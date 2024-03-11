@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* 도깨비 PJ : 공통 클래스 CSS - core.css */
+/* 홍루이젠 PJ : 공통 클래스 CSS - core.css */
 /* 공통 셋팅을 위한 클래스 + 웹폰트 */
 
 /* 웹폰트 CDN */
@@ -17,11 +17,27 @@
     font-family: 'Nanum Gothic', sans-serif;
 */
 
-/******* 공통 클래스 *******/
+/* 전체 글자크기 */
+html{
+    font-size: 10px;
+    /* rem단위 계산편의를 위함 */
+}
+body{
+    /* 글자체 */
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+/********* 공통 클래스 *********/
+/* 임시표시타이틀 */
+.temp-tit{
+    position: absolute;
+    font-size: 2vw;
+    color: #ccc;
+}
 /* 중앙속박스 */
 .inbox{
     /* 최대가로크기 */
-    max-width: 1360px;
+    max-width: 1660px;
     /* 블록박스 중앙정렬 -> 마.영.오! */
     margin: 0 auto;
     
