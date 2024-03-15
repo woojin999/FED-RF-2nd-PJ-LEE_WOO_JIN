@@ -4,19 +4,170 @@
 /* 공유기능 요소 셋팅 */
 
 /************* 1. 상단영역 *************/
+.top-area{
+    position: fixed;
+    background-color: #fff;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+    width: 100%;
+    
+}
 .mlogo img{
     width: 180px;
+    margin-top: 12px;
 }
+
+/* gnb박스 */
+/* .cont-box{
+    height: 300px;    
+} */
 
 /* gnb 메뉴 */
 .gnb-menu ul{
     display: flex;
+    white-space: nowrap;
+}
+.gnb-menu ul a:hover{
+    color: #f52334;
 }
 
 .gnb-menu ul a{
     display: block;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    padding: 0 13px;
+    line-height: 80px;
+    color: #401e20;
+    font-weight: 700;
+    font-family: 'Nunito Sans', 'S-CoreDream', sans-serif;
 }
+
+.gnb-menu ul > li:nth-child(1) > a::after,
+.gnb-menu ul > li:nth-child(2) ~ li:nth-child(-n + 5) > a::after
+{
+    content: "∨";
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 5px;
+    transform: scaleX(1.5);
+}
+
+.smenu{
+    position: absolute;
+    display: flex;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    z-index: 999;
+    overflow: hidden;
+    background-color: #fff;
+    transition: 0.5s;
+}
+.smenu .left-swrap .swrap ol li a{
+    line-height: 40px;
+    font-size: 22px;
+}
+.gnb-menu > ul > li:hover .smenu{
+    height: 300px;
+} 
+
+.swrap{
+    display: flex;
+    justify-content: space-evenly;
+    width: 35vw;
+    margin: 0 auto;
+    padding: 30px 30px 0;
+}
+.smenu ol{
+    flex-wrap: wrap;
+}
+.smenu h2{
+    font-size: 3rem;
+    
+}
+.smenu h2::after{
+    content: '';
+    position:absolute;
+    width: 4vw;
+    height: 1px;
+    top: 15%;
+    left: 16.5%;
+    background: black;
+}
+.swrap-img{
+    background-image: url(../images/smenu_img1.jpg);
+    background-repeat: no-repeat;
+    background-position: center left;
+    background-size: auto 300px;
+    width: 100%;
+    height: 100%;
+}
+.right-menu ul{
+    
+    display: flex;
+    justify-content: flex-end;
+    white-space: nowrap;
+}
+.right-menu{
+    position: relative;
+
+}
+.right-menu ul a{ 
+    font-size: 1.6rem;
+    padding: 0 13px;
+    line-height: 80px;
+    font-family: 'Montserrat', 'S-CoreDream', sans-serif;
+    font-weight: 700;
+}
+
+.right-menu ul li{
+    position: relative
+}
+.right-menu ul li:nth-of-type(1)::after{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 14px;
+    background: #401e1e;
+    top: 50%;
+    margin-top: -7px;
+}
+.right-menu ul li:nth-of-type(3) {
+    color: #f52334;
+    border: 3px solid #f52334;
+    border-radius: 24px;
+    margin: 11px 30px 0 20px;
+    width: 23rem;
+    height: 4.5rem;
+    text-align: center;
+    
+}
+.right-menu ul li:nth-of-type(3) a{
+    color: #f52334;
+    line-height: 50px;
+
+}
+.slide-box{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.slider{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.slider li {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.snum-01 {
+    background-image: url(../images/mainban1.png);
+    width: 100%;
+    height: 100%;
+}   
 
 /************* 2. 메인영역 *************/
 /************* 3. 하단영역 *************/
