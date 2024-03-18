@@ -64,9 +64,11 @@
     background-color: #fff;
     transition: 0.5s;
 }
+
 .smenu .left-swrap .swrap ol li a{
-    line-height: 40px;
+    line-height: 35px;
     font-size: 22px;
+    font-weight: 300;
 }
 .gnb-menu > ul > li:hover .smenu{
     height: 300px;
@@ -74,7 +76,7 @@
 
 .swrap{
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     width: 35vw;
     margin: 0 auto;
     padding: 30px 30px 0;
