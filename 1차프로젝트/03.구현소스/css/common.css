@@ -257,6 +257,7 @@
 
 .menu-list ul li ul:hover{
     background-color: #ffe675;;
+    transition: .5s;
 }
 
 .menu-list ul li ul a{
@@ -277,7 +278,9 @@
     right: 50px;
     cursor: pointer;
 }
+/************* 2. 메인영역 *************/
 
+/* 배너 영역 */
 .slide-box{
     width: 100%;
     height: 100%;
@@ -299,5 +302,65 @@
     height: 100%;
 }   
 
-/************* 2. 메인영역 *************/
+/* 상품 영역 */
+.product-area .cont-box{
+background-color: #fff5d9;
+}
+.product-box{
+    text-align: center;
+    padding: 100px;
+}
+.product-tit{
+    display: inline-block;
+    position: relative;
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f52334;
+    margin: 0 0 40px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.product-tit::after{
+    content: '';
+    position: absolute;
+    background-color: #f52334;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    bottom: -2px;
+}
+
+.product-box ul {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+    gap: 40px;
+}
+
+.product-img-box{
+    
+    display: flex;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+
+
+.product-img-box {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.pdnew-img-01{
+    
+    background: url(../images/product_new1.png);
+    
+}
+
+
+.event-area .cont-box{
+    background-color: #ffdcd1;
+}
 /************* 3. 하단영역 *************/
