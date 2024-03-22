@@ -335,29 +335,26 @@ background-color: #fff5d9;
     justify-content: center;
     font-size: 1.6rem;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .product-img-box{
     
-    display: flex;
+   /*  display: flex;
     width: 100%;
-    height: 400px;
+    height: 400px; */
     overflow: hidden;
+    flex-shrink: 0;
+}
+
+.product-img-box ul li img{
+    background-position: 100%;
+    background-size: contain;
 }
 
 
 
-.product-img-box {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-}
-
-.pdnew-img-01{
     
-    background: url(../images/product_new1.png);
-    
-}
 
 
 .event-area .cont-box{
