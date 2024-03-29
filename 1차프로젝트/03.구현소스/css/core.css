@@ -28,6 +28,9 @@
 /* 전체 기본폰트 */
 *{
     font-family: 'Nunito Sans', 'S-CoreDream', sans-serif;
+    color: #401e20;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
 }
 /* 전체 글자크기 */
 html{

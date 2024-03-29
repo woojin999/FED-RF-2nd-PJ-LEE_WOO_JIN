@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>홍루이젠 공식 홈페이지</title>
+    <!-- 폰트어썸 아이콘 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <link rel="shortcut icon" href="./images/favicon_hong.png" />
     <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/hong.js" defer></script>
+    <script src="./js/product_dummy.js" defer></script>
   </head>
 
   <body>
@@ -31,7 +37,6 @@
                     <!-- 서브메뉴 -->
 
                     <div class="smenu">
-                      
                       <div class="left-swrap">
                         <div class="swrap">
                           <h2>브랜드소개</h2>
@@ -49,7 +54,7 @@
                           </ol>
                         </div>
                       </div>
-                      
+
                       <div class="swrap-img img01"></div>
                     </div>
                   </li>
@@ -58,7 +63,7 @@
                   </li>
                   <li>
                     <a href="">메뉴</a>
-                     <div class="smenu">
+                    <div class="smenu">
                       <div class="left-swrap">
                         <div class="swrap">
                           <h2>메뉴</h2>
@@ -89,11 +94,11 @@
                         </div>
                       </div>
                       <div class="swrap-img img02"></div>
-                    </div> 
+                    </div>
                   </li>
                   <li>
                     <a href="">매장안내</a>
-                     <div class="smenu">
+                    <div class="smenu">
                       <div class="left-swrap">
                         <div class="swrap">
                           <h2>매장안내</h2>
@@ -109,10 +114,10 @@
                         </div>
                       </div>
                       <div class="swrap-img img03"></div>
-                    </div> 
+                    </div>
                   </li>
                   <li>
-                    <a href="">커뮤니티</a>                     
+                    <a href="">커뮤니티</a>
                     <div class="smenu">
                       <div class="left-swrap">
                         <div class="swrap">
@@ -157,7 +162,11 @@
                   </li>
                   <li>
                     <a>
-                      <img src="./images/icon_ham.png" alt="메뉴버튼" class="open-ham">
+                      <img
+                        src="./images/icon_ham.png"
+                        alt="메뉴버튼"
+                        class="open-ham"
+                      />
                     </a>
                   </li>
                 </ul>
@@ -167,13 +176,17 @@
         </div>
       </header>
     </div>
-    
+
     <!-- 햄버거 서브메뉴 영역 -->
     <div id="ham-area">
       <div class="ham-menu">
-        <img src="./images/ham_close.png" alt="햄버거버튼 메뉴" class="close-ham">
+        <img
+          src="./images/ham_close.png"
+          alt="햄버거버튼 메뉴"
+          class="close-ham"
+        />
         <a href="./index.html">
-          <img src="./images/main_logo.png" alt="메인로고">
+          <img src="./images/main_logo.png" alt="메인로고" />
         </a>
 
         <div class="menu-list">
@@ -286,8 +299,6 @@
             </ul>
           </div>
         </div>
-
-
       </div>
     </div>
     <!-- 2. 배너영역 -->
@@ -311,30 +322,113 @@
         <h2 class="temp-tit">3. 상품영역</h2>
         <div class="cont-box">
           <div class="col-12">
-            <div class="product-box">
-              <h2 class="product-tit">PRODUCT</h2>
+            <div class="product-box sub-box">
+              <h2 class="product-tit sub-tit">PRODUCT</h2>
               <ul>
                 <li>NEW</li>
                 <li>SANDWICH</li>
                 <li>DESSERT</li>
                 <li>DRINK</li>
               </ul>
-              <div class="product-img-box">
-                <ul>
-                  <li>
-                    <img src="./images/product_new1.png" alt="">
-                  </li>
-                  <li>
-                    <img src="./images/product_new2.png" alt="">
-                  </li>
-                  <li>
-                    <img src="./images/product_new3.png" alt="">
-                  </li>
-                  <li>
-                    <img src="./images/product_new4.png" alt="">
-                  </li>
-                </ul>
+              <div class="product-img-wrap">
+                <div class="product-img-left angles">
+                  <i class="fa-solid fa-angles-left"></i>
+                </div>
+                <div class="product-img-box">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <img
+                          src="./images/product_new1.png"
+                          alt="프리미엄햄치즈샌드위치"
+                        />
+                        <img
+                          src="./images/product_new_hover1.png"
+                          alt="프리미엄햄치즈샌드위치"
+                        />
+                        <div class="product-txt-box">
+                          <strong>프리미엄 햄치즈 샌드위치</strong>
+                          <span
+                            >탕종식빵과 터키브레스트 햄, 통모짜렐라치즈의
+                            만남</span
+                          >
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <img
+                          src="./images/product_new2.png"
+                          alt="프레시파베이컨크림치즈"
+                        />
+                        <img
+                          src="./images/product_new_hover2.png"
+                          alt="프레시파베이컨크림치즈"
+                        />
+                        <div class="product-txt-box">
+                          <strong>프레시 파 베이컨 크림치즈</strong>
+                          <span>부드러운 크림치즈에 쪽파와 베이컨이 가득</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img
+                          src="./images/product_new3.png"
+                          alt="매콤에그마요총좌빙"
+                        />
+                        <img
+                          src="./images/product_new_hover3.png"
+                          alt="매콤에그마요총좌빙"
+                        />
+                        <div class="product-txt-box">
+                          <strong>매콤에그마요 총좌빙</strong>
+                          <span>매콤한 소스와 고소한 에그마요가 듬뿍</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="./images/product_new4.png" alt="홍밀크" />
+                        <img
+                          src="./images/product_new_hover4.png"
+                          alt="홍밀크"
+                        />
+                        <div class="product-txt-box">
+                          <strong>홍 밀크</strong>
+                          <span>우유 속 비정제 흑설탕의 건강한 달콤함</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="./images/product_new5.png" alt="초콜릿밀크" />
+                        <img
+                          src="./images/product_new_hover5.png"
+                          alt="초콜릿밀크"
+                        />
+                        <div class="product-txt-box">
+                          <strong>초콜릿 밀크</strong>
+                          <span>달콤한 초콜릿의 진한 맛과 우유의 조화</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="product-img-right angles">
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
               </div>
+            </div>
+            <div class="product-btn-box">
+              <ol>
+                <li>
+                  <a href="">What's New?</a>
+                </li>
+                <li>
+                  <a href="">All Product</a>
+                </li>
+              </ol>
             </div>
           </div>
         </div>
@@ -346,8 +440,72 @@
         <h2 class="temp-tit">4. 이벤트영역</h2>
         <div class="cont-box">
           <div class="col-12">
-            <div class="event-box">
-
+            <div class="event-box sub-box">
+              <h2 class="event-tit sub-tit">EVENT</h2>
+              <div class="event-img-wrap">
+                <div class="event-img-left angles">
+                  <i class="fa-solid fa-angles-left"></i>
+                </div>
+                <div class="event-img-box">
+                  <ul>
+                    <li>
+                      <a href="">
+                        <img src="./images/event_img1.png" alt="이벤트이미지" />
+                        <div class="event-txt-box">
+                          <p>슈톨렌 케익샌드 15% 할인 프로모션</p>
+                          <img src="./images/arrow_cont.png" alt="" />
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="./images/event_img2.png" alt="이벤트이미지" />
+                        <div class="event-txt-box">
+                          <p>2월 WAYE</p>
+                          <img src="./images/arrow_cont.png" alt="" />
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="./images/event_img3.png" alt="이벤트이미지" />
+                        <div class="event-txt-box">
+                          <p>홍루이젠 소비자패널 6기 모집</p>
+                          <img src="./images/arrow_cont.png" alt="" />
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="./images/event_img4.png" alt="이벤트이미지" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="./images/event_img5.png" alt="이벤트이미지" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="./images/event_img6.jpg" alt="이벤트이미지" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="./images/event_img7.jpg" alt="이벤트이미지" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="">
+                        <img src="./images/event_img8.png" alt="이벤트이미지" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="event-img-right angles">
+                  <i class="fa-solid fa-angles-right"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -355,10 +513,46 @@
     </div>
     <!-- 5. 뉴스영역 -->
     <div id="news-area">
-      <section class="news-area inbox">
+      <section class="news-area">
         <h2 class="temp-tit">5. 뉴스영역</h2>
         <div class="cont-box">
-          <div class="col-12"></div>
+          <div class="col-12">
+            <div class="news-box sub-box">
+              <h2 class="news-tit sub-tit">NEWS</h2>
+              <div class="news-wrap">
+                <div class="news-cont">
+                  <img src="./images/noimg.png" alt="" />
+                  <div class="news-txt">
+                    <span>NEWS</span>
+                    <span
+                      >홍루이젠, 겨울 한정 디저트 '슈톨렌 케익샌드'..연말 파티에
+                      딱!</span>
+                    <p>
+                      샌드위치 전문 브랜드 ‘홍루이젠’은 겨울 시즌 신메뉴로
+                      크리스마스 파티, 홈파티 등 연말 모임에 제격인 스페셜
+                      디저트 ‘슈톨렌 케익샌드’를 1일 출시했다고 밝혔다. 독일에서
+                    </p>
+                    <a href="#">READ MORE</a>
+                  </div>
+                </div>
+                <div class="news-cont">
+                  <img src="./images/noimg.png" alt="" />
+                  <div class="news-txt">
+                    <span>NEWS</span>
+                    <span
+                      >홍루이젠, 신메뉴 2종 출시 "MZ세대의 트렌디한 입맛을
+                      사로잡아"</span>
+                    <p>
+                      [메가경제=주영래 기자] 샌드위치 전문 브랜드 ‘홍루이젠’이
+                      신메뉴 2종 ‘매콤에그마요 총좌빙’과 ‘프레시 파 베이컨
+                      크림치즈 샌드위치’로 MZ세대 입맛 사로잡기에 나섰다.
+                    </p>
+                    <a href="#">READ MORE</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
