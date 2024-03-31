@@ -1,3 +1,5 @@
+
+// 상단 메뉴 /////
 let openHam = document.querySelector('.open-ham');
 let closeHam = document.querySelector('.close-ham');
 let hamMenu = document.querySelector('.ham-menu');
@@ -10,6 +12,7 @@ closeHam.addEventListener('click', function () {
     hamMenu.classList.remove('on');
 });
 
+// 이벤트 파트/////////////
 let evtbtn = document.querySelectorAll('.evtbtn');
 // let eventbtn2 = document.querySelector('.eventbtn2');
 let eventslide =document.getElementById('eventslide');

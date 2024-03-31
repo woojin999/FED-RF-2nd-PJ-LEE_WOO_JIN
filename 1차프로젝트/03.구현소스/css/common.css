@@ -226,8 +226,7 @@
   overflow: hidden;
   transition: 0.4s ease-in-out;
 }
-
-.ham-menu.on .mwrap {
+  .ham-menu.on .mwrap {
   height: 650px;
 }
 .ham-menu.on .mwrap:nth-child(1) {
