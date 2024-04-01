@@ -33,10 +33,11 @@ const prdNew = {
 
 const prdSw = {
   sw1: {
-    img: "product_sand1.png",
-    imghv: "product_sand_hover1.png",
-    name: "프리미엄 햄치즈 샌드위치",
-    desc: "탕종식빵과 터키브레스트 햄,통모짜렐라치즈의 만남",
+    
+    img: "product_sand5.png",
+    imghv: "product_sand_hover5.png",
+    name: "에그 포테이토 샌드위치",
+    desc: "감자와 에그 샐러드의 든든한 조합",
   },
   sw2: {
     img: "product_sand2.png",
@@ -45,10 +46,10 @@ const prdSw = {
     desc: "부드러운 크림치즈에 쪽파와 베이컨이가득!",
   },
   sw3: {
-    img: "product_sand3.png",
-    imghv: "product_sand_hover3.png",
-    name: "매콤에그마요 총좌빙",
-    desc: "매콤한 소스와 고소한 에그마요가 듬뿍",
+    img: "product_sand6.png",
+    imghv: "product_sand_hover6.png",
+    name: "갓군샌 갈릭버터",
+    desc: "고소한 버터와 국내산 마늘의 풍미 가득한 만남",
   },
   sw4: {
     img: "product_sand4.png",
@@ -57,16 +58,16 @@ const prdSw = {
     desc: "폭신한 빵 속 햄과 치즈의 균형잡힌 맛",
   },
   sw5: {
-    img: "product_sand5.png",
-    imghv: "product_sand_hover5.png",
-    name: "에그 포테이토 샌드위치",
-    desc: "감자와 에그 샐러드의 든든한 조합",
+    img: "product_sand1.png",
+    imghv: "product_sand_hover1.png",
+    name: "프리미엄 햄치즈 샌드위치",
+    desc: "탕종식빵과 터키브레스트 햄,통모짜렐라치즈의 만남",
   },
   sw6: {
-    img: "product_sand6.png",
-    imghv: "product_sand_hover6.png",
-    name: "갓군샌 갈릭버터",
-    desc: "고소한 버터와 국내산 마늘의 풍미 가득한 만남",
+    img: "product_sand3.png",
+    imghv: "product_sand_hover3.png",
+    name: "매콤에그마요 총좌빙",
+    desc: "매콤한 소스와 고소한 에그마요가 듬뿍",
   },
   sw7: {
     img: "product_sand7.png",
@@ -128,38 +129,56 @@ const prdDrk = {
     name: "초콜릿 밀크",
     desc: "달콤한 초콜릿의 진한 맛과 우유의 조화",
   },
+  drk3: {
+    img: "product_drink1.png",
+    imghv: "product_drink_hover1.png",
+    name: "홍밀크",
+    desc: "우유 속 비정제 흑설탕의 건강한 달콤함",
+  },
+  drk4: {
+    img: "product_drink2.png",
+    imghv: "product_drink_hover2.png",
+    name: "초콜릿 밀크",
+    desc: "달콤한 초콜릿의 진한 맛과 우유의 조화",
+  },
 };
 const prdWrap = document.querySelector('.prdWrap');
 console.log(prdWrap);
 
 let hcode = "";
-/* 
 let prdBtn = document.querySelectorAll('.prdBtn li');
 
-let newBtn = prdBtn[0];
-let sdBtn = prdBtn[1];
-let dstBtn = prdBtn[2];
-let drkBtn = prdBtn[3];
 
-console.log("0",prdBtn[0]);
+/* console.log("0",prdBtn[0]);
 console.log("1",prdBtn[1]);
 console.log("2",prdBtn[2]);
 console.log("3",prdBtn[3]); */
 
-let newBtn = document.querySelector(".newBtn");
-let sdBtn = document.querySelector(".sdBtn");
-let dstBtn = document.querySelector(".dstBtn");
-let drkBtn = document.querySelector(".drkBtn");
-console.log(sdBtn);
+prdMakeList(prdNew);
 
-sdBtn.addEventListener('click', prdMakeList(prdSw));
-
-/* prdMakeList(prdNew);
-prdMakeList(prdSw); */
-
+prdBtn.forEach((val) => {
+  console.log("d",val);
+  
+  val.addEventListener('click', ()=>{
+    hcode = "";
+    switch (val) {
+      case prdBtn[0]:
+        prdMakeList(prdNew);
+        break;
+      case prdBtn[1]:
+        prdMakeList(prdSw);
+        break;
+      case prdBtn[2]:
+        prdMakeList(prdDst);
+        break;
+      case prdBtn[3]:
+        prdMakeList(prdDrk);
+        break;
+    }
+  });
+});
 
 function prdMakeList(menu) {
-  console.log('ddddd');
   for (let x in menu) {
     let data = menu[x];
 
@@ -167,11 +186,11 @@ function prdMakeList(menu) {
     <li>
       <a href="#">
         <img
-          src="./images/${data.img}"
+          src="./images/${data.imghv}"
           alt="상품이미지"
         />
         <img
-          src="./images/${data.imghv}"
+          src="./images/${data.img}"
           alt="상품이미지"
         />
         <div class="product-txt-box">
