@@ -12,15 +12,17 @@ closeHam.addEventListener('click', function () {
     hamMenu.classList.remove('on');
 });
 
+
+
 // 이벤트 파트/////////////
-let evtbtn = document.querySelectorAll('.evtbtn');
+let evtBtn = document.querySelectorAll('.evtbtn');
 // let eventbtn2 = document.querySelector('.eventbtn2');
 let eventslide =document.getElementById('eventslide');
-console.log(eventslide);
+// console.log(eventslide);
 
 let prot = false;
 
-for (let x of evtbtn) {
+for (let x of evtBtn) {
     x.onclick = evtGoSlide;
   }
 

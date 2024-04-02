@@ -344,16 +344,41 @@
 }
 
 .product-box > ul {
+  
   display: flex;
   justify-content: center;
   font-size: 1.6rem;
   gap: 40px;
   margin-bottom: 35px;
+}
+
+.product-box > ul li {
   cursor: pointer;
+  position: relative;
+  transition: 1s;
 }
-.product-box > ul li:hover{
-  color: red;
+
+.product-box > ul li:hover,
+.product-box > ul li.on{
+  font-weight: 900;
+}  
+
+.product-box > ul li.on::after,
+.product-box > ul li:hover::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #ffe675;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  z-index: -1;
+  
 }
+
+
 .product-img-wrap {
   position: relative;
   max-width: 1400px;

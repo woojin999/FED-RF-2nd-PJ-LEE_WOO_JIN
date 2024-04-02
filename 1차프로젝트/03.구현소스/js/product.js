@@ -33,7 +33,6 @@ const prdNew = {
 
 const prdSw = {
   sw1: {
-    
     img: "product_sand5.png",
     imghv: "product_sand_hover5.png",
     name: "에그 포테이토 샌드위치",
@@ -142,36 +141,45 @@ const prdDrk = {
     desc: "달콤한 초콜릿의 진한 맛과 우유의 조화",
   },
 };
-const prdWrap = document.querySelector('.prdWrap');
-console.log(prdWrap);
+const prdWrap = document.querySelector(".prdWrap");
+// console.log(prdWrap);
 
 let hcode = "";
-let prdBtn = document.querySelectorAll('.prdBtn li');
-
-
-/* console.log("0",prdBtn[0]);
-console.log("1",prdBtn[1]);
-console.log("2",prdBtn[2]);
-console.log("3",prdBtn[3]); */
+let prdBtn = document.querySelectorAll(".prdBtn li");
+let snum = 0;
+let prdSlBtn = document.querySelectorAll(".prdSlBtn");
+let prdslide = document.getElementById("prdslide");
 
 prdMakeList(prdNew);
 
 prdBtn.forEach((val) => {
-  console.log("d",val);
-  
-  val.addEventListener('click', ()=>{
+  val.addEventListener("click", () => {
+    // on 클래스 모두 지움
+    snum = 0;
+    prdslide.style.left = "0%";
+    prdSlBtn[0].style.display = "none";
+    prdSlBtn[1].style.display = "block";
+
+    for (const x of prdBtn) {
+      x.classList.remove("on");
+    }
+
     hcode = "";
     switch (val) {
       case prdBtn[0]:
+        prdBtn[0].classList.add("on");
         prdMakeList(prdNew);
         break;
       case prdBtn[1]:
+        prdBtn[1].classList.add("on");
         prdMakeList(prdSw);
         break;
       case prdBtn[2]:
+        prdBtn[2].classList.add("on");
         prdMakeList(prdDst);
         break;
       case prdBtn[3]:
+        prdBtn[3].classList.add("on");
         prdMakeList(prdDrk);
         break;
     }
@@ -207,3 +215,50 @@ function prdMakeList(menu) {
 } // prdNewList
 
 
+
+console.log("d",prdSlBtn,"a",prdslide);
+
+console.log(prdslide.childElementCount);
+
+prdSlBtn[0].style.display = "none";
+for(let x of prdSlBtn){
+  x.onclick = prdGoSlide;
+
+}
+
+function prdGoSlide() {
+  // 광클 금지
+  if (prot) return;
+  prot = true;
+  setTimeout(() => {
+    prot = false;
+  }, 500);
+
+  let liCnt = prdslide.childElementCount;
+
+  // console.log("asfq", liCnt - 1);
+
+  let isRbtn = this.classList.contains("slBtn2");
+
+  isRbtn ? snum++ : snum--;
+
+  if (snum < 0) {
+    snum = 0;
+  } else if (snum > liCnt - 4) {
+    snum = liCnt - 4;
+  } // elseif
+
+  if (snum === 0 || snum === (liCnt - 4)) {
+    // 해당 버튼 숨기기
+    this.style.display = "none";
+    // prdSlBtn[0].style.display = "block";
+  } else {
+    // 버튼 다시 보이기
+    for (let x of prdSlBtn) {
+      x.style.display = "block";
+    }
+  } //// else /////
+  console.log("snum",snum);
+  prdslide.style.left = -25 * snum + "%";
+  prdslide.style.transition = ".6s ease-in-out";
+}
