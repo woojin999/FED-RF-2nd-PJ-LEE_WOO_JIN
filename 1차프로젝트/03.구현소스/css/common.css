@@ -328,7 +328,7 @@
 .sub-box {
   position: relative;
   text-align: center;
-  padding: 100px 170px 50px;
+  padding: 100px 0 50px;
   z-index: 0;
 }
 .sub-tit {
@@ -427,6 +427,10 @@
   right: -60px;
 }
 
+.fa-solid{
+  color: #f52334;
+  font-weight: 600;
+}
 .angles {
   position: absolute;
   font-size: 50px;

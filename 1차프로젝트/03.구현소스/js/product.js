@@ -119,26 +119,26 @@ const prdDrk = {
   drk1: {
     img: "product_drink1.png",
     imghv: "product_drink_hover1.png",
-    name: "홍밀크",
-    desc: "우유 속 비정제 흑설탕의 건강한 달콤함",
+    name: "초콜릿 밀크",
+    desc: "달콤한 초콜릿의 진한 맛과 우유의 조화",
   },
   drk2: {
     img: "product_drink2.png",
     imghv: "product_drink_hover2.png",
-    name: "초콜릿 밀크",
-    desc: "달콤한 초콜릿의 진한 맛과 우유의 조화",
-  },
-  drk3: {
-    img: "product_drink1.png",
-    imghv: "product_drink_hover1.png",
     name: "홍밀크",
     desc: "우유 속 비정제 흑설탕의 건강한 달콤함",
   },
+  drk3: {
+    img: "product_drink3.png",
+    imghv: "product_drink_hover3.png",
+    name: "수제 달고나 밀크티",
+    desc: "부드러운 밀크티에 녹아드는 달고나 토핑",
+  },
   drk4: {
-    img: "product_drink2.png",
-    imghv: "product_drink_hover2.png",
-    name: "초콜릿 밀크",
-    desc: "달콤한 초콜릿의 진한 맛과 우유의 조화",
+    img: "product_drink4.png",
+    imghv: "product_drink_hover4.png",
+    name: "수제 달고나 라떼",
+    desc: "쌉싸름한 라떼로 즐기는 달고나 음료의 달콤함",
   },
 };
 const prdWrap = document.querySelector(".prdWrap");
@@ -156,10 +156,8 @@ prdBtn.forEach((val) => {
   val.addEventListener("click", () => {
     // on 클래스 모두 지움
     snum = 0;
-    prdslide.style.left = "0%";
     prdSlBtn[0].style.display = "none";
-    prdSlBtn[1].style.display = "block";
-
+    
     for (const x of prdBtn) {
       x.classList.remove("on");
     }
@@ -212,6 +210,16 @@ function prdMakeList(menu) {
     `;
   } // for문
   prdWrap.innerHTML = hcode;
+  prdslide.style.left = "0%";
+  
+  if(prdslide.childElementCount == 4) {
+    
+    prdSlBtn[1].style.display = "none";
+  }else{
+    
+    prdSlBtn[1].style.display = "block";
+  }
+  console.log("zxc",prdslide.childElementCount == 4);
 } // prdNewList
 
 
@@ -221,6 +229,7 @@ console.log("d",prdSlBtn,"a",prdslide);
 console.log(prdslide.childElementCount);
 
 prdSlBtn[0].style.display = "none";
+
 for(let x of prdSlBtn){
   x.onclick = prdGoSlide;
 
@@ -258,6 +267,11 @@ function prdGoSlide() {
       x.style.display = "block";
     }
   } //// else /////
+  if (snum !== 0) {
+    prdSlBtn[0].style.display = "block";
+  } else{
+    prdSlBtn[1].style.display = "block";
+  }
   console.log("snum",snum);
   prdslide.style.left = -25 * snum + "%";
   prdslide.style.transition = ".6s ease-in-out";
