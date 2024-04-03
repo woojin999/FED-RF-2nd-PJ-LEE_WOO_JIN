@@ -303,23 +303,68 @@
 .slide-box {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .slider {
+  display: flex;
   position: relative;
+  left: 0;
   width: 100%;
   height: 100%;
 }
 .slider li {
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top;
   background-size: cover;
+  flex-shrink: 0;
+  flex-basis: 100%;
 }
 .snum-01 {
   background-image: url(../images/mainban1.png);
   width: 100%;
   height: 100%;
 }
+.snum-02 {
+  background-image: url(../images/mainban2.png);
+  width: 100%;
+  height: 100%;
+}
+.snum-03 {
+  background-image: url(../images/mainban3.jpg);
+  width: 100%;
+  height: 100%;
+}
+
+.slide-btn{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-btn li{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.sbtn-01{
+  background-image: url(../images/ban_btn01.png);
+  width: 11vw;
+  height: 7vw;
+}
+.sbtn-02{
+  background-image: url(../images/ban_btn02.png);
+  width: 11vw;
+  height: 7vw;
+}
+  
+.sbtn-03{
+  background-image: url(../images/ban_btn03.png);
+  width: 11vw;
+  height: 7vw;
+}
+
 
 /* 상품 영역 */
 .product-area .cont-box {
@@ -646,25 +691,49 @@
   margin: 0 auto;
 }
 .news-cont{
+  display: flex;
   padding: 20px;
   border-top: 2px solid black;
+  /* transition: .4s; */
 }
 .news-cont:last-child{
   border-bottom: 2px solid black;
 }
 .news-txt{
-  display: inline-block;
   text-align: left;
+  padding-left: 20px;
 }
+.news-cont:hover{
+  background-color: #ffd1c3;
+  transition: .3s;
+}
+
 .news-txt span:first-child{
   display: block;
   width: 85px;
   height: 29px;
+  margin-bottom: 20px;
   background-color: #401e20;
   color: #fff;
   text-align: center;
   line-height: 2;
   font-size: 1.5rem;
   font-weight: bold;
+}
+.news-txt span:nth-child(2){
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.news-txt p{
+  font-size: 1.7rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  width: 90%;
+  margin: 17px 0;
+}
+.news-txt a{
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-bottom: 1px solid #000;
 }
 /************* 3. 하단영역 *************/
