@@ -35,7 +35,7 @@
 /* 전체 글자크기 */
 html{
     font-size: 10px;
-    
+    scroll-behavior: smooth;
     /* rem단위 계산편의를 위함 */
 }
 body{

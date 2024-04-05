@@ -187,7 +187,6 @@ prdBtn.forEach((val) => {
 function prdMakeList(menu) {
   for (let x in menu) {
     let data = menu[x];
-
     hcode += `   
     <li>
       <a href="#">
