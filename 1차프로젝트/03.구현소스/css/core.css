@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://webfontworld.github.io/score/SCoreDream.css');
 /* 
     0. 메뉴 등 일반체
     font-family: 'Noto Sans KR', sans-serif;
@@ -20,14 +21,14 @@
     4. 전체 공통체(메뉴 등)
     font-family: 'Nanum Gothic', sans-serif;
 
-    font-family: 'Nunito Sans', 'S-CoreDream', sans-serif;
+    font-family: 'Nunito Sans', 'SCoreDream', sans-serif;
 
-    font-family: 'Montserrat', 'S-CoreDream', sans-serif;
+    font-family: 'Montserrat', 'SCoreDream', sans-serif;
 */
 
 /* 전체 기본폰트 */
 *{
-    font-family: 'Nunito Sans', 'S-CoreDream', sans-serif;
+    font-family: 'Nunito Sans', 'SCoreDream', sans-serif;
     color: #401e20;
     line-height: 1.4;
     letter-spacing: -0.5px;

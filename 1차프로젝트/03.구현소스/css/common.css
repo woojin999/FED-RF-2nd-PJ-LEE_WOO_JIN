@@ -708,6 +708,9 @@
   border-top: 2px solid black;
   /* transition: .4s; */
 }
+.news-cont img {
+  height: 182px;
+}
 .news-cont:last-child {
   border-bottom: 2px solid black;
 }
@@ -772,7 +775,9 @@
 
 .video-wrap{
   width: 1400px;
-  margin: 0 auto
+  margin: 0 auto;
+  display: flex;
+  
 }
 
 .video-cont{
@@ -784,10 +789,12 @@
   position: relative;
   
 }
-.video-mv-img img{
+.video-mv-img img,
+.video-mv-img iframe{
   width: 100%;
   height: 566px;
   object-fit: fill;
+  border: none;
   
 }
 .video-mv-img img:nth-child(2){
@@ -808,5 +815,189 @@
     height: 134px;
     background: url(../images/btn_play.png) no-repeat;
     cursor: pointer;
+}
+
+.video-txt{
+  align-content: flex-end;
+  text-align: left;
+  padding-left: 42px;
+}
+.video-stit{
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  padding: 12px;
+  font-size: 2.5rem;
+  border: 3px solid #3C2121;
+  color: #3C2121;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.video-stit::after{
+  content: '';
+  position: absolute;
+  background: url(../images/dot_board.png) no-repeat center/cover;
+  top: -3px;
+  right: -50px;
+  border: 3px solid #3C2121;
+  width: 45px;
+  height: 100%;
+}
+
+.video-txt-box{
+  margin-bottom: 100px;
+}
+.video-txt-box img{
+  margin-left:60px;
+}
+.video-txt-box strong{
+  display: block;
+  font-size: 3.7rem;
+  color: #000;
+  padding: 30px 0;
+}
+
+.video-desc{
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.video-img-box p{
+  display: inline-block;
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.video-img-box p:first-child{
+background: url(../images/video_bg1.png) no-repeat center/cover;
+margin-right: 10px;
+border: 3px solid #f52334;
+}
+.video-img-box p:last-child{
+background: url(../images/video_bg2.png) no-repeat center/cover; 
+
+}
+/* 팔로우 영역 */
+
+#follow-area {
+  background-color: #def1ee;
+  position: relative;
+  overflow: hidden;
+}
+.follow-wrap{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.follow-img{
+  position: relative;
+  margin: 0 auto;
+  width: 324px;
+  height: 324px;
+  background: no-repeat center/cover;
+}
+
+.fimg1{
+  background-image: url(../images/event_img8.png);
+}
+.fimg2{
+  background-image: url(../images/follow_img.png);
+}
+.fimg3{
+  background-image: url(../images/event_img5.png);
+}
+
+.follow-cont {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+
+.follow-cont a .follow-img::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 13px;
+  background-color: #e6002d;
+  z-index: 9;
+  transition: .7s;
+}
+.follow-cont a:hover .follow-img::after{
+  width: 100%;
+}
+.follow-cont a .follow-img::before{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 13px;
+  height: 0;
+  background-color: #e6002d;
+  z-index: 9;
+  transition: .7s;
+}
+.follow-cont a:hover .follow-img::before{
+  height: 100%;
+}
+
+.follow-cont a{
+  position: relative;
+}
+
+.follow-cont a::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 13px;
+  height: 0;
+  background-color: #e6002d;
+  z-index: 9;
+  transition: .7s;
+}
+.follow-cont a:hover::after{
+  height: 100%;
+}
+.follow-cont a::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 13px;
+  background-color: #e6002d;
+  z-index: 9;
+  transition: .7s;
+}
+.follow-cont a:hover::before{
+  width: 100%;
+}
+.follow-hover{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+  transition: .7s;
+}
+.follow-hover:hover{
+
+  opacity: .6;
+}
+
+.follow-hover i{
+  margin-top: 40%;
+}
+
+.follow-hover i,
+.follow-hover p{
+  font-size: 18px;
+  color: #e6002d;
+  font-weight: bold;
 }
 /************* 3. 하단영역 *************/

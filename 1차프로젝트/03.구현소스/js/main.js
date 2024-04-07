@@ -22,7 +22,6 @@ slBtn[0].addEventListener("click", function () {
     let thisval = this;
     if ((thisval = val)) this.style.display = "none";
   });
-
 });
 slBtn[1].addEventListener("click", function () {
   bSlider.style.left = "-100%";
@@ -61,13 +60,13 @@ function evtGoSlide() {
   prot = true;
   setTimeout(() => {
     prot = false;
-  }, 500);
+  }, 600);
 
   let isEventRbtn = this.classList.contains("eventbtn2");
   console.log(isEventRbtn);
   if (isEventRbtn) {
     eventslide.style.left = "-33.333%";
-    eventslide.style.transition = ".5s ease-in-out";
+    eventslide.style.transition = ".6s ease-in-out";
 
     setTimeout(() => {
       eventslide.appendChild(eventslide.querySelectorAll("li")[0]);
@@ -82,7 +81,52 @@ function evtGoSlide() {
 
     setTimeout(() => {
       eventslide.style.left = "0";
-      eventslide.style.transition = ".5s ease-in-out";
-    }, 500);
+      eventslide.style.transition = ".6s ease-in-out";
+    }, 600);
   }
 }
+
+// 비디오 이벤트
+
+const videoMV = document.querySelector(".video-mv-img");
+const videoImg = document.querySelectorAll(".video-img-box p");
+const videoBg = document.querySelector(".video-mv-img img");
+const v1 = document.querySelector(".v1");
+const v2 = document.querySelector(".v2");
+let islv = true;
+
+videoMV.onclick = () => {
+  console.log("비디오 무비");
+
+    videoMV.innerHTML = `
+    <iframe src="https://www.youtube.com/embed/${islv ? 'QyQEY9zDQbI': 'VTTkU4SReM8'}?autoplay=1" allow="autoplay" title="[홍루이젠]  프레시 샌드위치로 속은 든든하게, 칼로리는 가볍게!"></iframe>
+    `;
+    videoMV.classList.remove("off");
+};
+
+videoImg[0].onclick = () => {
+  videoMV.innerHTML = `
+  <img
+    src="./images/video_bg1.png"
+    alt="비디오 동영상 이미지"
+  />
+  `;
+  videoMV.classList.add("off");
+  videoImg[0].style.border = "3px solid #f52334";
+  videoImg[1].style.border = "none";
+
+  islv = true;
+};
+videoImg[1].onclick = () => {
+  videoMV.innerHTML = `
+  <img
+    src="./images/video_bg2.png"
+    alt="비디오 동영상 이미지"
+  />
+  `;
+  videoMV.classList.add("off");
+  videoImg[0].style.border = "none";
+  videoImg[1].style.border = "3px solid #f52334";
+
+  islv = false;
+};
