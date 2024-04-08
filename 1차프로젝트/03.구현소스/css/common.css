@@ -1001,3 +1001,49 @@ background: url(../images/video_bg2.png) no-repeat center/cover;
   font-weight: bold;
 }
 /************* 3. 하단영역 *************/
+#footer-ban-area {
+  background-color: #9ad6cb;;
+}
+.ban-txt{
+    /* overflow: hidden; */
+    position: relative;
+    height: 100%;
+}
+.ban-txt p{
+  position: absolute;
+  font-size: 100px;
+  color: #f52334;
+  font-weight: 700;
+  white-space: nowrap;
+  line-height: 212px;
+  width: 180%;
+}
+
+.ban-txt p:first-child{
+animation: ban-ani1 20s linear infinite ;
+}
+
+.ban-txt p:last-child{
+  left: 180%;
+  animation: ban-ani2 30s linear infinite ;
+}
+
+
+
+@keyframes ban-ani1 {
+  0%{
+    left: 0%;
+  }
+  100%{
+    left: -156%
+  }
+}
+
+@keyframes ban-ani2 {
+  0%{
+    left: 180%;
+  }
+  100%{
+    left: 0%
+  }
+}

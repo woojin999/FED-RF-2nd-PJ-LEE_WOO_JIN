@@ -12,6 +12,15 @@ body *{
     outline: 2px dashed lightcoral;
 }
 
+/* 메인파트 전체박스 */
+/* .main-area {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.main-area > div + div {
+  padding-top: 60px;
+} */
 /* 1. 상단영역 */
 .top-area{
     height: 80px;
@@ -43,6 +52,10 @@ body *{
 /* 7. 팔로우영역 */
 .follow-area{
     height: 1080px;
+}
+/* 하단배너영역 */
+.footer-ban-area{
+    height: 212px;
 }
 /* 8. 하단영역 */
 .footer-area{
