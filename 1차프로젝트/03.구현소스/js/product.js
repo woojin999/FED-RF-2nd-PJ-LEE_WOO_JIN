@@ -157,11 +157,11 @@ prdBtn.forEach((val) => {
     // on 클래스 모두 지움
     snum = 0;
     prdSlBtn[0].style.display = "none";
+    prdslide.style.transition = "none";
     
     for (const x of prdBtn) {
       x.classList.remove("on");
     }
-
     hcode = "";
     switch (val) {
       case prdBtn[0]:
@@ -218,14 +218,9 @@ function prdMakeList(menu) {
     
     prdSlBtn[1].style.display = "block";
   }
-  console.log("zxc",prdslide.childElementCount == 4);
+  // console.log("zxc",prdslide.childElementCount == 4);
 } // prdNewList
 
-
-
-console.log("d",prdSlBtn,"a",prdslide);
-
-console.log(prdslide.childElementCount);
 
 prdSlBtn[0].style.display = "none";
 

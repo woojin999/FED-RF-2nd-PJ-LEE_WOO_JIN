@@ -477,7 +477,6 @@
 .product-img-box ul li img:nth-child(2):hover {
   margin-top: -117.7%;
   opacity: 0;
-  /* transition: 1s; */
 }
 
 .product-img-left {
@@ -546,7 +545,6 @@
   line-height: 3;
   font-weight: bold;
   cursor: pointer;
-  /* transition: .6s; */
   z-index: 1;
 }
 
