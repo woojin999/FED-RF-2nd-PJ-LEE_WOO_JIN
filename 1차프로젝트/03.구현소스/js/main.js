@@ -4,7 +4,7 @@ const elePage = document.querySelectorAll(".page");
 const totalCnt = elePage.length;
 console.log("대상", elePage, totalCnt, "개");
 
-window.addEventListener("wheel", wheelFn, { passive: false });
+// window.addEventListener("wheel", wheelFn, { passive: false });
 
 setTimeout(() => {
   window.scrollTo(0, 0);
@@ -20,7 +20,7 @@ function wheelFn(e) {
     stsWheel = false;
   }, 500);
   let delta = e.wheelDelta;
-  // 휠델타는 이벤트 객체에서 리턴해주는 방향,이동거리 등의 정보값이다
+  // 휠델타는 이벤트 객체에서 리턴해주는 방향,이동거리 등의 정보값
   console.log("델타값:", delta);
 
   if (delta < 0) {

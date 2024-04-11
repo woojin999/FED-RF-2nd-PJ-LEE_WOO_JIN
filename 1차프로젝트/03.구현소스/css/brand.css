@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/* 홍루이젠 PJ : 브랜드소개 CSS - brand.css */
+/* 공유기능 요소 셋팅 */
+
+.brand-sec01{
+    background: #ffe2de;
+}
+
+.txt-cont{
+    position: absolute;
+    top: 50%;
+    left: 18%;
+    transform: translatey(-50%);
+}
+.brand-tit{
+    font-size: 85px;
+    color: #3b2120;
+    font-weight: 300;
+    letter-spacing: -7px;
+}
+.img-wrap{
+    /* float: right; */
+}
+.ycircle{
+    width: 590px;
+    height: 590px;
+    border-radius: 50%;
+    background: #ffd55f;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    /* right: 18%; */
+    transform: translatey(-50%);
+}
+.sand-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.brand-sec02{
+    background: #fff9cd;
+}
+.brand-sec03{
+    background: #fdf08a;
+}
+.brand-sec04{
+    background: #fff9cd;
+}
+.brand-sec05{
+    background: #9ad6cb
+}

@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* 홍루이젠 PJ : 서브페이지 CSS - sub.css */
+
+/* 리셋, 코아, 커먼 공통 외부CSS 합치기 */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+@import url(./grid_12_flex.css);
+@import url(./brand.css);
+
+/* 공사중 표시 */
+body *{
+    outline: 2px dashed lightcoral;
+}
+
+/* 메인파트 전체박스 */
+/* .main-area {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.main-area > div + div {
+  padding-top: 60px;
+} */
+/* top-area */
+.top-area{
+    height: 80px;
+}
+.brand-box {
+    height: 1000px;
+}
