@@ -149,6 +149,8 @@ let prdBtn = document.querySelectorAll(".prdBtn li");
 let snum = 0;
 let prdSlBtn = document.querySelectorAll(".prdSlBtn");
 let prdslide = document.getElementById("prdslide");
+let prdImgWrap = document.querySelector(".product-img-wrap");
+console.log(prdImgWrap);
 
 prdMakeList(prdNew);
 
@@ -267,6 +269,17 @@ function prdGoSlide() {
     prdSlBtn[1].style.display = "block";
   }
   console.log("snum",snum);
-  prdslide.style.left = -25 * snum + "%";
+
+
+  if(prdImgWrap.offsetWidth > 1050){
+    prdslide.style.left = -25 * snum + "%";
+  }else if(prdImgWrap.offsetWidth > 700){
+    prdslide.style.left = -33.33 * snum + "%";
+
+  }else if(prdImgWrap.offsetWidth > 350){
+    prdslide.style.left = -50 * snum + "%";
+  }else{
+    prdslide.style.left = -100 * snum + "%";
+  }
   prdslide.style.transition = ".6s ease-in-out";
 }

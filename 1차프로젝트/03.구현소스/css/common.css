@@ -152,7 +152,7 @@
   color: #f52334;
   border: 3px solid #f52334;
   border-radius: 24px;
-  margin: 11px 30px 0 20px;
+  margin: 15px 30px 0 20px;
   width: 23rem;
   height: 4.5rem;
   text-align: center;
@@ -338,10 +338,10 @@
 
 .slide-btn {
   position: absolute;
-  width: 11%;
+  width: 13%;
   height: 65%;
   top: 213px;
-  left: 82%;
+  right: 6%;
 }
 
 .slide-btn li {
@@ -353,8 +353,8 @@
 .slide-btn li p {
   position: relative;
   color: #fff;
-  line-height: 1.6vw;
-  font-size: 1.3vw;
+  line-height: 1.2;
+  font-size: 25px;
   font-weight: bold;
   letter-spacing: -1.6px;
   text-align: center;
@@ -370,22 +370,21 @@
 .slide-btn li:hover p {
   opacity: 1;
 }
+
+.asbtn{
+  width: 213px;
+  height: 135px;
+}
 .sbtn-01 {
   background-image: url(../images/ban_btn01.png);
-  width: 11vw;
-  height: 7vw;
   display: none;
 }
 .sbtn-02 {
   background-image: url(../images/ban_btn02.png);
-  width: 11vw;
-  height: 7vw;
 }
 
 .sbtn-03 {
   background-image: url(../images/ban_btn03.png);
-  width: 11vw;
-  height: 7vw;
 }
 
 /* 상품 영역 */
@@ -464,6 +463,10 @@
   height: 100%;
 }
 
+/* .product-img-box ul li {
+  flex-basis: calc(25.5% - 2%);
+    flex-shrink: 0;
+} */
 .product-img-box ul li img {
   width: 330px;
   padding: 10px;
@@ -1065,6 +1068,7 @@
   color: #fff;
   font-size: 2.5rem;
   margin-right: 20px;
+  white-space: nowrap;
 }
 .foot-box address {
   color: #ecececb3;
@@ -1080,4 +1084,7 @@
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+.footer-box {
+  display: flex;
 }

@@ -2,7 +2,7 @@ let pgNum = 0;
 let stsWheel = false;
 const elePage = document.querySelectorAll(".page");
 const totalCnt = elePage.length;
-console.log("대상", elePage, totalCnt, "개");
+// console.log("대상", elePage, totalCnt, "개");
 
 window.addEventListener("wheel", wheelFn, { passive: false });
 
@@ -11,7 +11,7 @@ setTimeout(() => {
 }, 300);
 
 function wheelFn(e) {
-  console.log("휠");
+  // console.log("휠");
   e.preventDefault();
 
   if (stsWheel) return;
@@ -21,7 +21,7 @@ function wheelFn(e) {
   }, 500);
   let delta = e.wheelDelta;
   // 휠델타는 이벤트 객체에서 리턴해주는 방향,이동거리 등의 정보값
-  console.log("델타값:", delta);
+  // console.log("델타값:", delta);
 
   if (delta < 0) {
     // 아랫페이지로 가야하니까 페이지번호 증가
@@ -38,11 +38,11 @@ function wheelFn(e) {
       pgNum = 0;
     } // if //
   }
-  console.log("pgNum:", pgNum,"total",totalCnt);
+  // console.log("pgNum:", pgNum,"total",totalCnt);
 
   let pos = elePage[pgNum].offsetTop;
   // offsetTop 은 최상단에서부터 거리
-  console.log("이동할 위치 ",pgNum ,pos);
+  // console.log("이동할 위치 ",pgNum ,pos);
 
   //5-2. 페이지 스크롤 위치 이동하기
   // scrollTo(0, y축이동값)
@@ -59,6 +59,7 @@ let evtBtn = document.querySelectorAll(".evtbtn");
 // let eventbtn2 = document.querySelector('.eventbtn2');
 let eventslide = document.getElementById("eventslide");
 // console.log(eventslide);
+let evtImgWrap = document.querySelector(".event-img-wrap");
 
 let prot = false;
 
@@ -115,8 +116,16 @@ function evtGoSlide() {
 
   let isEventRbtn = this.classList.contains("eventbtn2");
   // console.log(isEventRbtn);
+  console.log(evtImgWrap.offsetWidth);
   if (isEventRbtn) {
-    eventslide.style.left = "-33.333%";
+    if (evtImgWrap.offsetWidth > 934) {
+      eventslide.style.left = "-33.333%";
+    } else if (evtImgWrap.offsetWidth > 467) {
+      eventslide.style.left = "-50%";
+    } else {
+      eventslide.style.left = "-100%";
+    }
+
     eventslide.style.transition = ".6s ease-in-out";
 
     setTimeout(() => {
@@ -127,7 +136,15 @@ function evtGoSlide() {
   } else {
     let list = eventslide.querySelectorAll("li");
     eventslide.insertBefore(list[list.length - 1], list[0]);
-    eventslide.style.left = "-33.333%";
+    
+    if (evtImgWrap.offsetWidth > 934) {
+      eventslide.style.left = "-33.333%";
+    } else if (evtImgWrap.offsetWidth > 467) {
+      eventslide.style.left = "-50%";
+    } else {
+      eventslide.style.left = "-100%";
+    }
+
     eventslide.style.transition = "none";
 
     setTimeout(() => {

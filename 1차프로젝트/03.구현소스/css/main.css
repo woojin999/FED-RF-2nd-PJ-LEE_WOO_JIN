@@ -6,6 +6,7 @@
 @import url(./core.css);
 @import url(./common.css);
 @import url(./grid_12_flex.css);
+@import url(./media.css);
 
 /* 공사중 표시 */
 /* body *{
