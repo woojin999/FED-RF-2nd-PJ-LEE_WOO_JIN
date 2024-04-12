@@ -189,7 +189,7 @@ function prdMakeList(menu) {
     let data = menu[x];
     hcode += `   
     <li>
-      <a href="#">
+      <a href="#;">
         <img
           src="./images/${data.imghv}"
           alt="상품이미지"
