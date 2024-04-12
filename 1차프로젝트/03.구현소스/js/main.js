@@ -4,7 +4,7 @@ const elePage = document.querySelectorAll(".page");
 const totalCnt = elePage.length;
 console.log("대상", elePage, totalCnt, "개");
 
-// window.addEventListener("wheel", wheelFn, { passive: false });
+window.addEventListener("wheel", wheelFn, { passive: false });
 
 setTimeout(() => {
   window.scrollTo(0, 0);
