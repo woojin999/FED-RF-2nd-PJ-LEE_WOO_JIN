@@ -42,6 +42,55 @@
 .brand-sec02{
     background: #fff9cd;
 }
+
+.brand-box{
+    position: relative;
+}
+
+.brand-list{
+  position: fixed;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.brand-list ul li strong{
+  display: block;
+  min-width: 300px;
+  padding: 15px 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+  color: #3c2121;
+  box-sizing: border-box;
+}
+
+.cent-img{
+    position: fixed;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.brand-explain{
+    position: fixed;
+    left: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.brand-stit{
+    font-size: 70px;
+    color: #3c2121;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.brand-desc{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 24px;
+    color: #3c2121;
+    font-weight: 300;
+}
+
 .brand-sec03{
     background: #fdf08a;
 }

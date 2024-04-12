@@ -737,12 +737,22 @@
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 15px;
+  display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .news-txt p {
   font-size: 1.7rem;
   font-family: "Noto Sans KR", sans-serif;
   width: 90%;
   margin: 17px 0;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .news-txt a {
   font-size: 1.6rem;
@@ -771,31 +781,28 @@
   left: -15%;
 }
 
-.video-wrap{
+.video-wrap {
   width: 1400px;
   margin: 0 auto;
   display: flex;
-  
 }
 
-.video-cont{
+.video-cont {
   width: 60%;
   height: 566px;
 }
 
-.video-mv-img{
+.video-mv-img {
   position: relative;
-  
 }
 .video-mv-img img,
-.video-mv-img iframe{
+.video-mv-img iframe {
   width: 100%;
   height: 566px;
   object-fit: fill;
   border: none;
-  
 }
-.video-mv-img img:nth-child(2){
+.video-mv-img img:nth-child(2) {
   position: absolute;
   width: 100%;
   height: 566px;
@@ -803,80 +810,79 @@
   left: 0;
 }
 
-.video-mv-img.off::after{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 134px;
-    height: 134px;
-    background: url(../images/btn_play.png) no-repeat;
-    cursor: pointer;
+.video-mv-img.off::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 134px;
+  height: 134px;
+  background: url(../images/btn_play.png) no-repeat;
+  cursor: pointer;
 }
 
-.video-txt{
+.video-txt {
   align-content: flex-end;
   text-align: left;
   padding-left: 42px;
 }
-.video-stit{
+.video-stit {
   position: relative;
   display: inline-block;
   width: 200px;
   padding: 12px;
   font-size: 2.5rem;
-  border: 3px solid #3C2121;
-  color: #3C2121;
+  border: 3px solid #3c2121;
+  color: #3c2121;
   line-height: 1;
   letter-spacing: -1.5px;
   font-weight: 700;
   text-align: center;
 }
 
-.video-stit::after{
-  content: '';
+.video-stit::after {
+  content: "";
   position: absolute;
   background: url(../images/dot_board.png) no-repeat center/cover;
   top: -3px;
   right: -50px;
-  border: 3px solid #3C2121;
+  border: 3px solid #3c2121;
   width: 45px;
   height: 100%;
 }
 
-.video-txt-box{
+.video-txt-box {
   margin-bottom: 100px;
 }
-.video-txt-box img{
-  margin-left:60px;
+.video-txt-box img {
+  margin-left: 60px;
 }
-.video-txt-box strong{
+.video-txt-box strong {
   display: block;
   font-size: 3.7rem;
   color: #000;
   padding: 30px 0;
 }
 
-.video-desc{
+.video-desc {
   font-size: 1.6rem;
   line-height: 1.6;
 }
-.video-img-box p{
+.video-img-box p {
   display: inline-block;
   width: 105px;
   height: 105px;
   border-radius: 50%;
   cursor: pointer;
 }
-.video-img-box p:first-child{
-background: url(../images/video_bg1.png) no-repeat center/cover;
-margin-right: 10px;
-border: 3px solid #f52334;
+.video-img-box p:first-child {
+  background: url(../images/video_bg1.png) no-repeat center/cover;
+  margin-right: 10px;
+  border: 3px solid #f52334;
 }
-.video-img-box p:last-child{
-background: url(../images/video_bg2.png) no-repeat center/cover; 
-
+.video-img-box p:last-child {
+  background: url(../images/video_bg2.png) no-repeat center/cover;
 }
 /* 팔로우 영역 */
 
@@ -885,12 +891,12 @@ background: url(../images/video_bg2.png) no-repeat center/cover;
   position: relative;
   overflow: hidden;
 }
-.follow-wrap{
+.follow-wrap {
   max-width: 1400px;
   margin: 0 auto;
   padding: 50px 0;
 }
-.follow-img{
+.follow-img {
   position: relative;
   margin: 0 auto;
   width: 324px;
@@ -898,13 +904,13 @@ background: url(../images/video_bg2.png) no-repeat center/cover;
   background: no-repeat center/cover;
 }
 
-.fimg1{
+.fimg1 {
   background-image: url(../images/event_img8.png);
 }
-.fimg2{
+.fimg2 {
   background-image: url(../images/follow_img.png);
 }
-.fimg3{
+.fimg3 {
   background-image: url(../images/event_img5.png);
 }
 
@@ -914,9 +920,8 @@ background: url(../images/video_bg2.png) no-repeat center/cover;
   gap: 25px;
 }
 
-
-.follow-cont a .follow-img::after{
-  content: '';
+.follow-cont a .follow-img::after {
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
@@ -924,13 +929,13 @@ background: url(../images/video_bg2.png) no-repeat center/cover;
   height: 13px;
   background-color: #e6002d;
   z-index: 9;
-  transition: .7s;
+  transition: 0.7s;
 }
-.follow-cont a:hover .follow-img::after{
+.follow-cont a:hover .follow-img::after {
   width: 100%;
 }
-.follow-cont a .follow-img::before{
-  content: '';
+.follow-cont a .follow-img::before {
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
@@ -938,18 +943,18 @@ background: url(../images/video_bg2.png) no-repeat center/cover;
   height: 0;
   background-color: #e6002d;
   z-index: 9;
-  transition: .7s;
+  transition: 0.7s;
 }
-.follow-cont a:hover .follow-img::before{
+.follow-cont a:hover .follow-img::before {
   height: 100%;
 }
 
-.follow-cont a{
+.follow-cont a {
   position: relative;
 }
 
-.follow-cont a::after{
-  content: '';
+.follow-cont a::after {
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -957,13 +962,13 @@ background: url(../images/video_bg2.png) no-repeat center/cover;
   height: 0;
   background-color: #e6002d;
   z-index: 9;
-  transition: .7s;
+  transition: 0.7s;
 }
-.follow-cont a:hover::after{
+.follow-cont a:hover::after {
   height: 100%;
 }
-.follow-cont a::before{
-  content: '';
+.follow-cont a::before {
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
@@ -971,43 +976,42 @@ background: url(../images/video_bg2.png) no-repeat center/cover;
   height: 13px;
   background-color: #e6002d;
   z-index: 9;
-  transition: .7s;
+  transition: 0.7s;
 }
-.follow-cont a:hover::before{
+.follow-cont a:hover::before {
   width: 100%;
 }
-.follow-hover{
+.follow-hover {
   width: 100%;
   height: 100%;
   background-color: #fff;
   opacity: 0;
-  transition: .7s;
+  transition: 0.7s;
 }
-.follow-hover:hover{
-
-  opacity: .6;
+.follow-hover:hover {
+  opacity: 0.6;
 }
 
-.follow-hover i{
+.follow-hover i {
   margin-top: 40%;
 }
 
 .follow-hover i,
-.follow-hover p{
+.follow-hover p {
   font-size: 18px;
   color: #e6002d;
   font-weight: bold;
 }
 /************* 3. 하단영역 *************/
 #footer-ban-area {
-  background-color: #9ad6cb;;
+  background-color: #9ad6cb;
 }
-.ban-txt{
-    overflow: hidden;
-    position: relative;
-    height: 100%;
+.ban-txt {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
 }
-.ban-txt p{
+.ban-txt p {
   position: absolute;
   font-size: 100px;
   color: #f52334;
@@ -1017,66 +1021,63 @@ background: url(../images/video_bg2.png) no-repeat center/cover;
   width: 100%;
 }
 
-.ban-txt p:first-child{
-  animation: ban-ani1 20s linear infinite ;
+.ban-txt p:first-child {
+  animation: ban-ani1 20s linear infinite;
 }
 
-.ban-txt p:last-child{
-
-  animation: ban-ani2 20s linear infinite ;
+.ban-txt p:last-child {
+  animation: ban-ani2 20s linear infinite;
 }
 
 @keyframes ban-ani1 {
-  0%{
+  0% {
     left: 0%;
   }
-  100%{
-    left: -160%
+  100% {
+    left: -160%;
   }
 }
 
 @keyframes ban-ani2 {
-  0%{
+  0% {
     left: 160%;
   }
-  100%{
-    left: 0%
+  100% {
+    left: 0%;
   }
 }
 
-#footer-area{
+#footer-area {
   background: #3b2120;
 }
-.foot-box{
+.foot-box {
   width: 33%;
- 
 }
-.foot-box ul{
+.foot-box ul {
   display: flex;
-  
 }
-.foot-box ul:nth-child(2){
-  margin-top: 40px;  
+.foot-box ul:nth-child(2) {
+  margin-top: 40px;
 }
-.right-ftbox ul{
+.right-ftbox ul {
   justify-content: flex-end;
 }
-.foot-box li a{
+.foot-box li a {
   color: #fff;
   font-size: 2.5rem;
   margin-right: 20px;
 }
-.foot-box address{
-  color: #ecececb3 ;
+.foot-box address {
+  color: #ecececb3;
   margin-top: 30px;
   font-size: 15px;
   font-weight: 300;
   font-style: normal;
 }
-.foot-wrap{
+.foot-wrap {
   padding: 80px 50px;
 }
-.foot-logo img{
+.foot-logo img {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
