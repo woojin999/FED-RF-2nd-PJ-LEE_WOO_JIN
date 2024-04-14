@@ -11,8 +11,9 @@
     />
     <link rel="shortcut icon" href="./images/favicon_hong.png" />
     <link rel="stylesheet" href="./css/sub.css" />
-    <script src="./js/main.js" defer></script>
-    <script src="./js/product.js" defer></script>
+    <!-- <script src="./js/main.js" defer></script> -->
+    <!-- <script src="./js/product.js" defer></script> -->
+    <script src="./js/sub.js" defer></script>
   </head>
 
   <body>
@@ -24,7 +25,9 @@
             <!-- 1-1-1.로고 -->
             <div class="col-2">
               <h1 class="mlogo">
-                <img src="./images/main_logo.png" alt="메인홍루이젠로고" />
+                <a href="./index.html">
+                  <img src="./images/main_logo.png" alt="메인홍루이젠로고" />
+                </a>
               </h1>
             </div>
             <!-- 1-1-2.GNB -->
@@ -301,63 +304,142 @@
         </div>
       </div>
     </div>
-    <div class="brand-sec01 brand-box">
-      <div class="sub-inbox">
-        <div class="txt-cont">
-          <p class="brand-tit">
-            심플하고 스윗한<br />
-            소프트 샌드위치,<br />
-            <strong>홍루이젠</strong>
-          </p>
-        </div>
-        <div class="img-cont">
-          <div class="img-wrap">
-            <p class="ycircle"></p>
-            <div class="sand-img">
-              <img src="./images/sandwich.png" alt="샌드위치 이미지" />
+    <!-- 서브페이지 -->
+    <div class="sub-wrap">
+      <div class="brand-sec01">
+        <div class="brand-box">
+          <div class="txt-cont">
+            <p class="brand-tit">
+              심플하고 스윗한<br />
+              소프트 샌드위치,<br />
+              <strong>홍루이젠</strong>
+            </p>
+          </div>
+          <div class="img-cont">
+            <div class="img-wrap">
+              <p class="ycircle"></p>
+              <div class="sand-img-box">
+                <p class="sand-txt">
+                  <img src="./images/sand_txt.png" alt="" />
+                </p>
+                <img
+                  src="./images/sandwich.png"
+                  class="sand-img"
+                  alt="샌드위치 이미지"
+                />
+                <p class="sand-icon">
+                  <img src="./images/circle_icon.png" alt="" />
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="brand-sec02">
-      <div class="brand-wrap brand-box sub-inbox">
-        <div class="brand-list">
-          <ul>
-            <li><strong>Simple</strong></li>
-            <li><strong>Sweet</strong></li>
-            <li><strong>soft</strong></li>
-          </ul>
-        </div>
-        <div class="cent-img">
-          <img src="./images/sandwich.png" alt="샌드위치 이미지" />
-        </div>
-        <div class="brand-explain">
-          <p class="brand-stit">심플하고<br>깔끔하게</p>
-          <p class="brand-desc">단순한 재료로 최고의 조합을 만듭니다.</p>
-        </div>
-      </div>
-    </div>
-    <div class="brand-sec03 brand-box">
-      <div class="sub-inbox">
-        <div class="brand-list"></div>
-        <div class="cent-img"></div>
-        <div class="brand-explain">
-          <p class="brand-stit"></p>
-          <p class="brand-desc"></p>
-        </div>
-      </div>
-    </div>
-    <div class="brand-sec04 brand-box">
-      <div class="sub-inbox">
-        <div class="brand-list"></div>
-        <div class="cent-img"></div>
-        <div class="brand-explain">
-          <p class="brand-stit"></p>
-          <p class="brand-desc"></p>
+      <div class="brand-sec02">
+        <div class="brand-wrap brand-box sub-inbox">
+          <div class="brand-list">
+            <ul>
+              <li class="blist on">
+                <p><strong>Simple</strong></p>
+              </li>
+              <li class="blist">
+                <p><strong>Sweet</strong></p>
+              </li>
+              <li class="blist">
+                <p><strong>soft</strong></p>
+              </li>
+            </ul>
+          </div>
+          <div class="cent-img">
+            <img src="./images/sandwich.png" alt="샌드위치 이미지" />
+          </div>
+          <div class="brand-explain">
+            <p class="brand-stit">심플하고<br />깔끔하게</p>
+            <p class="brand-desc">단순한 재료로 최고의 조합을 만듭니다.</p>
+          </div>
+          <div class="simple-img-box">
+            <img src="./images/simple01.png" alt="" id="cheese"/>
+            <img src="./images/simple02.png" alt="" 
+            id="sham"/>
+            <img src="./images/simple03.png" alt="" 
+            id="simple03"/>
+            <img src="./images/simple04.png" alt="" 
+            id="simple04"/>
+          </div>
         </div>
       </div>
+      <div class="brand-sec03">
+        <div class="brand-wrap brand-box sub-inbox">
+          <div class="brand-list">
+            <ul>
+              <li class="blist">
+                <p><strong>Simple</strong></p>
+              </li>
+              <li class="blist on">
+                <p><strong>Sweet</strong></p>
+              </li>
+              <li class="blist">
+                <p><strong>soft</strong></p>
+              </li>
+            </ul>
+          </div>
+          <div class="cent-img">
+            <img src="./images/sandwich.png" alt="샌드위치 이미지" />
+          </div>
+          <div class="brand-explain">
+            <p class="brand-stit">단짠단짠<br />맛의 조화</p>
+            <p class="brand-desc">
+              무가당 연유, 순수 돈육 햄 등<br />
+              좋은 재료 본연의 맛을<br />
+              살렸습니다.
+            </p>
+          </div>
+          <div class="sweet-img-box">
+            <img src="./images/sweet01.png" alt="" id="sweet01"/>
+            <img src="./images/sweet02.png" alt="" 
+            id="sweet02"/>
+            <img src="./images/sweet03.png" alt="" 
+            id="sweet03"/>
+            <img src="./images/sweet04.png" alt="" 
+            id="sweet04"/>
+          </div>
+        </div>
+      </div>
+      <div class="brand-sec04">
+        <div class="brand-wrap brand-box sub-inbox">
+          <div class="brand-list">
+            <ul>
+              <li class="blist">
+                <p><strong>Simple</strong></p>
+              </li>
+              <li class="blist">
+                <p><strong>Sweet</strong></p>
+              </li>
+              <li class="blist on">
+                <p><strong>soft</strong></p>
+              </li>
+            </ul>
+          </div>
+          <div class="cent-img">
+            <img src="./images/sandwich.png" alt="샌드위치 이미지" />
+          </div>
+          <div class="brand-explain">
+            <p class="brand-stit">촉촉하고<br />부드러운 빵</p>
+            <p class="brand-desc">
+              부드러운 오리지널 소프트 샌드위치를 위해<br />
+              매일 신선한 빵으로 만듭니다.
+            </p>
+          </div>
+          <div class="soft-img-box">
+            <img src="./images/soft01.png" alt="" id="soft01"/>
+            <img src="./images/soft02.png" alt="" 
+            id="soft02"/>
+            <img src="./images/soft04.png" alt="" id="soft03"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-sec05 brand-box"></div>
     </div>
-    <div class="brand-sec05 brand-box"></div>
   </body>
 </html>

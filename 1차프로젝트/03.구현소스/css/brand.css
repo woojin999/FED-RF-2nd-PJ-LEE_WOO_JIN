@@ -3,100 +3,304 @@
 /* 홍루이젠 PJ : 브랜드소개 CSS - brand.css */
 /* 공유기능 요소 셋팅 */
 
-.brand-sec01{
-    background: #ffe2de;
+body {
+  -ms-overflow-style: none;
 }
 
-.txt-cont{
-    position: absolute;
-    top: 50%;
-    left: 18%;
-    transform: translatey(-50%);
+::-webkit-scrollbar {
+  display: none;
 }
-.brand-tit{
-    font-size: 85px;
-    color: #3b2120;
-    font-weight: 300;
-    letter-spacing: -7px;
+.sub-wrap {
+  background: #ffe2de;
+  min-height: 5000px;
+  position: relative;
+  z-index: -1;
 }
-.img-wrap{
-    /* float: right; */
+
+/* .brand-sec01 {
+  background: #ffe2de;
+} */
+
+.txt-cont {
+  position: absolute;
+  top: 50%;
+  left: 18%;
+  transform: translatey(-50%);
 }
-.ycircle{
-    width: 590px;
-    height: 590px;
-    border-radius: 50%;
-    background: #ffd55f;
-    overflow: hidden;
-    position: absolute;
-    top: 50%;
-    /* right: 18%; */
-    transform: translatey(-50%);
+.brand-tit {
+  position: relative;
+  font-size: 85px;
+  color: #3b2120;
+  font-weight: 300;
+  letter-spacing: -7px;
 }
+.brand-tit::before{
+  content: '';
+  position: absolute;
+  background: url(../images/star1.png) no-repeat;
+  left: -5%;
+  top: -10%;
+  width: 9.5%;
+  height: 15.3%;
+  animation:star-ani2 .3s ease-out infinite alternate;
+}
+.brand-tit::after{
+  content: '';
+  position: absolute;
+  background: url(../images/star1.png) no-repeat;
+  left: -15%;
+  top: 0;
+  width: 9.5%;
+  height: 15.3%;
+  animation:star-ani1 .3s ease infinite alternate;
+}
+
+@keyframes star-ani1 {
+  from{
+      transform: scale(.7)
+  }to{
+      transform: scale(1.5)
+  }
+}
+@keyframes star-ani2 {
+  from{
+      transform: scale(1)
+  }to{
+      transform: scale(.4)
+  }
+}
+
+
+.ycircle {
+  width: 590px;
+  height: 590px;
+  border-radius: 50%;
+  background: #ffd55f;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translatey(-50%);
+}
+
 .sand-img{
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 50%;
+  /* left: 55%; */
+  transform: translatey(-50%) scale(.9);
+  animation:sand-ani1 .8s ease-out forwards,
+  sand-ani2 .2s ease-in-out 1s 5 alternate forwards;
 }
 
-.brand-sec02{
-    background: #fff9cd;
+.sand-txt{
+  position: absolute;
+  left: 52%;
+  top: 38%;
+  transform: scale(0);
+  animation: sandtxt-ani .2s ease-in-out 2.3s forwards;
+}
+.sand-icon{
+  position: absolute;
+  left: 82%;
+  top: 25%;
+  transform: scale(0);
+  animation: sandicon-ani .2s ease-in-out 2s forwards;
 }
 
-.brand-box{
-    position: relative;
+@keyframes sandicon-ani {
+  0%{
+    transform: scale(0);
+  }100%{
+    transform: scale(1);
+  }
+}
+@keyframes sandtxt-ani {
+  0%{
+    transform: scale(0) rotate(-30deg);
+  }100%{
+    transform: scale(1) rotate(0deg);
+  }
+}
+@keyframes sand-ani1 {
+  0%{
+    left: 40%;
+  }100%{
+    left: 53%;
+  }
+}
+@keyframes sand-ani2 {
+  0%{
+    transform: rotate(0deg) translatey(-50%) scale(.9);
+  }100%{
+    transform: rotate(10deg) translatey(-50%) scale(.9);
+  }
 }
 
-.brand-list{
+
+.brand-box {
+  position: relative;
+  visibility: hidden;
+}
+
+.brand-list {
   position: fixed;
   left: auto;
   top: 50%;
   transform: translateY(-50%);
 }
-.brand-list ul li strong{
+.brand-list ul li strong {
   display: block;
   min-width: 300px;
   padding: 15px 50px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 50px;
   color: #3c2121;
   box-sizing: border-box;
 }
 
-.cent-img{
-    position: fixed;
-    left:50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+.cent-img {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.brand-explain{
-    position: fixed;
-    left: 70%;
-    top: 50%;
-    transform: translateY(-50%);
+.brand-explain {
+  position: fixed;
+  left: 70%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.brand-stit{
-    font-size: 70px;
-    color: #3c2121;
-    font-weight: 300;
-    margin-bottom: 30px;
+.brand-stit {
+  font-size: 70px;
+  color: #3c2121;
+  font-weight: 300;
+  margin-bottom: 30px;
+  white-space: nowrap;
 }
 
-.brand-desc{
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 24px;
-    color: #3c2121;
-    font-weight: 300;
+.brand-desc {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 24px;
+  color: #3c2121;
+  font-weight: 300;
+  white-space: nowrap;
 }
 
-.brand-sec03{
-    background: #fdf08a;
+
+.blist {
+  margin-bottom: 20px;
 }
-.brand-sec04{
-    background: #fff9cd;
+
+.blist.on strong {
+  position: relative;
+  text-align: center;
+  border: 2px solid #3c2121;
+  transform: rotate(-5deg);
+  background: #fff9cd;
+  z-index: 9999;
 }
-.brand-sec05{
-    background: #9ad6cb
+.blist.on strong::after {
+  content: "";
+  position: absolute;
+  right: -37%;
+  top: 20px;
+  transform: scale(0.8);
+  width: 100%;
+  height: 100%;
+  background: url(../images/icon_arrow.png) no-repeat right;
+}
+
+.blist p {
+  position: relative;
+}
+
+.blist.on p::before {
+  position: absolute;
+  content: "";
+  left: 8px;
+  top: 8px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #3c2121;
+  background: #ee7868;
+  transform: rotate(-5deg);
+}
+
+.cent-img img{
+  scale: .8;
+  animation:swing-ani 1s ease-in-out infinite alternate;
+}
+@keyframes swing-ani {
+  from{
+      transform: rotate(10deg);
+  }to{
+      transform: rotate(-10deg);
+  }
+}
+
+
+
+.simple-img-box img{
+  position: fixed;
+  transform: scale(.5);
+  z-index: -1;
+}
+.simple-img-box img:first-child{
+  left: 10%;
+  top: -10%;
+}
+.simple-img-box img:nth-child(2){
+  left: 60%;
+  top: -20%;
+}
+.simple-img-box img:nth-child(3){
+  left: 10%;
+  top: 70%;
+}
+.simple-img-box img:nth-child(4){
+  left: 60%;
+  top: 70%;
+}
+
+.sweet-img-box img{
+  position: fixed;
+  transform: scale(.5);
+  z-index: -1;
+}
+.sweet-img-box img:first-child{
+  left: -3%;
+  top: -10%;
+}
+.sweet-img-box img:nth-child(2){
+  left: 60%;
+  top: -20%;
+}
+
+.sweet-img-box img:nth-child(3){
+  left: 10%;
+  top: 70%;
+}
+.sweet-img-box img:nth-child(4){
+  left: 60%;
+  top: 70%;
+}
+
+.soft-img-box img{
+  position: fixed;
+  transform: scale(.5);
+  z-index: -1;
+}
+.soft-img-box img:first-child{
+  left: 10%;
+  top: -10%;
+}
+.soft-img-box img:nth-child(2){
+  left: 60%;
+  top: -20%;
+}
+.soft-img-box img:nth-child(3){
+  left: -10%;
+  top: 70%;
 }
