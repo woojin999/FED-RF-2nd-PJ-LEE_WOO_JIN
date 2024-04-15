@@ -53,6 +53,9 @@ function wheelFn(e) {
 let openHam = document.querySelector(".open-ham");
 let closeHam = document.querySelector(".close-ham");
 let hamMenu = document.querySelector(".ham-menu");
+let mwrap = document.querySelectorAll(".mwrap");
+let mwrapList = document.querySelectorAll(".menu-list ul li ul");
+console.log(mwrapList);
 
 // 이벤트 파트/////////////
 let evtBtn = document.querySelectorAll(".evtbtn");
@@ -95,10 +98,30 @@ slBtn[2].addEventListener("click", function () {
 // 우측 메뉴 클릭 열기
 openHam.addEventListener("click", function () {
   hamMenu.classList.add("on");
+  console.log(hamMenu.offsetWidth);
 });
 // 우측메뉴 닫기
 closeHam.addEventListener("click", function () {
   hamMenu.classList.remove("on");
+  console.log(hamMenu.offsetWidth);
+});
+
+mwrap.forEach((ele, i) => {
+  ele.onclick = () => {
+    
+    for (const x of mwrapList) {
+      console.log(x);
+      x.style.padding = '0 0';
+      x.style.height = '0';
+      x.style.border = '0';
+    }
+
+    mwrapList[i].style.padding = "30px 0";
+    console.log(ele, i);
+    mwrapList[i].style.height = "auto";
+    console.log(ele, i);
+    mwrapList[i].style.border = "2px solid #000;";
+  };
 });
 
 // 이벤트 슬라이드 버튼
@@ -136,7 +159,7 @@ function evtGoSlide() {
   } else {
     let list = eventslide.querySelectorAll("li");
     eventslide.insertBefore(list[list.length - 1], list[0]);
-    
+
     if (evtImgWrap.offsetWidth > 934) {
       eventslide.style.left = "-33.333%";
     } else if (evtImgWrap.offsetWidth > 467) {

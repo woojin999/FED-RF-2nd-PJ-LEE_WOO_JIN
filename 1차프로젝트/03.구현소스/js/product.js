@@ -140,6 +140,12 @@ const prdDrk = {
     name: "수제 달고나 라떼",
     desc: "쌉싸름한 라떼로 즐기는 달고나 음료의 달콤함",
   },
+  drk5: {
+    img: "product_drink1.png",
+    imghv: "product_drink_hover1.png",
+    name: "초콜릿 밀크",
+    desc: "달콤한 초콜릿의 진한 맛과 우유의 조화",
+  },
 };
 const prdWrap = document.querySelector(".prdWrap");
 // console.log(prdWrap);
@@ -241,45 +247,52 @@ function prdGoSlide() {
 
   let liCnt = prdslide.childElementCount;
 
-  // console.log("asfq", liCnt - 1);
-
   let isRbtn = this.classList.contains("slBtn2");
 
   isRbtn ? snum++ : snum--;
-
-  if (snum < 0) {
-    snum = 0;
-  } else if (snum > liCnt - 4) {
-    snum = liCnt - 4;
-  } // elseif
-
-  if (snum === 0 || snum === (liCnt - 4)) {
-    // 해당 버튼 숨기기
-    this.style.display = "none";
-    // prdSlBtn[0].style.display = "block";
-  } else {
-    // 버튼 다시 보이기
-    for (let x of prdSlBtn) {
-      x.style.display = "block";
-    }
-  } //// else /////
-  if (snum !== 0) {
-    prdSlBtn[0].style.display = "block";
-  } else{
-    prdSlBtn[1].style.display = "block";
-  }
-  console.log("snum",snum);
-
-
+ 
+  let cntNum;
+  
   if(prdImgWrap.offsetWidth > 1050){
+    cntNum = 4;
     prdslide.style.left = -25 * snum + "%";
   }else if(prdImgWrap.offsetWidth > 700){
+    cntNum = 3;
     prdslide.style.left = -33.33 * snum + "%";
 
   }else if(prdImgWrap.offsetWidth > 350){
+    cntNum = 2;
     prdslide.style.left = -50 * snum + "%";
   }else{
+    cntNum = 1;
     prdslide.style.left = -100 * snum + "%";
   }
+
+  
+    if (snum < 0) {
+      snum = 0;
+    } else if (snum > liCnt - cntNum) {
+      snum = liCnt - cntNum;
+    } // elseif
+
+    if (snum === 0 || snum === liCnt - cntNum) {
+      // 해당 버튼 숨기기
+      this.style.display = "none";
+      // prdSlBtn[0].style.display = "block";
+    } else {
+      // 버튼 다시 보이기
+      for (let x of prdSlBtn) {
+        x.style.display = "block";
+      }
+    } //// else /////
+
+    if (snum !== 0) {
+      prdSlBtn[0].style.display = "block";
+    } else {
+      prdSlBtn[1].style.display = "block";
+    }
+    console.log("snum", snum);
+
+
   prdslide.style.transition = ".6s ease-in-out";
 }
