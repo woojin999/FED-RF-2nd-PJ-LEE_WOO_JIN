@@ -12,7 +12,7 @@ body {
 }
 .sub-wrap {
   background: #ffe2de;
-  min-height: 5000px;
+  min-height: 4500px;
   position: relative;
   z-index: -1;
 }

@@ -52,16 +52,17 @@ function subWheelFn(e) {
       brandBox[2].style.visibility = "visible";
       brandBox[2].style.opacity = "1";
     //   blistBox[2].style.background = "#fdf08a";
-    } else if (scrollY > 2300 && scrollY <= 3300) {
+    } else if (scrollY > 2300 && scrollY <= 3700) {
       subWrap.style.background = "#fff9cd";
       brandBox[3].style.visibility = "visible";
       brandBox[3].style.opacity = "1";
     //   blistBox[3].style.background = "#fff9cd";
-    } else if (scrollY > 3300 && scrollY <= 4300) {
-      subWrap.style.background = "#9ad6cb";
-      brandBox[4].style.visibility = "visible";
-      brandBox[4].style.opacity = "1";
-    }
+    } 
+    // else if (scrollY > 3300 && scrollY <= 4300) {
+    //   subWrap.style.background = "#9ad6cb";
+    //   brandBox[4].style.visibility = "visible";
+    //   brandBox[4].style.opacity = "1";
+    // }
     ele.style.transition = "opacity 1.5s";
   });
 }
