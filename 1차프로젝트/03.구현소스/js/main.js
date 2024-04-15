@@ -1,3 +1,9 @@
+
+// 메인 js - main.js //
+
+// import setElement from "./common.js";
+// setElement();
+
 let pgNum = 0;
 let stsWheel = false;
 const elePage = document.querySelectorAll(".page");
