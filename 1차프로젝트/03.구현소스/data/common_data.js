@@ -28,7 +28,7 @@ const comData = {
                           <div class="dash"></div>
                           <ol>
                             <li>
-                              <a href="">홍루이젠 소개</a>
+                              <a href="./brandstory.html">홍루이젠 소개</a>
                             </li>
                             <li>
                               <a href="">브랜드철학</a>
@@ -286,41 +286,23 @@ const comData = {
       </div>
     `,
   // 배너
-  banArea: `
-      <section class="ban-area">
-        <!-- <h2 class="temp-tit">2. 배너영역</h2> -->
+  footerBanArea: `
+      <footer class="footer-ban-area">
         <div class="cont-box">
           <div class="col-12">
-            <div class="slide-box">
-              <ul class="slider">
-                <li class="snum-01"></li>
-                <li class="snum-02"></li>
-                <li class="snum-03"></li>
-              </ul>
-              <ul class="slide-btn">
-                <li class="sbtn-01 asbtn">
-                  <p>
-                    <br />프리미엄<br />
-                    햄치즈 샌드위치
-                  </p>
-                </li>
-                <li class="sbtn-02 asbtn">
-                  <p>
-                    <br />프레시 파 베이컨<br />
-                    크림치즈 샌드위치
-                  </p>
-                </li>
-                <li class="sbtn-03 asbtn">
-                  <p>
-                    <br />누구나 가능한<br />
-                    수자본 창업
-                  </p>
-                </li>
-              </ul>
+            <div class="ban-txt">
+              <p>
+                <img src="./images/sand_l.png" alt="홍루이젠 텍스트" />
+                SIMPLE·SWEET·SOFT SANDWICH HUNG RUI CHEN
+              </p>
+              <p>
+                <img src="./images/sand_l.png" alt="홍루이젠 텍스트" />
+                SIMPLE·SWEET·SOFT SANDWICH HUNG RUI CHEN
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </footer>
     `,
   footerArea: `
       <footer class="footer-area inbox">
