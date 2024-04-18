@@ -1,3 +1,6 @@
+import setElement from "./common.js";
+setElement();
+
 // 상단 메뉴 /////
 let openHam = document.querySelector(".open-ham");
 let closeHam = document.querySelector(".close-ham");
@@ -23,8 +26,7 @@ setTimeout(() => {
 
 let subWrap = document.querySelector(".sub-wrap");
 let brandBox = document.querySelectorAll(".brand-box");
-let blistBox = document.querySelector('.blist.on strong');
-
+let blistBox = document.querySelector(".blist.on strong");
 
 console.log(blistBox);
 brandBox[0].style.visibility = "visible";
@@ -46,23 +48,15 @@ function subWheelFn(e) {
       subWrap.style.background = "#fff9cd";
       brandBox[1].style.visibility = "visible";
       brandBox[1].style.opacity = "1";
-    //   blistBox[1].style.background = "#fff9cd";
     } else if (scrollY > 1300 && scrollY <= 2300) {
       subWrap.style.background = "#fdf08a";
       brandBox[2].style.visibility = "visible";
       brandBox[2].style.opacity = "1";
-    //   blistBox[2].style.background = "#fdf08a";
     } else if (scrollY > 2300 && scrollY <= 3700) {
       subWrap.style.background = "#fff9cd";
       brandBox[3].style.visibility = "visible";
       brandBox[3].style.opacity = "1";
-    //   blistBox[3].style.background = "#fff9cd";
-    } 
-    // else if (scrollY > 3300 && scrollY <= 4300) {
-    //   subWrap.style.background = "#9ad6cb";
-    //   brandBox[4].style.visibility = "visible";
-    //   brandBox[4].style.opacity = "1";
-    // }
+    }
     ele.style.transition = "opacity 1.5s";
   });
 }
@@ -70,43 +64,34 @@ function subWheelFn(e) {
 // 전체document높이
 let docH = document.body.clientHeight;
 // 화면높이
-let winH =  window.innerHeight;
+let winH = window.innerHeight;
 // 스크롤 한계값
 let scLlimit = docH - winH;
-console.log('문서높이', docH,'\n화면높이:',winH,'\n한계값',scLlimit);
+// console.log("문서높이", docH, "\n화면높이:", winH, "\n한계값", scLlimit);
 
-const cheese = document.querySelector('#cheese');
-const sham = document.querySelector('#sham');
-const simple03 = document.querySelector('#simple03');
-const simple04 = document.querySelector('#simple04');
-const sweet01 = document.querySelector('#sweet01');
-const sweet02 = document.querySelector('#sweet02');
-const sweet03 = document.querySelector('#sweet03');
-const sweet04 = document.querySelector('#sweet04');
-const soft01 = document.querySelector('#soft01');
-const soft02 = document.querySelector('#soft02');
-const soft03 = document.querySelector('#soft03');
-console.log(cheese);
+const simple = document.querySelectorAll(".simple-img-box img");
+const sweet = document.querySelectorAll(".sweet-img-box img");
+const soft = document.querySelectorAll(".soft-img-box img");
+console.log(simple[0]);
 
-window.addEventListener('scroll',moveCheese);
+window.addEventListener("scroll", moveCheese);
 function moveCheese() {
-    console.log('cheese');
+  console.log("cheese");
 
-    let scTop = window.scrollY;
+  let scTop = window.scrollY;
 
-    let cTop = winH * scTop / scLlimit;
+  let cTop = (winH * scTop) / scLlimit;
 
-    cheese.style.top = cTop-300 + 'px';
-    sham.style.top = cTop-300 + 'px';
-    sweet01.style.top = cTop-600 + 'px';
-    sweet02.style.top = cTop-600 + 'px';
-    soft01.style.top = cTop-900 + 'px';
-    soft02.style.top = cTop-900 + 'px';
-    
-    simple03.style.top = (cTop-900)*-1 + 'px';
-    simple04.style.top = (cTop-900)*-1 + 'px';
-    sweet03.style.top = (cTop-1000)*-1 + 'px';
-    sweet04.style.top = (cTop-1000)*-1 + 'px';
-    soft03.style.top = (cTop-1200)*-1 + 'px';
+  simple[0].style.top = cTop - 300 + "px";
+  simple[1].style.top = cTop - 300 + "px";
+  sweet[0].style.top = cTop - 600 + "px";
+  sweet[1].style.top = cTop - 600 + "px";
+  soft[0].style.top = cTop - 900 + "px";
+  soft[1].style.top = cTop - 900 + "px";
 
+  simple[2].style.top = (cTop - 900) * -1 + "px";
+  simple[3].style.top = (cTop - 900) * -1 + "px";
+  sweet[2].style.top = (cTop - 1000) * -1 + "px";
+  sweet[3].style.top = (cTop - 1000) * -1 + "px";
+  soft[2].style.top = (cTop - 1200) * -1 + "px";
 }
