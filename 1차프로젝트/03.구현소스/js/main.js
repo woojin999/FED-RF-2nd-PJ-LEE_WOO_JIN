@@ -1,4 +1,3 @@
-
 // 메인 js - main.js //
 
 import setElement from "./common.js";
@@ -7,6 +6,8 @@ setElement();
 // product 데이터
 import * as prdData from "../data/product_data.js";
 
+// hong 데이터
+import * as hongData from "../data/hong_data.js";
 
 // product 페이지
 const prdWrap = document.querySelector(".prdWrap");
@@ -23,47 +24,44 @@ let prot = false;
 makeProduct();
 prdMakeList(prdData.prdNew);
 
+function makeProduct() {
+  prdBtn.forEach((val) => {
+    val.addEventListener("click", () => {
+      // on 클래스 모두 지움
+      snum = 0;
+      prdSlBtn[0].style.display = "none";
+      prdslide.style.transition = "none";
 
-function makeProduct(){
-
-    prdBtn.forEach((val) => {
-      val.addEventListener("click", () => {
-        // on 클래스 모두 지움
-        snum = 0;
-        prdSlBtn[0].style.display = "none";
-        prdslide.style.transition = "none";
-
-        for (const x of prdBtn) {
-          x.classList.remove("on");
-        }
-        hcode = "";
-        switch (val) {
-          case prdBtn[0]:
-            prdBtn[0].classList.add("on");
-            prdMakeList(prdData.prdNew);
-            break;
-          case prdBtn[1]:
-            prdBtn[1].classList.add("on");
-            prdMakeList(prdData.prdSw);
-            break;
-          case prdBtn[2]:
-            prdBtn[2].classList.add("on");
-            prdMakeList(prdData.prdDst);
-            break;
-          case prdBtn[3]:
-            prdBtn[3].classList.add("on");
-            prdMakeList(prdData.prdDrk);
-            break;
-        }
-      });
+      for (const x of prdBtn) {
+        x.classList.remove("on");
+      }
+      hcode = "";
+      switch (val) {
+        case prdBtn[0]:
+          prdBtn[0].classList.add("on");
+          prdMakeList(prdData.prdNew);
+          break;
+        case prdBtn[1]:
+          prdBtn[1].classList.add("on");
+          prdMakeList(prdData.prdSw);
+          break;
+        case prdBtn[2]:
+          prdBtn[2].classList.add("on");
+          prdMakeList(prdData.prdDst);
+          break;
+        case prdBtn[3]:
+          prdBtn[3].classList.add("on");
+          prdMakeList(prdData.prdDrk);
+          break;
+      }
     });
+  });
 
-    prdSlBtn[0].style.display = "none";
+  prdSlBtn[0].style.display = "none";
 
-    for (let x of prdSlBtn) {
-      x.onclick = prdGoSlide;
-    }
-
+  for (let x of prdSlBtn) {
+    x.onclick = prdGoSlide;
+  }
 }
 
 function prdMakeList(menu) {
@@ -92,17 +90,13 @@ function prdMakeList(menu) {
   } // for문
   prdWrap.innerHTML = hcode;
   prdslide.style.left = "0%";
-  
-  if(prdslide.childElementCount == 4) {
-    
+
+  if (prdslide.childElementCount == 4) {
     prdSlBtn[1].style.display = "none";
-  }else{
-    
+  } else {
     prdSlBtn[1].style.display = "block";
   }
 } // prdNewList
-
-
 
 function prdGoSlide() {
   // 광클 금지
@@ -113,7 +107,7 @@ function prdGoSlide() {
   }, 500);
 
   let liCnt = prdslide.childElementCount;
-  
+
   let isRbtn = this.classList.contains("slBtn2");
 
   isRbtn ? snum++ : snum--;
@@ -161,10 +155,7 @@ function prdGoSlide() {
   prdslide.style.transition = ".6s ease-in-out";
 }
 
-
-
 /************************************* prd 끝 *************************************/
-
 
 let pgNum = 0;
 let stsWheel = false;
@@ -226,13 +217,34 @@ let mwrapList = document.querySelectorAll(".menu-list ul li ul");
 console.log(mwrapList);
 
 // 이벤트 파트/////////////
+
+const evtData = hongData.eventData;
+const evtBox = document.querySelector(".event-img-box");
+
+let evtcode = `<ul id="eventslide">`;
+
+evtData.forEach((v) => {
+  evtcode += `
+  <li>
+    <a href="">
+      <img src="./images/${v.imgName}" alt="이벤트이미지" />
+      <div class="event-txt-box">
+        <p>${v.desc}</p>
+        <img src="./images/arrow_cont.png" alt="" />
+      </div>
+    </a>
+  </li>
+  `;
+});
+evtcode += `</ul>`;
+
+evtBox.innerHTML = evtcode;
+
 let evtBtn = document.querySelectorAll(".evtbtn");
 // let eventbtn2 = document.querySelector('.eventbtn2');
 let eventslide = document.getElementById("eventslide");
 // console.log(eventslide);
 let evtImgWrap = document.querySelector(".event-img-wrap");
-
-
 
 // 배너 슬라이드
 let slBtn = document.querySelectorAll(".slide-btn li");
@@ -276,12 +288,11 @@ closeHam.addEventListener("click", function () {
 
 mwrap.forEach((ele, i) => {
   ele.onclick = () => {
-    
     for (const x of mwrapList) {
       console.log(x);
-      x.style.padding = '0 0';
-      x.style.height = '0';
-      x.style.border = '0';
+      x.style.padding = "0 0";
+      x.style.height = "0";
+      x.style.border = "0";
     }
 
     mwrapList[i].style.padding = "30px 0";
