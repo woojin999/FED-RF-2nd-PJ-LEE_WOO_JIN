@@ -1,10 +1,13 @@
 @charset "utf-8";
 
-/* 불러오기 영역 */
-@import url(./core.css);
-@import url(./grid_12_flex.css);
-@import url(./reset.css);
+.main-img-box img{
+    width: 100%;
+}
 
-body{
-  background-color: #111;
+.sub-img-box{
+    padding: 30px 100px;
+}
+
+.sub-img-box img{
+    width: 100%;
 }

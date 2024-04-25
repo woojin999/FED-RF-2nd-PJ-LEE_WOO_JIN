@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* 불러오기 영역 */
+@import url(./core.css);
+@import url(./grid_12_flex.css);
+@import url(./reset.css);
+@import url(./sub_themandalorian.css);
+
+body{
+  background-color: #111;
+  color: #fff;
+}
+
+/* 공사중 표시 */
+body *{
+    outline: 2px dashed #fff;
+} 
+
+/* 1. 상단영역 */
+.top-area{
+    height: 150px;
+}
+/* 2. 인포영역 */
+.info-area{
+    height: 1400px;
+}
+/* 3 캐릭터영역 */
+.character-area{
+    height: 600px;
+}
+/* 4. 갤러리영역 */
+.gallery-area{
+    height: 1000px;
+}
+/* 5. 비디오영역 */
+.video-area{
+    height: 500px;
+}
+/* 6. 하단영역 */
+.footer-area{
+    height: 600px;
+}
