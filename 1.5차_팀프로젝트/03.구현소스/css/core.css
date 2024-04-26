@@ -3,7 +3,7 @@
 @import url("https://use.typekit.net/jyj1can.css");
 
 /* 
-프리텐다드
+1. 본문, 한글, 숫자: 프리텐다드
 
 font-family: "Pretendard Variable",Pretendard, apple-system, system-ui, Roboto, sans-serif;
 */
@@ -11,6 +11,11 @@ font-family: "Pretendard Variable",Pretendard, apple-system, system-ui, Roboto, 
 html {
     font-family:'Pretendard Variable',sans-serif;
     font-size: 10px;
+    text-align: center;
+    color: #fff;
+}
+*html>div{
+    margin-top: 200px;
 }
 
 /* 플렉스 박스 설정 */
@@ -19,12 +24,8 @@ html {
     /* flex-wrap: wrap; */
 }
 
-
-/* 중앙속박스 */
-.inbox{
-    /* 최대가로크기 */
-    max-width: 1600px;
-    /* 블록박스 중앙정렬 -> 마.영.오! */
-    margin: 0 auto;
-    
+.main-area *> div+div{
+    padding-top: 12rem;
 }
+
+
