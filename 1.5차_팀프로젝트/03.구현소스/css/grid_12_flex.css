@@ -32,5 +32,5 @@
 .cont-box{
     max-width: 1500px;
     margin: 0 auto;
-    text-align-last: left;
+    /* text-align-last: left; */
 }
