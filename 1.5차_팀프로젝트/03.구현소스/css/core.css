@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css");
 @import url("https://use.typekit.net/jyj1can.css");
 
 /* 
@@ -9,23 +9,51 @@ font-family: "Pretendard Variable",Pretendard, apple-system, system-ui, Roboto, 
 */
 
 html {
-    font-family:'Pretendard Variable',sans-serif;
-    font-size: 10px;
-    text-align: center;
-    color: #fff;
+  font-family: "Pretendard Variable", sans-serif;
+  font-size: 10px;
+  text-align: center;
+  color: #fff;
 }
-*html>div{
-    margin-top: 200px;
+*html > div {
+  margin-top: 200px;
 }
 
 /* 플렉스 박스 설정 */
-.fx-box{
-    display: flex;
-    /* flex-wrap: wrap; */
+.fx-box {
+  display: flex;
+  /* flex-wrap: wrap; */
 }
 
-.main-area *> div+div{
-    padding-top: 12rem;
+.main-area * > div + div {
+  padding-top: 12rem;
 }
 
+/* 블릿 */
+.bullet::before {
+  content: "";
+  display: block;
 
+  border-radius: 2rem;
+
+  width: 15px;
+  height: 9px;
+  background-color: #797979;
+  margin-left: 114%;
+}
+.bullet {
+  margin-bottom: 2rem;
+  display: block;
+
+  border-radius: 2rem;
+
+  width: 45px;
+  height: 9px;
+  background-color: #797979;
+}
+
+/* 카테고리 메뉴 사이 바 */
+.bar-line {
+  display: block;
+  width: 1px;
+  background-color: #797979;
+}
