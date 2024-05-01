@@ -1,0 +1,211 @@
+@charset "utf-8";
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+@import url("https://use.typekit.net/jyj1can.css");
+
+/* 
+1. 본문, 한글, 숫자: 프리텐다드
+
+font-family: "Pretendard Variable",Pretendard, apple-system, system-ui, Roboto, sans-serif;
+*/
+
+html {
+    font-family:'Pretendard Variable',sans-serif;
+    font-size: 10px;
+    /* ### 충돌요소 */
+    text-align: center;
+    color: #fff;
+}
+
+
+/* 플렉스 박스 설정 */
+.fx-box{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+/* 그리드 박스 설정 */
+.gr-box{
+  display: grid;
+}
+
+/* ★ ### 해당영역 안의모든 요소의 두번째 직계 div? */
+/* .main-area * > div+div{
+    padding-top: 4vh;
+} */
+
+
+
+
+/*************  박스 공통 설정 *************/
+/* 섹션 상단 여백 */
+.section-top{
+    padding-top: 15rem;
+}
+
+/* ### 부모요소에 보더레디우스 주는게 좋을듯!! */
+img{
+    object-fit: cover;
+  }
+
+  /* 슬라이드 내 박스 설정 */
+
+  .slider-wrap figcaption{
+    text-align: justify;
+    margin-top: 4rem;
+    line-height: 2;
+  }
+  .slider-wrap ul{
+    gap: 0 2rem;
+  }
+  .slider-wrap img{
+    width: 100%;
+  }
+  
+  /*************  텍스트 공통 설정 *************/
+  
+  /* 텍스트 설정 */
+  
+  .title-topic{
+    /* color: #FFE400; */
+    font-size: 1.8rem;
+  }
+  
+  .title-sub{
+    font-weight: 700;
+    font-size: 3.5rem;
+    line-height: 1.5;
+  }
+
+  .title-sub2{
+    text-align: justify;
+    font-weight: 500;
+    font-size: 2.5rem;
+    line-height: 1.3;
+  }
+
+  .title{
+    text-align: justify;
+    font-weight: 700;
+    font-size: 5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+  
+  .desc{
+    text-align: justify;
+    line-height: 1.5;
+  }
+
+  figcaption>.title-topic{
+    margin-top: 2rem;
+  }
+  
+  figcaption>h4{
+    margin-top: 2rem;
+  }
+
+  /* 링크설정 */
+  /* ### 모든a는 충돌 (네비,다른메뉴등)!
+  부모선택자 같이붙이면 좋을듯! */
+  .main-area > button a{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #FFE400;
+    text-decoration: none;
+  }
+  
+  /*************  공통 꾸밈요소 *************/
+
+/* 슬라이드 화살표 */
+.abtn span{
+  color: #ffffff;
+}
+
+  /* 블릿 */
+  .bullet::before{
+    content: '';
+    display: block;
+
+    border-radius: 2rem;
+
+    width: 15px;
+    height: 9px;
+    background-color: #797979;
+    margin-left: 114%;
+
+  }
+  .bullet{
+    margin-bottom: 2rem;
+    display: block;
+
+    border-radius: 2rem;
+
+    width: 45px;
+    height: 9px;
+    background-color: #797979;
+  }
+
+  /* 카테고리 메뉴 사이 바 */
+  .bar-line{
+    display: block;
+    width: 1px;
+    background-color: #797979;
+  }
+
+  .under-line{
+    display: block;
+    height: 1px;
+    background-color: #797979;
+  }
+  /*************  버튼 공통 설정 *************/
+  
+  /* 버튼초기화 */
+  button{
+    cursor: pointer;
+    margin: 0 2rem;
+    background-color: transparent;
+    border: transparent;
+  }
+  .btn-main a{
+    color: #000;
+  }
+  
+  .btn-main {
+    height: 7vh;
+    background-color: #FFE400;
+    border-radius: 4.5vw;
+    padding: 1vw;
+    transition: .4s;
+  }
+  
+  .btn-sub::after{
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color: #FFE400;
+    left: 0;
+  }
+  
+  .btn-sub {
+    height: 7vh;
+    border: 1px solid #FFE400;
+    border-radius: 4.5vw;
+    box-sizing: border-box;
+    padding: 1vw;
+  }
+  
+  /* 버튼 on class */
+  .btn-main.on {
+    background-color: #FFF075;
+    color: #000;
+    transition: .4s;
+  
+  }
+  
+  .btn-sub.on::after{
+    content: '';
+    width: 100%;
+  }
+  
+  
+

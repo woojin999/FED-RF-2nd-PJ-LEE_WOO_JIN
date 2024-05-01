@@ -10,9 +10,9 @@ body {
 }
 
 /* 공사중 표시 */
-/* body * {
+body * {
   outline: 2px dashed #fff;
-} */
+}
 
 /* 1. 상단영역 */
 .top-area {
@@ -94,8 +94,8 @@ body {
 }
 
 .character-wrap h2 {
-    text-align: center;
-    padding-left: 0;
+  text-align: center;
+  padding-left: 0;
 }
 .character-img-box {
   overflow: hidden;
@@ -134,8 +134,15 @@ body {
 }
 
 /* 에피소드 */
+.ep-wrap {
+  padding: 0 55px;
+}
+.ep-wrap h2 {
+  padding-left: 1.5%;
+}
 .ep-img-wrap {
   position: relative;
+  overflow: hidden;
 }
 
 .ep-img-wrap img {
@@ -145,13 +152,15 @@ body {
 }
 .ep-img-box {
   position: relative;
+  flex-basis: 33.3333%;
+  flex-shrink: 0;
   width: 33vw;
   aspect-ratio: 4/3;
-  padding: 10px;
+  scale: 0.9;
+
   cursor: pointer;
-  
 }
-.ep-bg-box{
+.ep-bg-box {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -159,45 +168,44 @@ body {
   height: 95%;
   /* padding: 10px; */
   background-color: #1d1e1f9a;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   opacity: 0;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
 }
 
-.ep-txt-box{
+.ep-txt-box {
   position: absolute;
-  left:50%;
+  left: 50%;
   top: 50%;
   width: 90%;
   opacity: 0;
-  transform: translate(-50%,-50%);
-  padding: 15px; 
-  transition: opacity .5s;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  transition: opacity 0.5s;
 }
-.ep-img-box:hover .ep-bg-box{
+.ep-img-box:hover .ep-bg-box {
   opacity: 1;
 }
-.ep-img-box:hover .ep-txt-box{
+.ep-img-box:hover .ep-txt-box {
   opacity: 1;
 }
 
-
-.ep-txt-box h3{
+.ep-txt-box h3 {
   font-size: 1.8rem;
   margin-bottom: 2vh;
 }
-.ep-txt-box p{
+.ep-txt-box p {
   font-size: 1.4rem;
 }
 
-.abtn{
+.abtn {
   position: absolute;
-  
+
   top: 50%;
   transform: translateY(-50%);
   width: 3vw;
   height: 3vw;
-  
+
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -205,25 +213,24 @@ body {
   font-size: 3rem;
   text-align: center;
 }
-.abtn:hover{
+.abtn:hover {
   background-color: #ccc;
 }
 
-.ab1{
+.ab1 {
   left: 0;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
 }
-.ab2{
- right: 0;
- margin-right: 5rem;
+.ab2 {
+  right: 0;
+  /* margin-right: 5rem; */
 }
-
 
 /* 비디오 */
-.video-wrap,.ep-img-wrap{
-    padding: 0 70px;
+.video-wrap {
+  padding: 0 70px;
 }
-.video-wrap{
+.video-wrap {
   position: relative;
 }
 .video-box {
@@ -288,8 +295,7 @@ body {
   font-size: 1.4rem;
 }
 .gtxt-box .bullet {
-  scale: .6;
+  scale: 0.6;
   margin-top: 1vh;
   margin-left: -1rem;
 }
-
