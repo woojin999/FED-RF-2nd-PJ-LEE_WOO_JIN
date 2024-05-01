@@ -16,14 +16,12 @@ for (let i = 1; i <= 10; i++) {
             </div>
         </li>
     `;
-}
-            
+}          
 hcode += `
 </ul>
 </div>
 <div class="img-list">
 <ul class="list02">`;
-
 for (let i = 11; i <= 25; i++) {
   hcode += `
         <li>
@@ -36,9 +34,6 @@ for (let i = 11; i <= 25; i++) {
         </li>
     `;
 }
-
-
-
 crtImgBox.innerHTML = hcode;
 
 let target = mFn.qsEl(crtImgBox, ".list01");
@@ -96,3 +91,61 @@ mFn.addEvt(crtImgBox, "mouseleave", () => {
 
 setTimeout(moveGallery);
 setTimeout(moveGallery2);
+
+
+///////////////////////////////////////////////////////////////
+
+const abtn = mFn.qsa(".abtn");
+const epbtn = mFn.qsa(".epbtn");
+const vdbtn = mFn.qsa(".vdbtn");
+const epSlide = mFn.qsa(".ep-img-wrap ul li");
+const vdSlide = mFn.qsa(".video-img-wrap ul li");
+let epSnum = 0;
+let vdSnum = 0;
+
+
+for(let x of abtn){
+  x.onclick = GoSlide;
+}
+
+function GoSlide() {
+  let isEpLbtn = this.classList.contains("epbtn1");
+  let isEpRbtn = this.classList.contains("epbtn2");
+  let isVdRbtn = this.classList.contains("vdbtn2");
+  let cntNum;
+  let epSlCnt = epSlide.length;
+  // console.log(epSlCnt);
+
+  isEpRbtn ? epSnum++ : isEpLbtn ? epSnum-- : isVdRbtn ? vdSnum ++ : vdSnum--;
+
+  epSlide.forEach(v=>{
+    // console.log(v,epSnum);
+    v.style.left = -33.3333 * epSnum +"%"
+  })
+
+  vdSlide.forEach(v=>{
+    // console.log(v);
+    v.style.left = -33.3333 * vdSnum + "%"
+  })
+
+  cntNum = 3;
+
+  if(epSnum < 0){
+    epSnum = 0;
+  } else if(epSnum > epSlCnt - cntNum) {
+    epSnum = epSlCnt - cntNum;
+  }
+
+  if (epSnum == 0 || epSnum == epSlCnt - cntNum) {
+    console.log(epbtn[0] == this);
+    console.log(this);
+    this.style.display = "none";
+  } else{
+    for(let x of epbtn) {
+      x.style.display = "block";
+    }
+  }
+}
+
+
+

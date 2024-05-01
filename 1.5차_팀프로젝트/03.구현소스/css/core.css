@@ -15,7 +15,7 @@ html {
   color: #fff;
 }
 *html > div {
-  margin-top: 200px;
+  margin-top: 150px;
 }
 
 /* 플렉스 박스 설정 */
@@ -25,7 +25,7 @@ html {
 }
 
 .main-area > div {
-  padding-top: 12rem;
+  padding-top: 10rem;
 }
 
 /* 블릿 */
