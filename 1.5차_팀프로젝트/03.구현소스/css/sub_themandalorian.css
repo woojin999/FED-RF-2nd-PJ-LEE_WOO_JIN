@@ -90,7 +90,7 @@ body {
 .inbox h2 {
   font-size: 2.4rem;
   text-align: left;
-  padding-left: 80px;
+  padding-left: 1.5%;
 }
 
 .character-wrap h2 {
@@ -158,6 +158,7 @@ body {
   scale: 0.9;
   cursor: pointer;
   left: 0;
+  transition: .5s ease-in-out;
 }
 
 .ep-bg-box {
@@ -197,6 +198,9 @@ body {
 .ep-txt-box p {
   font-size: 1.4rem;
 }
+.epbtn1, .vdbtn1{
+  display: none;
+}
 
 .abtn {
   position: absolute;
@@ -229,12 +233,18 @@ body {
   /* padding: 0 70px; */
   position: relative;
 }
+
+
+.video-img-wrap ul {
+  overflow: hidden;
+}
 .video-img-wrap ul li{
   position: relative;
   flex-basis: 33.3333%;
   flex-shrink: 0;
   scale: 0.9;
   left: 0;
+  transition: .5s ease-in-out;
 }
 .video-box {
   /* padding: 10px; */
@@ -270,7 +280,47 @@ body {
   background: url(../images/youtube_icon.png) no-repeat center center;
   background-size: 50px;
 }
+.video-cont-box{
+  display: none;
+}
+.video-cont-box.on{
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111111b9;
+  z-index: 99;
+}
 
+.video-cont-box.on .video-tab{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 999;
+  /* border: 10px solid #111; */
+  /* border-radius: 3%; */
+}
+.video-ddd{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.video-tab-btn{
+  float: right;
+  
+  /* transform: translateX(50%); */
+  cursor: pointer;
+}
+.video-tab iframe{
+  width: 50vw;
+  aspect-ratio: 1248/702;
+  border: none;
+}
 .gallery-box {
   padding: 40px 80px;
 }
