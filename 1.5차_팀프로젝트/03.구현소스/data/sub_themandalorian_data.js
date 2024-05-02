@@ -48,47 +48,62 @@ const characterData = [
 
 const episodeData = [
   {
-    image: "epsode1.jpeg",
+    image: "episode1.jpeg",
     title: '"The Rescue" Episode Guide | The Mandalorian',
     desc: "The Mandalorian and his allies attempt a daring rescue.",
   },
   {
-    image: "epsode2.jpeg",
+    image: "episode2.jpeg",
     title: '"The Believer" Episode Guide | The Mandalorian',
     desc: "To move against the Empire, the Mandalorian needs the help of an old enemy.",
   },
   {
-    image: "epsode3.jpeg",
+    image: "episode3.jpeg",
     title: '"The Tragedy" Episode Guide | The Mandalorian',
     desc: "The Mandalorian and the Child continue their journey through a dangerous galaxy.",
   },
   {
-    image: "epsode4.jpeg",
+    image: "episode4.jpeg",
     title: '"The Rescue" Episode Guide | The Mandalorian',
     desc: "Gloval Murals | The Mandalorian",
   },
   {
-    image: "epsode5.jpeg",
+    image: "episode5.jpeg",
     title: '"The Rescue" Episode Guide | The Mandalorian',
     desc: "Gloval Murals | The Mandalorian",
   },
   {
-    image: "epsode6.jpeg",
+    image: "episode6.jpeg",
     title: '"The Rescue" Episode Guide | The Mandalorian',
     desc: "Gloval Murals | The Mandalorian",
   },
   {
-    image: "epsode7.jpeg",
+    image: "episode7.jpeg",
     title: '"The Rescue" Episode Guide | The Mandalorian',
     desc: "Gloval Murals | The Mandalorian",
   },
   {
-    image: "epsode8.jpeg",
+    image: "episode8.jpeg",
     title: '"The Rescue" Episode Guide | The Mandalorian',
     desc: "Gloval Murals | The Mandalorian",
   },
   {
-    image: "epsode9.jpeg",
+    image: "episode9.jpeg",
+    title: '"The Rescue" Episode Guide | The Mandalorian',
+    desc: "Gloval Murals | The Mandalorian",
+  },
+  {
+    image: "episode10.jpeg",
+    title: '"The Rescue" Episode Guide | The Mandalorian',
+    desc: "Gloval Murals | The Mandalorian",
+  },
+  {
+    image: "episode11.jpeg",
+    title: '"The Rescue" Episode Guide | The Mandalorian',
+    desc: "Gloval Murals | The Mandalorian",
+  },
+  {
+    image: "episode12.jpeg",
     title: '"The Rescue" Episode Guide | The Mandalorian',
     desc: "Gloval Murals | The Mandalorian",
   },

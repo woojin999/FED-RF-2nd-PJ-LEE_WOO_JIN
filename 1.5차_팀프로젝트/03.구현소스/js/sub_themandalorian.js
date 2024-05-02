@@ -4,11 +4,12 @@ import * as mandalData from "../data/sub_themandalorian_data.js";
 
 
 const epData = mandalData.episodeData;
-console.log(epData);
+const epList = mFn.qs(".ep-list");
 
 let eplicode = `<ul class="fx-box">`;
 
-for(let i = 0; i < 9; i++){
+for(let i = 0; i < 12; i++){
+  console.log(epData[i].image);
   eplicode += `
   <li>
     <div class="ep-img-box">
@@ -17,18 +18,20 @@ for(let i = 0; i < 9; i++){
       <div class="ep-txt-box">
         <h3>
           <span class="ep-title">
-            "The Tragedy" Episode Guide | The Mandalorian
+            ${epData[i].title}
           </span>
         </h3>
         <p class="ep-desc">
-          The Mandalorian and the Child continue their journey
-          through a dangerous galaxy.
+          ${epData[i].desc}
         </p>
       </div>
     </div>
   </li>
   `;
 }
+eplicode += `</ul>`;
+
+// epList.innerHTML = eplicode;
 
 ///////////////////////////////////////////////////////////////
 
@@ -100,6 +103,8 @@ for (let x of epbtn) {
 for (let x of vdbtn) {
   x.onclick = GoVdSlide;
 }
+
+console.log(epSlide.length);
 
 function GoEpSlide() {
   // 광클 금지
