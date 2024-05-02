@@ -9,7 +9,7 @@ const epList = mFn.qs(".ep-list");
 let eplicode = `<ul class="fx-box">`;
 
 for(let i = 0; i < 12; i++){
-  console.log(epData[i].image);
+  // console.log(epData[i].image);
   eplicode += `
   <li>
     <div class="ep-img-box">
@@ -31,7 +31,7 @@ for(let i = 0; i < 12; i++){
 }
 eplicode += `</ul>`;
 
-// epList.innerHTML = eplicode;
+epList.innerHTML = eplicode;
 
 ///////////////////////////////////////////////////////////////
 

@@ -47,14 +47,103 @@ body {
   padding-top: 60px;
 } */
 
-.main-img-box img {
+.main-img-box {
+  position: relative;
+}
+.main-img-box > img {
   width: 100%;
+  /* overflow: hidden; */
+  background: linear-gradient(
+    180deg,
+    #00000000 0%,
+    #0000000a 16%,
+    #00000021 29%,
+    #00000042 41%,
+    #0000006b 51%,
+    #00000094 61%,
+    #000000bd 70%,
+    #000000de 79%,
+    #000000f5 89%,
+    #000000ff 100%
+  );
+}
+
+.main-img-title {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 33%;
+  margin-left: 5vw;
+  transform: translateY(-50%);
+}
+.main-img-title img{
+  width: 100%;
+}
+.main-img-title p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* 버튼초기화 */
+button {
+  cursor: pointer;
+  margin: 0 2rem;
+  background-color: transparent;
+  border: transparent;
+}
+.btn-main a {
+  color: #000;
+}
+
+.btn-main {
+  height: 7vh;
+  background-color: #ffe400;
+  border-radius: 4.5vw;
+  padding: 1vw;
+  transition: 0.4s;
+}
+
+.btn-main:hover {
+  background-color: #fff075;
+}
+
+.btn-sub {
+  height: 7vh;
+  border: 1px solid #ffe400;
+  border-radius: 4.5vw;
+  box-sizing: border-box;
+  color: #ffe400;
+  background-color: transparent;
+  padding: 1vw;
+  transition: 0.4s;
+}
+.btn-sub:hover {
+  color: #000;
+  background-color: #ffe40020;
+}
+
+.btn-sub a {
+  color: #ffe400;
+}
+
+.sub-blur-img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/main_poster2.jpeg) no-repeat top/cover;
+  filter: blur(20px);
+  z-index: -1;
 }
 
 .sub-img-box {
-  padding: 30px 70px;
+  position: relative;
+  padding: 80px 70px;
   text-align: left;
 }
+
 .character-area h2 {
   margin-bottom: 10px;
 }
@@ -64,7 +153,7 @@ body {
 
 .info-txt-box .bullet,
 .info-txt-box .desc {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 .info-txt-box .desc {
   font-size: 1.6rem;
@@ -134,11 +223,17 @@ body {
 }
 
 /* 에피소드 */
-.ep-wrap, .video-wrap {
+.ep-wrap,
+.video-wrap {
   padding: 0 55px;
 }
+
 .ep-wrap h2 {
   padding-left: 1.5%;
+}
+
+.ep-img-wrap {
+  position: relative;
 }
 .ep-img-wrap ul {
   position: relative;
@@ -151,14 +246,14 @@ body {
   object-fit: cover;
   aspect-ratio: 1280/720;
 }
-.ep-img-wrap ul li{
+.ep-img-wrap ul li {
   position: relative;
   flex-basis: 33.3333%;
   flex-shrink: 0;
   scale: 0.9;
   cursor: pointer;
   left: 0;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .ep-bg-box {
@@ -198,7 +293,8 @@ body {
 .ep-txt-box p {
   font-size: 1.4rem;
 }
-.epbtn1, .vdbtn1{
+.epbtn1,
+.vdbtn1 {
   display: none;
 }
 
@@ -209,7 +305,7 @@ body {
   transform: translateY(-50%);
   width: 3vw;
   height: 3vw;
-
+  margin: 0;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -230,21 +326,19 @@ body {
 
 /* 비디오 */
 .video-img-wrap {
-  /* padding: 0 70px; */
   position: relative;
 }
-
 
 .video-img-wrap ul {
   overflow: hidden;
 }
-.video-img-wrap ul li{
+.video-img-wrap ul li {
   position: relative;
   flex-basis: 33.3333%;
   flex-shrink: 0;
   scale: 0.9;
   left: 0;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .video-box {
   /* padding: 10px; */
@@ -280,10 +374,10 @@ body {
   background: url(../images/youtube_icon.png) no-repeat center center;
   background-size: 50px;
 }
-.video-cont-box{
+.video-cont-box {
   display: none;
 }
-.video-cont-box.on{
+.video-cont-box.on {
   display: inline-block;
   position: fixed;
   left: 0;
@@ -294,29 +388,21 @@ body {
   z-index: 99;
 }
 
-.video-cont-box.on .video-tab{
+.video-cont-box.on .video-tab {
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   z-index: 999;
-  /* border: 10px solid #111; */
-  /* border-radius: 3%; */
-}
-.video-ddd{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
 }
 
-.video-tab-btn{
+.video-tab-btn {
   float: right;
-  
+
   /* transform: translateX(50%); */
   cursor: pointer;
 }
-.video-tab iframe{
+.video-tab iframe {
   width: 50vw;
   aspect-ratio: 1248/702;
   border: none;
