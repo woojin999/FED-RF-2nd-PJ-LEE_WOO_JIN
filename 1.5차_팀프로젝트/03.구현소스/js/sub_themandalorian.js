@@ -6,6 +6,8 @@ import * as mandalData from "../data/sub_themandalorian_data.js";
 const epData = mandalData.episodeData;
 const epList = mFn.qs(".ep-list");
 
+
+
 let eplicode = `<ul class="fx-box">`;
 
 for(let i = 0; i < 12; i++){
@@ -33,7 +35,7 @@ eplicode += `</ul>`;
 
 epList.innerHTML = eplicode;
 
-///////////////////////////////////////////////////////////////
+//////////////////////////////비디오 /////////////////////////////////
 
 const epbtn = mFn.qsa(".epbtn");
 const vdbtn = mFn.qsa(".vdbtn");
@@ -48,7 +50,7 @@ const vdData = mandalData.videoData;
 
 
 let vlicode = `<ul class="fx-box">`;
-for (let i = 0; i <= 5; i++) {
+for (let i = 0; i <= 10; i++) {
   vlicode += `
     <li>
       <div class="video-box">
@@ -79,7 +81,7 @@ video.forEach((ele, i) => {
   ele.onclick = () => {
     vdcode += `
     <div class="video-tab-btn fa-solid fa-xmark fa-3x"></div>
-    <iframe src="https://www.youtube.com/embed/${vdData[i].video}"></iframe>
+    <iframe src="https://www.youtube.com/embed/${vdData[i].video}?autoplay=1" allow="autoplay""></iframe>
   `;
     videoTab.innerHTML = vdcode;
     videoBox.classList.add("on");
@@ -152,7 +154,7 @@ function GoVdSlide() {
   let isVdRbtn = this.classList.contains("vdbtn2");
 
   let cntNum;
-  let vdSlCnt = 5;
+  let vdSlCnt = 11;
   console.log(vdSlCnt);
 
   isVdRbtn ? vdSnum++ : vdSnum--;
@@ -180,18 +182,20 @@ function GoVdSlide() {
 
 ///////////////////////////////////
 
+const chrtData = mandalData.characterData;
+
 const crtImgBox = mFn.qs(".character-img-box");
 
 let crtcode = `<div class="img-list">
               <ul class="list01">`;
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 0; i < 15; i++) {
   crtcode += `
         <li>
             <div class="list-box">
-                <img src="./images/character${i}.jpeg" alt="" />
+                <img src="./images/${chrtData[i].image}" alt="" />
                 <h3>
-                    <span> Kelleran Beq</span>
+                    <span>${chrtData[i].name}</span>
                 </h3>
             </div>
         </li>
@@ -202,13 +206,13 @@ crtcode += `
 </div>
 <div class="img-list">
 <ul class="list02">`;
-for (let i = 11; i <= 25; i++) {
+for (let i = 14; i < 30; i++) {
   crtcode += `
         <li>
             <div class="list-box">
-                <img src="./images/character${i}.jpeg" alt="" />
+                <img src="./images/${chrtData[i].image}" alt="" />
                 <h3>
-                    <span> Kelleran Beq</span>
+                    <span>${chrtData[i].name}</span>
                 </h3>
             </div>
         </li>
