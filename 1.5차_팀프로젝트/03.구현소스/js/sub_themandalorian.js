@@ -38,12 +38,16 @@ epList.innerHTML = eplicode;
 const epbtn = mFn.qsa(".epbtn");
 const vdbtn = mFn.qsa(".vdbtn");
 const epSlide = mFn.qsa(".ep-img-wrap ul li");
+const epWrap = mFn.qs(".ep-wrap");
 const videoWrap = mFn.qs(".video-wrap");
 const videoli = mFn.qs(".video-list");
 const videoBox = mFn.qs(".video-cont-box");
 const videoTab = mFn.qs(".video-tab");
 
 const vdData = mandalData.videoData;
+
+console.log(videoWrap.offsetWidth);
+videoWrap.offsetWidth;
 
 let vlicode = `<ul class="fx-box">`;
 for (let i = 0; i <= 10; i++) {
@@ -56,7 +60,7 @@ for (let i = 0; i <= 10; i++) {
         <div class="video-txt-box">
           <h3>
             <span>
-              ${vdData[i].desc}
+              ${vdData[i].desc} 
             </span>
           </h3>
         </div>
@@ -102,8 +106,6 @@ for (let x of vdbtn) {
   x.onclick = GoVdSlide;
 }
 
-console.log(epSlide.length);
-
 function GoEpSlide() {
   // 광클 금지
   if (prot) return;
@@ -119,10 +121,17 @@ function GoEpSlide() {
   isEpRbtn ? epSnum++ : epSnum--;
 
   epSlide.forEach((v) => {
-    v.style.left = -33.3333 * epSnum + "%";
+    if (epWrap.offsetWidth > 1024) {
+      v.style.left = -33.3333 * epSnum + "%";
+      cntNum = 3;
+    } else if (epWrap.offsetWidth > 860) {
+      v.style.left = -50 * epSnum + "%";
+      cntNum = 2;
+    } else {
+      v.style.left = -100 * epSnum + "%";
+      cntNum = 1;
+    }
   });
-
-  cntNum = 3;
 
   if (epSnum < 0) {
     epSnum = 0;
@@ -156,10 +165,17 @@ function GoVdSlide() {
   isVdRbtn ? vdSnum++ : vdSnum--;
 
   vdSlide.forEach((v) => {
-    v.style.left = -33.3333 * vdSnum + "%";
+    if (videoWrap.offsetWidth > 1024) {
+      v.style.left = -33.3333 * vdSnum + "%";
+      cntNum = 3;
+    } else if (videoWrap.offsetWidth > 860) {
+      v.style.left = -50 * vdSnum + "%";
+      cntNum = 2;
+    } else {
+      v.style.left = -100 * vdSnum + "%";
+      cntNum = 1;
+    }
   });
-
-  cntNum = 3;
 
   if (vdSnum < 0) {
     vdSnum = 0;
@@ -344,7 +360,7 @@ function gallertGoSlide() {
   setTimeout(() => {
     prot = false;
   }, 500);
-  
+
   let isgalleryRbtn = this.classList.contains("gbtn2");
   const galSlide = mFn.qsEl(galleryTab, "ul");
 
@@ -388,3 +404,22 @@ function gallertGoSlide() {
     galleryTxt.innerHTML = galTxtcode;
   }
 }
+mFn.addEvt(window, "resize", () => {
+  // 2. 기준위치값으로 실제 슬라이드 CSS left값 변경하기
+  console.log(vdSlide);
+  // vdSlide.style.left = 0;
+  vdSlide.forEach((v) => {
+    v.style.left = 0;
+  });
+  epSlide.forEach((v) => {
+    v.style.left = 0;
+  });
+
+  vdSnum = 0;
+  epSnum = 0;
+  epbtn[0].style.display = "none";
+  vdbtn[0].style.display = "none";
+
+  epbtn[1].style.display = "block";
+  vdbtn[1].style.display = "block";
+}); ////////////// resize함수 //////////////////
