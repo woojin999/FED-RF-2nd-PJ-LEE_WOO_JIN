@@ -4,8 +4,11 @@
 @import url(./core.css);
 @import url(./grid_12_flex.css);
 @import url(./reset.css);
+@import url(./media.css);
+
 body {
-  background-color: #111;
+  background: url(../images/background-img.jpeg) repeat-y center;
+  
   color: #fff;
 }
 
@@ -14,33 +17,6 @@ body {
   outline: 2px dashed #fff;
 } */
 
-/* 1. 상단영역 */
-.top-area {
-  height: 150px;
-}
-/* 2. 인포영역 */
-/* .info-area{
-    height: 1500px;
-} */
-/* 3 캐릭터영역 */
-/* .character-area{
-    height: 1000px;
-} */
-/* 4. 갤러리영역 */
-/* .gallery-area {
-  height: 1000px;
-} */
-/* .episode-area {
-  height: 500px;
-} */
-/* 5. 비디오영역 */
-/* .video-area {
-  height: 500px;
-} */
-/* 6. 하단영역 */
-.footer-area {
-  height: 300px;
-}
 /********************************  */
 
 /* .main-area > div + div {
@@ -76,7 +52,7 @@ body {
   margin-left: 5vw;
   transform: translateY(-50%);
 }
-.main-img-title img{
+.main-img-title img {
   width: 100%;
 }
 .main-img-title p {
@@ -127,7 +103,7 @@ button {
   color: #ffe400;
 }
 
-.sub-blur-img{
+.sub-blur-img {
   position: absolute;
   left: 0;
   top: 0;
@@ -196,6 +172,7 @@ button {
 }
 .character-img-box li {
   box-sizing: border-box;
+  transition: .4s;
 }
 
 .character-img-box .img-list:nth-child(1) li {
@@ -213,6 +190,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 .character-img-box li:hover {
   scale: 1.2;
@@ -224,7 +202,8 @@ button {
 
 /* 에피소드 */
 .ep-wrap,
-.video-wrap {
+.video-wrap,
+.gallery-wrap {
   padding: 0 55px;
 }
 
@@ -243,6 +222,7 @@ button {
 .ep-img-wrap img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   object-fit: cover;
   aspect-ratio: 1280/720;
 }
@@ -280,6 +260,7 @@ button {
   padding: 15px;
   transition: opacity 0.5s;
 }
+
 .ep-img-box:hover .ep-bg-box {
   opacity: 1;
 }
@@ -352,19 +333,33 @@ button {
   height: 100%;
   object-fit: cover;
   aspect-ratio: 480/270;
+  border-radius: 10px 10px 0 0;
 }
 .video-txt-box {
   background-color: #1d1e1f;
   min-height: 100px;
+  border-radius: 0 0 10px 10px;
 }
 .video-txt-box h3 {
   padding: 32px 12px 12px;
   font-size: 1.8rem;
   text-align: left;
-  word-break:break-all;
+  word-break: break-all;
 }
 .video-img {
   position: relative;
+}
+.video-box {
+  overflow: hidden;
+}
+.video-img{
+  transition: .4s;
+}
+.video-img:hover {
+  scale: 1.1;
+}
+.video-txt-box{
+  z-index: 1;
 }
 .video-img::after {
   content: "";
@@ -387,7 +382,7 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #111111b9;
+  background-color: #111111f1;
   z-index: 99;
 }
 
@@ -411,7 +406,8 @@ button {
   border: none;
 }
 .gallery-box {
-  padding: 40px 80px;
+  margin: 40px 15px;
+  cursor: pointer;
 }
 .gimg-box img {
   width: 100%;
@@ -419,13 +415,12 @@ button {
   border-radius: 2% 0 0 2%;
 }
 .gtxt-box {
+  position: relative;
   width: 100%;
   background-color: #1d1e1f;
   text-align: left;
   padding-left: 1.6rem;
   padding-right: 1.6rem;
-  bottom: 10px;
-  /* height: 100%; */
 }
 .gtxt-box h3 {
   font-size: 1.8rem;
@@ -434,8 +429,93 @@ button {
 .gtxt-box p {
   font-size: 1.4rem;
 }
+.gtxt-box p:last-child {
+  position: absolute;
+  bottom: 10px;
+}
 .gtxt-box .bullet {
   scale: 0.6;
   margin-top: 1vh;
   margin-left: -1rem;
 }
+
+.gallery-cont-box {
+  display: none;
+}
+.gallery-cont-box.on {
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111111f1;
+  z-index: 99;
+}
+
+.gallery-cont-box.on > .gallery-tab {
+  position: relative;
+  top: 47%;
+  transform: translateY(-50%);
+}
+
+.gallery-tab-btn {
+  position: relative;
+  margin-top: 1%;
+  margin-right: 2%;
+  float: right;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.gimg-wrap {
+  width: 100vw;
+}
+
+.gallery-tab ul {
+  display: flex;
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  will-change: left;
+}
+
+.gallery-tab .imagea {
+  height: 80vh;
+  border-radius: 20px;
+}
+
+.gallery-tab .imageb {
+  width: 90vw;
+  border-radius: 20px;
+}
+
+.gbtn {
+  width: 55px;
+  height: 55px;
+  z-index: 99;
+}
+
+.gbtn1 {
+  left: 1vw;
+}
+.gbtn2 {
+  right: 1vw;
+}
+
+.gallery-img-txt p:nth-child(1){
+  position: absolute;
+  left: 2%;
+  bottom: 3%;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.gallery-img-txt p:nth-child(2){
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  font-size: 1.5rem;
+}
+

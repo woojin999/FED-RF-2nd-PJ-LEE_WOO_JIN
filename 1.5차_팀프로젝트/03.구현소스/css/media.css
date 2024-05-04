@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* 스타워즈 PJ 미디어쿼리 CSS - media.css */
+
+/* 1024px */
+@media screen and (max-width: 1024px) {
+  .ep-img-wrap ul li {
+    position: relative;
+    flex-basis: 50%;
+  }
+  body {
+    color: #111;
+  }
+} /* 1024px */

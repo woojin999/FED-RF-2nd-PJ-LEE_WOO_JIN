@@ -2,15 +2,13 @@ import mFn from "./my_function.js";
 
 import * as mandalData from "../data/sub_themandalorian_data.js";
 
-
 const epData = mandalData.episodeData;
 const epList = mFn.qs(".ep-list");
-
-
+const body = mFn.qs("body");
 
 let eplicode = `<ul class="fx-box">`;
 
-for(let i = 0; i < 12; i++){
+for (let i = 0; i < 12; i++) {
   // console.log(epData[i].image);
   eplicode += `
   <li>
@@ -47,8 +45,6 @@ const videoTab = mFn.qs(".video-tab");
 
 const vdData = mandalData.videoData;
 
-
-
 let vlicode = `<ul class="fx-box">`;
 for (let i = 0; i <= 10; i++) {
   vlicode += `
@@ -75,7 +71,6 @@ videoli.innerHTML = vlicode;
 const vdSlide = mFn.qsaEl(videoWrap, ".video-img-wrap ul li");
 const video = mFn.qsaEl(videoli, ".video-box");
 
-
 let vdcode = ``;
 video.forEach((ele, i) => {
   ele.onclick = () => {
@@ -85,15 +80,16 @@ video.forEach((ele, i) => {
   `;
     videoTab.innerHTML = vdcode;
     videoBox.classList.add("on");
+    body.style.overflow = "hidden";
 
     mFn.qsEl(videoTab, "div").onclick = () => {
       console.log("ddd");
       videoBox.classList.remove("on");
       vdcode = ``;
+      body.style.overflow = "auto";
     };
   };
 });
-
 
 let epSnum = 0;
 let vdSnum = 0;
@@ -275,3 +271,120 @@ mFn.addEvt(crtImgBox, "mouseleave", () => {
 
 setTimeout(moveGallery);
 setTimeout(moveGallery2);
+
+//////////////////////갤러리////////////////////////
+const gallery = mFn.qsa(".gallery-box");
+const galleryBox = mFn.qs(".gallery-cont-box");
+const galleryTab = mFn.qs(".gallery-tab");
+const gtabBtn = mFn.qs(".gallery-tab-btn");
+const gSlBtn = mFn.qsa(".gbtn");
+const galleryTxt = mFn.qs(".gallery-img-txt");
+
+let galcode = `<ul>`;
+let galTxtcode = ``;
+let galPgNum = 1;
+let galPgTotal;
+
+gallery.forEach((ele, i) => {
+  let isFirstGbox = ele.classList.contains("gbox1");
+  ele.onclick = () => {
+    console.log("dd", isFirstGbox);
+    isFirstGbox ? (galPgTotal = 26) : (galPgTotal = 19);
+    galleryBox.classList.add("on");
+    for (let i = 1; i <= galPgTotal; i++) {
+      galcode += `
+      <li>
+        <div class="gimg-wrap">
+          <img src="./images/gallery_${
+            isFirstGbox ? "a" : "b"
+          }${i}.jpg" alt="갤러리이미지" class="image${
+        isFirstGbox ? "a" : "b"
+      }" />
+        </div>
+      </li>
+      `;
+    }
+
+    if (isFirstGbox) {
+      galTxtcode += `
+      <p>Poster Gallery | The Mandalorian <br/> Season 3</p>
+      <p>${galPgNum} of ${galPgTotal}</p>
+      `;
+    } else {
+      galTxtcode += `
+      <p>Stills Gallery | The Mandalorian <br/> Season 3</p>
+      <p>${galPgNum} of ${galPgTotal}</p>
+      `;
+    }
+    galcode += `</ul> `;
+
+    galleryTab.innerHTML = galcode;
+    galleryTxt.innerHTML = galTxtcode;
+    body.style.overflow = "hidden";
+  };
+});
+
+gtabBtn.onclick = () => {
+  galleryBox.classList.remove("on");
+  galcode = `<ul>`;
+  galTxtcode = ``;
+  galPgNum = 1;
+  body.style.overflow = "auto";
+};
+
+/////////////// 갤러리 슬라이드 ////////////////
+for (let x of gSlBtn) {
+  x.onclick = gallertGoSlide;
+}
+
+function gallertGoSlide() {
+  // 광클 금지
+  if (prot) return;
+  prot = true;
+  setTimeout(() => {
+    prot = false;
+  }, 500);
+  
+  let isgalleryRbtn = this.classList.contains("gbtn2");
+  const galSlide = mFn.qsEl(galleryTab, "ul");
+
+  if (isgalleryRbtn) {
+    galSlide.style.left = "-100%";
+    galSlide.style.transition = ".6s ease-in-out";
+    galSlide.style.opacity = "1";
+
+    galPgNum == galPgTotal ? (galPgNum = 1) : galPgNum++;
+
+    setTimeout(() => {
+      galSlide.appendChild(galSlide.querySelectorAll("li")[0]);
+      galSlide.style.left = "0";
+      galSlide.style.transition = "none";
+    }, 500);
+
+    galTxtcode = `
+      <p>Poster Gallery | The Mandalorian <br/> Season 3</p>
+      <p>${galPgNum} of ${galPgTotal}</p>
+      `;
+
+    galleryTxt.innerHTML = galTxtcode;
+  } else {
+    let list = galSlide.querySelectorAll("li");
+    galSlide.insertBefore(list[list.length - 1], list[0]);
+    galSlide.style.left = "-100%";
+    galSlide.style.transition = "none";
+
+    galPgNum == 1 ? (galPgNum = galPgTotal) : galPgNum--;
+
+    setTimeout(() => {
+      galSlide.style.left = "0";
+      galSlide.style.transition = ".6s ease-in-out";
+    }, 600);
+
+    galTxtcode = `
+      <p>Poster Gallery | The Mandalorian <br/> Season 3</p>
+      <p>${galPgNum} of ${galPgTotal}</p>
+      `;
+
+    galleryTxt.innerHTML = galTxtcode;
+  }
+}

@@ -24,7 +24,7 @@ html {
   /* flex-wrap: wrap; */
 }
 
-.main-area > div {
+.main-area > div + div {
   padding-top: 10rem;
 }
 
