@@ -192,7 +192,7 @@ function GoVdSlide() {
   }
 }
 
-///////////////////////////////////
+////////////////////////////캐릭터///////////////////////////
 
 const chrtData = mandalData.characterData;
 
@@ -300,11 +300,13 @@ let galcode = `<ul>`;
 let galTxtcode = ``;
 let galPgNum = 1;
 let galPgTotal;
+let isOnebox;
 
-gallery.forEach((ele, i) => {
+gallery.forEach((ele) => {
   let isFirstGbox = ele.classList.contains("gbox1");
   ele.onclick = () => {
-    console.log("dd", isFirstGbox);
+    isFirstGbox ? isOnebox = true : isOnebox = false;
+    
     isFirstGbox ? (galPgTotal = 26) : (galPgTotal = 19);
     galleryBox.classList.add("on");
     for (let i = 1; i <= galPgTotal; i++) {
@@ -321,17 +323,11 @@ gallery.forEach((ele, i) => {
       `;
     }
 
-    if (isFirstGbox) {
-      galTxtcode += `
-      <p>Poster Gallery | The Mandalorian <br/> Season 3</p>
-      <p>${galPgNum} of ${galPgTotal}</p>
-      `;
-    } else {
-      galTxtcode += `
-      <p>Stills Gallery | The Mandalorian <br/> Season 3</p>
-      <p>${galPgNum} of ${galPgTotal}</p>
-      `;
-    }
+    galTxtcode += `
+    <p>${isFirstGbox ? "Poster Gallery" : "Stills Gallery"} | The Mandalorian <br/> Season 3</p>
+    <p>${galPgNum} of ${galPgTotal}</p>
+    `;
+    
     galcode += `</ul> `;
 
     galleryTab.innerHTML = galcode;
@@ -350,10 +346,11 @@ gtabBtn.onclick = () => {
 
 /////////////// 갤러리 슬라이드 ////////////////
 for (let x of gSlBtn) {
-  x.onclick = gallertGoSlide;
+  x.onclick = galleryGoSlide;
 }
 
-function gallertGoSlide() {
+function galleryGoSlide() {
+  
   // 광클 금지
   if (prot) return;
   prot = true;
@@ -378,7 +375,7 @@ function gallertGoSlide() {
     }, 500);
 
     galTxtcode = `
-      <p>Poster Gallery | The Mandalorian <br/> Season 3</p>
+      <p>${isOnebox ? "Poster Gallery" : "Stills Gallery"} | The Mandalorian <br/> Season 3</p>
       <p>${galPgNum} of ${galPgTotal}</p>
       `;
 
@@ -394,20 +391,19 @@ function gallertGoSlide() {
     setTimeout(() => {
       galSlide.style.left = "0";
       galSlide.style.transition = ".6s ease-in-out";
-    }, 600);
+    }, 0);
 
     galTxtcode = `
-      <p>Poster Gallery | The Mandalorian <br/> Season 3</p>
+      <p>${isOnebox ? "Poster Gallery" : "Stills Gallery"} | The Mandalorian <br/> Season 3</p>
       <p>${galPgNum} of ${galPgTotal}</p>
       `;
 
     galleryTxt.innerHTML = galTxtcode;
   }
 }
+
+// 화면 사이즈 줄일때 슬라이드 위치 초기화
 mFn.addEvt(window, "resize", () => {
-  // 2. 기준위치값으로 실제 슬라이드 CSS left값 변경하기
-  console.log(vdSlide);
-  // vdSlide.style.left = 0;
   vdSlide.forEach((v) => {
     v.style.left = 0;
   });
