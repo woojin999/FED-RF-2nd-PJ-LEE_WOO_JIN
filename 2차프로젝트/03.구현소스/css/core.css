@@ -1,0 +1,69 @@
+@charset "utf-8";
+/* 홍루이젠 PJ : 공통 클래스 CSS - core.css */
+/* 공통 셋팅을 위한 클래스 + 웹폰트 */
+
+/* 웹폰트 CDN */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&family=Gugi&family=Nanum+Gothic&family=Single+Day&family=ZCOOL+KuaiLe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://webfontworld.github.io/score/SCoreDream.css');
+/* 
+    0. 메뉴 등 일반체
+    font-family: 'Noto Sans KR', sans-serif;
+    1. 캐릭터 설명 제목체
+    font-family: 'Gugi', cursive;
+    2. 캐릭터 설명 내용체
+    font-family: 'Single Day', cursive;
+    3. 캐릭터 설명 한자체
+    font-family: 'ZCOOL KuaiLe', cursive;
+    4. 전체 공통체(메뉴 등)
+    font-family: 'Nanum Gothic', sans-serif;
+
+    font-family: 'Nunito Sans', 'SCoreDream', sans-serif;
+
+    font-family: 'Montserrat', 'SCoreDream', sans-serif;
+*/
+
+/* 전체 기본폰트 */
+*{
+    font-family: 'Nunito Sans', 'SCoreDream', sans-serif;
+    color: #401e20;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+/* 전체 글자크기 */
+html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+    /* rem단위 계산편의를 위함 */
+}
+body{
+    /* 글자체 */
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+
+/********* 공통 클래스 *********/
+/* 임시표시타이틀 */
+.temp-tit{
+    position: absolute;
+    font-size: 2vw;
+    color: #ccc;
+}
+/* 중앙속박스 */
+.inbox{
+    /* 최대가로크기 */
+    max-width: 1600px;
+    /* 블록박스 중앙정렬 -> 마.영.오! */
+    margin: 0 auto;
+    
+}
+.sub-inbox{
+    /* 최대가로크기 */
+    max-width: 1600px;
+    /* 블록박스 중앙정렬 -> 마.영.오! */
+    margin: 0 auto;
+    
+}
