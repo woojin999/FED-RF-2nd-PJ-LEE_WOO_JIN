@@ -1,0 +1,43 @@
+html{
+    font-size: 10px;
+}
+/* 중앙속박스 */
+.inbox{
+    /* 최대가로크기 */
+    max-width: 1800px;
+    padding: 0 20px;
+    /* 블록박스 중앙정렬 -> 마.영.오! */
+    margin: 0 auto;
+}
+/* 그룹파트박스 */
+
+/* 플렉스박스 클래스 */
+.fx-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* 파트박스 */
+.partbox {
+    /* 패딩,보더 포함박스 */
+    box-sizing: border-box;
+}
+
+/* 메인영역 col-박스 */
+.main-area [class*='col-'] {
+    padding: 10px;
+}
+
+.sub-gnb-box{
+    justify-content: flex-end;
+}
+.logo-box{
+    text-align: center;
+}
+.gnb-menu ul li span{
+    padding: 15px;
+    font-size: 14px;
+}
+.sub-gnb a {
+    padding: 10px;
+}
