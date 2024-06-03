@@ -1,5 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    font-family: "Inter", sans-serif;
+    color: #503217;
+    letter-spacing: 1px;
+}
+h2,h3,h4{
+    font-family: "ITC Clearface" ,serif;
+}
 html{
     font-size: 10px;
+}
+body{
+    font-family: "Inter", sans-serif;
 }
 /* 중앙속박스 */
 .inbox{
@@ -28,16 +42,3 @@ html{
     padding: 10px;
 }
 
-.sub-gnb-box{
-    justify-content: flex-end;
-}
-.logo-box{
-    text-align: center;
-}
-.gnb-menu ul li span{
-    padding: 15px;
-    font-size: 14px;
-}
-.sub-gnb a {
-    padding: 10px;
-}
