@@ -6,8 +6,22 @@
     width: 100%;
     z-index: 999;
 }
+.top-area{
+    height: 90px;
+}
 #main-area{
     margin-top: 90px;
+}
+.gnb-box{
+    height: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.gnb-smenu{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
 }
 .sub-gnb-box{
     justify-content: flex-end;
@@ -15,8 +29,10 @@
 .logo-box{
     text-align: center;
 }
-.gnb-menu ul li span{
-    padding: 15px;
+.gnb-menu ul {
+    gap: 30px;
+}
+.gnb-menu ul li{
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -32,6 +48,19 @@
 .sub-gnb li:nth-child(3) {
     margin-right: 20px;
 }
+.smenu {
+    line-height: normal;
+    height: 0;
+    overflow: hidden;
+    display: none;
+}
+
+.gnb-menu > ul >li:hover .smenu{
+    display: block;
+    height: auto;
+}
+
+
 
 .ban-box {
     position: relative;
