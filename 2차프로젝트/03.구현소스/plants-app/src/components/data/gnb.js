@@ -23,6 +23,8 @@ export const menu = [
         txt: "CALM",
         link: "/calm",
       },
+    ],
+    sub2: [
       {
         txt: "BUNDLES",
         link: "/shop",

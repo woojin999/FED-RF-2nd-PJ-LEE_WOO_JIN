@@ -8,9 +8,9 @@ export default function TopArea() {
         <header className="top-area">
           <div className="inbox">
             <div className="gnb-box">
-              <div className="col-4 fx-box">
+              <div className="col-4 fx-box ">
                 <nav className="gnb-menu">
-                  <ul className="gnb-smenu">
+                  <ul className="gnb-smenu fx-box">
                     {menu.map((v, i) => (
                       <li key={i}>
                         {v.sub ? (
@@ -22,7 +22,7 @@ export default function TopArea() {
                           // 서브 메뉴 데이터가 있으면 하위 그리고
                           v.sub && (
                             <div className="smenu">
-                              <ol>
+                              <ol className="col-6">
                                 {v.sub.map((v, i) => (
                                   <li key={i}>
                                     <Link to={v.link} />
@@ -30,6 +30,23 @@ export default function TopArea() {
                                   </li>
                                 ))}
                               </ol>
+                              {v.sub2 && (
+                              <ol className="col-6">
+                                {v.sub2.map((v, i) => (
+                                  <li key={i}>
+                                    <Link to={v.link} />
+                                    {v.txt}
+                                  </li>
+                                ))}
+                              </ol>
+                              )}
+                              <video className="col-6"
+                                src="./images/main.mp4"
+                                muted
+                                autoplay
+                                playsInline
+                                loop
+                              ></video>
                             </div>
                           )
                         }
