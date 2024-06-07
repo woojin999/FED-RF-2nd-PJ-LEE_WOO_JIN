@@ -2,6 +2,7 @@ export const menu = [
   {
     txt: "SHOP",
     link: "/shop",
+    video: "./videos/Calm.mp4",
     sub: [
       {
         txt: "HERBAL TINCTURES",

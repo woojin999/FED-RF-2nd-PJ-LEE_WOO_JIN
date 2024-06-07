@@ -18,38 +18,37 @@ export default function TopArea() {
                         ) : (
                           <Link to={v.link}>{v.txt}</Link>
                         )}
-                        {
-                          // 서브 메뉴 데이터가 있으면 하위 그리고
-                          v.sub && (
-                            <div className="smenu">
-                              <ol className="col-6">
-                                {v.sub.map((v, i) => (
-                                  <li key={i}>
-                                    <Link to={v.link} />
-                                    {v.txt}
-                                  </li>
-                                ))}
-                              </ol>
-                              {v.sub2 && (
-                              <ol className="col-6">
+                        {v.sub && (
+                          <div className="smenu">
+                            <ol className={v.sub2 ? "col-3" : "col-6"}>
+                              {v.sub.map((v, i) => (
+                                <li key={i}>
+                                  <Link to={v.link}>{v.txt}</Link>
+                                </li>
+                              ))}
+                            </ol>
+                            {v.sub2 && (
+                              <ol className="col-3">
                                 {v.sub2.map((v, i) => (
                                   <li key={i}>
-                                    <Link to={v.link} />
-                                    {v.txt}
+                                    <Link to={v.link}>{v.txt}</Link>
                                   </li>
                                 ))}
                               </ol>
-                              )}
-                              <video className="col-6"
-                                src="./images/main.mp4"
+                            )}
+                            <div className="video-box col-6">
+                              {v.video ? <video
+                                src={v.video}
+                                autoPlay
                                 muted
-                                autoplay
-                                playsInline
                                 loop
-                              ></video>
+                                playsInline
+                              ></video>: <img src="./images/Card_PDP.png"/>
+                              }
+                              
                             </div>
-                          )
-                        }
+                          </div>
+                        )}
                       </li>
                     ))}
                   </ul>
