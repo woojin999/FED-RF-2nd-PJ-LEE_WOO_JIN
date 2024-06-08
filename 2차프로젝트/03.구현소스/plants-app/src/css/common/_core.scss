@@ -5,6 +5,7 @@
     font-family: "Inter", sans-serif;
     color: #503217;
     letter-spacing: 1px;
+    font-weight: 500;
 }
 h2,h3,h4{
     font-family: "ITC Clearface" ,serif;
@@ -18,12 +19,14 @@ body{
 /* 중앙속박스 */
 .inbox{
     /* 최대가로크기 */
-    max-width: 1800px;
-    padding: 0 20px;
+    max-width: 1750px;
+    padding: 0 40px;
     /* 블록박스 중앙정렬 -> 마.영.오! */
     margin: 0 auto;
 }
-/* 그룹파트박스 */
+.main-area > div + div {
+    padding-top: 10rem;
+  }
 
 /* 플렉스박스 클래스 */
 .fx-box{

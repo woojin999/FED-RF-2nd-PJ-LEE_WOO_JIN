@@ -6,9 +6,9 @@ export default function TopArea() {
     <>
       <div id="top-area">
         <header className="top-area">
-          <div className="inbox">
+          <div className="">
             <div className="gnb-box">
-              <div className="col-4 fx-box ">
+              <div className="col-4">
                 <nav className="gnb-menu">
                   <ul className="gnb-smenu fx-box">
                     {menu.map((v, i) => (
@@ -37,15 +37,17 @@ export default function TopArea() {
                               </ol>
                             )}
                             <div className="video-box col-6">
-                              {v.video ? <video
-                                src={v.video}
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                              ></video>: <img src="./images/Card_PDP.png"/>
-                              }
-                              
+                              {v.video ? (
+                                <video
+                                  src={v.video}
+                                  autoPlay
+                                  muted
+                                  loop
+                                  playsInline
+                                ></video>
+                              ) : (
+                                <img src="./images/Card_PDP.png" />
+                              )}
                             </div>
                           </div>
                         )}
@@ -56,7 +58,9 @@ export default function TopArea() {
               </div>
               <div className="col-4">
                 <div className="logo-box">
-                  <img src="./images/Pttr_Logo_Brown.png" alt="main-logo" />
+                  <Link to="/">
+                    <img src="./images/Pttr_Logo_Brown.png" alt="main-logo" />
+                  </Link>
                 </div>
               </div>
               <div className="sub-gnb-box col-4 fx-box">
