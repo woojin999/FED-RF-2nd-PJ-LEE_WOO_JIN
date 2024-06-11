@@ -1,49 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@font-face {
+  font-family: "BookkMyungjo-Bd";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2")
+    format("woff2");
+//   font-weight: 700;
+  font-style: normal;
+}
 
-*{
-    font-family: "Inter", sans-serif;
-    color: #503217;
-    letter-spacing: 1px;
-    font-weight: 500;
+* {
+  font-family: "Inter", sans-serif;
+  color: #503217;
+  font-weight: 500;
 }
-h2,h3,h4{
-    font-family: "ITC Clearface" ,serif;
+h2,
+h3,
+h4 {
+  font-family: "BookkMyungjo-Bd", "ITC Clearface", serif;
 }
-html{
-    font-size: 10px;
+html {
+  font-size: 10px;
 }
-body{
-    font-family: "Inter", sans-serif;
+body {
+  font-family: "Inter", sans-serif;
 }
 /* 중앙속박스 */
-.inbox{
-    /* 최대가로크기 */
-    max-width: 1750px;
-    padding: 0 40px;
-    /* 블록박스 중앙정렬 -> 마.영.오! */
-    margin: 0 auto;
+.inbox {
+  /* 최대가로크기 */
+  max-width: 1750px;
+  padding: 0 40px;
+  /* 블록박스 중앙정렬 -> 마.영.오! */
+  margin: 0 auto;
 }
 .main-area > div + div {
-    padding-top: 10rem;
-  }
-
-/* 플렉스박스 클래스 */
-.fx-box{
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
+  padding-top: 10rem;
 }
 
+/* 플렉스박스 클래스 */
+.fx-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
 
 /* 파트박스 */
 .partbox {
-    /* 패딩,보더 포함박스 */
-    box-sizing: border-box;
+  /* 패딩,보더 포함박스 */
+  box-sizing: border-box;
 }
 
 /* 메인영역 col-박스 */
-.main-area [class*='col-'] {
-    padding: 10px;
+.main-area [class*="col-"] {
+  padding: 10px;
 }
-

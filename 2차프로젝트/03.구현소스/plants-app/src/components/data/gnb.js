@@ -57,8 +57,8 @@ export const menu = [
         link: "/about",
       },
       {
-        txt: "BLUG",
-        link: "/blug",
+        txt: "BLOG",
+        link: "/blog",
       },
     ],
   },

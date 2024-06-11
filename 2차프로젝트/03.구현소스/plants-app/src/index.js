@@ -10,6 +10,8 @@ import Shop from "./components/pages/Shop";
 import Digest from "./components/pages/Digest";
 import ShroomBoost from "./components/pages/ShroomBoost";
 import Sleep from "./components/pages/Sleep";
+import About from "./components/pages/About";
+import Blog from "./components/pages/Blog";
 
 export default function MainComponent() {
   return (
@@ -22,6 +24,8 @@ export default function MainComponent() {
           <Route path="digest" element={<Digest />} />
           <Route path="shroom-boost" element={<ShroomBoost />} />
           <Route path="sleep" element={<Sleep />} />
+          <Route path="/about" element={<About />}/>
+          <Route path="/blog" element={<Blog />}/>
         </Route>
       </Routes>
     </BrowserRouter>
