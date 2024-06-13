@@ -3,15 +3,33 @@ import React from "react";
 import { faq } from "../data/faq";
 // 제이쿼리
 import $ from "jquery";
-
+import "jquery-ui-dist/jquery-ui";
 function Faq() {
-  function faqToggle() {
-    let asd =$(this.attr("className"));
-    console.log(asd);
-    // $(".faq-box p").toggle(function () {
-    //   console.log(this);
-    // });
-  }
+  // const showAnswer = () => {
+  //   const faq = $(".faq-box");
+  //   faq.on("click", () => {
+  //     console.log("asas");
+  //     $(this).toggleClass("on");
+  //   });
+  // };
+
+  React.useEffect(() => {
+    console.log("asd");
+    $(".faq-box").on("click", function aa() {
+      const answer = this.lastChild;
+      console.log(answer);
+      // this.classList.toggle("on")
+      let isT = this.classList.contains("on");
+      if (isT) {
+        this.classList.remove("on");
+      } else {
+        $(".faq-box").removeClass("on");
+        this.classList.add("on");
+      }
+
+      console.log(this.classList.contains("on"));
+    });
+  }, []);
 
   return (
     <>
@@ -21,9 +39,11 @@ function Faq() {
             <h2>FAQ</h2>
             <div className="faq-wrap-box faq-grid">
               {faq.map((v, i) => (
-                <div key={i} className={"faq-box"} onClick={() => faqToggle()}>
+                <div key={i} className={"faq-box"}>
                   <img src={v.isrc} alt="image" />
                   <h3>{v.question}</h3>
+                  <i className="fa-solid fa-minus fa-lg"></i>
+                  <i className="fa-solid fa-plus fa-lg"></i>
                   <p>{v.answer}</p>
                 </div>
               ))}
