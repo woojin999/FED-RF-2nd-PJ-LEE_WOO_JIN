@@ -12,6 +12,7 @@ import ShroomBoost from "./components/pages/ShroomBoost";
 import Sleep from "./components/pages/Sleep";
 import About from "./components/pages/About";
 import Blog from "./components/pages/Blog";
+import ProductDetail from "./components/pages/ProductDetail";
 
 export default function MainComponent() {
   return (
@@ -20,12 +21,13 @@ export default function MainComponent() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="shop" element={<Shop />} />
-          <Route path="calm" element={<Calm />} />
-          <Route path="digest" element={<Digest />} />
-          <Route path="shroom-boost" element={<ShroomBoost />} />
-          <Route path="sleep" element={<Sleep />} />
-          <Route path="/about" element={<About />}/>
-          <Route path="/blog" element={<Blog />}/>
+          {/* <Route path="calm" element={<Calm />} /> */}
+          {/* <Route path="digest" element={<Digest />} /> */}
+          {/* <Route path="shroom-boost" element={<ShroomBoost />} /> */}
+          {/* <Route path="sleep" element={<Sleep />} /> */}
+          <Route path="about" element={<About />}/>
+          <Route path="blog" element={<Blog />}/>
+          <Route path="detail" element={<ProductDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

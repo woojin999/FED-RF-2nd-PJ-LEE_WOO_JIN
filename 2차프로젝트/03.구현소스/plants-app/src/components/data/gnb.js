@@ -10,19 +10,19 @@ export const menu = [
       },
       {
         txt: "SHROOM BOOST",
-        link: "/shroom-boost",
+        link: "/detail",
       },
       {
         txt: "SLEEP",
-        link: "/sleep",
+        link: "/detail",
       },
       {
         txt: "DIGEST",
-        link: "/digest",
+        link: "/detail",
       },
       {
         txt: "CALM",
-        link: "/calm",
+        link: "/detail",
       },
     ],
     sub2: [
@@ -32,19 +32,19 @@ export const menu = [
       },
       {
         txt: "ANXIETY RESCUE BUNDLE",
-        link: "/anxiety-recue-bundle",
+        link: "/detail",
       },
       {
         txt: "GUT RESCUE BUNDLE",
-        link: "/gut-rescue-bundle",
+        link: "/detail",
       },
       {
         txt: "SLEEP RESCUE BUNDLE",
-        link: "/sleep-rescue-bundle",
+        link: "/detail",
       },
       {
         txt: "THE RESCUE BUNDLE",
-        link: "/the-rescue-bundle",
+        link: "/detail",
       },
     ],
   },

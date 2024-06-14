@@ -333,7 +333,6 @@
   box-sizing: border-box;
   cursor: pointer;
   // transition: all .7s ease-in-out;
-
   img {
     height: 80px;
   }
@@ -363,6 +362,30 @@
     opacity: 1;
     transition: all 0.4s;
     transform: rotate(0deg);
+  }
+}
+
+.product-detail {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.product-detail-content {
+  display: flex;
+}
+
+.detail-img-box img {
+  width: 100%;
+}
+
+.product-count-box {
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 120px;
+  input {
+    width: 20px;
+    border: none;
   }
 }
 
