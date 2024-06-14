@@ -13,22 +13,26 @@ function Faq() {
   //   });
   // };
 
+  const toggleFaq = (e) => {
+    let tg = e.currentTarget;
+    // console.log(tg);
+    const answer = tg.lastChild;
+    console.log(Event.currentTarget);
+    // tg.classList.toggle("on")
+    let isT = tg.classList.contains("on");
+    if (isT) {
+      tg.classList.remove("on");
+    } else {
+      $(".faq-box").removeClass("on");
+      tg.classList.add("on");
+    }
+
+    // console.log(this.classList.contains("on"));
+  };
   React.useEffect(() => {
     console.log("asd");
-    $(".faq-box").on("click", function aa() {
-      const answer = this.lastChild;
-      console.log(answer);
-      // this.classList.toggle("on")
-      let isT = this.classList.contains("on");
-      if (isT) {
-        this.classList.remove("on");
-      } else {
-        $(".faq-box").removeClass("on");
-        this.classList.add("on");
-      }
-
-      console.log(this.classList.contains("on"));
-    });
+    // $(".faq-box").on("click",
+    // );
   }, []);
 
   return (
@@ -39,7 +43,7 @@ function Faq() {
             <h2>FAQ</h2>
             <div className="faq-wrap-box faq-grid">
               {faq.map((v, i) => (
-                <div key={i} className={"faq-box"}>
+                <div key={i} className={"faq-box"} onClick={toggleFaq}>
                   <img src={v.isrc} alt="image" />
                   <h3>{v.question}</h3>
                   <i className="fa-solid fa-minus fa-lg"></i>

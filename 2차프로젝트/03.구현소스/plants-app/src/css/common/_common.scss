@@ -323,6 +323,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0 min(5vw, 30px);
 }
+
 .faq-box {
   position: relative;
   border-top: 1px solid #503217;
@@ -331,6 +332,7 @@
   height: 142px;
   overflow: hidden;
   box-sizing: border-box;
+  margin-top: -1px;
   cursor: pointer;
   // transition: all .7s ease-in-out;
   img {

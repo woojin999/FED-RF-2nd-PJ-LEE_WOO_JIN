@@ -18,7 +18,7 @@ function ProductDetail({ product }) {
                 <p>$37.00</p>
                 <div className="product-count-box">
                   <i className="fa-solid fa-minus fa-lg"></i>
-                  <input type="text" value={1} />
+                  <input type="text" defaultValue={1} />
                   <i className="fa-solid fa-plus fa-lg"></i>
                 </div>
                 <div className="cart-btn-box">
