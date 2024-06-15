@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../../css/banner.scss";
+
 function Banner() {
   return (
     <>

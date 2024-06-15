@@ -1,0 +1,82 @@
+// support-area
+.support-wrap {
+    h2 {
+      font-size: 5rem;
+      font-weight: 600;
+      padding-bottom: 20px;
+    }
+  }
+  .support-img-wrap ul {
+    display: flex;
+    gap: 3%;
+    img {
+      width: 100%;
+      padding-bottom: 20px;
+    }
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+  }
+  .support-area-box {
+    padding: 0 40px;
+  }
+  
+  .faq-area-box {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    h2 {
+      font-size: 3rem;
+      margin-bottom: 4rem;
+    }
+  }
+  
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0 min(5vw, 30px);
+  }
+  
+  .faq-box {
+    position: relative;
+    border-top: 1px solid #503217;
+    border-bottom: 1px solid #503217;
+    padding: 30px 0;
+    height: 142px;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-top: -1px;
+    cursor: pointer;
+    // transition: all .7s ease-in-out;
+    img {
+      height: 80px;
+    }
+    h3 {
+      display: inline-block;
+      font-size: 2rem;
+      margin-left: 2rem;
+    }
+    p {
+      font-size: 1.6rem;
+      margin-top: 3rem;
+      // display: none;
+    }
+    &.on {
+      height: auto;
+      .fa-plus {
+        opacity: 0;
+        transform: rotate(180deg);
+      }
+    }
+  
+    .fa-plus,
+    .fa-minus {
+      position: absolute;
+      right: 3%;
+      top: 70px;
+      opacity: 1;
+      transition: all 0.4s;
+      transform: rotate(0deg);
+    }
+  }

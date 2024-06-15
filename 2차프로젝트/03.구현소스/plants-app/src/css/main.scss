@@ -1,7 +1,6 @@
 // 페인 페이지 css
 
 // 공통 리셋 불러오기
-@import "./common/common";
 @import "./common/reset";
 @import "./common/core";
 @import "./common/grid_12_flex";
@@ -14,6 +13,7 @@
 body {
   background-color: #eeede7;
 }
+
 
 #product-info-area {
   max-width: 1400px;

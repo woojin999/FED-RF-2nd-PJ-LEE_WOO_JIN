@@ -4,21 +4,15 @@ import { faq } from "../data/faq";
 // 제이쿼리
 import $ from "jquery";
 import "jquery-ui-dist/jquery-ui";
+
+import "../../css/faq.scss";
 function Faq() {
-  // const showAnswer = () => {
-  //   const faq = $(".faq-box");
-  //   faq.on("click", () => {
-  //     console.log("asas");
-  //     $(this).toggleClass("on");
-  //   });
-  // };
 
   const toggleFaq = (e) => {
     let tg = e.currentTarget;
     // console.log(tg);
     const answer = tg.lastChild;
-    console.log(Event.currentTarget);
-    // tg.classList.toggle("on")
+    // console.log(Event.currentTarget);
     let isT = tg.classList.contains("on");
     if (isT) {
       tg.classList.remove("on");
@@ -27,13 +21,7 @@ function Faq() {
       tg.classList.add("on");
     }
 
-    // console.log(this.classList.contains("on"));
   };
-  React.useEffect(() => {
-    console.log("asd");
-    // $(".faq-box").on("click",
-    // );
-  }, []);
 
   return (
     <>

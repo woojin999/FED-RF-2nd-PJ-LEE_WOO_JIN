@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
+import { useLocation } from "react-router-dom";
+
+import "../../css/product_detail.scss";
+
+import { productLIst } from "../data/product_list";
 import PdList from "../modules/PdList";
 import PdInfo from "../modules/PdInfo";
 import Support from "../modules/Support";
 
 function ProductDetail({ product }) {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+  const loc = useLocation();
+  const pname = loc.state.pname;
+  const category = loc.state.category;
+  console.log(pname, category);
+  const pvo = productLIst[category][pname];
+  console.log(pvo);
   return (
     <>
       <div id="product-detail">
@@ -11,45 +25,41 @@ function ProductDetail({ product }) {
           <div className="product-detail-wrap">
             <div className="product-detail-content">
               <div className="col-6 detail-img-box">
-                <img src="/images/calm.png" alt="" />
+                <img src={pvo.isrc1} alt="" />
               </div>
               <div className="col-6 detail-txt">
-                <h2>Calm</h2>
-                <p>$37.00</p>
-                <div className="product-count-box">
-                  <i className="fa-solid fa-minus fa-lg"></i>
-                  <input type="text" defaultValue={1} />
-                  <i className="fa-solid fa-plus fa-lg"></i>
+                <h2>{pvo.tit}</h2>
+                <p>${pvo.price}</p>
+                <div className="cart-wrap">
+                  <div className="product-count-box">
+                    <button>
+                      <i className="fa-solid fa-minus"></i>
+                    </button>
+                    <input type="text" defaultValue={1} />
+                    <button>
+                      <i className="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                  <div className="cart-btn">
+                    <button>ADD TO CART</button>
+                  </div>
                 </div>
-                <div className="cart-btn-box">
-                  <button>ADD TO CART</button>
-                </div>
-                <div>
+                <div className="product-desc-box">
                   <p>DESCRIPTION</p>
-                  <h3>
-                    A non‑alcoholic herbal tincture made with 3 potent nervines
-                    (Oat Tops, Skullcap, Hawthorn) and an adaptogen
-                    (Ashwagandha) that come together to create the ultimate hug
-                    in a drop, essential in moments of stress or anxiety. Take
-                    Calm to ease those frazzled nerves and experience a sense of
-                    comforting peace when you need it the most.
-                  </h3>
+                  <h3>{pvo.desc}</h3>
                   <p>Free shipping on orders over £50</p>
                   <p>Ships within 2 days</p>
                 </div>
               </div>
             </div>
-            <div className="product-detail-sub">
+            {/* <div className="product-detail-sub">
               <div className="product-benefit">
                 <p>KEY BENEFITS</p>
-                <h2>
-                  Calming nervines to help you find a sense of peace on
-                  stressful days WHEN TO USE
-                </h2>
+                <h2>{pvo.benefit}</h2>
               </div>
-            </div>
+            </div> */}
           </div>
-          <PdInfo category={"main"} />
+          <PdInfo category={pname} />
           <Support />
         </section>
       </div>

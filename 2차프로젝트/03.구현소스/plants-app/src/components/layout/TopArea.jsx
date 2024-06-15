@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { menu } from "../data/gnb";
 
+import "../../css/top_area.scss";
+
 export default function TopArea() {
   return (
     <>
@@ -13,25 +15,25 @@ export default function TopArea() {
                   <ul className="gnb-smenu fx-box">
                     {menu.map((v, i) => (
                       <li key={i}>
-                        {v.sub ? (
+                        {v.single ? (
                           <a href="#">{v.txt}</a>
                         ) : (
                           <Link to={v.link}>{v.txt}</Link>
                         )}
-                        {v.sub && (
+                        {v.single && (
                           <div className="smenu">
-                            <ol className={v.sub2 ? "col-3" : "col-6"}>
-                              {v.sub.map((v, i) => (
+                            <ol className={v.bundle ? "col-3" : "col-6"}>
+                              {v.single.map((v, i) => (
                                 <li key={i}>
-                                  <Link to={v.link}>{v.txt}</Link>
+                                  <Link to={v.link} state={{category:"single",pname:v.pname}}>{v.txt}</Link>
                                 </li>
                               ))}
                             </ol>
-                            {v.sub2 && (
+                            {v.bundle && (
                               <ol className="col-3">
-                                {v.sub2.map((v, i) => (
+                                {v.bundle.map((v, i) => (
                                   <li key={i}>
-                                    <Link to={v.link}>{v.txt}</Link>
+                                    <Link to={v.link} state={{category:"bundle",pname:v.pname}}>{v.txt}</Link>
                                   </li>
                                 ))}
                               </ol>

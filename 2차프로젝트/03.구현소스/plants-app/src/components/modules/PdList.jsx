@@ -3,8 +3,15 @@ import React from "react";
 import { productLIst } from "../data/product_list";
 import { Link } from "react-router-dom";
 
+import "../../css/product_list.scss";
+
 function PdList({ category, className }) {
-  const selData = productLIst[category];
+  const pdData = productLIst[category];
+  const selData = Object.values(pdData);
+  const selDataKey = Object.keys(pdData);
+  
+  // console.log(selData,selDataKey[0]);
+  // Object.values(selData)
 
   return (
     <>
@@ -31,7 +38,7 @@ function PdList({ category, className }) {
             <ul className="product-img-slider">
               {selData.map((v, i) => (
                 <li key={i}>
-                  <Link to={v.link}>
+                  <Link to="/detail" state={{category:category,pname:selDataKey[i]}}>
                     <div className="product-img-box">
                       <img src={v.isrc1} alt={v.tit} />
                       {category == "single" ? (

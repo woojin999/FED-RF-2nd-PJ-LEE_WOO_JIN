@@ -1,3 +1,5 @@
+import "../../css/footer_area.scss";
+
 export default function FooterArea() {
   return (
     <>

@@ -1,0 +1,125 @@
+.product-list-box {
+    text-align: center;
+    > div {
+      margin-bottom: 30px;
+    }
+    .shop-all {
+      position: relative;
+      font-size: 1.4rem;
+      font-weight: 500;
+      overflow: hidden;
+    }
+    // 밑줄
+    .shop-all::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      right: 0;
+      background-color: #160d05;
+      height: 1.3px;
+      width: 100%;
+      overflow: hidden;
+      transition: 0.4s;
+    }
+    .shop-all:hover::after {
+      width: 50%;
+    }
+    .shop-all::before {
+      content: "";
+      background-color: #eeede7;
+      position: absolute;
+      bottom: -1px;
+      right: -100%;
+      width: 100%;
+      height: 1.3px;
+      transition: 0.4s;
+      overflow: hidden;
+      z-index: 999;
+      cursor: default;
+    }
+    .shop-all:hover::before {
+      right: -50%;
+    }
+  }
+  
+  .product-img-slider {
+    display: flex;
+    gap: 3%;
+  }
+  .product-img-box {
+    position: relative;
+    margin-bottom: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+    video {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .prd-img2 {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    &:hover video {
+      opacity: 1;
+    }
+    &:hover .prd-img2 {
+      opacity: 1;
+    }
+    &:hover .add-box {
+      bottom: 0;
+    }
+  }
+  .product-txt {
+    text-align: center;
+    font-weight: 500;
+    p {
+      color: #160d05;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+    span {
+      color: #7f6a55;
+      font-size: 1.4rem;
+    }
+  }
+  .add-box {
+    position: absolute;
+    bottom: -43px;
+    left: 0;
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: #eeede7;
+    height: 40px;
+    transition: bottom 0.3s;
+    opacity: 0.8;
+    span {
+      color: #160d05;
+      opacity: 1;
+      position: relative;
+      top: 33%;
+    }
+  }
+  .shop-tit:nth-child(1) {
+    margin-top: 70px;
+  }
+  
+  .shop-tit {
+    h2 {
+      font-size: 5.5rem;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+  .shop-link.off {
+    display: none;
+  }

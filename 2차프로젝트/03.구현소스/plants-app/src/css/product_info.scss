@@ -1,0 +1,33 @@
+//product-info-area
+.product-info {
+    padding: 0 50px;
+  }
+  .product-info-txt {
+    p {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    h2 {
+      padding: 20px 0;
+      font-size: 5.5rem;
+      font-weight: 600;
+    }
+    .tit2{
+      margin-top: 50px;
+    }
+  }
+  .product-info-img {
+    padding-top: 80px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      li {
+        flex-basis: 16.66%;
+      }
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        padding: 15px 0;
+      }
+    }
+  }

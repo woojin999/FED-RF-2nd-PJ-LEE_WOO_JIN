@@ -1,6 +1,8 @@
 import React from "react";
 import { productInfo } from "../data/product_info";
 
+import "../../css/product_info.scss";
+
 function PdInfo({ category }) {
   const selData = productInfo[category];
   //   console.log(selData[0].isrc);
@@ -12,7 +14,7 @@ function PdInfo({ category }) {
             <div className="product-info-txt">
               <p>{selData.tit1}</p>
               <h2>{selData.desc}</h2>
-              <p>{selData.tit2}</p>
+              <p className="tit2">{selData.tit2}</p>
             </div>
             <div className="product-info-img">
               <ul>
