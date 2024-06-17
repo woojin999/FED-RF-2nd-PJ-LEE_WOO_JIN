@@ -67,23 +67,23 @@ export const productInfo = {
     tit2: "WHEN TO USE",
     images: [
       {
-        isrc: "/gifs/Organic.gif",
+        isrc: "/gifs/Bag.gif",
         itxt: "Keep it in your bag for on-the-go support",
       },
       {
-        isrc: "/gifs/NonGMO.gif",
+        isrc: "/gifs/Meditativeday.gif",
         itxt: "For a gentle start to your day",
       },
       {
-        isrc: "/gifs/Nosugar.gif",
+        isrc: "/gifs/Travel.gif",
         itxt: "Your travel-friendly anxiety support",
       },
       {
-        isrc: "/gifs/Nosyntheticflavours.gif",
+        isrc: "/gifs/Moon.gif",
         itxt: "Take to wind down after a stressful day",
       },
       {
-        isrc: "/gifs/Noartificialcolours.gif",
+        isrc: "/images/Meditation.png",
         itxt: "A ritual before your meditation practice",
       },
     ],
@@ -94,19 +94,19 @@ export const productInfo = {
     tit2: "MAKE IT A RITUAL",
     images: [
       {
-        isrc: "/gifs/Organic.gif",
+        isrc: "/gifs/Bag.gif",
         itxt: "Keep it in your bag for on-the-go support",
       },
       {
-        isrc: "/gifs/NonGMO.gif",
+        isrc: "/gifs/Meditativeday.gif",
         itxt: "Use when you need the energy without the crash",
       },
       {
-        isrc: "/gifs/Nosugar.gif",
+        isrc: "/gifs/coffee.gif",
         itxt: "Add it to your tea/coffee for an adaptogenic boost",
       },
       {
-        isrc: "/gifs/Nosyntheticflavours.gif",
+        isrc: "/gifs/Brain.gif",
         itxt: "A daily ritual for long term cognitive benefits",
       },
     ],
@@ -117,19 +117,19 @@ export const productInfo = {
     tit2: "MAKE IT A RITUAL",
     images: [
       {
-        isrc: "/gifs/Organic.gif",
+        isrc: "/gifs/Bed.gif",
         itxt: "Keep it by your bedside for a nightly ritual",
       },
       {
-        isrc: "/gifs/NonGMO.gif",
+        isrc: "/gifs/Anxiety.png",
         itxt: "Soothe your central nervous system",
       },
       {
-        isrc: "/gifs/Nosugar.gif",
+        isrc: "/gifs/Moon.gif",
         itxt: "Take to wind down after a stressful day",
       },
       {
-        isrc: "/gifs/Nosyntheticflavours.gif",
+        isrc: "/gifs/Travel.gif",
         itxt: "Your travel-friendly jetlag support",
       },
     ],
@@ -140,19 +140,19 @@ export const productInfo = {
     tit2: "WHEN TO USE",
     images: [
       {
-        isrc: "/gifs/Organic.gif",
+        isrc: "/gifs/Candle.gif",
         itxt: "Your anti flatulence support on dinner dates ;)",
       },
       {
-        isrc: "/gifs/NonGMO.gif",
+        isrc: "/gifs/AdventurousEater.gif",
         itxt: "A faithful ally for adventurous eaters",
       },
       {
-        isrc: "/gifs/Nosugar.gif",
+        isrc: "/gifs/Travel.gif",
         itxt: "A digestive saviour on exotic holidays",
       },
       {
-        isrc: "/gifs/Nosyntheticflavours.gif",
+        isrc: "/gifs/Bag.gif",
         itxt: "Your on-the-go digestive support",
       },
     ],

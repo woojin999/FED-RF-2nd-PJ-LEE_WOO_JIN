@@ -1,0 +1,29 @@
+.promise-area{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+.promise-area-wrap{
+    background-color: #a2d0d2;
+    height: 500px;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    .video-box video{
+        box-sizing: border-box;
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+    .txt-box{
+        padding:0 6%;
+        p{
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
+        h2{
+            margin-top: 30px;
+            font-size: 3.5rem;
+        }
+    }
+}

@@ -12,7 +12,7 @@ function Shop(props) {
       </div>
       <PdList category={"single"} className={"off"} />
 
-      <PdList category={"bundle"} className={"off"} />
+      <PdList category={"bundle"} className={"off"} classSale={"on"} />
       <PdInfo category={"shop"} />
     </>
   );

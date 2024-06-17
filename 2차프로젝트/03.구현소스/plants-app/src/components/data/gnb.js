@@ -2,78 +2,68 @@ export const menu = [
   {
     txt: "SHOP",
     link: "/shop",
-    video: "./videos/Calm.mp4",
+    video: "/videos/Calm.mp4",
     single: [
       {
         txt: "HERBAL TINCTURES",
         link: "/shop",
-        pname:""
+        pname: "",
       },
       {
         txt: "SHROOM BOOST",
         link: "/detail",
-        pname:"shroomBoost",
+        pname: "shroomBoost",
       },
       {
         txt: "SLEEP",
         link: "/detail",
-        pname:"sleep"
+        pname: "sleep",
       },
       {
         txt: "DIGEST",
         link: "/detail",
-        pname:"digest"
+        pname: "digest",
       },
       {
         txt: "CALM",
         link: "/detail",
-        pname:"calm"
+        pname: "calm",
       },
     ],
     bundle: [
       {
         txt: "BUNDLES",
         link: "/shop",
-        pname:""
+        pname: "",
       },
       {
         txt: "ANXIETY RESCUE BUNDLE",
         link: "/detail",
-        pname:"anxietyRescueBundle"
+        pname: "anxietyRescueBundle",
       },
       {
         txt: "GUT RESCUE BUNDLE",
         link: "/detail",
-        pname:"gutRescueBundle"
+        pname: "gutRescueBundle",
       },
       {
         txt: "SLEEP RESCUE BUNDLE",
         link: "/detail",
-        pname:"sleepRescueBundle"
+        pname: "sleepRescueBundle",
       },
       {
         txt: "THE RESCUE BUNDLE",
         link: "/detail",
-        pname:"theRescueBundle"
+        pname: "theRescueBundle",
       },
     ],
   },
   {
-    txt: "LEARN",
-    link: "/learn",
-    single: [
-      {
-        txt: "ABOUT",
-        link: "/about",
-      },
-      {
-        txt: "BLOG",
-        link: "/blog",
-      },
-    ],
+    txt: "ABOUT",
+    link: "/about",
   },
   {
-    txt: "15% OFF",
-    link: "/newsletter",
+    txt: "BLOG",
+    link: "/blog",
   },
 ];

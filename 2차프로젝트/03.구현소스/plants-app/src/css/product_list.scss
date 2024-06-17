@@ -123,3 +123,20 @@
   .shop-link.off {
     display: none;
   }
+  .sale-box{
+    display: none;
+  }
+  .sale-box.on{
+    display: inline;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 55px;
+    height: 30px;
+    background-color: #D3744A;
+    border-radius: 4px;
+    p{
+      font-size: 1.2rem;
+      line-height: 3rem;
+    }
+  }

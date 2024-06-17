@@ -7,8 +7,9 @@ import { productLIst } from "../data/product_list";
 import PdList from "../modules/PdList";
 import PdInfo from "../modules/PdInfo";
 import Support from "../modules/Support";
+import Promise from "../modules/Promise";
 
-function ProductDetail({ product }) {
+function ProductDetail() {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -52,18 +53,13 @@ function ProductDetail({ product }) {
                 </div>
               </div>
             </div>
-            {/* <div className="product-detail-sub">
-              <div className="product-benefit">
-                <p>KEY BENEFITS</p>
-                <h2>{pvo.benefit}</h2>
-              </div>
-            </div> */}
           </div>
           <PdInfo category={pname} />
-          <Support />
+          {category == "single" && <Support category={pname} />}
         </section>
       </div>
-      <PdList category={"bundle"} className={"off"} />
+      <Promise />
+      <PdList category={"bundle"} className={"off"} classSale={"on"} />
     </>
   );
 }

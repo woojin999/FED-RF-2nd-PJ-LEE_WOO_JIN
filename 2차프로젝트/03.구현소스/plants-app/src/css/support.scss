@@ -1,0 +1,38 @@
+// support-area
+.support-wrap {
+  h2 {
+    font-size: 5rem;
+    font-weight: 600;
+    padding-bottom: 30px;
+  }
+}
+.support-img-wrap ul {
+  display: flex;
+  gap: 3%;
+  // / li가 3개일 때 /
+  li:first-child:nth-last-child(3),
+  li:first-child:nth-last-child(3) ~ li {
+    width: 33.3333%;
+  }
+
+  // / li가 4개일 때 /
+  li:first-child:nth-last-child(4),
+  li:first-child:nth-last-child(4) ~ li {
+    width: 25%;
+  }
+  img {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  p{
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+}
+.support-area-box {
+  padding: 0 40px;
+}

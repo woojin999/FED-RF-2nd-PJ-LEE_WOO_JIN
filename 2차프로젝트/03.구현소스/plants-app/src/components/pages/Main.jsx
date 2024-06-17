@@ -16,10 +16,10 @@ export default function Main() {
     <>
       {/* 배너 컴포넌트 */}
       <Banner />
-      <PdList category={"single"} />
+      <PdList category={"single"} classSale={""} />
       <PdInfo category={"main"} />
-      <Support />
-      <PdList category={"bundle"} className={"off"} />
+      <Support category={"main"} />
+      <PdList category={"bundle"} className={"off"} classSale={"on"} />
       <Faq />
     </>
   );

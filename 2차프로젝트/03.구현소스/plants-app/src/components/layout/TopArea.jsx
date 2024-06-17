@@ -15,17 +15,23 @@ export default function TopArea() {
                   <ul className="gnb-smenu fx-box">
                     {menu.map((v, i) => (
                       <li key={i}>
-                        {v.single ? (
-                          <a href="#">{v.txt}</a>
-                        ) : (
-                          <Link to={v.link}>{v.txt}</Link>
-                        )}
+                        <Link to={v.link}>
+                          <span>{v.txt}</span>
+                        </Link>
                         {v.single && (
                           <div className="smenu">
                             <ol className={v.bundle ? "col-3" : "col-6"}>
                               {v.single.map((v, i) => (
                                 <li key={i}>
-                                  <Link to={v.link} state={{category:"single",pname:v.pname}}>{v.txt}</Link>
+                                  <Link
+                                    to={v.link}
+                                    state={{
+                                      category: "single",
+                                      pname: v.pname,
+                                    }}
+                                  >
+                                    {v.txt}
+                                  </Link>
                                 </li>
                               ))}
                             </ol>
@@ -33,7 +39,15 @@ export default function TopArea() {
                               <ol className="col-3">
                                 {v.bundle.map((v, i) => (
                                   <li key={i}>
-                                    <Link to={v.link} state={{category:"bundle",pname:v.pname}}>{v.txt}</Link>
+                                    <Link
+                                      to={v.link}
+                                      state={{
+                                        category: "bundle",
+                                        pname: v.pname,
+                                      }}
+                                    >
+                                      {v.txt}
+                                    </Link>
                                   </li>
                                 ))}
                               </ol>
@@ -48,7 +62,7 @@ export default function TopArea() {
                                   playsInline
                                 ></video>
                               ) : (
-                                <img src="./images/Card_PDP.png" />
+                                <img src="/images/Card_PDP.png" />
                               )}
                             </div>
                           </div>
@@ -61,7 +75,7 @@ export default function TopArea() {
               <div className="col-4">
                 <div className="logo-box">
                   <Link to="/">
-                    <img src="./images/Pttr_Logo_Brown.png" alt="main-logo" />
+                    <img src="/images/Pttr_Logo_Brown.png" alt="main-logo" />
                   </Link>
                 </div>
               </div>

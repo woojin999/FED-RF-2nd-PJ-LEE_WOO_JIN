@@ -2,19 +2,31 @@ import React from "react";
 
 import { spData } from "../data/support";
 
-function Support(props) {
+import "../../css/support.scss";
+
+function Support({ category }) {
+  const selData = spData[category];
   return (
     <>
       <div id="support-area">
         <section className="support-area-box">
           <div className="support-wrap">
-            <h2>Herbal support, whenever you need it</h2>
+            <h2>{selData.tit}</h2>
             <div className="support-img-wrap">
               <ul>
-                {spData.map((v, i) => (
+                {selData.images.map((v, i) => (
                   <li key={i}>
                     <img src={v.isrc} alt="" />
-                    <h3>{v.desc}</h3>
+                    <div>
+                      {category == "main" ? (
+                        <h3>{v.desc}</h3>
+                      ) : (
+                        <>
+                          <h3>{v.iname}</h3>
+                          <p>{v.desc}</p>
+                        </>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>
