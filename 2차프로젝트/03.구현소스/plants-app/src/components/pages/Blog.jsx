@@ -1,11 +1,62 @@
-import React from 'react';
+import React from "react";
 
-function Blog(props) {
-    return (
-        <div>
-            <h2>블로그</h2>
-        </div>
-    );
+import "../../css/blog.scss";
+import { sblogData } from "../data/shop_blog";
+import { Link } from "react-router-dom";
+import PdList from "../modules/PdList";
+
+function Blog() {
+  return (
+    <>
+      <div id="blog-area">
+        <section className="blog-area">
+          <div className="blog-main">
+            <div className="blog-txt col-6">
+              <p>FEATURED POST</p>
+              <h2>What is a herbal tincture?</h2>
+              <p>
+                Tinctures are a fast acting form of herbal medicine that can be
+                used to target specific issues.
+              </p>
+              <div className="read-box">
+                <a href="#">
+                  <p className="read">READ MORE</p>
+                </a>
+              </div>
+            </div>
+            <div className="blog-main-img col-6">
+              <img src="/images/blog4.png" alt="" />
+            </div>
+          </div>
+        </section>
+        <section className="bloglist-area-box">
+          <div className="bloglist-wrap">
+            <div className="bloglist-img-wrap">
+              <ul>
+                {sblogData.map((v, i) => (
+                  <li key={i}>
+                    <Link to="/blog">
+                      <img src={v.isrc} alt="" />
+                      <div>
+                        {
+                          <>
+                            <h3>{v.tit}</h3>
+                            <p>{v.desc}</p>
+                          </>
+                        }
+                      </div>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+      <PdList category={"single"} className={"off"} blog={"blog"} />
+    </>
+  );
 }
 
 export default Blog;

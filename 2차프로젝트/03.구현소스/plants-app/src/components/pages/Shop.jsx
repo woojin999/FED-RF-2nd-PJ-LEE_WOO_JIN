@@ -1,7 +1,8 @@
 import React, { useLayoutEffect } from "react";
 import PdList from "../modules/PdList";
 import PdInfo from "../modules/PdInfo";
-function Shop(props) {
+import ShopBlog from "../modules/ShopBlog";
+function Shop() {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -14,6 +15,7 @@ function Shop(props) {
 
       <PdList category={"bundle"} className={"off"} classSale={"on"} />
       <PdInfo category={"shop"} />
+      <ShopBlog />
     </>
   );
 }

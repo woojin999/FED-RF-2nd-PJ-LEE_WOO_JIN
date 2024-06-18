@@ -1,14 +1,14 @@
-// support-area
-.support-wrap {
+// shopblog-area
+.shopblog-wrap {
   h2 {
     font-size: 5rem;
     font-weight: 600;
     padding-bottom: 30px;
   }
 }
-.support-img-wrap ul {
+.shopblog-img-wrap ul {
   display: flex;
-  gap: 3%;
+  gap: 20px;
   // / li가 3개일 때 /
   li:first-child:nth-last-child(3),
   li:first-child:nth-last-child(3) ~ li {
@@ -33,7 +33,8 @@
     font-size: 1.5rem;
   }
 }
-.support-area-box {
-  padding: 0 40px;
-  
+.shopblog-area-box {
+  padding: 40px 40px 0;
+  background-color: #a2d0d2;
+  margin-bottom: -10rem;
 }

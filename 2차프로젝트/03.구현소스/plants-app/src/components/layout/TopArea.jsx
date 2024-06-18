@@ -98,9 +98,9 @@ export default function TopArea() {
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <Link to="/login">
                         <i className="fa-regular fa-circle-user"></i>
-                      </a>
+                      </Link>
                     </li>
                     <li>
                       <a href="">

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import "../../css/product_list.scss";
 
-function PdList({ category, className, classSale }) {
+function PdList({ category, className, classSale,blog }) {
   const pdData = productLIst[category];
   const selData = Object.values(pdData);
   const selDataKey = Object.keys(pdData);
@@ -30,6 +30,11 @@ function PdList({ category, className, classSale }) {
                       Save <img src="/images/sticker.png" alt="sticker" />
                       &nbsp;with bundles
                     </h2>
+                  </div>
+                )}
+                {blog == "blog" && (
+                  <div className="blog-tit">
+                    <h2>Shop herbal saviours</h2>
                   </div>
                 )}
               </>

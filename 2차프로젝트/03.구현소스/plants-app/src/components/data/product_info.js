@@ -31,7 +31,7 @@ export const productInfo = {
     ],
   },
   shop: {
-    tit1: "WHAT ARE HERasdasdBAL TINCTURES?",
+    tit1: "WHAT ARE HERBAL TINCTURES?",
     desc: "Herbal tinctures are highly bioavailable concentrated essence of medicinal herbs.",
     tit2: "",
     images: [

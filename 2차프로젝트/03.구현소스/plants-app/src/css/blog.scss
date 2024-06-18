@@ -1,0 +1,123 @@
+#blog-area {
+  padding-top: 8rem;
+}
+.blog-area {
+  max-width: 1750px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+.blog-main {
+  display: flex;
+  height: 500px;
+  .blog-txt {
+    padding-top: 80px;
+    padding-left: 100px;
+    padding-right: 80px;
+    p {
+      font-size: 1.3rem;
+      &:nth-child(3) {
+        font-size: 1.8rem;
+      }
+    }
+    h2 {
+      margin-top: 7rem;
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+  }
+}
+.blog-main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.read-box {
+  margin-top: 2rem;
+  // overflow: hidden;
+}
+
+.read {
+  padding-top: 1rem;
+  position: relative;
+  display: inline;
+  width: 100%;
+}
+// 밑줄
+.read::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: 0;
+  background-color: #160d05;
+  height: 1.3px;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.4s;
+}
+.read:hover::after {
+  width: 50%;
+}
+.read::before {
+  content: "";
+  background-color: #eeede7;
+  position: absolute;
+  bottom: -1px;
+  right: -100%;
+  width: 100%;
+  height: 1.3px;
+  transition: 0.4s;
+  overflow: hidden;
+  z-index: 999;
+  cursor: default;
+}
+.read:hover::before {
+  right: -50%;
+}
+.shopblog-wrap .shopblog-img-wrap ul {
+  display: flex;
+//   flex-wrap: wrap;
+  li {
+    width: calc(33.333333333% - 13.5px);
+  }
+}
+
+// shopblog-area
+.bloglist-wrap {
+  h2 {
+    font-size: 5rem;
+    font-weight: 600;
+    padding-bottom: 30px;
+  }
+}
+.bloglist-img-wrap ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  li {
+    width: calc(33.333333333% - 13.5px);
+    margin-bottom: 20px;
+  }
+  img {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  p{
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+}
+.bloglist-area-box {
+  padding: 40px 40px 0;
+  margin-bottom: -10rem;
+}
+.bloglist-area-box{
+    padding-bottom: 10rem;
+}
+.blog-tit{
+  font-size: 3rem;
+}
