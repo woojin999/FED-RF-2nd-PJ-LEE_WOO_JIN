@@ -1,52 +1,56 @@
-#login-area{
-    padding-top: 6rem;
+#login-area {
+  padding-top: 6rem;
 }
 
-.login-area{
-    max-width: 55rem;
-    margin: 0 auto;
-    padding: 0 40px;
-    text-align: center;
+.login-area {
+  max-width: 55rem;
+  margin: 0 auto;
+  padding: 0 40px;
+  text-align: center;
 }
-.login-wrap{
-    .signbtn{
-        text-align: left;
-        float: left;
+.login-wrap {
+  .signtxt {
+    display: inline-block;
+    margin: 2.5rem 0;
+    p {
+      font-size: 1.6rem;
     }
-    > p{
-        margin: 2.5rem 0;
-        font-size: 1.6rem;
-    }
-    h2{
-        font-size: 4rem;
-    }
-    input{
-        width: 100%;
-        margin-bottom: 2rem;
-        height: 3.5rem;
-        background-color: #eeede7;
-        border: 1px solid #503217;
-        border-radius: 5px;
-    }
-    button{
-        border: none;
-        border-radius: 5px;
-        background-color: #503217;
-        height: 4rem;
-        width: 10rem;
-        cursor: pointer;
-        p{
-            // line-height: 5rem;
-            color: #eeede7;
-            font-size: 1.5rem;
-        }
-    }
-}
-.forgot-box{
+  }
+  .signbtn {
+    text-align: left;
+    float: left;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+  input {
+    width: 100%;
+    margin-bottom: 2rem;
+    height: 3.5rem;
+    background-color: #eeede7;
+    border: 1px solid #503217;
+    border-radius: 5px;
+  }
+  button {
+    border: none;
+    border-radius: 5px;
+    background-color: #503217;
     height: 4rem;
-    float: right;
-    font-size: 1.4rem;
-    line-height: 4rem;
+    width: 10rem;
+    cursor: pointer;
+    p {
+      // line-height: 5rem;
+      color: #eeede7;
+      font-size: 1.5rem;
+    }
+  }
+}
+.forgot-box {
+  height: 4rem;
+  float: right;
+  font-size: 1.4rem;
+  line-height: 4rem;
 }
 
 .forgot {
@@ -58,7 +62,6 @@
 }
 // 밑줄
 .forgot::after {
-    
   content: "";
   position: absolute;
   bottom: -3px;
@@ -70,11 +73,11 @@
   transition: 0.4s;
 }
 .forgot:hover::after {
-    width: 50%;
+  width: 50%;
 }
 .forgot::before {
-    content: "";
-    // background-color: #160d05;
+  content: "";
+  // background-color: #160d05;
   background-color: #eeede7;
   position: absolute;
   bottom: -3px;
@@ -83,9 +86,51 @@
   height: 1.3px;
   transition: 0.4s;
   overflow: auto;
-  z-index: 999;
+  z-index: 9;
   cursor: default;
 }
 .forgot:hover::before {
+  left: 50%;
+}
+
+
+
+.signup {
+  padding-top: 1rem;
+  position: relative;
+  display: inline;
+  width: 100%;
+  overflow: hidden;
+}
+// 밑줄
+.signup::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  right: 0;
+  background-color: #160d05;
+  height: 1.3px;
+  width: 100%;
+  overflow: auto;
+  transition: 0.4s;
+}
+.signup:hover::after {
+  width: 50%;
+}
+.signup::before {
+  content: "";
+  // background-color: #160d05;
+  background-color: #eeede7;
+  position: absolute;
+  bottom: -3px;
+  left: 100%;
+  width: 50%;
+  height: 1.3px;
+  transition: 0.4s;
+  overflow: auto;
+  z-index: 9;
+  cursor: default;
+}
+.signup:hover::before {
   left: 50%;
 }

@@ -68,7 +68,7 @@
   height: 1.3px;
   transition: 0.4s;
   overflow: hidden;
-  z-index: 999;
+  z-index: 1;
   cursor: default;
 }
 .read:hover::before {

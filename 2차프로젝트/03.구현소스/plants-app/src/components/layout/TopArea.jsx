@@ -1,9 +1,20 @@
 import { Link } from "react-router-dom";
 import { menu } from "../data/gnb";
 
+import $ from "jquery";
+
 import "../../css/top_area.scss";
 
 export default function TopArea() {
+  const searchBtn = (e) => {
+    e.preventDefault();
+    $(".search-area").addClass("on");
+    $(".searchInput").val("").focus();
+  };
+  const searchRBtn = () => {
+    $(".search-area").removeClass("on");
+  };
+
   return (
     <>
       <div id="top-area">
@@ -83,17 +94,17 @@ export default function TopArea() {
                 <nav className="sub-gnb">
                   <ul className="fx-box">
                     <li>
-                      <a href="">
+                      <a href="#">
                         <i className="fa-brands fa-instagram"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a href="#">
                         <i className="fa-brands fa-tiktok"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a href="#">
                         <i className="fa-brands fa-pinterest"></i>
                       </a>
                     </li>
@@ -103,17 +114,36 @@ export default function TopArea() {
                       </Link>
                     </li>
                     <li>
-                      <a href="">
-                        <i className="fa-solid fa-magnifying-glass"></i>
+                      <a href="#">
+                        <i
+                          className="fa-solid fa-magnifying-glass"
+                          onClick={searchBtn}
+                        ></i>
                       </a>
                     </li>
                     <li>
-                      <a href="">
+                      <a href="#">
                         <i className="fa-solid fa-cart-shopping"></i>
                       </a>
                     </li>
                   </ul>
                 </nav>
+              </div>
+            </div>
+            <div className="search-area">
+              <div className="search-box">
+                <div className="search-wrap">
+                  <i className="fa-solid fa-magnifying-glass fa-3x"></i>
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    className="searchInput"
+                  />
+                  <i
+                    className="fa-solid fa-xmark fa-3x xbtn"
+                    onClick={searchRBtn}
+                  ></i>
+                </div>
               </div>
             </div>
           </div>

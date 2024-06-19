@@ -1,7 +1,9 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import "../../css/product_detail.scss";
+
+import $ from "jquery";
 
 import { productLIst } from "../data/product_list";
 import PdList from "../modules/PdList";
@@ -10,9 +12,21 @@ import Support from "../modules/Support";
 import Promise from "../modules/Promise";
 
 function ProductDetail() {
+  let cntNum = 1;
+  $("#prdcnt").val("1");
+  const countUp = () => {
+    cntNum++;
+    $("#prdcnt").val(cntNum);
+  };
+  const countDown = () => {
+    if (cntNum > 1) cntNum--;
+    $("#prdcnt").val(cntNum);
+  };
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
+
   const loc = useLocation();
   const pname = loc.state.pname;
   const category = loc.state.category;
@@ -33,11 +47,11 @@ function ProductDetail() {
                 <p>${pvo.price}</p>
                 <div className="cart-wrap">
                   <div className="product-count-box">
-                    <button>
+                    <button onClick={countDown}>
                       <i className="fa-solid fa-minus"></i>
                     </button>
-                    <input type="text" defaultValue={1} />
-                    <button>
+                    <input type="text" id="prdcnt" defaultValue={1} />
+                    <button onClick={countUp}>
                       <i className="fa-solid fa-plus"></i>
                     </button>
                   </div>

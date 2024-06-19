@@ -11,7 +11,6 @@ function Faq() {
   const toggleFaq = (e) => {
     let tg = e.currentTarget;
     // console.log(tg);
-    const answer = tg.lastChild;
     // console.log(Event.currentTarget);
     let isT = tg.classList.contains("on");
     if (isT) {

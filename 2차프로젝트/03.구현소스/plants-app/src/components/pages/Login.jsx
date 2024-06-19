@@ -9,9 +9,14 @@ function Login(props) {
       <section className="login-area">
         <div className="login-wrap">
           <h2>Login</h2>
-          <p>
-            Don't have an account? <a href="">Sign up here.</a>
-          </p>
+          <div className="signtxt">
+            <p>Don't have an account? &nbsp;</p>
+          </div>
+          <div className="signtxt">
+            <p className="signup">
+              <a href="">Sign up here.</a>
+            </p>
+          </div>
           <form action="">
             <input type="email" placeholder="Email" />
             <input type="password" placeholder="Password" />
@@ -22,8 +27,9 @@ function Login(props) {
             </button>
           </div>
           <div className="forgot-box">
-
-            <Link><p className="forgot">Forgot your password?</p></Link>
+            <Link>
+              <p className="forgot">Forgot your password?</p>
+            </Link>
           </div>
         </div>
       </section>
