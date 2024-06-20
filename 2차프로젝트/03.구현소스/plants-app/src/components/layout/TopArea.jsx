@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { menu } from "../data/gnb";
 
 import $ from "jquery";
@@ -14,6 +14,23 @@ export default function TopArea() {
   const searchRBtn = () => {
     $(".search-area").removeClass("on");
   };
+
+  const goNav = useNavigate();
+
+  const enterKey = (e) =>{
+    if (e.key == "Enter") {
+      let txt = $(e.target).val().trim();
+      if (txt != ''){
+        $(".search-area").removeClass("on");
+        goSearch(txt);
+      }
+    }
+  }
+
+  const goSearch = (txt) => {
+    console.log("검색",txt);
+    goNav("search",{state:{keyword:txt}})
+  }
 
   return (
     <>
@@ -138,6 +155,7 @@ export default function TopArea() {
                     type="text"
                     placeholder="Search"
                     className="searchInput"
+                    onKeyUp={enterKey}
                   />
                   <i
                     className="fa-solid fa-xmark fa-3x xbtn"

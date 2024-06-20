@@ -10,6 +10,7 @@ import About from "./components/pages/About";
 import Blog from "./components/pages/Blog";
 import ProductDetail from "./components/pages/ProductDetail";
 import Login from "./components/pages/Login";
+import SearchPage from "./components/pages/SearchPage";
 
 export default function MainComponent() {
   return (
@@ -22,6 +23,7 @@ export default function MainComponent() {
           <Route path="blog" element={<Blog />}/>
           <Route path="detail" element={<ProductDetail />} />
           <Route path="login" element={<Login />} />
+          <Route path="search" element={<SearchPage/>} />
         </Route>
       </Routes>
     </BrowserRouter>
