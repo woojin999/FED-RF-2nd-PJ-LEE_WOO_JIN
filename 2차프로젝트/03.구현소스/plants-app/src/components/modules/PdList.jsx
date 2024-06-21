@@ -1,12 +1,12 @@
 import React from "react";
 
-import { productLIst } from "../data/product_list";
+import { productList } from "../data/product_list";
 import { Link } from "react-router-dom";
 
 import "../../css/product_list.scss";
 
 function PdList({ category, className, classSale,blog }) {
-  const pdData = productLIst[category];
+  const pdData = productList[category];
   const selData = Object.values(pdData);
   const selDataKey = Object.keys(pdData);
 

@@ -52,5 +52,23 @@
   }
 }
 .searching-info {
-  padding: 0 15px;
+  padding: 40px 40px 0;
+}
+
+
+.plist {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    width: calc(25% - 2%);
+    margin: 1%;
+  }
+  img,video {
+    width: 100%;
+  }
+}
+
+.searching-list > p {
+  margin-top: 6rem;
+  font-size: 2rem;
 }

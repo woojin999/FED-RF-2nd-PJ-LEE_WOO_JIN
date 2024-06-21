@@ -21,16 +21,26 @@ export default function TopArea() {
     if (e.key == "Enter") {
       let txt = $(e.target).val().trim();
       if (txt != ''){
-        $(".search-area").removeClass("on");
         goSearch(txt);
+        $(".search-area").removeClass("on");
       }
     }
   }
+
+  const goSearchBtn = () => {
+      let txt = $("#topSearchingVal").val().trim();
+      if (txt != "") {
+        goSearch(txt);
+        $(".search-area").removeClass("on");
+      }
+    
+  };
 
   const goSearch = (txt) => {
     console.log("검색",txt);
     goNav("search",{state:{keyword:txt}})
   }
+
 
   return (
     <>
@@ -150,8 +160,10 @@ export default function TopArea() {
             <div className="search-area">
               <div className="search-box">
                 <div className="search-wrap">
-                  <i className="fa-solid fa-magnifying-glass fa-3x"></i>
+                  <i className="fa-solid fa-magnifying-glass fa-3x"
+                  onClick={goSearchBtn}></i>
                   <input
+                  id="topSearchingVal"
                     type="text"
                     placeholder="Search"
                     className="searchInput"

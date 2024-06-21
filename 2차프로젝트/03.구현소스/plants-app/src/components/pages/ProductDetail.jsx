@@ -5,7 +5,7 @@ import "../../css/product_detail.scss";
 
 import $ from "jquery";
 
-import { productLIst } from "../data/product_list";
+import { productList } from "../data/product_list";
 import PdList from "../modules/PdList";
 import PdInfo from "../modules/PdInfo";
 import Support from "../modules/Support";
@@ -31,7 +31,7 @@ function ProductDetail() {
   const pname = loc.state.pname;
   const category = loc.state.category;
   console.log(pname, category);
-  const pvo = productLIst[category][pname];
+  const pvo = productList[category][pname];
   console.log(pvo);
   return (
     <>

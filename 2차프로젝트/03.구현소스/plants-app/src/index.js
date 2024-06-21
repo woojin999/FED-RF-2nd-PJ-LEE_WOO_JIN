@@ -11,6 +11,7 @@ import Blog from "./components/pages/Blog";
 import ProductDetail from "./components/pages/ProductDetail";
 import Login from "./components/pages/Login";
 import SearchPage from "./components/pages/SearchPage";
+import BlogDetail from "./components/pages/BlogDetail";
 
 export default function MainComponent() {
   return (
@@ -24,6 +25,7 @@ export default function MainComponent() {
           <Route path="detail" element={<ProductDetail />} />
           <Route path="login" element={<Login />} />
           <Route path="search" element={<SearchPage/>} />
+          <Route path="blogDetail" element ={<BlogDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

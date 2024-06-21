@@ -1,4 +1,4 @@
-export const productLIst = {
+export const productList = {
   single: {
     calm: {
       isrc1: "/images/Calm.png",

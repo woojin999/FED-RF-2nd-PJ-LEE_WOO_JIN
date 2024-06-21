@@ -76,7 +76,7 @@
 }
 .shopblog-wrap .shopblog-img-wrap ul {
   display: flex;
-//   flex-wrap: wrap;
+  //   flex-wrap: wrap;
   li {
     width: calc(33.333333333% - 13.5px);
   }
@@ -93,9 +93,9 @@
 .bloglist-img-wrap ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 2%;
   li {
-    width: calc(33.333333333% - 13.5px);
+    width: calc(33.333333333% - 1.333333333%);
     margin-bottom: 20px;
   }
   img {
@@ -106,18 +106,20 @@
     font-size: 1.8rem;
     font-weight: 600;
   }
-  p{
+  p {
     margin-top: 10px;
     font-size: 1.5rem;
   }
 }
 .bloglist-area-box {
+  max-width: 1750px;
   padding: 40px 40px 0;
+  margin: 0 auto;
   margin-bottom: -10rem;
 }
-.bloglist-area-box{
-    padding-bottom: 10rem;
+.bloglist-area-box {
+  padding-bottom: 10rem;
 }
-.blog-tit{
+.blog-tit {
   font-size: 3rem;
 }

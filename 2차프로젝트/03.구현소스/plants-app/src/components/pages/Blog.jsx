@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 
 import "../../css/blog.scss";
-import { sblogData } from "../data/shop_blog";
+import { sblogData } from "../data/blog";
 import { Link } from "react-router-dom";
 import PdList from "../modules/PdList";
 
 function Blog() {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <>
       <div id="blog-area">
@@ -35,7 +39,17 @@ function Blog() {
               <ul>
                 {sblogData.map((v, i) => (
                   <li key={i}>
-                    <Link to="/blog">
+                    <Link
+                      to="/blogDetail"
+                      state={{
+                        isrc: v.isrc,
+                        tit: v.tit,
+                        desc: v.desc,
+                        maindesc: v.maindesc,
+                        descimg:v.descimg,
+                        suvtit:v.subtit
+                      }}
+                    >
                       <img src={v.isrc} alt="" />
                       <div>
                         {
@@ -53,7 +67,7 @@ function Blog() {
           </div>
         </section>
       </div>
-      
+
       <PdList category={"single"} className={"off"} blog={"blog"} />
     </>
   );
