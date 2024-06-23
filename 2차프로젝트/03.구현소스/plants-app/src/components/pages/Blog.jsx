@@ -23,9 +23,18 @@ function Blog() {
                 used to target specific issues.
               </p>
               <div className="read-box">
-                <a href="#">
+                <Link
+                to="/blogDetail"
+                state={{
+                  isrc: sblogData[3].isrc,
+                  tit: sblogData[3].tit,
+                  desc: sblogData[3].desc,
+                  maindesc: sblogData[3].maindesc,
+                  descimg:sblogData[3].descimg,
+                  suvtit:sblogData[3].subtit
+                }}>
                   <p className="read">READ MORE</p>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="blog-main-img col-6">

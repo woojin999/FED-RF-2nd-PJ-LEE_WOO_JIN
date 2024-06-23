@@ -1,5 +1,5 @@
 .blog-detail-area{
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 40px;
     
@@ -27,8 +27,33 @@
 }
 
 .blog-desc{
+    padding-right: 5rem;
     p{
         font-size: 1.8rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    h2{
+        font-size: 4rem;
+        margin-bottom: 2.5rem;
+    }
+    img{
+        width: 100%;
+        margin-bottom: 2.5rem;
+    }
+}
+.blog-entries{
+    h3{
+        font-size: 2rem;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #000;
+        margin-bottom: 3rem;
+    }
+    li img{
+        width: 100%;
+        margin-bottom: 2.5rem;
+    }
+    h4{
+        font-size: 2rem;
+        margin-bottom: 3rem;
     }
 }
