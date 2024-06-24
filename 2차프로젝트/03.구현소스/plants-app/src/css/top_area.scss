@@ -15,21 +15,36 @@
 .gnb-box {
   height: 90px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-content: center;
   position: relative;
 }
 .gnb-smenu {
-  line-height: 40px;
+  line-height: 90px;
 }
 .sub-gnb-box {
   justify-content: flex-end;
 }
 .logo-box {
   text-align: center;
+  line-height: 90px;
 }
 .gnb-menu {
   margin-left: 50px;
+}
+.ham-li {
+  display: none;
+  .ham-menu {
+    font-size: 2.5rem;
+  }
+}
+.ham-sc {
+  font-size: 20px;
+
+  display: none;
+  a {
+    font-size: 2.3rem;
+  }
 }
 .gnb-menu ul {
   gap: 30px;
@@ -40,7 +55,7 @@
   // cursor: pointer;
 }
 .sub-gnb {
-  margin-right: 50px;
+  padding-right: 30px;
 }
 .sub-gnb a {
   // padding: 10px;
@@ -65,11 +80,17 @@
     padding-top: 40px;
     li {
       line-height: 30px;
+      // font-weight: 800;
     }
   }
 }
 .smenu ol:nth-child(1) {
   padding-left: 50px;
+}
+.smenu ol:nth-child(-n + 2) {
+  li:nth-child(1) a {
+    font-weight: 600;
+  }
 }
 .gnb-smenu li:nth-child(1) .smenu ol li:nth-child(1) {
   margin-bottom: 20px;
@@ -77,8 +98,8 @@
 .smenu ol li:nth-child(n + 2) {
   font-weight: 500;
 }
-.gnb-smenu > li:nth-child(2) ol li {
-  font-weight: 600;
+.gnb-smenu > li:nth-child(4) ol li {
+  font-weight: 700;
 }
 
 .smenu li a:hover {
@@ -104,6 +125,7 @@
 .gnb-smenu li span {
   position: relative;
   overflow: hidden;
+  font-weight: 600;
 }
 
 .gnb-smenu li span::after {
@@ -186,9 +208,135 @@
   }
   input:focus {
     outline: none;
-    
   }
   i {
     cursor: pointer;
+  }
+}
+.ham-area {
+  position: absolute;
+  background-color: #eeede7;
+  left: -350px;
+  top: 0;
+  max-width: 350px;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition:  .5s;
+
+}
+.ham-box {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  ul {
+    margin-top: 3rem;
+  }
+  li:nth-child(1) {
+    position: relative;
+    // margin-top: 1rem;
+  }
+  li {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    .sub-txt {
+      display: inline-block;
+      width: 100%;
+      font-size: 2rem;
+    }
+    .ham-sub-m {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      // width: 100%;
+      // height: 100%;
+    }
+    .ham-sub-p {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      opacity: 1;
+      transition: 0.5s;
+    }
+  }
+}
+.ham-menu {
+  height: 0;
+  transition: 0.5s;
+  cursor: pointer;
+  ol:nth-child(1) {
+    li:nth-child(1) {
+      padding-top: 1rem;
+      font-size: 2rem;
+    }
+    a {
+      font-size: 1.4rem;
+    }
+  }
+  ol:nth-child(2) {
+    a {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+
+.ham-list {
+  a {
+    display: inline-block;
+    width: 100%;
+
+    font-size: 2rem;
+  }
+}
+.ham-list.on {
+  .ham-menu {
+    height: 330px;
+  }
+  .ham-sub-p {
+    opacity: 0;
+    transform: rotate(180deg);
+  }
+}
+.ham-xbtn{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 940px) {
+  .sub-gnb {
+    li:nth-child(-n + 3) {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 800px) {
+  .gnb-menu {
+    margin-left: 30px;
+    ul {
+      gap: 15px;
+    }
+    li:nth-child(n + 3):nth-child(-n + 5) {
+      display: none;
+    }
+    li:nth-child(-n + 2) {
+      display: block;
+    }
+  }
+  .sub-gnb {
+    padding-right: 10px;
+  }
+  .sub-gnb {
+    li:nth-child(5) {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .logo-box {
+    img {
+      width: 150px;
+    }
   }
 }

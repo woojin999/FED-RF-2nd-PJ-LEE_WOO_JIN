@@ -17,30 +17,42 @@ export default function TopArea() {
 
   const goNav = useNavigate();
 
-  const enterKey = (e) =>{
+  const enterKey = (e) => {
     if (e.key == "Enter") {
       let txt = $(e.target).val().trim();
-      if (txt != ''){
-        goSearch(txt);
-        $(".search-area").removeClass("on");
-      }
-    }
-  }
-
-  const goSearchBtn = () => {
-      let txt = $("#topSearchingVal").val().trim();
       if (txt != "") {
         goSearch(txt);
         $(".search-area").removeClass("on");
       }
-    
+    }
+  };
+
+  const goSearchBtn = () => {
+    let txt = $("#topSearchingVal").val().trim();
+    if (txt != "") {
+      goSearch(txt);
+      $(".search-area").removeClass("on");
+    }
   };
 
   const goSearch = (txt) => {
-    console.log("검색",txt);
-    goNav("search",{state:{keyword:txt}})
-  }
+    console.log("검색", txt);
+    goNav("search", { state: { keyword: txt } });
+  };
 
+  const goHamSub = () => {
+    console.log($(".ham-list:first"));
+
+    $(".ham-list:first").toggleClass("on");
+  };
+
+  const goHam = () => {
+    $(".ham-area").css({ left: "0px", opacity: "1" });
+  };
+
+  const closeHam = () => {
+    $(".ham-area").css({ left: "-350px", opacity: "0" });
+  };
 
   return (
     <>
@@ -51,6 +63,19 @@ export default function TopArea() {
               <div className="col-4">
                 <nav className="gnb-menu">
                   <ul className="gnb-smenu fx-box">
+                    <li className="ham-li">
+                      <div className="ham-menu" onClick={goHam}>
+                        <i className="fa-solid fa-bars"></i>
+                      </div>
+                    </li>
+                    <li className="ham-sc">
+                      <a href="#">
+                        <i
+                          className="fa-solid fa-magnifying-glass"
+                          onClick={searchBtn}
+                        ></i>
+                      </a>
+                    </li>
                     {menu.map((v, i) => (
                       <li key={i}>
                         <Link to={v.link}>
@@ -160,10 +185,12 @@ export default function TopArea() {
             <div className="search-area">
               <div className="search-box">
                 <div className="search-wrap">
-                  <i className="fa-solid fa-magnifying-glass fa-3x"
-                  onClick={goSearchBtn}></i>
+                  <i
+                    className="fa-solid fa-magnifying-glass fa-3x"
+                    onClick={goSearchBtn}
+                  ></i>
                   <input
-                  id="topSearchingVal"
+                    id="topSearchingVal"
                     type="text"
                     placeholder="Search"
                     className="searchInput"
@@ -173,6 +200,78 @@ export default function TopArea() {
                     className="fa-solid fa-xmark fa-3x xbtn"
                     onClick={searchRBtn}
                   ></i>
+                </div>
+              </div>
+            </div>
+            <div className="ham-area">
+              <div className="ham-box">
+                <div className="ham-wrap">
+                  <i
+                    className="fa-solid fa-xmark fa-3x ham-xbtn"
+                    onClick={closeHam}
+                  ></i>
+                  <ul>
+                    {menu.map((v, i) => (
+                      <li key={i} className="ham-list">
+                        {v.single ? (
+                          <>
+                            <span className="sub-txt" onClick={goHamSub}>
+                              {v.txt}
+                            </span>
+                            <div onClick={goHamSub}>
+                              <span className="ham-sub-m">
+                                <i className="fa-solid fa-minus fa-lg"></i>
+                              </span>
+                              <span className="ham-sub-p">
+                                <i className="fa-solid fa-plus fa-lg"></i>
+                              </span>
+                            </div>
+                          </>
+                        ) : (
+                          <Link to={v.link}>
+                            <span>{v.txt}</span>
+                          </Link>
+                        )}
+
+                        {v.single && (
+                          <div className="ham-menu">
+                            <ol className={v.bundle ? "col-3" : "col-6"}>
+                              {v.single.map((v, i) => (
+                                <li key={i}>
+                                  <Link
+                                    to={v.link}
+                                    state={{
+                                      category: "single",
+                                      pname: v.pname,
+                                    }}
+                                  >
+                                    {v.txt}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ol>
+                            {v.bundle && (
+                              <ol className="col-3">
+                                {v.bundle.map((v, i) => (
+                                  <li key={i}>
+                                    <Link
+                                      to={v.link}
+                                      state={{
+                                        category: "bundle",
+                                        pname: v.pname,
+                                      }}
+                                    >
+                                      {v.txt}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ol>
+                            )}
+                          </div>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>

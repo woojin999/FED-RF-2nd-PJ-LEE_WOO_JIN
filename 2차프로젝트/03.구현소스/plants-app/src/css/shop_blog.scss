@@ -28,13 +28,46 @@
     font-size: 1.8rem;
     font-weight: 600;
   }
-  p{
+  p {
     margin-top: 10px;
     font-size: 1.5rem;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
 }
 .shopblog-area-box {
   padding: 40px 40px 0;
   background-color: #a2d0d2;
   margin-bottom: -10rem;
+}
+
+@media screen and (max-width: 800px) {
+  .shopblog-wrap .shopblog-img-wrap ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    // / li가 4개일 때 /
+    li:first-child:nth-last-child(4),
+    li:first-child:nth-last-child(4) ~ li {
+      width: 48%;
+    }
+    img {
+      margin-top: 6%;
+    }
+    h3{
+      font-size: 1.7rem;
+    }
+    p{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+  }
 }

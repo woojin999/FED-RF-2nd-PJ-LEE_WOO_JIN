@@ -109,6 +109,11 @@
   p {
     margin-top: 10px;
     font-size: 1.5rem;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
 }
 .bloglist-area-box {
@@ -122,4 +127,29 @@
 }
 .blog-tit {
   font-size: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+  .blog-main {
+    display: flex;
+    height: auto;
+    flex-direction: column-reverse;
+    .blog-txt {
+      padding-left: 0px;
+      padding-right: 0px;
+      h2{
+        margin-top: 5rem;
+        font-size: 3rem;
+      }
+    }
+  }
+  .bloglist-img-wrap ul li {
+    width: 49%;
+  }
+  .blog-main-area {
+    display: block;
+  }
+  .blog-desc {
+    padding-right: 0;
+  }
 }

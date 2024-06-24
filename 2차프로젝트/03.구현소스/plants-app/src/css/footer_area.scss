@@ -21,7 +21,7 @@
     margin-top: 40px;
     display: flex;
     h4 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 900;
       margin-bottom: 20px;
     }
@@ -32,14 +32,48 @@
         justify-content: center;
         li {
           padding: 0 3%;
-          font-size: 3rem;
+          font-size: 2rem;
         }
       }
     }
     .info-detail-box {
       text-align: right;
       img {
-        width: 150px;
+        width: 100px;
+      }
+    }
+    .info-box{
+      p{
+        font-size: 1.4rem;
+        margin-bottom: .4rem;
       }
     }
   }
+
+  @media screen and (max-width: 800px) {
+    .footer-img-box .ft-img-wrap ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    li{
+      width: 48%;
+    }
+    img{
+      margin-top: 6%;
+    }
+    
+    
+}
+  
+}
+  @media screen and (max-width: 550px) {
+  .footer-img-box h2 {
+    margin: 20px 0;
+    font-size: 3rem;
+}
+}
+  @media screen and (max-width: 400px) {
+  .footer-img-box h2 {
+    font-size: 2.4rem;
+}
+}

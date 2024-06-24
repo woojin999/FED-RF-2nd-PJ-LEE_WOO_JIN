@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 function SearchingCat({ dt }) {
   const total = dt.length;
   return (
@@ -15,7 +14,6 @@ function SearchingCat({ dt }) {
                 state={{ category: v.category, pname: v.pname }}
               >
                 <div className="product-img-box">
-                  <img src={v.isrc1} alt="" />
                   {v.category == "single" ? (
                     <video src={v.isrc2} muted autoPlay loop />
                   ) : v.category == "bundle" ? (
@@ -23,6 +21,7 @@ function SearchingCat({ dt }) {
                   ) : (
                     ""
                   )}
+                  <img className="prd-img1" src={v.isrc1} alt="" />
                   <div className="add-box">
                     <span>QUICK ADD</span>
                   </div>

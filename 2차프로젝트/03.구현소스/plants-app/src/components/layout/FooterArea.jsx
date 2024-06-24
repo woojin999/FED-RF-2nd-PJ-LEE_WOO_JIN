@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../css/footer_area.scss";
 
 export default function FooterArea() {
@@ -49,13 +50,26 @@ export default function FooterArea() {
               <div className="col-4 info-box">
                 <h4>Information</h4>
                 <ul>
-                  <li>Wholesale</li>
-                  <li>About</li>
-                  <li>Shop</li>
-                  <li>Shipping & Returns</li>
-                  <li>Terms & Conditions</li>
-                  <li>Privacy Policy</li>
-                  <li>Contact</li>
+                  <li>
+                    <Link to="/shop">
+                      <p>Shop</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/about">
+                      <p>About</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/blog">
+                      <p>Blog</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/shop">
+                      <p>Wholesale</p>
+                    </Link>
+                  </li>
                 </ul>
               </div>
               <div className="col-4 social-box">

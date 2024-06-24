@@ -22,18 +22,53 @@
   }
   img {
     width: 100%;
-    padding-bottom: 20px;
+    padding: 20px 0;
   }
   h3 {
     font-size: 1.8rem;
     font-weight: 600;
   }
-  p{
+  p {
     margin-top: 10px;
     font-size: 1.5rem;
   }
 }
 .support-area-box {
   padding: 0 40px;
-  
+}
+
+@media screen and (max-width: 800px) {
+  // / li가 4개일 때 /
+
+  .support-img-wrap ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3%;
+    // / li가 4개일 때 /
+    li:first-child:nth-last-child(4),
+    li:first-child:nth-last-child(4) ~ li {
+      width: 48%;
+    }
+  }
+  .support-wrap h2 {
+    font-size: 4.5rem;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .support-wrap h2 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .support-img-wrap ul h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .product-info-txt p {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
 }

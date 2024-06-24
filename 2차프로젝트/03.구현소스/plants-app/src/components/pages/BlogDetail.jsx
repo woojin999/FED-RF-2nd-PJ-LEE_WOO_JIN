@@ -27,10 +27,10 @@ function BlogDetail(props) {
     return (
       <>
         {data.map((v, i) => (
-          <>
+          <div key={i}>
             {tabCode(v)}
-            <h2 key={i}>{suvtit[i]}</h2>
-          </>
+            <h2>{suvtit[i]}</h2>
+          </div>
         ))}
       </>
     );

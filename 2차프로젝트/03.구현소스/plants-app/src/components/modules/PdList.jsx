@@ -14,7 +14,6 @@ function PdList({ category, className, classSale, blog }) {
   const selData = Object.values(pdData);
   const selDataKey = Object.keys(pdData);
 
-  // console.log(selData,selDataKey[0]);
 
   return (
     <>
@@ -46,16 +45,16 @@ function PdList({ category, className, classSale, blog }) {
             <Swiper
               slidesPerView={4}
               spaceBetween={20}
-              allowTouchMove={false}
               navigation={true}
+              // allowTouchMove={false}
               /* 사용할 모듈을 여기에 적용시킨다 */
               modules={[Navigation]}
               // 스와이퍼 사이즈별 슬라이드수 변경!
               breakpoints={{
-                400: {
+                100: {
                   slidesPerView: 1,
                 },
-                700: {
+                600: {
                   slidesPerView: 2,
                 },
                 900: {
@@ -64,7 +63,6 @@ function PdList({ category, className, classSale, blog }) {
                 1200: {
                   slidesPerView: 4,
                 },
-                touchRatio: 0,
               }}
               className="mySwiper2"
             >
@@ -76,7 +74,6 @@ function PdList({ category, className, classSale, blog }) {
                       state={{ category: category, pname: selDataKey[i] }}
                     >
                       <div className="product-img-box">
-                        <img src={v.isrc1} alt={v.tit} />
                         {category == "single" ? (
                           <video src={v.isrc2} muted autoPlay loop />
                         ) : category == "bundle" ? (
@@ -84,6 +81,7 @@ function PdList({ category, className, classSale, blog }) {
                         ) : (
                           ""
                         )}
+                        <img className="prd-img1" src={v.isrc1} alt={v.tit} />
 
                         <div className="add-box">
                           <span>QUICK ADD</span>
