@@ -6,9 +6,6 @@ import { Link } from "react-router-dom";
 import PdList from "../modules/PdList";
 
 function Blog() {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   return (
     <>

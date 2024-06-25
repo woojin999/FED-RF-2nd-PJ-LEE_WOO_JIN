@@ -5,10 +5,6 @@ import { Link } from "react-router-dom";
 
 function Login(props) {
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
   return (
     <div id="login-area">
       <section className="login-area">

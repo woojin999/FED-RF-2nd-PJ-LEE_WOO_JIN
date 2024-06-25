@@ -23,16 +23,12 @@ function ProductDetail() {
     $("#prdcnt").val(cntNum);
   };
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
-
   const loc = useLocation();
   const pname = loc.state.pname;
   const category = loc.state.category;
-  console.log(pname, category);
+  // console.log(pname, category);
   const pvo = productList[category][pname];
-  console.log(pvo);
+  // console.log(pvo);
   return (
     <>
       <div id="product-detail">

@@ -8,10 +8,7 @@ import PdList from "../modules/PdList";
 import Support from "../modules/Support";
 
 export default function Main() {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
-  //
+  
   return (
     <>
       {/* 배너 컴포넌트 */}

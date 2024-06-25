@@ -41,7 +41,6 @@ export default function TopArea() {
   };
 
   const goHamSub = () => {
-    console.log($(".ham-list:first"));
 
     $(".ham-list:first").toggleClass("on");
   };

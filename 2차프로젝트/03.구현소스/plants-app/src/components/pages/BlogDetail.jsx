@@ -6,9 +6,6 @@ import { sblogData } from "../data/blog";
 import PdList from "../modules/PdList";
 
 function BlogDetail(props) {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   const loc = useLocation();
   const isrc = loc.state.isrc;
@@ -51,12 +48,12 @@ function BlogDetail(props) {
     return (
       <>
         {data.map((v, i) => (
-          <>
+          <div key={i}>
             {v.split("^").map((v, i) => (
               <p key={i}>{v}</p>
             ))}
             <img key={i} src={descimg[i]} alt="" />
-          </>
+          </div>
         ))}
       </>
     );
