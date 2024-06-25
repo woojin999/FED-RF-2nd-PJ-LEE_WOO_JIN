@@ -1,12 +1,14 @@
-import React, { useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import "../../css/blog_detail.scss";
 import { sblogData } from "../data/blog";
 import PdList from "../modules/PdList";
 
-function BlogDetail(props) {
 
+import $ from "jquery";
+
+function BlogDetail(props) {
   const loc = useLocation();
   const isrc = loc.state.isrc;
   const tit = loc.state.tit;
@@ -58,6 +60,11 @@ function BlogDetail(props) {
       </>
     );
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    $(".ham-area").css({ left: "-350px", opacity: "0" });
+    $(".gotopbtn").removeClass("on");
+  });
 
   return (
     <>

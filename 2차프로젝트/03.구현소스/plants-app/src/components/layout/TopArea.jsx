@@ -4,6 +4,7 @@ import { menu } from "../data/gnb";
 import $ from "jquery";
 
 import "../../css/top_area.scss";
+import { useEffect } from "react";
 
 export default function TopArea() {
   const searchBtn = (e) => {
@@ -41,7 +42,6 @@ export default function TopArea() {
   };
 
   const goHamSub = () => {
-
     $(".ham-list:first").toggleClass("on");
   };
 
@@ -52,6 +52,25 @@ export default function TopArea() {
   const closeHam = () => {
     $(".ham-area").css({ left: "-350px", opacity: "0" });
   };
+
+  const goTop = () => {
+    console.log($(window).scrollTop());
+    if ($(window).scrollTop() > 200) {
+      $(".gotopbtn").addClass("on");
+    } else {
+      $(".gotopbtn").removeClass("on");
+    }
+  };
+
+  const gotopbtn = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    $(".gotopbtn").removeClass("on");
+  };
+
+  useEffect(() => {
+    console.log($(window).scrollTop());
+    window.addEventListener("wheel", goTop);
+  });
 
   return (
     <>
@@ -272,6 +291,11 @@ export default function TopArea() {
                     ))}
                   </ul>
                 </div>
+              </div>
+            </div>
+            <div className="gotop" onClick={gotopbtn}>
+              <div className="gotopbtn">
+                <i className="fa-solid fa-arrow-up fa-2x"></i>
               </div>
             </div>
           </div>

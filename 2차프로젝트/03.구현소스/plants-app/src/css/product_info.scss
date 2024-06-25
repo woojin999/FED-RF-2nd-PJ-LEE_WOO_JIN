@@ -40,8 +40,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    li {
+    // / li가 6개일 때 /
+    // li {
+    //   flex-basis: 33.3333%;
+    // }
+    li:first-child:nth-last-child(6),
+    li:first-child:nth-last-child(6) ~ li {
       flex-basis: 33.3333%;
+    }
+    li:first-child:nth-last-child(5),
+    li:first-child:nth-last-child(5) ~ li {
+      flex-basis: 50%;
+    }
+    li:first-child:nth-last-child(4),
+    li:first-child:nth-last-child(4) ~ li {
+      flex-basis: 50%;
     }
   }
   .product-info-txt h2 {
@@ -53,6 +66,9 @@
   }
   .product-info-img {
     padding-top: 50px;
+}
+.product-info {
+    padding: 0;
 }
 }
 

@@ -27,3 +27,21 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+  .promise-area-wrap {
+    height: auto;
+    flex-direction: column;
+    .video-box video{
+      height: 225px;
+      
+    }
+  }
+  .promise-area-wrap .txt-box h2 {
+    margin: 30px 0;
+    font-size: 3rem;
+}
+.promise-area {
+    padding: 0 10px;
+}
+}

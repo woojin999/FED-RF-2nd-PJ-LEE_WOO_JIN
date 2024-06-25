@@ -9,7 +9,6 @@ import { productListex } from "../data/product_listex";
 function Searching({ kword }) {
   const [kw, setKw] = useState(kword);
   const pdListData = productListex;
-
   const newList = pdListData.filter((val) => {
     let newVal = val.pkeyword.toLocaleLowerCase();
     let key = kw.toLocaleLowerCase();
@@ -46,11 +45,11 @@ function Searching({ kword }) {
           <div className="searching-info-text">
             {newList.length > 0 ? (
               <p>
-                {newList.length} results found for " {kword} "
+                {newList.length} results found
               </p>
             ) : (
               <p>
-                No results found for"{kword}". Check the spelling or use a
+                No results found. Check the spelling or use a
                 different word or phrase.
               </p>
             )}

@@ -40,7 +40,7 @@ const ScrollTop = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     $(".ham-area").css({ left: "-350px", opacity: "0" });
-    // console.log(pathname);
+    $(".gotopbtn").removeClass("on");
   }, [pathname]);
   return null;
 };

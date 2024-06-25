@@ -38,7 +38,6 @@
 }
 
 @media screen and (max-width: 800px) {
-  // / li가 4개일 때 /
 
   .support-img-wrap ul {
     display: flex;
@@ -49,11 +48,19 @@
     li:first-child:nth-last-child(4) ~ li {
       width: 48%;
     }
+    // / li가 4개일 때 /
+    li:first-child:nth-last-child(3),
+    li:first-child:nth-last-child(3) ~ li {
+      width: 48%;
+    }
   }
   .support-wrap h2 {
     font-size: 4.5rem;
     padding-bottom: 20px;
   }
+  .support-area-box {
+    padding:0;
+}
 }
 
 @media screen and (max-width: 450px) {

@@ -72,3 +72,10 @@
   margin-top: 6rem;
   font-size: 2rem;
 }
+
+@media screen and (max-width: 800px) {
+  .plist li {
+    width: 48%;
+    margin: 1%;
+}
+}
