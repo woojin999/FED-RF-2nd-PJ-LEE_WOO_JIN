@@ -12,7 +12,7 @@ function Support({ category }) {
         <section className="support-area-box page">
           <div className="support-wrap">
             <h2>{selData.tit}</h2>
-            <div className="support-img-wrap">
+            <div className="support-img-wrap mpage">
               <ul>
                 {selData.images.map((v, i) => (
                   <li key={i}>

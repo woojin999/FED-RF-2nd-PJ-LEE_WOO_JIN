@@ -5,7 +5,7 @@ export default function FooterArea() {
   return (
     <>
       <div id="footer-area">
-        <footer className="footer-area page">
+        <footer className="footer-area">
           <div className="footer-box">
             <div className="footer-img-box">
               <h2>@plantstotherescue.co</h2>

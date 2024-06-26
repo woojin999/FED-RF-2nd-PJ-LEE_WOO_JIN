@@ -71,8 +71,52 @@ export default function TopArea() {
     window.addEventListener("wheel", goTop);
   });
 
+  const banArr = [
+    "◎ You are $64.62 away from free shipping.",
+    "◎ You are $64.62 away from free shipping.",
+    "◎ You are $64.62 away from free shipping.",
+    "◎ You are $64.62 away from free shipping.",
+    "◎ You are $64.62 away from free shipping.",
+    "◎ You are $64.62 away from free shipping.",
+    "◎ You are $64.62 away from free shipping.",
+    "◎ You are $64.62 away from free shipping.",
+    "◎ You are $64.62 away from free shipping.",
+  ];
+
+  useEffect(() => {
+    let target = document.querySelector(".top-ban ul");
+    let tagetEle = target.querySelectorAll("li");
+    const updateCriteria = () => tagetEle[0].offsetWidth;
+    let criteria = updateCriteria();
+    window.addEventListener("resize", () => {
+      criteria = updateCriteria();
+    });
+
+    let currVal = 0;
+    function moveText() {
+        target.style.translate = --currVal + "px";
+        if(currVal <= Math.floor(-criteria)){
+            target.appendChild(tagetEle[0])
+            target.style.translate = "0px";
+            currVal = 0;
+        }
+        setTimeout(moveText, 15);
+    }
+
+    setTimeout(moveText);
+  },[]);
+
   return (
     <>
+        <div className="top-ban">
+          <ul>
+            {
+              banArr.map((v,i)=>(
+                <li><p>{v}</p></li>
+              ))
+            }
+          </ul>
+        </div>
       <div id="top-area">
         <header className="top-area">
           <div className="">
@@ -191,7 +235,7 @@ export default function TopArea() {
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="/">
                         <i className="fa-solid fa-cart-shopping"></i>
                       </a>
                     </li>

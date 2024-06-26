@@ -1,0 +1,14 @@
+.sl-banner{
+    overflow: hidden;
+    ul{
+        display: flex;
+        li{
+            // margin-right: 5vw;
+            padding: 0 2vw;
+        }
+        h2{
+            font-size: 3rem;
+            white-space: nowrap;
+        }
+    }
+}

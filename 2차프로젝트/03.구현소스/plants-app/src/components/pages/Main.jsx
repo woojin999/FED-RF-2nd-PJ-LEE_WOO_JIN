@@ -7,12 +7,14 @@ import PdInfo from "../modules/PdInfo";
 import PdList from "../modules/PdList";
 import Support from "../modules/Support";
 
-import * as wFn from "../func/auto_wheel";
+
+import * as sFn from "../func/auto_wheel";
+import SlBanner from "../modules/SlBanner";
 
 export default function Main() {
   
   useEffect(()=>{
-    window.addEventListener("wheel", wFn.wheelFn);
+    window.addEventListener("scroll", sFn.scrollFn);
   })
   return (
     <>
@@ -22,6 +24,7 @@ export default function Main() {
       <PdInfo category={"main"} />
       <Support category={"main"} />
       <PdList category={"bundle"} className={"off"} classSale={"on"} />
+      <SlBanner />
       <Faq />
     </>
   );

@@ -16,7 +16,7 @@ function PdInfo({ category }) {
               <h2>{selData.desc}</h2>
               <p className="tit2">{selData.tit2}</p>
             </div>
-            <div className="product-info-img">
+            <div className="product-info-img mpage">
               <ul>
                 {selData.images.map((v, i) => (
                   <li key={i}>

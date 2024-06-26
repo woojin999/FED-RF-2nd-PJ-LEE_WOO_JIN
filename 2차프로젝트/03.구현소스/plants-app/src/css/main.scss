@@ -5,15 +5,14 @@
 @import "./common/core";
 @import "./common/grid_12_flex";
 
-/* 공사중 표시 */ 
+/* 공사중 표시 */
 // body *{
 //     outline: 2px dashed #ccc;
-// } 
+// }
 
 body {
   background-color: #eeede7;
 }
-
 
 #product-info-area {
   max-width: 1400px;
@@ -24,4 +23,23 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   text-align: center;
+}
+
+.page {
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 1s;
+}
+.page.on {
+  transform: translateY(0);
+  opacity: 1;
+}
+.mpage {
+  transform: translateX(-15%);
+  opacity: 0;
+  transition: 1.5s;
+}
+.mpage.on {
+  transform: translateX(0);
+  opacity: 1;
 }

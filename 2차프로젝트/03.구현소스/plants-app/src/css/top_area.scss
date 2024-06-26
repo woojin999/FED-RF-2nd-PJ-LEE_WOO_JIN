@@ -1,16 +1,31 @@
+.top-ban {
+  background-color: #e2dfcf;
+  overflow: hidden;
+  ul{
+    display: flex;
+    li{
+      padding: 10px 20px;
+      p{
+        font-size: 1.5rem;
+        white-space: nowrap;
+      }
+    }
+  }
+}
 #top-area {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 99999999;
+}
+.top-area {
   background-color: #eeede7;
-  position: fixed;
+  position: relative;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 999;
-}
-.top-area {
   height: 90px;
-}
-.main-area {
-  padding-top: 90px;
 }
 .gnb-box {
   height: 90px;
@@ -239,7 +254,7 @@
   }
   li {
     font-size: 1.6rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     overflow: hidden;
     cursor: pointer;
     .sub-txt {
@@ -269,14 +284,26 @@
   cursor: pointer;
   ol:nth-child(1) {
     li:nth-child(1) {
-      padding-top: 1rem;
-      font-size: 2rem;
+      padding-top: 2rem;
+      // font-size: 2rem;
+      a:nth-child(1) {
+        font-size: 1.6rem;
+  
+      }
     }
     a {
       font-size: 1.4rem;
     }
   }
   ol:nth-child(2) {
+    li:nth-child(1) {
+      padding-top: 1rem;
+      // font-size: 2rem;
+      a:nth-child(1) {
+        font-size: 1.6rem;
+  
+      }
+    }
     a {
       font-size: 1.4rem;
     }
@@ -293,7 +320,7 @@
 }
 .ham-list.on {
   .ham-menu {
-    height: 330px;
+    height: 350px;
   }
   .ham-sub-p {
     opacity: 0;
