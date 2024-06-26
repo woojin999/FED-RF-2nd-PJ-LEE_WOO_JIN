@@ -1,14 +1,19 @@
 // 메인페이지 컴포넌트 //
 
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import Banner from "../modules/Banner";
 import Faq from "../modules/Faq";
 import PdInfo from "../modules/PdInfo";
 import PdList from "../modules/PdList";
 import Support from "../modules/Support";
 
+import * as wFn from "../func/auto_wheel";
+
 export default function Main() {
   
+  useEffect(()=>{
+    window.addEventListener("wheel", wFn.wheelFn);
+  })
   return (
     <>
       {/* 배너 컴포넌트 */}

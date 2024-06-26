@@ -25,7 +25,7 @@ function Faq() {
   return (
     <>
       <div id="faq-area">
-        <section className="faq-area-box">
+        <section className="faq-area-box page">
           <div className="faq-wrap">
             <h2>FAQ</h2>
             <div className="faq-wrap-box faq-grid">

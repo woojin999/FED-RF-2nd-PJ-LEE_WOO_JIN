@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import SearchingCat from "./SearchingCat";
 import $ from "jquery";
 
@@ -8,7 +8,20 @@ import { productListex } from "../data/product_listex";
 
 function Searching({ kword }) {
   const [kw, setKw] = useState(kword);
+
+  const beforeKword = useRef(kword);
+
+  if (beforeKword.current != kword) {
+    // 컴포넌트 리랜더링 (검색결과 변경)
+    console.log(beforeKword.current, "==", kword);
+    setKw(kword);
+    // 다음 검색을 위해 다시 현재 검색어를 참조 변수에 저장
+    beforeKword.current = kword;
+    $("#searchingValue").val(kword);
+  }
+
   const pdListData = productListex;
+
   const newList = pdListData.filter((val) => {
     let newVal = val.pkeyword.toLocaleLowerCase();
     let key = kw.toLocaleLowerCase();
@@ -45,12 +58,19 @@ function Searching({ kword }) {
           <div className="searching-info-text">
             {newList.length > 0 ? (
               <p>
-                {newList.length} results found
+                {newList.length} results found "
+                {$("#searchingValue").val() == null
+                  ? kword
+                  : $("#searchingValue").val()}
+                "
               </p>
             ) : (
               <p>
-                No results found. Check the spelling or use a
-                different word or phrase.
+                No results found "
+                {$("#searchingValue").val() == null
+                  ? kword
+                  : $("#searchingValue").val()}
+                ". Check the spelling or use a different word or phrase.
               </p>
             )}
           </div>

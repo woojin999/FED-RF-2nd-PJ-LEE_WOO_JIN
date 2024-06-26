@@ -54,7 +54,6 @@ export default function TopArea() {
   };
 
   const goTop = () => {
-    console.log($(window).scrollTop());
     if ($(window).scrollTop() > 200) {
       $(".gotopbtn").addClass("on");
     } else {

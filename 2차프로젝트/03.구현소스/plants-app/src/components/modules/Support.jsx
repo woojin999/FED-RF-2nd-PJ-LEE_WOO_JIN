@@ -9,7 +9,7 @@ function Support({ category }) {
   return (
     <>
       <div id="support-area">
-        <section className="support-area-box">
+        <section className="support-area-box page">
           <div className="support-wrap">
             <h2>{selData.tit}</h2>
             <div className="support-img-wrap">

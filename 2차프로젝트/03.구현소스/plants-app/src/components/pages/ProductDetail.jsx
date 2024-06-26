@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import "../../css/product_detail.scss";
@@ -37,15 +37,25 @@ function ProductDetail() {
   const category = loc.state.category;
   const pvo = productList[category][pname];
 
+  
+
   const goImg = () => {
     $(".pd-detail-img").addClass("on");
     $("body").css({ overflow: "hidden" });
+  };
+
+  const closeImg = () => {
+    $(".pd-detail-img").removeClass("on");
+    $("body").css({ overflow: "auto" });
+   
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     $(".ham-area").css({ left: "-350px", opacity: "0" });
     $(".gotopbtn").removeClass("on");
+    
+    
   });
   return (
     <>
@@ -94,24 +104,28 @@ function ProductDetail() {
             </div>
           </div>
           <div className="pd-detail-img">
+            <div className="dt-img-close" onClick={closeImg}>
+              <i className="fa-solid fa-xmark fa-4x imgXbtn"></i>
+            </div>
             <Swiper
+              
               pagination={{
                 type: "fraction",
               }}
               navigation={true}
               modules={[Pagination, Navigation]}
+              slidesPerView={1}
               className="mySwiper"
+              
             >
               <div className="pd-dt-img">
                 <SwiperSlide>
                   <img src={pvo.isrc1} alt="" />
                 </SwiperSlide>
                 {pvo.subisrc.map((v, i) => (
-                  <div key={"a" + i}>
-                    <SwiperSlide>
-                      <img src={v} alt="" />
-                    </SwiperSlide>
-                  </div>
+                  <SwiperSlide key={i}>
+                    <img src={v} alt="" />
+                  </SwiperSlide>
                 ))}
               </div>
             </Swiper>

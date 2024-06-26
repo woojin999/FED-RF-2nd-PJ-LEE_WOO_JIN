@@ -18,7 +18,7 @@ function PdList({ category, className, classSale, blog }) {
   return (
     <>
       <div id="product-list-area">
-        <section className="product-list inbox">
+        <section className="product-list inbox page">
           <div className="product-list-box">
             {
               <>

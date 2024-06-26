@@ -9,7 +9,7 @@ function PdInfo({ category }) {
   return (
     <>
       <div id="product-info-area">
-        <section className="product-info">
+        <section className="product-info page">
           <div className="product-info-box">
             <div className="product-info-txt">
               <p>{selData.tit1}</p>

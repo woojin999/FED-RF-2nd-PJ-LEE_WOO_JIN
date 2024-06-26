@@ -14,6 +14,7 @@ import ProductDetail from "./components/pages/ProductDetail";
 import Login from "./components/pages/Login";
 import SearchPage from "./components/pages/SearchPage";
 import BlogDetail from "./components/pages/BlogDetail";
+import Member from "./components/pages/Member";
 
 export default function MainComponent() {
   return (
@@ -27,6 +28,7 @@ export default function MainComponent() {
           <Route path="blog" element={<Blog />} />
           <Route path="detail" element={<ProductDetail />} />
           <Route path="login" element={<Login />} />
+          <Route path="member" element={<Member/>}/>
           <Route path="search" element={<SearchPage />} />
           <Route path="blogDetail" element={<BlogDetail />} />
         </Route>
