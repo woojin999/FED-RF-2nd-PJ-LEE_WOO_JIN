@@ -18,7 +18,7 @@ import Member from "./components/pages/Member";
 
 export default function MainComponent() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ScrollTop />
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -28,7 +28,7 @@ export default function MainComponent() {
           <Route path="blog" element={<Blog />} />
           <Route path="detail" element={<ProductDetail />} />
           <Route path="login" element={<Login />} />
-          <Route path="member" element={<Member/>}/>
+          <Route path="member" element={<Member />} />
           <Route path="search" element={<SearchPage />} />
           <Route path="blogDetail" element={<BlogDetail />} />
         </Route>
