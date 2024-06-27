@@ -309,7 +309,10 @@ export default function TopArea() {
                 <div className="cart-product">
                   <p>Product</p>
                   <div className="cart-product-box">
-                    <img src="/images/Calm.png" alt="" />
+                    <img
+                      src={process.env.PUBLIC_URL + "/images/Calm.png"}
+                      alt=""
+                    />
                     <div className="cart-pd-info">
                       <p>Calm</p>
                       <p>$35.00</p>
@@ -324,7 +327,6 @@ export default function TopArea() {
                       </div>
                     </div>
                   </div>
-                  
                 </div>
               </div>
             </div>

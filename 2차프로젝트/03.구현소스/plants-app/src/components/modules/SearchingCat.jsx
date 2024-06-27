@@ -15,7 +15,12 @@ function SearchingCat({ dt }) {
               >
                 <div className="product-img-box">
                   {v.category == "single" ? (
-                    <video src={v.isrc2} muted autoPlay loop />
+                    <video
+                      src={process.env.PUBLIC_URL + v.isrc2}
+                      muted
+                      autoPlay
+                      loop
+                    />
                   ) : v.category == "bundle" ? (
                     <img
                       className="prd-img2"
