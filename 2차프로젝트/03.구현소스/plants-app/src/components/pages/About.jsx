@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { aboutData } from "../data/about";
 import "../../css/about.scss";
 import PdInfo from "../modules/PdInfo";
 import PdList from "../modules/PdList";
+import * as sFn from "../func/auto_wheel";
 
 function About(props) {
-  console.log(aboutData["main"]);
+  // console.log(aboutData["main"]);
   const mainData = aboutData["main"];
   const subData = aboutData["sub"];
+  useEffect(() => {
+    window.addEventListener("scroll", sFn.scrollFn);
+  }, []);
   return (
     <>
       <div id="about-area">

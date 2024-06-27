@@ -15,7 +15,7 @@ export default function Main() {
   
   useEffect(()=>{
     window.addEventListener("scroll", sFn.scrollFn);
-  })
+  },[])
   return (
     <>
       {/* 배너 컴포넌트 */}

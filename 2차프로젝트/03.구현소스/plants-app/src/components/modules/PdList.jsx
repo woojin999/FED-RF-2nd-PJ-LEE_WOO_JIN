@@ -9,16 +9,15 @@ import "../../css/product_list.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 
-function PdList({ category, className, classSale, blog }) {
+function PdList({ category, className, classSale, blog, clN }) {
   const pdData = productList[category];
   const selData = Object.values(pdData);
   const selDataKey = Object.keys(pdData);
 
-
   return (
     <>
       <div id="product-list-area">
-        <section className="product-list inbox page">
+        <section className={"product-list inbox page " + clN}>
           <div className="product-list-box">
             {
               <>

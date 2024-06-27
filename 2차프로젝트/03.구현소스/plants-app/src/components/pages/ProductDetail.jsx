@@ -10,6 +10,7 @@ import PdList from "../modules/PdList";
 import PdInfo from "../modules/PdInfo";
 import Support from "../modules/Support";
 import Promise from "../modules/Promise";
+import * as sFn from "../func/auto_wheel";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -37,8 +38,6 @@ function ProductDetail() {
   const category = loc.state.category;
   const pvo = productList[category][pname];
 
-  
-
   const goImg = () => {
     $(".pd-detail-img").addClass("on");
     $("body").css({ overflow: "hidden" });
@@ -47,16 +46,17 @@ function ProductDetail() {
   const closeImg = () => {
     $(".pd-detail-img").removeClass("on");
     $("body").css({ overflow: "auto" });
-   
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
     $(".ham-area").css({ left: "-350px", opacity: "0" });
     $(".gotopbtn").removeClass("on");
-    
-    
   });
+
+  useEffect(() => {
+    window.addEventListener("scroll", sFn.scrollFn);
+  }, []);
   return (
     <>
       <div id="product-detail">
@@ -108,7 +108,6 @@ function ProductDetail() {
               <i className="fa-solid fa-xmark fa-4x imgXbtn"></i>
             </div>
             <Swiper
-              
               pagination={{
                 type: "fraction",
               }}
@@ -116,7 +115,6 @@ function ProductDetail() {
               modules={[Pagination, Navigation]}
               slidesPerView={1}
               className="mySwiper"
-              
             >
               <div className="pd-dt-img">
                 <SwiperSlide>

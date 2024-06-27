@@ -1,5 +1,5 @@
 function scrollFn() {
-  // console.log("휠");
+  console.log("휠");
   const page = document.querySelectorAll(".page");
   const mpage = document.querySelectorAll(".mpage");
   // console.log(page);
@@ -17,6 +17,8 @@ function scrollFn() {
 
     if (pos < screenH) {
       page[i].classList.add("on");
+    } else {
+      page[i].classList.remove("on");
     }
   });
 
@@ -31,6 +33,8 @@ function scrollFn() {
 
     if (pos < screenH) {
       mpage[i].classList.add("on");
+    } else{
+      mpage[i].classList.remove("on");
     }
   });
 }

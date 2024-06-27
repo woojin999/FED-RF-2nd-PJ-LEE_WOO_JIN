@@ -67,7 +67,7 @@ export default function TopArea() {
   };
 
   useEffect(() => {
-    console.log($(window).scrollTop());
+    // console.log($(window).scrollTop());
     window.addEventListener("wheel", goTop);
   });
 
@@ -112,7 +112,7 @@ export default function TopArea() {
           <ul>
             {
               banArr.map((v,i)=>(
-                <li><p>{v}</p></li>
+                <li key={i}><p>{v}</p></li>
               ))
             }
           </ul>
