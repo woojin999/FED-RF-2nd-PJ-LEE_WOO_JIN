@@ -31,7 +31,7 @@ function Faq() {
             <div className="faq-wrap-box faq-grid">
               {faq.map((v, i) => (
                 <div key={i} className={"faq-box"} onClick={toggleFaq}>
-                  <img src={v.isrc} alt="image" />
+                  <img src={process.env.PUBLIC_URL + v.isrc} alt="image" />
                   <h3>{v.question}</h3>
                   <i className="fa-solid fa-minus fa-lg"></i>
                   <i className="fa-solid fa-plus fa-lg"></i>

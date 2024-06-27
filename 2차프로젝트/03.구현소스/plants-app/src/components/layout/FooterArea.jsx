@@ -14,7 +14,9 @@ export default function FooterArea() {
                   <li>
                     <a href="">
                       <img
-                        src="/images/Instagram_post1.png"
+                        src={
+                          process.env.PUBLIC_URL + "/images/Instagram_post1.png"
+                        }
                         alt="Instagram_post"
                       />
                     </a>
@@ -22,7 +24,9 @@ export default function FooterArea() {
                   <li>
                     <a href="">
                       <img
-                        src="/images/Instagram_post2.png"
+                        src={
+                          process.env.PUBLIC_URL + "/images/Instagram_post2.png"
+                        }
                         alt="Instagram_post"
                       />
                     </a>
@@ -30,7 +34,9 @@ export default function FooterArea() {
                   <li>
                     <a href="">
                       <img
-                        src="/images/Instagram_post3.png"
+                        src={
+                          process.env.PUBLIC_URL + "/images/Instagram_post3.png"
+                        }
                         alt="Instagram_post"
                       />
                     </a>
@@ -38,7 +44,9 @@ export default function FooterArea() {
                   <li>
                     <a href="">
                       <img
-                        src="/images/Instagram_post4.png"
+                        src={
+                          process.env.PUBLIC_URL + "/images/Instagram_post4.png"
+                        }
                         alt="Instagram_post"
                       />
                     </a>
@@ -94,7 +102,10 @@ export default function FooterArea() {
               </div>
               <div className="col-4 info-detail-box">
                 <h4>Details</h4>
-                <img src="/images/Group.png" alt="Group" />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/Group.png"}
+                  alt="Group"
+                />
                 <p>
                   *These statements have not been evaluated by the Food and Drug
                   Administration. This product is not intended to diagnose,

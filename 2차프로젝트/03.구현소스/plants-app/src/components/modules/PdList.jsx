@@ -76,11 +76,19 @@ function PdList({ category, className, classSale, blog, clN }) {
                         {category == "single" ? (
                           <video src={v.isrc2} muted autoPlay loop />
                         ) : category == "bundle" ? (
-                          <img className="prd-img2" src={v.isrc2} alt={v.tit} />
+                          <img
+                            className="prd-img2"
+                            src={process.env.PUBLIC_URL + v.isrc2}
+                            alt={v.tit}
+                          />
                         ) : (
                           ""
                         )}
-                        <img className="prd-img1" src={v.isrc1} alt={v.tit} />
+                        <img
+                          className="prd-img1"
+                          src={process.env.PUBLIC_URL + v.isrc1}
+                          alt={v.tit}
+                        />
 
                         <div className="add-box">
                           <span>QUICK ADD</span>

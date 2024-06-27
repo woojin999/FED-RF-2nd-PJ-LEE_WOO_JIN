@@ -16,7 +16,7 @@ function Support({ category }) {
               <ul>
                 {selData.images.map((v, i) => (
                   <li key={i}>
-                    <img src={v.isrc} alt="" />
+                    <img src={process.env.PUBLIC_URL + v.isrc} alt="" />
                     <div>
                       {category == "main" ? (
                         <h3>{v.desc}</h3>

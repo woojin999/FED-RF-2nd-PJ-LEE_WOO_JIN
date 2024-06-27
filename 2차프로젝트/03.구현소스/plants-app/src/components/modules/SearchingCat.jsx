@@ -17,11 +17,19 @@ function SearchingCat({ dt }) {
                   {v.category == "single" ? (
                     <video src={v.isrc2} muted autoPlay loop />
                   ) : v.category == "bundle" ? (
-                    <img className="prd-img2" src={v.isrc2} alt={v.tit} />
+                    <img
+                      className="prd-img2"
+                      src={process.env.PUBLIC_URL + v.isrc2}
+                      alt={v.tit}
+                    />
                   ) : (
                     ""
                   )}
-                  <img className="prd-img1" src={v.isrc1} alt="" />
+                  <img
+                    className="prd-img1"
+                    src={process.env.PUBLIC_URL + v.isrc1}
+                    alt=""
+                  />
                   <div className="add-box">
                     <span>QUICK ADD</span>
                   </div>

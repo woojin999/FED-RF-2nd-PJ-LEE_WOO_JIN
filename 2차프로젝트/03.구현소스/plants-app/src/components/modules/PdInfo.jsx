@@ -20,7 +20,7 @@ function PdInfo({ category }) {
               <ul>
                 {selData.images.map((v, i) => (
                   <li key={i}>
-                    <img src={v.isrc} alt="images" />
+                    <img src={process.env.PUBLIC_URL + v.isrc} alt="images" />
                     <h3>{v.itxt}</h3>
                   </li>
                 ))}

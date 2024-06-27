@@ -65,13 +65,13 @@ function ProductDetail() {
             <div className="product-detail-content">
               <div className="col-6 detail-img-box" onClick={goImg}>
                 <div className="dt-main-img">
-                  <img src={pvo.isrc1} alt="" />
+                  <img src={process.env.PUBLIC_URL + pvo.isrc1} alt="" />
                 </div>
                 <div className="dt-sub-img">
                   <ul>
                     {pvo.subisrc.map((v, i) => (
                       <li key={i}>
-                        <img src={v} alt="" />
+                        <img src={process.env.PUBLIC_URL + v} alt="" />
                       </li>
                     ))}
                   </ul>
@@ -118,11 +118,11 @@ function ProductDetail() {
             >
               <div className="pd-dt-img">
                 <SwiperSlide>
-                  <img src={pvo.isrc1} alt="" />
+                  <img src={process.env.PUBLIC_URL + pvo.isrc1} alt="" />
                 </SwiperSlide>
                 {pvo.subisrc.map((v, i) => (
                   <SwiperSlide key={i}>
-                    <img src={v} alt="" />
+                    <img src={process.env.PUBLIC_URL + v} alt="" />
                   </SwiperSlide>
                 ))}
               </div>

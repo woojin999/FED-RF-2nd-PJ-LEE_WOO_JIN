@@ -21,21 +21,22 @@ function Blog() {
               </p>
               <div className="read-box">
                 <Link
-                to="/blogDetail"
-                state={{
-                  isrc: sblogData[3].isrc,
-                  tit: sblogData[3].tit,
-                  desc: sblogData[3].desc,
-                  maindesc: sblogData[3].maindesc,
-                  descimg:sblogData[3].descimg,
-                  suvtit:sblogData[3].subtit
-                }}>
+                  to="/blogDetail"
+                  state={{
+                    isrc: sblogData[3].isrc,
+                    tit: sblogData[3].tit,
+                    desc: sblogData[3].desc,
+                    maindesc: sblogData[3].maindesc,
+                    descimg: sblogData[3].descimg,
+                    suvtit: sblogData[3].subtit,
+                  }}
+                >
                   <p className="read">READ MORE</p>
                 </Link>
               </div>
             </div>
             <div className="blog-main-img col-6">
-              <img src="/images/blog4.png" alt="" />
+              <img src="process.env.PUBLIC_URL + /images/blog4.png" alt="" />
             </div>
           </div>
         </section>
@@ -52,11 +53,11 @@ function Blog() {
                         tit: v.tit,
                         desc: v.desc,
                         maindesc: v.maindesc,
-                        descimg:v.descimg,
-                        suvtit:v.subtit
+                        descimg: v.descimg,
+                        suvtit: v.subtit,
                       }}
                     >
-                      <img src={v.isrc} alt="" />
+                      <img src={process.env.PUBLIC_URL + v.isrc} alt="" />
                       <div>
                         {
                           <>

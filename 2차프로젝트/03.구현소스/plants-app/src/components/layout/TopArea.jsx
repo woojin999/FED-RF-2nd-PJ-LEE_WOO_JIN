@@ -108,15 +108,15 @@ export default function TopArea() {
 
   return (
     <>
-        <div className="top-ban">
-          <ul>
-            {
-              banArr.map((v,i)=>(
-                <li key={i}><p>{v}</p></li>
-              ))
-            }
-          </ul>
-        </div>
+      <div className="top-ban">
+        <ul>
+          {banArr.map((v, i) => (
+            <li key={i}>
+              <p>{v}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div id="top-area">
         <header className="top-area">
           <div className="">
@@ -186,7 +186,12 @@ export default function TopArea() {
                                   playsInline
                                 ></video>
                               ) : (
-                                <img src="/images/Card_PDP.png" />
+                                <img
+                                  src={
+                                    process.env.PUBLIC_URL +
+                                    "/images/Card_PDP.png"
+                                  }
+                                />
                               )}
                             </div>
                           </div>
@@ -199,7 +204,12 @@ export default function TopArea() {
               <div className="col-4">
                 <div className="logo-box">
                   <Link to="/">
-                    <img src="/images/Pttr_Logo_Brown.png" alt="main-logo" />
+                    <img
+                      src={
+                        process.env.PUBLIC_URL + "/images/Pttr_Logo_Brown.png"
+                      }
+                      alt="main-logo"
+                    />
                   </Link>
                 </div>
               </div>

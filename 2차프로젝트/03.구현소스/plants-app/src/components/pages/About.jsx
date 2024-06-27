@@ -22,7 +22,7 @@ function About(props) {
               <div key={i} className="about-main-wrap">
                 <ul>
                   <li className="col-6">
-                    <img src={v.isrc} alt="" />
+                    <img src={process.env.PUBLIC_URL + v.isrc} alt="" />
                   </li>
                   <li className="col-6">
                     <h2>{v.desc}</h2>
@@ -36,7 +36,7 @@ function About(props) {
               <div key={i} className="about-sub-wrap">
                 <ul>
                   <li className="col-6">
-                    <img src={v.isrc} alt="" />
+                    <img src={process.env.PUBLIC_URL + v.isrc} alt="" />
                   </li>
                   <li className="col-6">
                     <div className="sub-txt-wrap">

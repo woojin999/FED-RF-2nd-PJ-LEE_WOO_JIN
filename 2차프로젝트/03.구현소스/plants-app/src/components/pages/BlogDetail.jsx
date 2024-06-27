@@ -54,7 +54,7 @@ function BlogDetail(props) {
             {v.split("^").map((v, i) => (
               <p key={i}>{v}</p>
             ))}
-            <img key={i} src={descimg[i]} alt="" />
+            <img key={i} src={process.env.PUBLIC_URL + descimg[i]} alt="" />
           </div>
         ))}
       </>
@@ -73,7 +73,7 @@ function BlogDetail(props) {
           <div className="blog-top-area">
             <h2>{tit}</h2>
             <div className="blog-img-box">
-              <img src={isrc} alt="" />
+              <img src={process.env.PUBLIC_URL + isrc} alt="" />
             </div>
           </div>
           <div className="blog-main-area">
@@ -100,7 +100,7 @@ function BlogDetail(props) {
                             suvtit: v.subtit,
                           }}
                         >
-                          <img src={v.isrc} alt="" />
+                          <img src={process.env.PUBLIC_URL + v.isrc} alt="" />
                           <h4>{v.tit}</h4>
                         </Link>
                       </li>

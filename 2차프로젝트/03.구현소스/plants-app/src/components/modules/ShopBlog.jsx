@@ -28,7 +28,7 @@ function ShopBlog() {
                             suvtit: v.subtit,
                           }}
                         >
-                          <img src={v.isrc} alt="" />
+                          <img src={process.env.PUBLIC_URL + v.isrc} alt="" />
                           <div>
                             {
                               <>
