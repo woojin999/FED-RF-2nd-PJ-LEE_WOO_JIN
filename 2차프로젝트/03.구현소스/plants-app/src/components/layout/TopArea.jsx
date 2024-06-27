@@ -287,7 +287,7 @@ export default function TopArea() {
                 </div>
               </div>
             </div>
-            <div className="cart-area">
+            {/* <div className="cart-area">
               <div className="cart-box">
                 <div className="cart-wrap">
                   <div className="cart-tit">
@@ -329,7 +329,7 @@ export default function TopArea() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="ham-area">
               <div className="ham-box">
                 <div className="ham-wrap">
