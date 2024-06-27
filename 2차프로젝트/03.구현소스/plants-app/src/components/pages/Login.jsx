@@ -15,7 +15,9 @@ function Login(props) {
           </div>
           <div className="signtxt">
             <p className="signup">
-              <a href="/member">Sign up here.</a>
+              <Link to="/member">
+              Sign up here.
+              </Link>
             </p>
           </div>
           <form action="">
