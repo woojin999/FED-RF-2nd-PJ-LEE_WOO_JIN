@@ -17,6 +17,7 @@
   top: 0;
   width: 100%;
   z-index: 99999999;
+  
 }
 .top-area {
   background-color: #eeede7;
@@ -26,6 +27,11 @@
   width: 100%;
   z-index: 999;
   height: 90px;
+  
+}
+.top-area-box{
+  position: relative;
+  // overflow: hidden;
 }
 .gnb-box {
   height: 90px;
@@ -242,6 +248,7 @@
   opacity: 0;
   transition: 0.4s;
   border-left: 1px solid #503217;
+  // overflow: hidden;
   .cart-wrap {
     .cart-tit {
       position: relative;

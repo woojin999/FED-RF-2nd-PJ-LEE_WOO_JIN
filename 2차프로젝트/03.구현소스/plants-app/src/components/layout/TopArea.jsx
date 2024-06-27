@@ -129,7 +129,7 @@ export default function TopArea() {
       </div>
       <div id="top-area">
         <header className="top-area">
-          <div className="">
+          <div className="top-area-box">
             <div className="gnb-box">
               <div className="col-4">
                 <nav className="gnb-menu">
