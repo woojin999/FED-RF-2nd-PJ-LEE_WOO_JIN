@@ -9,7 +9,12 @@ function Banner() {
         <section className="ban-area">
           <div className="ban-box">
             <div className="video-box">
-              <video src="./videos/main.mp4" muted autoPlay loop></video>
+              <video
+                src={process.env.PUBLIC_URL + "/videos/main.mp4"}
+                muted
+                autoPlay
+                loop
+              ></video>
             </div>
             <div className="ban-txt">
               <h2>We only use 100% Organic Certified Herbs</h2>

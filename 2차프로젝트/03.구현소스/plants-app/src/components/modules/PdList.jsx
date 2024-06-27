@@ -29,7 +29,11 @@ function PdList({ category, className, classSale, blog, clN }) {
                 {category == "bundle" && (
                   <div className="shop-tit">
                     <h2>
-                      Save <img src="/images/sticker.png" alt="sticker" />
+                      Save{" "}
+                      <img
+                        src={process.env.PUBLIC_URL + "/images/sticker.png"}
+                        alt="sticker"
+                      />
                       &nbsp;with bundles
                     </h2>
                   </div>
@@ -74,7 +78,12 @@ function PdList({ category, className, classSale, blog, clN }) {
                     >
                       <div className="product-img-box">
                         {category == "single" ? (
-                          <video src={v.isrc2} muted autoPlay loop />
+                          <video
+                            src={process.env.PUBLIC_URL + v.isrc2}
+                            muted
+                            autoPlay
+                            loop
+                          />
                         ) : category == "bundle" ? (
                           <img
                             className="prd-img2"

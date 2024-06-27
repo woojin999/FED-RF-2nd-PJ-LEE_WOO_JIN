@@ -179,7 +179,7 @@ export default function TopArea() {
                             <div className="video-box col-6">
                               {v.video ? (
                                 <video
-                                  src={v.video}
+                                  src={process.env.PUBLIC_URL + v.video}
                                   autoPlay
                                   muted
                                   loop

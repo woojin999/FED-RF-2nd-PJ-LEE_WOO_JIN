@@ -36,7 +36,7 @@ function Blog() {
               </div>
             </div>
             <div className="blog-main-img col-6">
-              <img src="process.env.PUBLIC_URL + /images/blog4.png" alt="" />
+              <img src={process.env.PUBLIC_URL + "/images/blog4.png"} alt="blog-main" />
             </div>
           </div>
         </section>
