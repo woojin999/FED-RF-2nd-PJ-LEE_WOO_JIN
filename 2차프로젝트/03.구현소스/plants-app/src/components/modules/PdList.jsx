@@ -93,6 +93,7 @@ function PdList({ category, className, classSale, blog, clN }) {
                             muted
                             autoPlay
                             loop
+                            playsinline
                           />
                         ) : category == "bundle" ? (
                           <img
@@ -109,9 +110,7 @@ function PdList({ category, className, classSale, blog, clN }) {
                           alt={v.tit}
                         />
 
-                        <div
-                          className="add-box"
-                        >
+                        <div className="add-box">
                           <span>QUICK ADD</span>
                         </div>
                         <div className={"sale-box " + classSale}>
