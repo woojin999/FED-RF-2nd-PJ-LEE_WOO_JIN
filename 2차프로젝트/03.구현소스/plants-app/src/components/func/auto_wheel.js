@@ -1,5 +1,5 @@
 function scrollFn() {
-  console.log("휠");
+  // console.log("휠");
   const page = document.querySelectorAll(".page");
   const mpage = document.querySelectorAll(".mpage");
   // console.log(page);

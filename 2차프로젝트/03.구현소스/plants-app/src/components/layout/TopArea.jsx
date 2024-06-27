@@ -37,7 +37,7 @@ export default function TopArea() {
   };
 
   const goSearch = (txt) => {
-    console.log("검색", txt);
+    // console.log("검색", txt);
     goNav("search", { state: { keyword: txt } });
   };
 

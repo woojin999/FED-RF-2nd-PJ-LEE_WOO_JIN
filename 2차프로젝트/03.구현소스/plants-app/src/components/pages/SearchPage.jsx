@@ -7,7 +7,7 @@ function SearchPage(props) {
     const loc = useLocation();
 
     let keyword = loc.state.keyword;
-    console.log("검색어" , keyword);
+    // console.log("검색어" , keyword);
 
     return (
       <>
