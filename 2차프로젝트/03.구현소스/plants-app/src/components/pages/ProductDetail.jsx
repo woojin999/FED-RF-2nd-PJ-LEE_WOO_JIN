@@ -48,6 +48,13 @@ function ProductDetail() {
     $("body").css({ overflow: "auto" });
   };
 
+  const goSearchBtn = (txt) => {
+    console.log(txt.tit);
+    console.log("dd");
+    // goSearch(txt);
+    $(".cart-box").css({ right: "0px", opacity: "1" });
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
     $(".ham-area").css({ left: "-350px", opacity: "0" });

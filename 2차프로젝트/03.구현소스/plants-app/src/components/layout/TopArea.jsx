@@ -47,10 +47,21 @@ export default function TopArea() {
 
   const goHam = () => {
     $(".ham-area").css({ left: "0px", opacity: "1" });
+    $(".cart-box").css({ right: "-350px", opacity: "0" });
   };
 
   const closeHam = () => {
     $(".ham-area").css({ left: "-350px", opacity: "0" });
+    
+  };
+  const openCart = (e) => {
+    e.preventDefault();
+    $(".cart-box").css({ right: "0px", opacity: "1" });
+    $(".ham-area").css({ left: "-350px", opacity: "0" });
+  };
+
+  const closeCart = () => {
+    $(".cart-box").css({ right: "-350px", opacity: "0" });
   };
 
   const goTop = () => {
@@ -67,7 +78,6 @@ export default function TopArea() {
   };
 
   useEffect(() => {
-    // console.log($(window).scrollTop());
     window.addEventListener("wheel", goTop);
   });
 
@@ -94,17 +104,17 @@ export default function TopArea() {
 
     let currVal = 0;
     function moveText() {
-        target.style.translate = --currVal + "px";
-        if(currVal <= Math.floor(-criteria)){
-            target.appendChild(tagetEle[0])
-            target.style.translate = "0px";
-            currVal = 0;
-        }
-        setTimeout(moveText, 15);
+      target.style.translate = --currVal + "px";
+      if (currVal <= Math.floor(-criteria)) {
+        target.appendChild(tagetEle[0]);
+        target.style.translate = "0px";
+        currVal = 0;
+      }
+      setTimeout(moveText, 15);
     }
 
     setTimeout(moveText);
-  },[]);
+  }, []);
 
   return (
     <>
@@ -245,8 +255,11 @@ export default function TopArea() {
                       </a>
                     </li>
                     <li>
-                      <a href="/">
-                        <i className="fa-solid fa-cart-shopping"></i>
+                      <a href="#">
+                        <i
+                          className="fa-solid fa-cart-shopping"
+                          onClick={openCart}
+                        ></i>
                       </a>
                     </li>
                   </ul>
@@ -271,6 +284,47 @@ export default function TopArea() {
                     className="fa-solid fa-xmark fa-3x xbtn"
                     onClick={searchRBtn}
                   ></i>
+                </div>
+              </div>
+            </div>
+            <div className="cart-area">
+              <div className="cart-box">
+                <div className="cart-wrap">
+                  <div className="cart-tit">
+                    <p>
+                      If you have a discount code, you can enter it on the next
+                      page.
+                    </p>
+                  </div>
+                  <div className="cart-top">
+                    <i
+                      className="fa-solid fa-xmark fa-3x cart-xbtn"
+                      onClick={closeCart}
+                    ></i>
+                  </div>
+                </div>
+                <div className="cart-name">
+                  <p>CART</p>
+                </div>
+                <div className="cart-product">
+                  <p>Product</p>
+                  <div className="cart-product-box">
+                    <img src="/images/Calm.png" alt="" />
+                    <div className="cart-pd-info">
+                      <p>Calm</p>
+                      <p>$35.00</p>
+                      <div className="cart-cnt-box">
+                        <button>
+                          <i className="fa-solid fa-minus"></i>
+                        </button>
+                        <input type="text" id="cart-prdcnt" defaultValue={1} />
+                        <button>
+                          <i className="fa-solid fa-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  
                 </div>
               </div>
             </div>

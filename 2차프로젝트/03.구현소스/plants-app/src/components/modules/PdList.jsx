@@ -4,6 +4,7 @@ import { productList } from "../data/product_list";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import $ from "jquery";
 
 import "../../css/product_list.scss";
 import "swiper/css";
@@ -13,6 +14,15 @@ function PdList({ category, className, classSale, blog, clN }) {
   const pdData = productList[category];
   const selData = Object.values(pdData);
   const selDataKey = Object.keys(pdData);
+
+  const goSearchBtn = (txt) => {
+    
+    console.log(txt);
+   
+      // goSearch(txt);
+      $(".cart-box").css({ right: "0px", opacity: "1" });
+    }
+  
 
   return (
     <>
@@ -99,7 +109,9 @@ function PdList({ category, className, classSale, blog, clN }) {
                           alt={v.tit}
                         />
 
-                        <div className="add-box">
+                        <div
+                          className="add-box"
+                        >
                           <span>QUICK ADD</span>
                         </div>
                         <div className={"sale-box " + classSale}>
