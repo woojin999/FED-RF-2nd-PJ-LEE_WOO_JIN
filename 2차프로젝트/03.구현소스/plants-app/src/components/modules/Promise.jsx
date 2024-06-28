@@ -14,7 +14,7 @@ function Promise(props) {
                   autoPlay
                   muted
                   loop
-                  playsInline="true"
+                  playsInline
                 />
               </div>
               <div className="txt-box col-6">
