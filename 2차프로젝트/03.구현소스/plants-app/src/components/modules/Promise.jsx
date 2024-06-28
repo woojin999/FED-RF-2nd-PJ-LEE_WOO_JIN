@@ -12,8 +12,8 @@ function Promise(props) {
                 <video
                   src={process.env.PUBLIC_URL + "/videos/sub.mp4"}
                   autoPlay
-                  muted
                   loop
+                  muted
                   playsInline
                 />
               </div>

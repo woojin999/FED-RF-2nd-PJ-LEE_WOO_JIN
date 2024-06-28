@@ -11,9 +11,9 @@ function Banner() {
             <div className="video-box">
               <video
                 src={process.env.PUBLIC_URL + "/videos/main.mp4"}
-                muted
                 autoPlay
                 loop
+                muted
                 playsInline
               ></video>
             </div>

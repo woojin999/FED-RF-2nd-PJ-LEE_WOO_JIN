@@ -90,9 +90,9 @@ function PdList({ category, className, classSale, blog, clN }) {
                         {category == "single" ? (
                           <video
                             src={process.env.PUBLIC_URL + v.isrc2}
-                            muted
                             autoPlay
                             loop
+                            muted
                             playsInline
                           />
                         ) : category == "bundle" ? (
