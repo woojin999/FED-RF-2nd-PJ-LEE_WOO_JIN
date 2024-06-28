@@ -14,7 +14,7 @@ function Banner() {
                 muted
                 autoPlay
                 loop
-                playsInline={true}
+                playsInline
               ></video>
             </div>
             <div className="ban-txt">
