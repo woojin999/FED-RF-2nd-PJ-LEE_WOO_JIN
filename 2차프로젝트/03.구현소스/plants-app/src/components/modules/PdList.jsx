@@ -93,7 +93,7 @@ function PdList({ category, className, classSale, blog, clN }) {
                             muted
                             autoPlay
                             loop
-                            playsinline
+                            playsInline
                           />
                         ) : category == "bundle" ? (
                           <img
