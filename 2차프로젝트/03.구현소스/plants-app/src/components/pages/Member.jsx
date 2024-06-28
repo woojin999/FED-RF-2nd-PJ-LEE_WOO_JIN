@@ -14,7 +14,7 @@ function Member(props) {
           </div>
           <div className="signtxt">
             <p className="signup">
-              <a href="/login">Sign in here.</a>
+              <Link to="/login">Sign in here.</Link>
             </p>
           </div>
           <form action="">
