@@ -18,10 +18,23 @@ function Member(props) {
             </p>
           </div>
           <form action="">
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <input type="password" placeholder="Password Check" />
-            <input type="text" placeholder="Name" />
+            <ul>
+              <li>
+                <input type="text" placeholder="Id" />
+              </li>
+              <li>
+                <input type="password" placeholder="Password" />
+              </li>
+              <li>
+                <input type="password" placeholder="Password Check" />
+              </li>
+              <li>
+                <input type="text" placeholder="Name" />
+              </li>
+              <li>
+                <input type="email" placeholder="Email" />
+              </li>
+            </ul>
           </form>
           <div className="signbtn">
             <button>
@@ -29,9 +42,7 @@ function Member(props) {
             </button>
           </div>
           <div className="forgot-box">
-            
-              <p className="forgot">Forgot your password?</p>
-            
+            <p className="forgot">Forgot your password?</p>
           </div>
         </div>
       </section>
