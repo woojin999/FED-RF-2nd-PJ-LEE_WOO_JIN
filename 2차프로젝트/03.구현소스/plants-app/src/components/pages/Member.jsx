@@ -238,7 +238,9 @@ function Member(props) {
                 />
                 {userIdError && (
                   <div className="msg">
-                    <small>{idMsg}</small>
+                    <small style={{ color: "red", fontSize: "10px" }}>
+                      {idMsg}
+                    </small>
                   </div>
                 )}
               </li>
@@ -251,7 +253,9 @@ function Member(props) {
                 />
                 {pwdError && (
                   <div className="msg">
-                    <small>{msgEtc.pwd}</small>
+                    <small style={{ color: "red", fontSize: "10px" }}>
+                      {msgEtc.pwd}
+                    </small>
                   </div>
                 )}
               </li>
@@ -264,7 +268,9 @@ function Member(props) {
                 />
                 {chkPwdError && (
                   <div className="msg">
-                    <small>{msgEtc.confPwd}</small>
+                    <small style={{ color: "red", fontSize: "10px" }}>
+                      {msgEtc.confPwd}
+                    </small>
                   </div>
                 )}
               </li>
