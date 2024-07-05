@@ -79,6 +79,17 @@ function Login(props) {
     e.preventDefault();
 
     console.log("최종", totalValid());
+
+    initData();
+
+    let memData = localStorage.getItem("mem-data");
+
+    memData = JSON.parse(memData);
+
+    let result = memData.find((v)=>{
+      if (v.uid == userId) return true;
+    });
+    console.log(result);
   }
 
   return (
