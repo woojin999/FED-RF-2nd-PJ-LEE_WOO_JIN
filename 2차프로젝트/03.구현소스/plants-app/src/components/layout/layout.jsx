@@ -22,16 +22,22 @@ export default function Layout() {
   const goPage = useCallback((pm1, pm2) => {
     goNav(pm1, pm2);
   }, []);
+
+  const makeMsg = useCallback((name) =>{
+    setLoginMsg(name);
+  })
+
+
+  
+  useEffect(()=>{
+    if (sessionStorage.getItem("minfo")) {
+      let ss = sessionStorage.getItem("mingo");
+      setLoginSts(ss);
+    }
+  })
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
-
-  useEffect(()=>{
-    if (sessionStorage.getItem("minfo")) {
-        let ss = sessionStorage.getItem("mingo");
-        setLoginSts(ss);
-    }
-  })
   //
   return (
     <dCon.Provider
@@ -41,12 +47,12 @@ export default function Layout() {
         loginMsg,
         setLoginMsg,
         goPage,
-        // makeMsg,
+        makeMsg,
         // logoutFn,
       }}
     >
       {/* 상단영역 */}
-      <TopArea />
+      <TopArea loginMsg={loginMsg} loginSts={loginSts} goPage={goPage}/>
       {/* 메인영역 */}
       <MainArea />
       {/* 하단영역 */}

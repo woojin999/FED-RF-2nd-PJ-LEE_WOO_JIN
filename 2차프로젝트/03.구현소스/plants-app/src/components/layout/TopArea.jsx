@@ -6,7 +6,7 @@ import $ from "jquery";
 import "../../css/top_area.scss";
 import { useEffect } from "react";
 
-export default function TopArea() {
+export default function TopArea({ loginSts, goPage, loginMsg }) {
   const searchBtn = (e) => {
     e.preventDefault();
     $(".search-area").addClass("on");
@@ -52,7 +52,6 @@ export default function TopArea() {
 
   const closeHam = () => {
     $(".ham-area").css({ left: "-350px", opacity: "0" });
-    
   };
   const openCart = (e) => {
     e.preventDefault();
@@ -237,8 +236,8 @@ export default function TopArea() {
                       </a>
                     </li>
                     <li>
-                      <a href="#">
-                        <i className="fa-brands fa-pinterest"></i>
+                      <a href="#" className="user-name">
+                        {loginMsg}
                       </a>
                     </li>
                     <li>

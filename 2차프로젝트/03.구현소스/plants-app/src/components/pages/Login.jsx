@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect, useState } from "react";
+import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 
 import "../../css/login.scss";
 import { Link } from "react-router-dom";
@@ -79,18 +79,54 @@ function Login(props) {
     e.preventDefault();
 
     console.log("최종", totalValid());
+    if (totalValid()) {
+      initData();
 
-    initData();
+      let memData = localStorage.getItem("mem-data");
 
-    let memData = localStorage.getItem("mem-data");
+      memData = JSON.parse(memData);
 
-    memData = JSON.parse(memData);
+      let result = memData.find((v) => {
+        if (v.uid == userId) return true;
+      });
+      console.log(result);
+      if (!result) {
+        // (1) 에러메시지 선택하기
+        setIdMsg(msgId[1]);
+        // (2) 에러메시지 띄우기
+        setUserIdError(true);
+      } ////if///
+      else {
+        setUserIdError(false);
+        if (pwd == result.pwd) {
+          sessionStorage.setItem("minfo", JSON.stringify(result));
 
-    let result = memData.find((v)=>{
-      if (v.uid == userId) return true;
-    });
-    console.log(result);
+          // 2. 컨텍스트 API의 로그인 상태 업데이트
+          myCon.setLoginSts(sessionStorage.getItem("minfo"));
+          // -> 업데이트 된 minfo 세션스 값을 넣음
+
+          // 3. 로그인 환영메시지 셋팅함수 호출
+          myCon.makeMsg(result.uname);
+          console.log(result.uname);
+
+          // 4. 로그인 성공 메시지 버튼에 출력
+          document.querySelector(".signbtn p").innerText = "로그인 완";
+
+          myCon.goPage("/");
+        } else {
+          // (1) 비밀번호 에러메시지 선택하기
+          setPwdMsg(msgPwd[1]);
+          setPwdError(true);
+        } /// else ////
+      }
+    } else {
+      alert("Change your input");
+    } /// else ///
   }
+  useEffect(() => {
+    // 아이디 입력창 포커스
+    document.querySelector("#user-id").focus();
+  }, []);
 
   return (
     <div id="login-area">
@@ -109,6 +145,7 @@ function Login(props) {
             <ul>
               <li>
                 <input
+                  id="user-id"
                   type="text"
                   placeholder="Your ID"
                   value={userId}
@@ -145,13 +182,12 @@ function Login(props) {
                   )
                 }
               </li>
-              
             </ul>
-          <div className="signbtn">
-            <button onClick={onSubmit}>
-              <p>SIGN IN</p>
-            </button>
-          </div>
+            <div className="signbtn">
+              <button onClick={onSubmit}>
+                <p>SIGN IN</p>
+              </button>
+            </div>
           </form>
           <div className="forgot-box">
             <Link>
