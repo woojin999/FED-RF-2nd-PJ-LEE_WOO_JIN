@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../../css/footer_area.scss";
 
-export default function FooterArea() {
+export default function FooterArea({ logoutFn }) {
   return (
     <>
       <div id="footer-area">
@@ -77,6 +77,14 @@ export default function FooterArea() {
                     <Link to="/shop">
                       <p>Wholesale</p>
                     </Link>
+                  </li>
+                  <li>
+                    <a href="#" onClick={(e)=>{
+                      e.preventDefault();
+                      logoutFn();
+                    }}>
+                      <p>Logout</p>
+                    </a>
                   </li>
                 </ul>
               </div>

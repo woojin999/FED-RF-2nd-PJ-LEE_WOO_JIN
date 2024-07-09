@@ -5,6 +5,8 @@ import FooterArea from "./FooterArea";
 import MainArea from "./MainArea";
 import TopArea from "./TopArea";
 
+import $ from "jquery";
+
 import { dCon } from "../modules/dCon";
 import { useNavigate } from "react-router-dom";
 
@@ -23,18 +25,36 @@ export default function Layout() {
     goNav(pm1, pm2);
   }, []);
 
-  const makeMsg = useCallback((name) =>{
+  const makeMsg = useCallback((name) => {
     setLoginMsg(name);
-  })
+  });
 
+  const logoutFn = useCallback(() => {
+    setLoginSts(null);
+    sessionStorage.removeItem("minfo");
+    setLoginMsg(null);
+    goPage("/");
+  }, []);
 
-  
-  useEffect(()=>{
+  const openCart = useCallback((e) => {
+    e.preventDefault();
+    $(".cart-box").css({ right: "0px", opacity: "1" });
+    $(".ham-area").css({ left: "-350px", opacity: "0" });
+    $(".cart-area").css({ zIndex: "999999999" });
+  },[]);
+
+  const closeCart = useCallback(() => {
+    $(".cart-box").css({ right: "-350px", opacity: "0" });
+    $(".cart-area").css({ zIndex: "-1" });
+  },[]);
+
+  useEffect(() => {
     if (sessionStorage.getItem("minfo")) {
-      let ss = sessionStorage.getItem("mingo");
+      let ss = sessionStorage.getItem("minfo");
       setLoginSts(ss);
+      makeMsg(JSON.parse(ss).uname);
     }
-  })
+  });
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -48,15 +68,24 @@ export default function Layout() {
         setLoginMsg,
         goPage,
         makeMsg,
-        // logoutFn,
+        logoutFn,
+        openCart,
+        closeCart,
       }}
     >
       {/* 상단영역 */}
-      <TopArea loginMsg={loginMsg} loginSts={loginSts} goPage={goPage}/>
+      <TopArea
+        loginMsg={loginMsg}
+        loginSts={loginSts}
+        goPage={goPage}
+        logoutFn={logoutFn}
+        closeCart={closeCart}
+        openCart={openCart}
+      />
       {/* 메인영역 */}
       <MainArea />
       {/* 하단영역 */}
-      <FooterArea />
+      <FooterArea logoutFn={logoutFn} />
     </dCon.Provider>
   );
 } ///////Layout ////

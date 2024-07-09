@@ -6,7 +6,14 @@ import $ from "jquery";
 import "../../css/top_area.scss";
 import { useEffect } from "react";
 
-export default function TopArea({ loginSts, goPage, loginMsg }) {
+export default function TopArea({
+  loginSts,
+  goPage,
+  loginMsg,
+  logoutFn,
+  openCart,
+  closeCart,
+}) {
   const searchBtn = (e) => {
     e.preventDefault();
     $(".search-area").addClass("on");
@@ -53,15 +60,8 @@ export default function TopArea({ loginSts, goPage, loginMsg }) {
   const closeHam = () => {
     $(".ham-area").css({ left: "-350px", opacity: "0" });
   };
-  const openCart = (e) => {
-    e.preventDefault();
-    $(".cart-box").css({ right: "0px", opacity: "1" });
-    $(".ham-area").css({ left: "-350px", opacity: "0" });
-  };
 
-  const closeCart = () => {
-    $(".cart-box").css({ right: "-350px", opacity: "0" });
-  };
+  
 
   const goTop = () => {
     if ($(window).scrollTop() > 200) {
@@ -117,6 +117,45 @@ export default function TopArea({ loginSts, goPage, loginMsg }) {
 
   return (
     <>
+      <div className="cart-area">
+        <div className="cart-box">
+          <div className="cart-wrap">
+            <div className="cart-tit">
+              <p>
+                If you have a discount code, you can enter it on the next page.
+              </p>
+            </div>
+            <div className="cart-top">
+              <i
+                className="fa-solid fa-xmark fa-3x cart-xbtn"
+                onClick={closeCart}
+              ></i>
+            </div>
+          </div>
+          <div className="cart-name">
+            <p>CART</p>
+          </div>
+          <div className="cart-product">
+            <p>Product</p>
+            <div className="cart-product-box">
+              <img src={process.env.PUBLIC_URL + "/images/Calm.png"} alt="" />
+              <div className="cart-pd-info">
+                <p>Calm</p>
+                <p>$35.00</p>
+                <div className="cart-cnt-box">
+                  <button>
+                    <i className="fa-solid fa-minus"></i>
+                  </button>
+                  <input type="text" id="cart-prdcnt" defaultValue={1} />
+                  <button>
+                    <i className="fa-solid fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="top-ban">
         <ul>
           {banArr.map((v, i) => (
@@ -226,25 +265,24 @@ export default function TopArea({ loginSts, goPage, loginMsg }) {
                 <nav className="sub-gnb">
                   <ul className="fx-box">
                     <li>
-                      <a href="#">
-                        <i className="fa-brands fa-instagram"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i className="fa-brands fa-tiktok"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="user-name">
+                      <Link to="/myPage" className="user-name">
                         {loginMsg}
-                      </a>
-                    </li>
-                    <li>
-                      <Link to="/login">
-                        <i className="fa-regular fa-circle-user"></i>
                       </Link>
                     </li>
+                    {loginSts == null && (
+                      <li>
+                        <Link to="/login">
+                          <i className="fa-regular fa-circle-user"></i>
+                        </Link>
+                      </li>
+                    )}
+                    {loginSts !== null && (
+                      <li>
+                        <Link to="/myPage">
+                          <i className="fa-regular fa-circle-user"></i>
+                        </Link>
+                      </li>
+                    )}
                     <li>
                       <a href="#">
                         <i
@@ -286,49 +324,7 @@ export default function TopArea({ loginSts, goPage, loginMsg }) {
                 </div>
               </div>
             </div>
-            {/* <div className="cart-area">
-              <div className="cart-box">
-                <div className="cart-wrap">
-                  <div className="cart-tit">
-                    <p>
-                      If you have a discount code, you can enter it on the next
-                      page.
-                    </p>
-                  </div>
-                  <div className="cart-top">
-                    <i
-                      className="fa-solid fa-xmark fa-3x cart-xbtn"
-                      onClick={closeCart}
-                    ></i>
-                  </div>
-                </div>
-                <div className="cart-name">
-                  <p>CART</p>
-                </div>
-                <div className="cart-product">
-                  <p>Product</p>
-                  <div className="cart-product-box">
-                    <img
-                      src={process.env.PUBLIC_URL + "/images/Calm.png"}
-                      alt=""
-                    />
-                    <div className="cart-pd-info">
-                      <p>Calm</p>
-                      <p>$35.00</p>
-                      <div className="cart-cnt-box">
-                        <button>
-                          <i className="fa-solid fa-minus"></i>
-                        </button>
-                        <input type="text" id="cart-prdcnt" defaultValue={1} />
-                        <button>
-                          <i className="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
+
             <div className="ham-area">
               <div className="ham-box">
                 <div className="ham-wrap">

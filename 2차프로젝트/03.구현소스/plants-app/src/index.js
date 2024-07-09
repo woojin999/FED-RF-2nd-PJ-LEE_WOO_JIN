@@ -15,6 +15,7 @@ import Login from "./components/pages/Login";
 import SearchPage from "./components/pages/SearchPage";
 import BlogDetail from "./components/pages/BlogDetail";
 import Member from "./components/pages/Member";
+import MyPage from "./components/pages/MyPage";
 
 export default function MainComponent() {
   return (
@@ -31,6 +32,7 @@ export default function MainComponent() {
           <Route path="member" element={<Member />} />
           <Route path="search" element={<SearchPage />} />
           <Route path="blogDetail" element={<BlogDetail />} />
+          <Route path="myPage" element={<MyPage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

@@ -2,7 +2,7 @@
   background-color: #e2dfcf;
   overflow: hidden;
   position: relative;
-  z-index: 9999999999999;
+  z-index: 999999;
   ul {
     display: flex;
     li {
@@ -19,7 +19,6 @@
   top: 0;
   width: 100%;
   z-index: 99999999;
-  
 }
 .top-area {
   background-color: #eeede7;
@@ -29,9 +28,8 @@
   width: 100%;
   z-index: 999;
   height: 90px;
-  
 }
-.top-area-box{
+.top-area-box {
   position: relative;
   // overflow: hidden;
 }
@@ -85,12 +83,12 @@
   margin: 0 10px;
   font-size: 20px;
 }
-.user-name{
+.user-name {
   text-decoration: underline;
 }
-.sub-gnb li:nth-child(2) {
-  margin-right: 20px;
-}
+// .sub-gnb li:nth-child(2) {
+//   margin-right: 20px;
+// }
 .smenu {
   display: flex;
   position: absolute;
@@ -242,8 +240,14 @@
     cursor: pointer;
   }
 }
+.cart-area{
+  position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
 .cart-box {
-  position: absolute;
+  position: fixed;
   background-color: #eeede7;
   top: -40px;
   right: -350px;
@@ -253,6 +257,7 @@
   opacity: 0;
   transition: 0.4s;
   border-left: 1px solid #503217;
+  z-index: 999999999999999;
   // overflow: hidden;
   .cart-wrap {
     .cart-tit {
@@ -269,8 +274,8 @@
         top: 0;
         padding: 7rem 2rem;
         cursor: pointer;
-        transition: .4s;
-        &:hover{
+        transition: 0.4s;
+        &:hover {
           transform: rotate(90deg);
         }
       }
@@ -449,11 +454,11 @@
 }
 
 @media screen and (max-width: 940px) {
-  .sub-gnb {
-    li:nth-child(-n + 3) {
-      display: none;
-    }
-  }
+  // .sub-gnb {
+  //   li:nth-child(n + 2):nth-child(-n + 3) {
+  //     display: none;
+  //   }
+  // }
 }
 @media screen and (max-width: 800px) {
   .gnb-menu {
@@ -470,6 +475,9 @@
   }
   .sub-gnb {
     padding-right: 10px;
+    li:nth-child(n + 3):nth-child(-n + 3) {
+      display: none;
+    }
   }
   .sub-gnb {
     li:nth-child(5) {
@@ -478,10 +486,29 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .logo-box {
     img {
       width: 150px;
     }
+  }
+  .gnb-menu {
+    margin-left: 15px;
+  }
+  .sub-gnb {
+    padding-right: 5px;
+    a {
+      margin: 0 3px;
+      font-size: 15px;
+    }
+  }
+  .ham-li .ham-menu {
+    font-size: 2rem;
+  }
+  .ham-sc a {
+    font-size: 1.8rem;
+  }
+  .gnb-menu ul {
+    gap: 10px;
   }
 }

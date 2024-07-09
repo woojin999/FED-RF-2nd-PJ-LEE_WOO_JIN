@@ -10,19 +10,25 @@ import "../../css/product_list.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 
-function PdList({ category, className, classSale, blog, clN }) {
+function PdList({
+  category,
+  className,
+  classSale,
+  blog,
+  clN,
+  openCart,
+  closeCart,
+}) {
   const pdData = productList[category];
   const selData = Object.values(pdData);
   const selDataKey = Object.keys(pdData);
 
   const goSearchBtn = (txt) => {
-    
     console.log(txt);
-   
-      // goSearch(txt);
-      $(".cart-box").css({ right: "0px", opacity: "1" });
-    }
-  
+
+    // goSearch(txt);
+    $(".cart-box").css({ right: "0px", opacity: "1" });
+  };
 
   return (
     <>
@@ -110,7 +116,10 @@ function PdList({ category, className, classSale, blog, clN }) {
                           alt={v.tit}
                         />
 
-                        <div className="add-box">
+                        <div className="add-box" onClick={(e)=>{
+                          e.preventDefault();
+                          // openCart;
+                          }}>
                           <span>QUICK ADD</span>
                         </div>
                         <div className={"sale-box " + classSale}>
