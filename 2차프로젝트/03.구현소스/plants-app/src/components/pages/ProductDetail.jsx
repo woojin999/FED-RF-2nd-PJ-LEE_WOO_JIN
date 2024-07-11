@@ -1,9 +1,10 @@
-import React, { useEffect, useLayoutEffect, useRef } from "react";
+import React, { useCallback, useContext, useEffect, useLayoutEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 import "../../css/product_detail.scss";
 
 import $ from "jquery";
+import { dCon } from "../modules/dCon";
 
 import { productList } from "../data/product_list";
 import PdList from "../modules/PdList";
@@ -22,6 +23,9 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
 function ProductDetail() {
+
+   const myCon = useContext(dCon);
+
   let cntNum = 1;
   $("#prdcnt").val("1");
   const countUp = () => {
@@ -55,6 +59,13 @@ function ProductDetail() {
     $(".cart-box").css({ right: "0px", opacity: "1" });
   };
 
+  const openCart = useCallback(() => {
+    
+    $(".cart-box").css({ right: "0px", opacity: "1" });
+    $(".ham-area").css({ left: "-350px", opacity: "0" });
+    $(".cart-area").css({ zIndex: "999999999" });
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
     $(".ham-area").css({ left: "-350px", opacity: "0" });
@@ -86,7 +97,7 @@ function ProductDetail() {
               </div>
               <div className="col-6 detail-txt">
                 <h2>{pvo.tit}</h2>
-                <p>${pvo.price}</p>
+                <p>${pvo.price}.00</p>
                 <div className="cart-wrap">
                   <div className="product-count-box">
                     <button onClick={countDown}>
@@ -98,7 +109,44 @@ function ProductDetail() {
                     </button>
                   </div>
                   <div className="cart-btn">
-                    <button>ADD TO CART</button>
+                    <button onClick={(e)=>{
+                      // e.preventDefault();
+                      console.log("ddd");
+                      // 1. 로컬스 생성
+                      if (!localStorage.getItem("cart-data")) {
+                        localStorage.setItem("cart-data", "[]");
+                      } // if ////
+                      // 2. 로컬스 파싱
+                      let locals =localStorage.getItem("cart-data");
+                      locals = JSON.parse(locals);
+
+                      let retSts = locals.some(v=>{
+                        if(v.tit == pvo.tit) return true;
+                      })
+
+                      if (retSts) {
+                        alert("이미 카트에 담긴 상품입니다")
+                        openCart();
+                        return;
+                      }
+
+                      // 4. 로컬스에 데이터 추가
+                      locals.push({
+                        tit: pvo.tit,
+                        pimage: pvo.isrc1,
+                        price: pvo.price,
+                        count: $("#prdcnt").val()
+                      });
+
+                      localStorage.setItem("cart-data", JSON.stringify(locals));
+
+                      myCon.setLocalsCart(localStorage.getItem("cart-data"));
+
+                      myCon.setCartSts(true);
+                      console.log(myCon.cartSts);
+                      openCart();
+                    }}
+                    >ADD TO CART</button>
                   </div>
                 </div>
                 <div className="product-desc-box">

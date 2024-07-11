@@ -128,7 +128,7 @@ function PdList({
                       </div>
                       <div className="product-txt">
                         <p>{v.tit}</p>
-                        <span>${v.price}</span>
+                        <span>${v.price}.00</span>
                       </div>
                     </Link>
                   </SwiperSlide>

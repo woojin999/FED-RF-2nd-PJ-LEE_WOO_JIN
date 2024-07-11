@@ -9,6 +9,7 @@ import $ from "jquery";
 
 import { dCon } from "../modules/dCon";
 import { useNavigate } from "react-router-dom";
+import CartList from "../modules/CartList";
 
 export default function Layout() {
   // 상태관리 변수 //
@@ -17,6 +18,20 @@ export default function Layout() {
   // -> 초기값으로 로컬스토리지 "minfo" 를 할당함
   // 2. 로그인 환영 메시지 상태변수
   const [loginMsg, setLoginMsg] = useState(null);
+
+  // 로컬스 카트 데이터
+
+  let cartTemp = false;
+  const [localsCart, setLocalsCart] = useState(
+    localStorage.getItem("cart-data")
+  );
+
+  if(localsCart){
+    let cartCnt = JSON.parse(localsCart).length;
+    if(cartCnt > 0) cartTemp = true;
+  }
+
+  const [cartSts, setCartSts] = useState(cartTemp);
 
   const goNav = useNavigate();
   // 따라서 별도의 함수를 만들고 이것을 콜백처리해준다
@@ -45,8 +60,7 @@ export default function Layout() {
 
   const closeCart = useCallback(() => {
     $(".cart-box").css({ right: "-350px", opacity: "0" });
-    $(".cart-area").css({ zIndex: "-1" });
-  },[]);
+  });
 
   useEffect(() => {
     if (sessionStorage.getItem("minfo")) {
@@ -71,8 +85,13 @@ export default function Layout() {
         logoutFn,
         openCart,
         closeCart,
+        localsCart,
+        setLocalsCart,
+        cartSts,
+        setCartSts
       }}
     >
+      <CartList closeCart={closeCart} cartSts={cartSts} />
       {/* 상단영역 */}
       <TopArea
         loginMsg={loginMsg}

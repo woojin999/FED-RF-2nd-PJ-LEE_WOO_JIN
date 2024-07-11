@@ -117,45 +117,7 @@ export default function TopArea({
 
   return (
     <>
-      <div className="cart-area">
-        <div className="cart-box">
-          <div className="cart-wrap">
-            <div className="cart-tit">
-              <p>
-                If you have a discount code, you can enter it on the next page.
-              </p>
-            </div>
-            <div className="cart-top">
-              <i
-                className="fa-solid fa-xmark fa-3x cart-xbtn"
-                onClick={closeCart}
-              ></i>
-            </div>
-          </div>
-          <div className="cart-name">
-            <p>CART</p>
-          </div>
-          <div className="cart-product">
-            <p>Product</p>
-            <div className="cart-product-box">
-              <img src={process.env.PUBLIC_URL + "/images/Calm.png"} alt="" />
-              <div className="cart-pd-info">
-                <p>Calm</p>
-                <p>$35.00</p>
-                <div className="cart-cnt-box">
-                  <button>
-                    <i className="fa-solid fa-minus"></i>
-                  </button>
-                  <input type="text" id="cart-prdcnt" defaultValue={1} />
-                  <button>
-                    <i className="fa-solid fa-plus"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
       <div className="top-ban">
         <ul>
           {banArr.map((v, i) => (
