@@ -52,7 +52,7 @@ export default function Layout() {
   }, []);
 
   const openCart = useCallback((e) => {
-    e.preventDefault();
+    // e.preventDefault();
     $(".cart-box").css({ right: "0px", opacity: "1" });
     $(".ham-area").css({ left: "-350px", opacity: "0" });
     $(".cart-area").css({ zIndex: "999999999" });
@@ -70,7 +70,8 @@ export default function Layout() {
     }
   });
   useLayoutEffect(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
+    // $(".cart-box").css({ right: "-350px", opacity: "0" });
   });
   //
   return (

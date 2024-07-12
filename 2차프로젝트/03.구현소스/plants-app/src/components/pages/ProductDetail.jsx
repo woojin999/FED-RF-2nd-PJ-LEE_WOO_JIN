@@ -55,7 +55,6 @@ function ProductDetail() {
   const goSearchBtn = (txt) => {
     console.log(txt.tit);
     console.log("dd");
-    // goSearch(txt);
     $(".cart-box").css({ right: "0px", opacity: "1" });
   };
 

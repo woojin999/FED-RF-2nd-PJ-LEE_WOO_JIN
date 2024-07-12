@@ -254,12 +254,12 @@ export default function TopArea({
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      
                         <i
                           className="fa-solid fa-cart-shopping"
                           onClick={openCart}
                         ></i>
-                      </a>
+                      
                     </li>
                   </ul>
                 </nav>

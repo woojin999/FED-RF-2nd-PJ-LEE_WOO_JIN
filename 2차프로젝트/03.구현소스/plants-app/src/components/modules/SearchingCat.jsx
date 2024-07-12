@@ -35,9 +35,9 @@ function SearchingCat({ dt }) {
                     src={process.env.PUBLIC_URL + v.isrc1}
                     alt=""
                   />
-                  <div className="add-box">
+                  {/* <div className="add-box">
                     <span>QUICK ADD</span>
-                  </div>
+                  </div> */}
                   <div
                     className={
                       "sale-box " + (v.category == "bundle" ? "on" : "")

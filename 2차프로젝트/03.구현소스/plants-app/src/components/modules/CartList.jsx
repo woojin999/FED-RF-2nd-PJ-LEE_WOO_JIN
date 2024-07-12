@@ -8,12 +8,12 @@ import { Link } from "react-router-dom";
 function CartList({ closeCart, cartSts }) {
   const myCon = useContext(dCon);
   const selData = JSON.parse(myCon.localsCart);
-  console.log(selData);
+  // console.log(selData);
   let dataCnt = 0;
-  if(cartSts){
+  if (cartSts) {
     dataCnt = selData.length;
   }
-  console.log(cartSts);
+  // console.log(cartSts);
 
   const totalFn = () => {
     let result = 0;
@@ -24,8 +24,19 @@ function CartList({ closeCart, cartSts }) {
     return result;
   };
 
+  const cntBtn = (i, tgVal) => {
+    selData[i].count = tgVal;
+
+    let res = JSON.stringify(selData);
+    localStorage.setItem("cart-data", res);
+    myCon.setLocalsCart(res);
+    setTimeout(() => {
+      $(".total-price").text("$" + totalFn() + ".00");
+    }, 0);
+  };
+
   useEffect(() => {
-    $(".total-price").text("TOTAL : $" + totalFn() + ".00");
+    $(".total-price").text("$" + totalFn() + ".00");
   }, [dataCnt]);
   return (
     <div className="cart-area">
@@ -71,7 +82,17 @@ function CartList({ closeCart, cartSts }) {
                     defaultValue={v.price * v.count}
                   />
                   <div className="cart-cnt-box">
-                    <button>
+                    <button
+                      onClick={(e) => {
+                        let target = $(e.currentTarget).next();
+                        target.val(
+                          target.val() == 1 ? 1 : Number(target.val()) - 1
+                        );
+
+                        let tgVal = target.val();
+                        cntBtn(i, tgVal);
+                      }}
+                    >
                       <i className="fa-solid fa-minus"></i>
                     </button>
                     <input
@@ -79,12 +100,43 @@ function CartList({ closeCart, cartSts }) {
                       id="cart-prdcnt"
                       defaultValue={v.count}
                     />
-                    <button>
+                    <button
+                      onClick={(e) => {
+                        let target = $(e.currentTarget).prev();
+                        target.val(Number(target.val()) + 1);
+                        let tgVal = target.val();
+                        cntBtn(i, tgVal);
+                      }}
+                    >
                       <i className="fa-solid fa-plus"></i>
                     </button>
                   </div>
-                  <div className="rmBtn">
-                    <p>remove</p>
+
+                  <div className="cart-flex">
+                    <div className="pd-total">
+                      <p>${v.price * v.count}.00</p>
+                    </div>
+                    <div
+                      className="rmBtn"
+                      onClick={() => {
+                        if (
+                          window.confirm("Are you sure you want to delete?")
+                        ) {
+                          // 데이터 지우기
+                          selData.splice(i, 1);
+                          // 데이터 문자화
+                          let res = JSON.stringify(selData);
+                          // 로컬에 반영
+                          localStorage.setItem("cart-data", res);
+                          myCon.setLocalsCart(res);
+                          if (selData.length == 0) {
+                            myCon.setCartSts(false);
+                          }
+                        }
+                      }}
+                    >
+                      <p>REMOVE</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -92,6 +144,7 @@ function CartList({ closeCart, cartSts }) {
         </div>
         {cartSts && (
           <div className="cart-name">
+            <span className="total-titgle">TOTAL</span>
             <p className="total-price"></p>
           </div>
         )}

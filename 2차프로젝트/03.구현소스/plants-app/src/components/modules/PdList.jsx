@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { productList } from "../data/product_list";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { dCon } from "./dCon";
+
 import $ from "jquery";
 
 import "../../css/product_list.scss";
@@ -22,6 +24,8 @@ function PdList({
   const pdData = productList[category];
   const selData = Object.values(pdData);
   const selDataKey = Object.keys(pdData);
+
+  const myCon = useContext(dCon);
 
   const goSearchBtn = (txt) => {
     console.log(txt);
@@ -118,7 +122,44 @@ function PdList({
 
                         <div className="add-box" onClick={(e)=>{
                           e.preventDefault();
-                          // openCart;
+                          console.log("ddd");
+                          // 1. 로컬스 생성
+                          if (!localStorage.getItem("cart-data")) {
+                            localStorage.setItem("cart-data", "[]");
+                          } // if ////
+                          // 2. 로컬스 파싱
+                          let locals = localStorage.getItem("cart-data");
+                          locals = JSON.parse(locals);
+
+                          let retSts = locals.some((val) => {
+                            if (val.tit == v.tit) return true;
+                          });
+
+                          if (retSts) {
+                            alert("This product is already in your cart.");
+                            myCon.openCart();
+                            return;
+                          }
+
+                          // 4. 로컬스에 데이터 추가
+                          locals.push({
+                            tit: v.tit,
+                            pimage: v.isrc1,
+                            price: v.price,
+                            count: "1",
+                          });
+
+                          localStorage.setItem(
+                            "cart-data",
+                            JSON.stringify(locals)
+                          );
+
+                          myCon.setLocalsCart(
+                            localStorage.getItem("cart-data")
+                          );
+
+                          myCon.setCartSts(true);
+                          myCon.openCart();
                           }}>
                           <span>QUICK ADD</span>
                         </div>

@@ -10,12 +10,16 @@ import Support from "../modules/Support";
 
 import * as sFn from "../func/auto_wheel";
 import SlBanner from "../modules/SlBanner";
+import $ from "jquery";
 
 export default function Main() {
   
   useEffect(()=>{
     window.addEventListener("scroll", sFn.scrollFn);
   },[])
+  // useLayoutEffect(() => {
+  //   $(".cart-box").css({ right: "-350px", opacity: "0" });
+  // });
   return (
     <>
       {/* 배너 컴포넌트 */}

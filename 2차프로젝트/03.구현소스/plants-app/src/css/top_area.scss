@@ -78,10 +78,11 @@
 .sub-gnb {
   padding-right: 30px;
 }
-.sub-gnb a {
+.sub-gnb li {
   // padding: 10px;
   margin: 0 10px;
   font-size: 20px;
+  cursor: pointer;
 }
 .user-name {
   text-decoration: underline;
@@ -282,14 +283,17 @@
     }
   }
   .cart-name {
+    border-top: 1px solid #503217;
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid #503217;
-    p {
+    
       font-size: 2rem;
       padding: 2rem 2rem;
-    }
+    
   }
   .cart-product {
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 80vh;
     > p {
       padding: 2rem 0 0 2rem;
@@ -300,7 +304,7 @@
       display: flex;
       img {
         padding: 2rem;
-        width: 30%;
+        width: 35%;
         flex-basis: 30%;
         object-fit: contain;
       }
@@ -309,12 +313,13 @@
         padding: 2rem 0;
         flex-basis: 70%;
         p {
-          margin-bottom: 1rem;
+          margin-bottom: .5rem;
           font-size: 1.6rem;
         }
         .rmBtn p {
           font-size: 1.2rem;
           cursor: pointer;
+          display: inline-block;
         }
         .cart-cnt-box {
           border: 1px solid #503217;
@@ -335,7 +340,7 @@
             text-align: center;
             margin: 0 auto;
             width: 30px;
-            height: 36px;
+            height: 30px;
           }
         }
       }
@@ -351,6 +356,22 @@
     border: 1px solid #000;
     margin-top: 2rem;
     // width: 70%;
+  }
+}
+.cart-area .cart-box .cart-flex{
+  display: flex;
+  justify-content: space-between;
+  .pd-total{
+    height: 1.5rem;
+    padding-top: 1.2rem;
+    p{
+      font-size: 1.8rem;
+    }
+  }
+  .rmBtn{
+    height: 1.5rem;
+    padding-top: 1.6rem;
+    padding-right: 2rem;
   }
 }
 .ham-area {
