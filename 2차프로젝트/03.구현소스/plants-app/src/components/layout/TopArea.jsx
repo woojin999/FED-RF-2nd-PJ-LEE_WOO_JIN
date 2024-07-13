@@ -61,8 +61,6 @@ export default function TopArea({
     $(".ham-area").css({ left: "-350px", opacity: "0" });
   };
 
-  
-
   const goTop = () => {
     if ($(window).scrollTop() > 200) {
       $(".gotopbtn").addClass("on");
@@ -117,7 +115,6 @@ export default function TopArea({
 
   return (
     <>
-      
       <div className="top-ban">
         <ul>
           {banArr.map((v, i) => (
@@ -226,11 +223,6 @@ export default function TopArea({
               <div className="sub-gnb-box col-4 fx-box">
                 <nav className="sub-gnb">
                   <ul className="fx-box">
-                    <li>
-                      <Link to="/myPage" className="user-name">
-                        {loginMsg}
-                      </Link>
-                    </li>
                     {loginSts == null && (
                       <li>
                         <Link to="/login">
@@ -254,16 +246,19 @@ export default function TopArea({
                       </a>
                     </li>
                     <li>
-                      
-                        <i
-                          className="fa-solid fa-cart-shopping"
-                          onClick={openCart}
-                        ></i>
-                      
+                      <i
+                        className="fa-solid fa-cart-shopping"
+                        onClick={openCart}
+                      ></i>
                     </li>
                   </ul>
                 </nav>
               </div>
+            </div>
+            <div className="login-name">
+              <Link to="/myPage" className="user-name">
+                {loginMsg}
+              </Link>
             </div>
             <div className="search-area">
               <div className="search-box">

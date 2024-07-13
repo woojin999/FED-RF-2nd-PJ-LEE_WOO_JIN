@@ -143,10 +143,15 @@ function CartList({ closeCart, cartSts }) {
             ))}
         </div>
         {cartSts && (
-          <div className="cart-name">
-            <span className="total-titgle">TOTAL</span>
-            <p className="total-price"></p>
-          </div>
+          <>
+            <div className="cart-name">
+              <span className="total-titgle">TOTAL</span>
+              <p className="total-price"></p>
+            </div>
+            <div className="buyBtn">
+              <p>BUY</p>
+            </div>
+          </>
         )}
       </div>
     </div>

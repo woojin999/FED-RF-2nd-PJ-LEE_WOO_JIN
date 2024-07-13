@@ -124,7 +124,7 @@ function ProductDetail() {
                       })
 
                       if (retSts) {
-                        alert("이미 카트에 담긴 상품입니다")
+                        alert("This product is already in your cart.")
                         openCart();
                         return;
                       }
