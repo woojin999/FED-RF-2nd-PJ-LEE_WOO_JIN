@@ -129,8 +129,17 @@ function ProductDetail() {
                         return;
                       }
 
+                      let memIdx = 0;
+
+                      if (myCon.loginSts) {
+                        memIdx = JSON.parse(myCon.loginSts).idx;
+                        // console.log(JSON.parse(myCon.loginSts).idx);
+                      } else {
+                        memIdx = 0;
+                      }
                       // 4. 로컬스에 데이터 추가
                       locals.push({
+                        midx: memIdx,
                         tit: pvo.tit,
                         pimage: pvo.isrc1,
                         price: pvo.price,

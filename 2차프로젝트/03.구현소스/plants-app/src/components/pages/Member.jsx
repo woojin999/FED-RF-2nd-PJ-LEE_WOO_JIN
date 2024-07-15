@@ -63,7 +63,7 @@ function Member(props) {
     const valid = /^[A-Za-z0-9+]{6,15}$/;
 
     if (valid.test(val)) {
-      console.log("통과");
+      // console.log("통과");
 
       initData();
 
@@ -82,10 +82,10 @@ function Member(props) {
         setUserIdError(false);
       }
 
-      console.log("중복id", isTrue);
+      // console.log("중복id", isTrue);
       memData.forEach((v) => console.log(v));
     } else {
-      console.log("에");
+      // console.log("에");
       // 에러 메시지 업데이트
       setIdMsg(msgId[0]);
       setUserIdError(true);

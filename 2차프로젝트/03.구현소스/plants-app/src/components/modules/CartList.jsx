@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useLayoutEffect } from "react";
 
 import { dCon } from "./dCon";
 
@@ -8,12 +8,20 @@ import { Link } from "react-router-dom";
 function CartList({ closeCart, cartSts }) {
   const myCon = useContext(dCon);
   const selData = JSON.parse(myCon.localsCart);
+
+  let memIdx = 0;
+  if (myCon.loginSts) {
+    memIdx = JSON.parse(myCon.loginSts).idx;
+  }
+
   // console.log(selData);
   let dataCnt = 0;
   if (cartSts) {
-    dataCnt = selData.length;
+    if (myCon.loginSts) {
+      dataCnt = selData.length;
+    }
   }
-  // console.log(cartSts);
+  console.log(cartSts);
 
   const totalFn = () => {
     let result = 0;
@@ -35,9 +43,13 @@ function CartList({ closeCart, cartSts }) {
     }, 0);
   };
 
+  let memCartCnt = $(".cart-product-box").length;
+
   useEffect(() => {
     $(".total-price").text("$" + totalFn() + ".00");
   }, [dataCnt]);
+  useEffect(()=>{
+  })
   return (
     <div className="cart-area">
       <div className="cart-box">
@@ -51,7 +63,7 @@ function CartList({ closeCart, cartSts }) {
           </div>
         </div>
         <div className="cart-name">
-          <p>CART({dataCnt})</p>
+          <p>CART({myCon.loginSts == null ? dataCnt : memCartCnt})</p>
         </div>
         <div className="cart-product">
           <p>Products</p>
@@ -70,77 +82,81 @@ function CartList({ closeCart, cartSts }) {
             </div>
           )}
           {cartSts &&
-            selData.map((v, i) => (
-              <div key={i} className="cart-product-box">
-                <img src={process.env.PUBLIC_URL + v.pimage} alt="dd" />
-                <div className="cart-pd-info">
-                  <p>{v.tit}</p>
-                  <p>${v.price}.00</p>
-                  <input
-                    className="sum-price"
-                    type="hidden"
-                    defaultValue={v.price * v.count}
-                  />
-                  <div className="cart-cnt-box">
-                    <button
-                      onClick={(e) => {
-                        let target = $(e.currentTarget).next();
-                        target.val(
-                          target.val() == 1 ? 1 : Number(target.val()) - 1
-                        );
+            selData.map(
+              (v, i) =>
+                (myCon.loginSts == null ? true : memIdx == v.midx) && (
+                  <div key={i} className="cart-product-box">
+                    <img src={process.env.PUBLIC_URL + v.pimage} alt="dd" />
+                    <div className="cart-pd-info">
+                      <p>{v.tit}</p>
+                      <p>${v.price}.00</p>
+                      <input
+                        className="sum-price"
+                        type="hidden"
+                        defaultValue={v.price * v.count}
+                      />
+                      <div className="cart-cnt-box">
+                        <button
+                          onClick={(e) => {
+                            let target = $(e.currentTarget).next();
+                            target.val(
+                              target.val() == 1 ? 1 : Number(target.val()) - 1
+                            );
 
-                        let tgVal = target.val();
-                        cntBtn(i, tgVal);
-                      }}
-                    >
-                      <i className="fa-solid fa-minus"></i>
-                    </button>
-                    <input
-                      type="text"
-                      id="cart-prdcnt"
-                      defaultValue={v.count}
-                    />
-                    <button
-                      onClick={(e) => {
-                        let target = $(e.currentTarget).prev();
-                        target.val(Number(target.val()) + 1);
-                        let tgVal = target.val();
-                        cntBtn(i, tgVal);
-                      }}
-                    >
-                      <i className="fa-solid fa-plus"></i>
-                    </button>
-                  </div>
+                            let tgVal = target.val();
+                            cntBtn(i, tgVal);
+                          }}
+                        >
+                          <i className="fa-solid fa-minus"></i>
+                        </button>
+                        <input
+                          type="text"
+                          id="cart-prdcnt"
+                          defaultValue={v.count}
+                          readOnly
+                        />
+                        <button
+                          onClick={(e) => {
+                            let target = $(e.currentTarget).prev();
+                            target.val(Number(target.val()) + 1);
+                            let tgVal = target.val();
+                            cntBtn(i, tgVal);
+                          }}
+                        >
+                          <i className="fa-solid fa-plus"></i>
+                        </button>
+                      </div>
 
-                  <div className="cart-flex">
-                    <div className="pd-total">
-                      <p>${v.price * v.count}.00</p>
-                    </div>
-                    <div
-                      className="rmBtn"
-                      onClick={() => {
-                        if (
-                          window.confirm("Are you sure you want to delete?")
-                        ) {
-                          // 데이터 지우기
-                          selData.splice(i, 1);
-                          // 데이터 문자화
-                          let res = JSON.stringify(selData);
-                          // 로컬에 반영
-                          localStorage.setItem("cart-data", res);
-                          myCon.setLocalsCart(res);
-                          if (selData.length == 0) {
-                            myCon.setCartSts(false);
-                          }
-                        }
-                      }}
-                    >
-                      <p>REMOVE</p>
+                      <div className="cart-flex">
+                        <div className="pd-total">
+                          <p>${v.price * v.count}.00</p>
+                        </div>
+                        <div
+                          className="rmBtn"
+                          onClick={() => {
+                            if (
+                              window.confirm("Are you sure you want to delete?")
+                            ) {
+                              // 데이터 지우기
+                              selData.splice(i, 1);
+                              // 데이터 문자화
+                              let res = JSON.stringify(selData);
+                              // 로컬에 반영
+                              localStorage.setItem("cart-data", res);
+                              myCon.setLocalsCart(res);
+                              if (selData.length == 0) {
+                                myCon.setCartSts(false);
+                              }
+                            }
+                          }}
+                        >
+                          <p>REMOVE</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                )
+            )}
         </div>
         {cartSts && (
           <>

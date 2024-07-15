@@ -78,7 +78,7 @@ function Login(props) {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    console.log("최종", totalValid());
+    // console.log("최종", totalValid());
     if (totalValid()) {
       initData();
 
