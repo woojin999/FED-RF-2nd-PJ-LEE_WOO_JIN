@@ -14,11 +14,19 @@ function CartList({ closeCart, cartSts }) {
     memIdx = JSON.parse(myCon.loginSts).idx;
   }
 
-  // console.log(selData);
   let dataCnt = 0;
+  let memCartCnt = 0;
   if (cartSts) {
-    if (myCon.loginSts) {
+    if (myCon.loginSts == null) {
       dataCnt = selData.length;
+    } else if (myCon.loginSts) {
+      console.log(selData);
+      selData.map((v) => {
+        if (v.midx == memIdx) {
+          memCartCnt++;
+        }
+        console.log(memCartCnt);
+      });
     }
   }
   console.log(cartSts);
@@ -43,13 +51,9 @@ function CartList({ closeCart, cartSts }) {
     }, 0);
   };
 
-  let memCartCnt = $(".cart-product-box").length;
-
   useEffect(() => {
     $(".total-price").text("$" + totalFn() + ".00");
   }, [dataCnt]);
-  useEffect(()=>{
-  })
   return (
     <div className="cart-area">
       <div className="cart-box">
@@ -67,7 +71,7 @@ function CartList({ closeCart, cartSts }) {
         </div>
         <div className="cart-product">
           <p>Products</p>
-          {!cartSts && (
+          {(!cartSts || (myCon.loginSts && memCartCnt == 0)) && (
             <div className="no-cart">
               <p>Your Cart is Empty</p>
               <div>

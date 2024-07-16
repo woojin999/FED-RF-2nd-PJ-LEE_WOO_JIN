@@ -118,17 +118,7 @@ function ProductDetail() {
                       // 2. 로컬스 파싱
                       let locals =localStorage.getItem("cart-data");
                       locals = JSON.parse(locals);
-
-                      let retSts = locals.some(v=>{
-                        if(v.tit == pvo.tit) return true;
-                      })
-
-                      if (retSts) {
-                        alert("This product is already in your cart.")
-                        openCart();
-                        return;
-                      }
-
+                      
                       let memIdx = 0;
 
                       if (myCon.loginSts) {
@@ -137,6 +127,17 @@ function ProductDetail() {
                       } else {
                         memIdx = 0;
                       }
+
+                      let retSts = locals.some(v=>{
+                        if(v.tit == pvo.tit && v.midx == memIdx) return true;
+                      })
+
+                      if (retSts) {
+                        alert("This product is already in your cart.")
+                        openCart();
+                        return;
+                      }
+
                       // 4. 로컬스에 데이터 추가
                       locals.push({
                         midx: memIdx,

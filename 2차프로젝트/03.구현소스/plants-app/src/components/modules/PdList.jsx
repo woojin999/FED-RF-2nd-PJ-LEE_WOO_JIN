@@ -130,22 +130,23 @@ function PdList({
                           // 2. 로컬스 파싱
                           let locals = localStorage.getItem("cart-data");
                           locals = JSON.parse(locals);
-
-                          let retSts = locals.some((val) => {
-                            if (val.tit == v.tit) return true;
-                          });
-
-                          if (retSts) {
-                            alert("This product is already in your cart.");
-                            myCon.openCart();
-                            return;
-                          }
                           let memIdx = 0;
                           if (myCon.loginSts) {
                             memIdx = JSON.parse(myCon.loginSts).idx;
                             // console.log(JSON.parse(myCon.loginSts).idx);
                           } else {
                             memIdx = 0;
+                          }
+
+                          let retSts = locals.some((val) => {
+                            if (val.tit == v.tit && val.midx == memIdx)
+                              return true;
+                          });
+
+                          if (retSts) {
+                            alert("This product is already in your cart.");
+                            myCon.openCart();
+                            return;
                           }
 
                           // 4. 로컬스에 데이터 추가
