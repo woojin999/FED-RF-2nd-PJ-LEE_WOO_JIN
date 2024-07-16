@@ -394,6 +394,10 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    transition: .4s;
+  }
+  div:hover{
+    background-color: #e2dfcf;
   }
 }
 .cart-area .cart-box .cart-flex {
@@ -554,7 +558,10 @@
   }
   .sub-gnb {
     padding-right: 10px;
-    li:nth-child(n + 2):nth-child(-n + 2) {
+    li:nth-child(1){
+      display: none;
+    }
+    li:nth-child(3){
       display: none;
     }
   }

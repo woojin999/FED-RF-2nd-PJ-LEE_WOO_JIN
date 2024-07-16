@@ -1,0 +1,142 @@
+#mypage-area {
+  padding-top: 6rem;
+}
+
+.mypage-area {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  //   text-align: center;
+  box-sizing: border-box;
+}
+
+.mypage-wrap {
+  .my-page-cont {
+    display: flex;
+    .mp-detail {
+      h2 {
+        font-size: 3rem;
+        text-align: left;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #503217;
+      }
+    }
+  }
+  h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .mp-list {
+    li {
+      margin-bottom: 0.5rem;
+      span {
+        font-size: 2rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.myinfo-area {
+  .info-tb {
+    tr {
+      td:first-child {
+        width: 120px;
+        font-size: 2.2rem;
+      }
+      td:last-child {
+        font-size: 1.7rem;
+      }
+    }
+  }
+}
+.mycart-product-box {
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid #503217;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  img {
+    width: 125px;
+    object-fit: contain;
+  }
+  .mycart-pd-info {
+    margin: 0 0 2rem 2rem;
+    flex-basis: 70%;
+    > p:first-child {
+      font-size: 2rem;
+    }
+    p {
+      margin-bottom: 0.5rem;
+      font-size: 1.6rem;
+    }
+    .rmBtn p {
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .mycart-cnt-box {
+      position: absolute;
+      top: 0;
+      right: 0;
+      border: 1px solid #503217;
+      border-radius: 4px;
+      box-sizing: border-box;
+      width: 85px;
+      margin-bottom: 0.5rem;
+      height: 35px;
+      button {
+        border: none;
+        background-color: #eeede7;
+        cursor: pointer;
+      }
+      #cart-prdcnt {
+        background-color: #eeede7;
+        width: 2rem;
+        border: none;
+        text-align: center;
+        margin: 0 auto;
+        width: 30px;
+        height: 30px;
+      }
+      input:focus {
+        outline: none;
+      }
+    }
+    .rmBtn {
+      position: absolute;
+      bottom: 5px;
+      right: 0px;
+    }
+    .pd-total {
+      position: absolute;
+      top: 45px;
+      right: 0px;
+    }
+  }
+}
+.mycart-name {
+  text-align: right;
+  span {
+    font-size: 2rem;
+    margin-left: 0.5rem;
+  }
+}
+.mybuyBtn {
+  margin-top: 1rem;
+  position: relative;
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  background-color: #503217;
+  height: 3.5rem;
+  line-height: 3.5rem;
+  border-radius: 7px;
+  cursor: pointer;
+  p{
+    color: #eeede7;
+
+  }
+}

@@ -16,6 +16,7 @@ import SearchPage from "./components/pages/SearchPage";
 import BlogDetail from "./components/pages/BlogDetail";
 import Member from "./components/pages/Member";
 import MyPage from "./components/pages/MyPage";
+import Board from "./components/pages/Board";
 
 export default function MainComponent() {
   return (
@@ -33,6 +34,7 @@ export default function MainComponent() {
           <Route path="search" element={<SearchPage />} />
           <Route path="blogDetail" element={<BlogDetail />} />
           <Route path="myPage" element={<MyPage/>}/>
+          <Route path="board" element={<Board/>} />
         </Route>
       </Routes>
     </BrowserRouter>

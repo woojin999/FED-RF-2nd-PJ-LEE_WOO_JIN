@@ -51,7 +51,7 @@ function CartList({ closeCart, cartSts }) {
     }, 0);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     $(".total-price").text("$" + totalFn() + ".00");
   }, [dataCnt]);
   return (
@@ -75,13 +75,13 @@ function CartList({ closeCart, cartSts }) {
             <div className="no-cart">
               <p>Your Cart is Empty</p>
               <div>
-                <Link to="/shop">SHOP</Link>
+                <Link to="/shop"><p>SHOP</p></Link>
               </div>
               <div>
-                <Link to="/about">ABOUT</Link>
+                <Link to="/about"><p>ABOUT</p></Link>
               </div>
               <div>
-                <Link to="/blog">BLOG</Link>
+                <Link to="/blog"><p>BLOG</p></Link>
               </div>
             </div>
           )}

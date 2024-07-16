@@ -60,22 +60,22 @@ export default function FooterArea({ logoutFn }) {
                 <ul>
                   <li>
                     <Link to="/shop">
-                      <p>Shop</p>
+                      <span>Shop</span>
                     </Link>
                   </li>
                   <li>
                     <Link to="/about">
-                      <p>About</p>
+                      <span>About</span>
                     </Link>
                   </li>
                   <li>
                     <Link to="/blog">
-                      <p>Blog</p>
+                      <span>Blog</span>
                     </Link>
                   </li>
                   <li>
                     <Link to="/shop">
-                      <p>Wholesale</p>
+                      <span>Wholesale</span>
                     </Link>
                   </li>
                   <li>
@@ -83,7 +83,7 @@ export default function FooterArea({ logoutFn }) {
                       e.preventDefault();
                       logoutFn();
                     }}>
-                      <p>Logout</p>
+                      <span>Logout</span>
                     </a>
                   </li>
                 </ul>

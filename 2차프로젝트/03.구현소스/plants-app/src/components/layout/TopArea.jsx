@@ -223,6 +223,11 @@ export default function TopArea({
               <div className="sub-gnb-box col-4 fx-box">
                 <nav className="sub-gnb">
                   <ul className="fx-box">
+                    <li>
+                      <Link to="/board">
+                        <i class="fa-solid fa-clipboard-question"></i>
+                      </Link>
+                    </li>
                     {loginSts == null && (
                       <li>
                         <Link to="/login">
@@ -350,6 +355,11 @@ export default function TopArea({
                         )}
                       </li>
                     ))}
+                    <li className="ham-list">
+                      <Link to="/board">
+                        <span>QUESTION</span>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
