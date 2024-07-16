@@ -1,0 +1,45 @@
+.board-area {
+  font-size: 1.5rem;
+  padding: 0 4rem;
+  h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+  .bd-table {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border-collapse: collapse;
+  }
+}
+.paging-td {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+table {
+  border: 1px solid #503217;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+thead {
+  font-weight: bold;
+  background: #e2dfcf;
+}
+
+td,
+th {
+  padding: 1em 0.5em;
+  vertical-align: middle;
+}
+
+td {
+  border-bottom: 1px solid #927b67;
+}
