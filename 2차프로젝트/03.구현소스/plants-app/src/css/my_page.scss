@@ -135,8 +135,21 @@
   line-height: 3.5rem;
   border-radius: 7px;
   cursor: pointer;
-  p{
-    color: #eeede7;
-
+  transition: .4s;
+  &:hover {
+    p {
+      color: #503217;
+    }
+    background-color: #e2dfcf;
   }
+  p {
+    color: #eeede7;
+  }
+}
+.board-area.mybd{
+  margin: 0;
+  padding: 0;
+  // width: 800px;
+  max-width: 100%;
+  text-align: center;
 }

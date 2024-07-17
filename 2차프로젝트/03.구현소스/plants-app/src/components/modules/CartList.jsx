@@ -18,18 +18,20 @@ function CartList({ closeCart, cartSts }) {
   let memCartCnt = 0;
   if (cartSts) {
     if (myCon.loginSts == null) {
-      dataCnt = selData.length;
+      selData.map((v) => {
+        if (v.midx == "0") {
+          dataCnt++;
+        }
+      });
     } else if (myCon.loginSts) {
-      console.log(selData);
       selData.map((v) => {
         if (v.midx == memIdx) {
           memCartCnt++;
         }
-        console.log(memCartCnt);
       });
     }
   }
-  console.log(cartSts);
+  // console.log(cartSts);
 
   const totalFn = () => {
     let result = 0;
@@ -75,20 +77,26 @@ function CartList({ closeCart, cartSts }) {
             <div className="no-cart">
               <p>Your Cart is Empty</p>
               <div>
-                <Link to="/shop"><p>SHOP</p></Link>
+                <Link to="/shop">
+                  <p>SHOP</p>
+                </Link>
               </div>
               <div>
-                <Link to="/about"><p>ABOUT</p></Link>
+                <Link to="/about">
+                  <p>ABOUT</p>
+                </Link>
               </div>
               <div>
-                <Link to="/blog"><p>BLOG</p></Link>
+                <Link to="/blog">
+                  <p>BLOG</p>
+                </Link>
               </div>
             </div>
           )}
           {cartSts &&
             selData.map(
               (v, i) =>
-                (myCon.loginSts == null ? true : memIdx == v.midx) && (
+                (myCon.loginSts == null ? v.midx == "0" : memIdx == v.midx) && (
                   <div key={i} className="cart-product-box">
                     <img src={process.env.PUBLIC_URL + v.pimage} alt="dd" />
                     <div className="cart-pd-info">

@@ -55,7 +55,9 @@ function MyCart(props) {
       {cartSts &&
         selData.map(
           (v, i) =>
-            (myCon.loginSts == null ? true : memIdx == v.midx) && (
+            (
+              myCon.loginSts == null ? true : memIdx == v.midx
+            ) && (
               <div key={i} className="mycart-product-box">
                 <img src={process.env.PUBLIC_URL + v.pimage} alt="dd" />
                 <div className="mycart-pd-info">

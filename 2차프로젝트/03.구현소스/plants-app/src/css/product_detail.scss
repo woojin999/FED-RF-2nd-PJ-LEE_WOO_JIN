@@ -84,6 +84,12 @@
     color: #fff;
     border-radius: 4px;
     width: 90%;
+    transition: 0.4s;
+    &:hover {
+      color: #503217;
+
+      background-color: #e2dfcf;
+    }
   }
 }
 .product-desc-box {

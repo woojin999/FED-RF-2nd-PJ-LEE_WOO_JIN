@@ -1,4 +1,7 @@
 .board-area {
+  input:focus,textarea:focus {
+    outline: none;
+  }
   font-size: 1.5rem;
   padding: 0 4rem;
   h2 {
@@ -7,18 +10,56 @@
     margin-top: 4rem;
     margin-bottom: 4rem;
   }
-  .bd-table {
+  .list-table {
     width: 1000px;
     max-width: 100%;
     margin: 0 auto;
     text-align: center;
     border-collapse: collapse;
   }
+  .other-table {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    input,
+    textarea {
+      width: 100%;
+      border: none;
+      background-color: #eeede7;
+    }
+  }
+  .boardBtn{
+    width: 1000px;
+    max-width: 100%;
+    text-align: right;
+    margin: 0 auto;
+    td{
+      padding: 0
+    }
+    button{
+      color: #eeede7;
+      height: 4rem;
+      width: 8rem;
+      font-size: 1.8rem;
+      background-color: #503217;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: .4s;
+      margin-left: 1rem;
+      &:hover{
+        color: #503217;
+        background-color: #e2dfcf;
+      }
+    }
+  }
 }
 .paging-td {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 table {
@@ -42,4 +83,7 @@ th {
 
 td {
   border-bottom: 1px solid #927b67;
+}
+textarea {
+  resize: none;
 }

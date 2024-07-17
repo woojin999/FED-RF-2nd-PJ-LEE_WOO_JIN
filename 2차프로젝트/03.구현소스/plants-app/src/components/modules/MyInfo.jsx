@@ -6,7 +6,7 @@ import { dCon } from './dCon';
 function MyInfo(props) {
     const myCon = useContext(dCon);
     let meminfo = JSON.parse(myCon.loginSts);
-    console.log(meminfo);
+    // console.log(meminfo);
 
     return (
       <div className="myinfo-area">

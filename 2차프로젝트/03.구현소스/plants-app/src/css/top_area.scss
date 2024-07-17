@@ -45,7 +45,7 @@
 }
 .sub-gnb-box {
   justify-content: flex-end;
-  .fa-quora{
+  .fa-quora {
     scale: 1.2;
   }
 }
@@ -377,6 +377,13 @@
     p {
       color: #fff;
     }
+    transition: 0.4s;
+    &:hover {
+      p {
+        color: #503217;
+      }
+      background-color: #e2dfcf;
+    }
   }
 }
 .no-cart {
@@ -397,9 +404,9 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    transition: .4s;
+    transition: 0.4s;
   }
-  div:hover{
+  div:hover {
     background-color: #e2dfcf;
   }
 }
@@ -561,10 +568,10 @@
   }
   .sub-gnb {
     padding-right: 10px;
-    li:nth-child(1){
+    li:nth-child(1) {
       display: none;
     }
-    li:nth-child(3){
+    li:nth-child(3) {
       display: none;
     }
   }

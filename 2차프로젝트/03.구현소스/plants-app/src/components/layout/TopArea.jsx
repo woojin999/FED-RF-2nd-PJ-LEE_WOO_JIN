@@ -225,7 +225,7 @@ export default function TopArea({
                   <ul className="fx-box">
                     <li>
                       <Link to="/board">
-                        <i class="fa-brands fa-quora"></i>
+                        <i className="fa-brands fa-quora"></i>
                       </Link>
                     </li>
                     {loginSts == null && (
