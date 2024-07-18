@@ -5,6 +5,7 @@ import { dCon } from "../modules/dCon";
 import $ from "jquery";
 
 import "../../css/board.scss";
+import { useLocation } from "react-router-dom";
 
 function Board(props) {
   const myCon = useContext(dCon);
@@ -21,10 +22,20 @@ function Board(props) {
   // 참조변수 //
   // [1] 전체 개수 - 매번 계산하지 않도록 참조변수로
   const totalCount = useRef(baseData.length);
-  // console.log("전체 개수", totalCount);
   // [2] 선택 데이터 저장
   const selRecord = useRef(null);
   // -> 특정 리스트 글 제목 클릭시 데이터 저장함
+
+  const loc = useLocation();
+
+  // const myNavFn = () =>{
+  // let mymode = loc.state.mode;
+  // let selRcd = loc.state.selRcd;
+  // console.log(mymode);
+  // console.log(selRcd);
+  // setMode(mymode);
+  // }
+  // setMode(mode);
 
   // 페이지당 개수
   const unitSize = 10;
@@ -40,16 +51,10 @@ function Board(props) {
       Number(a.idx) > Number(b.idx) ? -1 : Number(a.idx) < Number(b.idx) ? 1 : 0
     );
 
-    // 3. 일부 데이터만 선택
-    // 예시로 0번부터 9번까지만 선택
-    // 한페이지당 10개라면
-    // 페이지 번호와 연관 시켜본다
-    // 1,2,3,4 .....
     // 시작번호 = (페이지번호-1) * 단위 수
     let sNum = (pageNum - 1) * unitSize;
     // 끝번호 = (페이지번호-1) * 단위 수
     let eNum = pageNum * unitSize;
-    // console.log("첫번호:", sNum, "/끝번호:", eNum);
     // 결과배열
     const selData = [];
 
@@ -133,6 +138,12 @@ function Board(props) {
       case "Submit":
         submitFn();
         break;
+      case "Modify":
+        setMode("M");
+        break;
+      case "Delete":
+        deleteFn();
+        break;
       default:
         break;
     }
@@ -178,8 +189,72 @@ function Board(props) {
       totalCount.current = baseData.length;
 
       setMode("L");
+    } else if (mode == "M") {
+      let today = new Date();
+      // 현재 데이터 idx값
+      let currIdx = selRecord.current.idx;
+
+      baseData.find((v) => {
+        // console.log(v,selRecord);
+        if (v.idx == currIdx) {
+          // [ 업데이트 작업하기 ]
+          // 기존항목변경 : tit, cont
+          // 이미 선택된 selRecord 참조변수의 글번호인 idx로
+          // 원본 데이터를 조회하여 기존 데이터를 업데이트함!
+
+          // (1) 글제목 : tit
+          v.tit = title;
+          // (2) 글내용 : cont
+          v.cont = cont;
+          // 추가항목
+          // (원래는 확정된 DB스키마에 따라 입력해야하지만
+          // 우리가 사용하는 로컬스토리지의 확장성에 따라 필요한
+          // 항목을 추가하여 넣는다!)
+          // (3) 수정일 : mdate
+          v.mdate = today.toJSON().substr(0, 10);
+
+          // 해당항목을 만나면 끝남!
+          return true;
+        } /// if ///
+      }); /////// find 메서드 /////////
+      localStorage.setItem("board-data", JSON.stringify(baseData));
+      setMode("L");
     }
   }; //submitFn
+
+  const deleteFn = () => {
+    // 삭제여부확인
+    if (window.confirm("Are you sure you want to delete?")) {
+      // 1. 해당항목 idx담기
+      let currIdx = selRecord.current.idx;
+      // 2. some()로 순회하여 해당항목 삭제하기
+      // find()와 달리 some()은 결과값을 boolean값으로
+      // 리턴하여 처리한다! 이것을 이용하여 코드처리해보자!
+      baseData.some((v, i) => {
+        if (v.idx == currIdx) {
+          // 해당순번 배열값을 삭제하자!
+          // 배열삭제는  splice(순번,1)
+          baseData.splice(i, 1);
+
+          // 리턴true할 경우 종료!
+          return true;
+        } ///// if ////
+      }); ///// some ///////
+
+      // 3. 로컬스에 업데이트하기 //////
+      localStorage.setItem("board-data", JSON.stringify(baseData));
+
+      // 4. 삭제후 리스트 리랜더링시 리스트 불일치로 인한
+      // 에러를 방지하기 위하여 전체 개수를 바로 업데이트한다!
+      totalCount.current = baseData.length;
+
+      // 4. 리스트로 돌아가기 -> 리랜더링 /////
+      // -> 모드변경! "L"
+      setMode("L");
+      // -> 삭제후 첫페이지로 이동!
+      setPageNum(1);
+    } ///////// if ///////////////
+  }; //////// deleteFn ///////////////
 
   // 코드 리턴
   return (
@@ -187,19 +262,39 @@ function Board(props) {
       <h2>Question</h2>
       {mode == "L" && <ListMode bindList={bindList} pagingList={pagingList} />}
       {mode == "W" && <WriteMode sts={JSON.parse(sts)} />}
-      {mode == "R" && <ReadMode selRecord={selRecord}/>}
+      {mode == "R" && <ReadMode selRecord={selRecord} />}
+      {mode == "M" && <ModifyMode selRecord={selRecord} />}
       <table className="boardBtn">
         <tbody>
           <tr>
             <td>
-              {mode == "L" && sts && <button onClick={clickButton}>Write</button>}
+              {mode == "L" && sts && (
+                <button onClick={clickButton}>Write</button>
+              )}
               {mode == "W" && (
                 <>
                   <button onClick={clickButton}>List</button>
                   <button onClick={clickButton}>Submit</button>
                 </>
               )}
-              {mode == "R" && <button onClick={clickButton}>List</button>}
+              <>
+                {mode == "R" &&
+                  sts &&
+                  JSON.parse(sts).uid == selRecord.current.uid && (
+                    <>
+                      <button onClick={clickButton}>Modify</button>
+                      <button onClick={clickButton}>Delete</button>
+                    </>
+                  )}
+                {mode == "R" && <button onClick={clickButton}>List</button>}
+              </>
+
+              {mode == "M" && (
+                <>
+                  <button onClick={clickButton}>Submit</button>
+                  <button onClick={clickButton}>List</button>
+                </>
+              )}
             </td>
           </tr>
         </tbody>
@@ -211,6 +306,13 @@ const ListMode = ({ bindList, pagingList }) => {
   return (
     <div className="board-list">
       <table className="list-table">
+        <colgroup>
+          <col span="1" style={{ width: "1%" }} />
+          <col span="1" style={{ width: "40%" }} />
+          <col span="1" style={{ width: "20%" }} />
+          <col span="1" style={{ width: "20%" }} />
+          <col span="1" style={{ width: "20%" }} />
+        </colgroup>
         <thead>
           <tr>
             <th>Number</th>
@@ -291,7 +393,7 @@ const ReadMode = ({ selRecord }) => {
               <input
                 type="text"
                 className="write-title"
-                defaultValue={data.cont}
+                defaultValue={data.tit}
                 readOnly
               />
             </td>
@@ -304,7 +406,7 @@ const ReadMode = ({ selRecord }) => {
                 cols="60"
                 maxLength="300"
                 rows="10"
-                value={data.cont}
+                defaultValue={data.cont}
               ></textarea>
             </td>
           </tr>
@@ -315,6 +417,48 @@ const ReadMode = ({ selRecord }) => {
         </tbody>
       </table>
     </>
+  );
+};
+
+const ModifyMode = ({ selRecord }) => {
+  const data = selRecord.current;
+  return (
+    <table className="other-table">
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>
+            <input type="text" defaultValue={data.unm} readOnly />
+          </td>
+        </tr>
+        <tr>
+          <td>Title</td>
+          <td>
+            <input
+              type="text"
+              className="write-title"
+              defaultValue={data.tit}
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Content</td>
+          <td>
+            <textarea
+              className="write-cont"
+              cols="60"
+              maxLength="300"
+              rows="10"
+              defaultValue={data.cont}
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>Attachment</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
   );
 };
 

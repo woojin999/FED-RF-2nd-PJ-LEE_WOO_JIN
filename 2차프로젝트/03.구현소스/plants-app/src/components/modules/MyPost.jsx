@@ -1,10 +1,13 @@
 import React, { Fragment, useContext, useRef, useState } from "react";
 
 import { dCon } from "./dCon";
+import { Link, useNavigate } from "react-router-dom";
 
 function MyPost(props) {
   const myCon = useContext(dCon);
   let meminfo = JSON.parse(myCon.loginSts);
+
+  const goBdNav = useNavigate();
 
   console.log(meminfo.uid);
 
@@ -62,13 +65,27 @@ function MyPost(props) {
             {/* 시작번호를 더하여 페이지별 순번을 변경 */}
             <td>{i + sNum + 1}</td>
             <td>
+              {/* <Link
+                to="/board"
+                onClick={(e) => {
+                  // e.preventDefault();
+                  // 읽기 모드로 변경
+                  // setMode("R");
+                  // 해당 데이터 저장하기
+                  selRecord.current = v;
+                }}
+              >
+                {v.tit}
+              </Link> */}
               <a
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
                   // 읽기 모드로 변경
+                  // setMode("R");
                   // 해당 데이터 저장하기
-                  selRecord.current = v;
+                  // selRecord.current = v;
+                  goBdNav("/board", { state: { mode: "R",selRcd:v } });
                 }}
               >
                 {v.tit}
@@ -116,33 +133,31 @@ function MyPost(props) {
     return pgCode;
   };
   return (
-    // selData.map((v, i) => <div>dd</div>) && 
-    (
-      <div>
-        <h2>My Post</h2>
-        <div className="board-area mybd">
-          <div className="board-list">
-            <table className="mylist-table">
-              <thead>
-                <tr>
-                  <th>Number</th>
-                  <th>Title</th>
-                  <th>Writer</th>
-                  <th>Date</th>
-                  <th>Hits</th>
-                </tr>
-              </thead>
-              <tbody>{bindList()}</tbody>
-              <tfoot>
-                <tr>
-                  <td className="paging-td">{pagingList()}</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
+    // selData.map((v, i) => <div>dd</div>) &&
+    <div>
+      <h2>My Post</h2>
+      <div className="board-area mybd">
+        <div className="board-list">
+          <table className="mylist-table">
+            <thead>
+              <tr>
+                <th>Number</th>
+                <th>Title</th>
+                <th>Writer</th>
+                <th>Date</th>
+                <th>Hits</th>
+              </tr>
+            </thead>
+            <tbody>{bindList()}</tbody>
+            <tfoot>
+              <tr>
+                <td className="paging-td">{pagingList()}</td>
+              </tr>
+            </tfoot>
+          </table>
         </div>
       </div>
-    )
+    </div>
   );
 }
 

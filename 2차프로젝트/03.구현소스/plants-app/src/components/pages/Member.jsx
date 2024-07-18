@@ -227,7 +227,7 @@ function Member(props) {
               <Link to="/login">Sign in here.</Link>
             </p>
           </div>
-          <form action="">
+          <form action="" className="member-form">
             <ul>
               <li>
                 <input
@@ -319,9 +319,9 @@ function Member(props) {
               </button>
             </div>
           </form>
-          <div className="forgot-box">
+          {/* <div className="forgot-box">
             <p className="forgot">Forgot your password?</p>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>
