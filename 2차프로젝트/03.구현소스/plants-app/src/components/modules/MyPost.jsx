@@ -54,10 +54,9 @@ function MyPost(props) {
       selData.push(orgData[i]);
     } /// for ///
     // console.log(selData);
-    let pgCnt =0;
+    let pgCnt = 0;
     return selData.map(
       (v, i) =>
-        
         v.uid == meminfo.uid && (
           <tr key={i}>
             {/* 시작번호를 더하여 페이지별 순번을 변경 */}
@@ -117,30 +116,33 @@ function MyPost(props) {
     return pgCode;
   };
   return (
-    <div>
-      <h2>My Post</h2>
-      <div className="board-area mybd">
-        <div className="board-list">
-          <table className="mylist-table">
-            <thead>
-              <tr>
-                <th>Number</th>
-                <th>Title</th>
-                <th>Writer</th>
-                <th>Date</th>
-                <th>Hits</th>
-              </tr>
-            </thead>
-            <tbody>{bindList()}</tbody>
-            <tfoot>
-              <tr>
-                <td className="paging-td">{pagingList()}</td>
-              </tr>
-            </tfoot>
-          </table>
+    // selData.map((v, i) => <div>dd</div>) && 
+    (
+      <div>
+        <h2>My Post</h2>
+        <div className="board-area mybd">
+          <div className="board-list">
+            <table className="mylist-table">
+              <thead>
+                <tr>
+                  <th>Number</th>
+                  <th>Title</th>
+                  <th>Writer</th>
+                  <th>Date</th>
+                  <th>Hits</th>
+                </tr>
+              </thead>
+              <tbody>{bindList()}</tbody>
+              <tfoot>
+                <tr>
+                  <td className="paging-td">{pagingList()}</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
+    )
   );
 }
 
