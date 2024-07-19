@@ -28,14 +28,20 @@ function Board(props) {
 
   const loc = useLocation();
 
-  // const myNavFn = () =>{
-  // let mymode = loc.state.mode;
-  // let selRcd = loc.state.selRcd;
-  // console.log(mymode);
-  // console.log(selRcd);
-  // setMode(mymode);
-  // }
-  // setMode(mode);
+  if (loc.state) {
+    let mymode = loc.state.mode;
+    let selRcd = loc.state.selRcd;
+    selRecord.current = selRcd;
+    // console.log(selRcd);
+
+    console.log("mymode", mymode);
+    console.log("mode", mode);
+
+    if (mymode != mode) {
+      setMode(mymode);
+      loc.state = null;
+    }
+  }
 
   // 페이지당 개수
   const unitSize = 10;
@@ -407,6 +413,7 @@ const ReadMode = ({ selRecord }) => {
                 maxLength="300"
                 rows="10"
                 defaultValue={data.cont}
+                readOnly
               ></textarea>
             </td>
           </tr>

@@ -9,7 +9,7 @@ function MyPost(props) {
 
   const goBdNav = useNavigate();
 
-  console.log(meminfo.uid);
+  // console.log(meminfo.uid);
 
   const baseData = JSON.parse(localStorage.getItem("board-data"));
   const [pageNum, setPageNum] = useState(1);
@@ -20,7 +20,7 @@ function MyPost(props) {
       memCartCount++;
     }
   });
-  console.log(memCartCount);
+  // console.log(memCartCount);
   const totalCount = useRef(memCartCount);
   const selRecord = useRef(null);
   const unitSize = 10;
@@ -47,25 +47,32 @@ function MyPost(props) {
     let eNum = pageNum * unitSize;
     // console.log("첫번호:", sNum, "/끝번호:", eNum);
     // 결과배열
+    const myData = [];
     const selData = [];
+
+    orgData.map((v) => {
+      if (v.uid == meminfo.uid) {
+        myData.push(v);
+      }
+    });
 
     // for문으로 배열 만들기
     for (let i = sNum; i < eNum; i++) {
       // 끝번호가 전체 갯수보다 크면 나가
       if (i >= totalCount.current) break;
       // 대상 배열값 추가
-      selData.push(orgData[i]);
+      selData.push(myData[i]);
     } /// for ///
+
     // console.log(selData);
     let pgCnt = 0;
-    return selData.map(
-      (v, i) =>
-        v.uid == meminfo.uid && (
-          <tr key={i}>
-            {/* 시작번호를 더하여 페이지별 순번을 변경 */}
-            <td>{i + sNum + 1}</td>
-            <td>
-              {/* <Link
+    return selData.map((v, i) => (
+      // v.uid == meminfo.uid &&
+      <tr key={i}>
+        {/* 시작번호를 더하여 페이지별 순번을 변경 */}
+        <td>{i + sNum + 1}</td>
+        <td>
+          {/* <Link
                 to="/board"
                 onClick={(e) => {
                   // e.preventDefault();
@@ -77,26 +84,25 @@ function MyPost(props) {
               >
                 {v.tit}
               </Link> */}
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  // 읽기 모드로 변경
-                  // setMode("R");
-                  // 해당 데이터 저장하기
-                  // selRecord.current = v;
-                  goBdNav("/board", { state: { mode: "R",selRcd:v } });
-                }}
-              >
-                {v.tit}
-              </a>
-            </td>
-            <td>{v.unm}</td>
-            <td>{v.date}</td>
-            <td>{v.cnt}</td>
-          </tr>
-        )
-    );
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              // 읽기 모드로 변경
+              // setMode("R");
+              // 해당 데이터 저장하기
+              // selRecord.current = v;
+              goBdNav("/board", { state: { mode: "R", selRcd: v } });
+            }}
+          >
+            {v.tit}
+          </a>
+        </td>
+        <td>{v.unm}</td>
+        <td>{v.date}</td>
+        <td>{v.cnt}</td>
+      </tr>
+    ));
   };
 
   const pagingList = () => {
