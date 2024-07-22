@@ -135,7 +135,7 @@
   line-height: 3.5rem;
   border-radius: 7px;
   cursor: pointer;
-  transition: .4s;
+  transition: 0.4s;
   &:hover {
     p {
       color: #503217;
@@ -146,10 +146,37 @@
     color: #eeede7;
   }
 }
-.board-area.mybd{
+.board-area.mybd {
   margin: 0;
   padding: 0;
   // width: 800px;
   max-width: 100%;
   text-align: center;
+}
+.mylist-table {
+  th:nth-child(1) {
+    width: 10px;
+  }
+  td:nth-child(2) {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .mypage-wrap .my-page-cont {
+    display: block;
+  }
+  .mp-list {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .mycart-product-box .mycart-pd-info .mycart-cnt-box {
+    position: inherit;
+  }
+
+  .mycart-product-box .mycart-pd-info .pd-total {
+    position: inherit;
+  }
 }

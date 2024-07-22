@@ -147,7 +147,7 @@ function MyPost(props) {
           <table className="mylist-table">
             <thead>
               <tr>
-                <th>Number</th>
+                <th>No</th>
                 <th>Title</th>
                 <th>Writer</th>
                 <th>Date</th>
