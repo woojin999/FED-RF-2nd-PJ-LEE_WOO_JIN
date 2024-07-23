@@ -55,7 +55,7 @@ function CartList({ closeCart, cartSts }) {
 
   useLayoutEffect(() => {
     $(".total-price").text("$" + totalFn() + ".00");
-  }, [dataCnt]);
+  }, [dataCnt, memCartCnt]);
   return (
     <div className="cart-area">
       <div className="cart-box">

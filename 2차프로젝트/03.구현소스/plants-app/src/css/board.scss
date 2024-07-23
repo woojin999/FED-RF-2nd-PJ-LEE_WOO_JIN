@@ -113,22 +113,18 @@ textarea {
   resize: none;
 }
 .next {
-  position: absolute;
   font-weight: 900;
-  right: -40px;
+  margin-left: 1.5rem;
 }
 .nextFst {
-  position: absolute;
   font-weight: 900;
-  right: -55px;
+  margin-left: .5rem;
 }
 .previous {
-  position: absolute;
   font-weight: 900;
-  left: -55px;
+  margin-right: .5rem;
 }
 .previousEnd {
-  position: absolute;
   font-weight: 900;
-  left: -40px;
+  margin-right: 1.5rem;
 }

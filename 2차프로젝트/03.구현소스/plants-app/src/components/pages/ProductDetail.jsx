@@ -74,6 +74,11 @@ function ProductDetail() {
   useEffect(() => {
     window.addEventListener("scroll", sFn.scrollFn);
   }, []);
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    $(".cart-box").css({ right: "-350px", opacity: "0" });
+  }, []);
   return (
     <>
       <div id="product-detail">

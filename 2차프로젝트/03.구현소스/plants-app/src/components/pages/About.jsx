@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 
 import { aboutData } from "../data/about";
 import "../../css/about.scss";
 import PdInfo from "../modules/PdInfo";
 import PdList from "../modules/PdList";
 import * as sFn from "../func/auto_wheel";
+import $ from "jquery";
 
 function About(props) {
   // console.log(aboutData["main"]);
@@ -12,6 +13,10 @@ function About(props) {
   const subData = aboutData["sub"];
   useEffect(() => {
     window.addEventListener("scroll", sFn.scrollFn);
+  }, []);
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    $(".cart-box").css({ right: "-350px", opacity: "0" });
   }, []);
   return (
     <>

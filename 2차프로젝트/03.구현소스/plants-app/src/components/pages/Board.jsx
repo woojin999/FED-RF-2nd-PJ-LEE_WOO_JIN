@@ -1,4 +1,10 @@
-import React, { Fragment, useContext, useRef, useState } from "react";
+import React, {
+  Fragment,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 import { initBoardData } from "../func/board_fn";
 import { dCon } from "../modules/dCon";
@@ -27,16 +33,16 @@ function Board(props) {
   // [2] 선택 데이터 저장
   const selRecord = useRef(null);
   // -> 특정 리스트 글 제목 클릭시 데이터 저장함
-  
+
   const pgPgNum = useRef(1);
-  
+
   // 페이지당 개수
   const unitSize = 10;
-  
+
   // 페이징 개수
   const pgPgSize = 5;
-  
-  // 마이페이지 
+
+  // 마이페이지
   if (loc.state) {
     let mymode = loc.state.mode;
     let selRcd = loc.state.selRcd;
@@ -109,6 +115,7 @@ function Board(props) {
     switch (btnText) {
       case "Write":
         setMode("W");
+
         break;
       case "List":
         setMode("L");
@@ -342,6 +349,9 @@ const ListMode = ({
 };
 
 const WriteMode = ({ sts }) => {
+  useEffect(() => {
+    document.querySelector(".write-title").focus();
+  }, []);
   return (
     <table className="other-table">
       <tbody>
@@ -460,6 +470,9 @@ const ReadMode = ({ selRecord, sts }) => {
 };
 
 const ModifyMode = ({ selRecord }) => {
+  useEffect(() => {
+    document.querySelector(".write-title").focus();
+  }, []);
   const data = selRecord.current;
   return (
     <table className="other-table">
@@ -519,13 +532,11 @@ const PagingList = ({
     pagingCount++;
   }
 
-  let pgPgCount = Math.floor(pagingCount /pgPgSize);
+  let pgPgCount = Math.floor(pagingCount / pgPgSize);
 
   if (pagingCount % pgPgSize > 0) {
     pgPgCount++;
   }
-
-
 
   let initNum = (pgPgNum.current - 1) * pgPgSize;
 
@@ -534,19 +545,19 @@ const PagingList = ({
   let pgCode = [];
 
   for (let i = initNum; i < limitNum; i++) {
-    if(i >= pagingCount) break;
+    if (i >= pagingCount) break;
 
     pgCode.push(
       <Fragment key={i}>
         {i + 1 == pageNum ? (
-          <b style={{ fontWeight: "900" }}>{i+1}</b>
+          <b style={{ fontWeight: "900" }}>{i + 1}</b>
         ) : (
           // 불일치시 링크코드
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault();
-              setPageNum(i+1);
+              setPageNum(i + 1);
             }}
           >
             {i + 1}
@@ -568,7 +579,6 @@ const PagingList = ({
         // for문으로 만든 리스트에 추가하는 것이므로 key값이 있어야함 단, 중복되면 안됨
         // 중복안되는 수인 마이너스로 셋팅한다
         <Fragment key={-2}>
-          
           <a
             href="#"
             onClick={(e) => {

@@ -51,6 +51,20 @@
       }
     }
   }
+  button{
+    
+   float: right;
+    color: #eeede7;
+    height: 4rem;
+    width: 7.5rem;
+    font-size: 1.8rem;
+    background-color: #503217;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-left: 1rem;
+  }
 }
 .mycart-product-box {
   position: relative;
@@ -161,6 +175,7 @@
     text-align: left;
   }
 }
+
 
 @media screen and (max-width: 800px) {
   .mypage-wrap .my-page-cont {

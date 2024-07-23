@@ -69,10 +69,7 @@ export default function Layout() {
       makeMsg(JSON.parse(ss).uname);
     }
   });
-  useLayoutEffect(() => {
-    // window.scrollTo(0, 0);
-    // $(".cart-box").css({ right: "-350px", opacity: "0" });
-  });
+  
   //
   return (
     <dCon.Provider
