@@ -28,6 +28,13 @@ const initData = () => {
                 "pwd":"1111",
                 "uname":"Administrator",
                 "email":"admin@plants.com"
+            },
+            {
+                "idx": "2",
+                "uid":"tester",
+                "pwd":"1111",
+                "uname":"tester",
+                "email":"tester@plants.com"
             }
         ]
     `
