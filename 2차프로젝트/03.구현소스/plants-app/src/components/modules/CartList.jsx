@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 function CartList({ closeCart, cartSts }) {
   const myCon = useContext(dCon);
   const selData = JSON.parse(myCon.localsCart);
+  console.log(selData);
 
   let memIdx = 0;
   if (myCon.loginSts) {
@@ -73,7 +74,8 @@ function CartList({ closeCart, cartSts }) {
         </div>
         <div className="cart-product">
           <p>Products</p>
-          {(!cartSts || (myCon.loginSts && memCartCnt == 0)) && (
+          {((myCon.loginSts == null && dataCnt == 0) ||
+            (myCon.loginSts && memCartCnt == 0)) && (
             <div className="no-cart">
               <p>Your Cart is Empty</p>
               <div>
