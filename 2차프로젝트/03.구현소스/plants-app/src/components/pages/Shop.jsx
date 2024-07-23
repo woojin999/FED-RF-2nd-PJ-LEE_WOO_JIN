@@ -4,9 +4,11 @@ import PdInfo from "../modules/PdInfo";
 import ShopBlog from "../modules/ShopBlog";
 import SlBanner from "../modules/SlBanner";
 import * as sFn from "../func/auto_wheel";
+import $ from "jquery";
 function Shop() {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
+    $(".cart-box").css({ right: "-350px", opacity: "0" });
   });
   useEffect(() => {
     window.addEventListener("scroll", sFn.scrollFn);

@@ -5,8 +5,13 @@ import { sblogData } from "../data/blog";
 import { Link } from "react-router-dom";
 import PdList from "../modules/PdList";
 
-function Blog() {
+import $ from "jquery";
 
+function Blog() {
+useLayoutEffect(() => {
+  window.scrollTo(0, 0);
+  $(".cart-box").css({ right: "-350px", opacity: "0" });
+}, []);
   return (
     <>
       <div id="blog-area">
