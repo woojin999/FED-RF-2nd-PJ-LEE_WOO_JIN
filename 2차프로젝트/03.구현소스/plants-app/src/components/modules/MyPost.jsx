@@ -2,8 +2,10 @@ import React, { Fragment, useContext, useRef, useState } from "react";
 
 import { dCon } from "./dCon";
 import { Link, useNavigate } from "react-router-dom";
+import { initBoardData } from "../func/board_fn";
 
 function MyPost(props) {
+  initBoardData();
   const myCon = useContext(dCon);
   let meminfo = JSON.parse(myCon.loginSts);
 
