@@ -1,0 +1,67 @@
+/*************  4. pos area *************/
+.badbatch {
+  #pos-area {
+    .tit-box > h3 {
+      text-align: center;
+      font-size: 5rem;
+    }
+    .tit-wrap .tit-box {
+      position: relative;
+      width: 50%;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+    }
+
+    .tit-wrap {
+      position: relative;
+      /* left: 50%; */
+      /* translate: -50%; */
+      width: 100vw;
+      height: 60vh;
+
+      background-image: linear-gradient(to top, #000000, #00000000),
+        linear-gradient(
+          to bottom,
+          #000000,
+          #00000000,
+          #00000000,
+          #00000000,
+          #00000000
+        ),
+        url(../../public/images/sub_badbatch_img/poster_1.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 70% 90%;
+    }
+
+    .slider-wrap {
+      margin-top: 2rem;
+    }
+    .slider-wrap {
+      margin-top: 10rem;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .slider-wrap li {
+      border: 0px dashed #85e2ff;
+      backdrop-filter: drop-shadow(inset 0px 0px 5px 3px #85e2ff);
+
+      scale: 1;
+      z-index: auto;
+      transition: 0.2s;
+    }
+
+    .slider-wrap li.on {
+      scale: 1.4;
+      z-index: 1;
+      box-shadow: 53px 50px 50px 3px #00000080;
+    }
+  }
+
+  button.close-btn-bb {
+    position: relative;
+    left: 90%;
+  }
+}

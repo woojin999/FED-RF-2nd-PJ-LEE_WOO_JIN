@@ -1,0 +1,141 @@
+
+#mdgallery-area {
+  text-align: center;
+}
+.gallery-box {
+  margin: 40px 15px;
+  cursor: pointer;
+}
+.gimg-box img {
+  width: 100%;
+  aspect-ratio: 864/482;
+  border-radius: 2% 0 0 2%;
+}
+.gtxt-box {
+  position: relative;
+  width: 100%;
+  background-color: #1d1e1f;
+  text-align: left;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+.gtxt-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+.gtxt-box p {
+  font-size: 1.4rem;
+}
+.gtxt-box p:last-child {
+  position: absolute;
+  bottom: 10px;
+}
+.gtxt-box .bullet {
+  scale: 0.6;
+  margin-top: 1vh;
+  margin-left: -1rem;
+}
+
+.gallery-cont-box {
+  display: none;
+}
+.gallery-cont-box.on {
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111111f1;
+  z-index: 9999999;
+}
+
+.gallery-cont-box.on > .gallery-tab {
+  position: relative;
+  top: 47%;
+  transform: translateY(-50%);
+}
+
+.gallery-tab-btn {
+  position: relative;
+  margin-top: 1%;
+  margin-right: 2%;
+  float: right;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.gimg-wrap {
+  width: 100vw;
+}
+
+.gallery-tab ul {
+  display: flex;
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  will-change: left;
+}
+
+.gallery-tab .imagea {
+  height: 80vh;
+  border-radius: 20px;
+}
+
+.gallery-tab .imageb {
+  width: 90vw;
+  border-radius: 20px;
+}
+
+.gbtn {
+  width: 55px;
+  height: 55px;
+  z-index: 99;
+}
+
+.gbtn1 {
+  left: 1vw;
+}
+.gbtn2 {
+  right: 1vw;
+}
+
+.gallery-img-txt p {
+  z-index: 9999;
+}
+
+.gallery-img-txt p:nth-child(1) {
+  position: absolute;
+  left: 2%;
+  bottom: 3%;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.gallery-img-txt p:nth-child(2) {
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  font-size: 1.5rem;
+}
+
+.cont-box {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+
+.sub-ban-wrap .sub-ban-box {
+  position: relative;
+  top: -100%;
+}
+#bt-banner-area{
+  max-width: 1600px;
+  padding: 0 55px;
+  margin: 0 auto;
+}
+
+.sub-ban-wrap {
+  width: 100%;
+}

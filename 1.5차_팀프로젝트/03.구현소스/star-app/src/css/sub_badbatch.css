@@ -1,0 +1,605 @@
+@charset "utf-8";
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background-color: #000;
+  color: #fff;
+
+  /* 공사중 */
+  /* border: 2px dotted red; */
+  /* 베이스 폰트 */
+}
+
+.cont-box {
+  max-width: 1500px;
+}
+
+.center-obj {
+  /* font-size: 1.6rem; */
+  text-align: center;
+}
+
+.desc {
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+/************* 상단배너 설정 *************/
+
+#top-area {
+  margin: 0 auto;
+  margin-top: -0.1%;
+}
+
+.top-banner {
+  padding-top: 10%;
+  height: 100vh;
+}
+
+.top-banner img {
+  width: 31%;
+}
+
+.top-banner .desc {
+  font-size: 1.6rem;
+  width: 30%;
+  text-align: center;
+  margin: 3rem auto;
+}
+
+.btn-box {
+  margin: 3rem;
+  justify-content: center;
+}
+
+/* iframe 설정 */
+#ifr {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 120vh;
+  left: 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* 스크롤 다운 */
+.top-banner .linebx {
+  /* padding: 0; */
+  overflow: hidden;
+  height: 80px;
+  padding-top: 3vw;
+  /* margin-bottom: -3vw; */
+}
+
+.top-banner .line {
+  display: block;
+  height: 50px;
+  margin-top: 0;
+  border-left: 1px solid #c8c8c8;
+  margin-left: 50%;
+  transition: 0.2s;
+  opacity: 1;
+
+  animation: line-ani 2.5s ease-out infinite;
+}
+
+@keyframes line-ani {
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+    margin-top: 100px;
+  }
+  100% {
+    opacity: 0;
+    margin-top: 100px;
+  }
+}
+
+/*************  1. info area *************/
+#info-area .cont-box.fx-box {
+  margin: 0 auto;
+}
+
+#info-area .btn-link {
+  text-align-last: left;
+  margin-left: -1rem;
+  margin-top: 2rem;
+}
+
+#info-area .desc-box > div {
+  margin-top: 4rem;
+}
+
+.bulr-box {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 150vh;
+  backdrop-filter: blur(20px) opacity(100%) saturate(50%) brightness(50%);
+}
+
+#info-area .imgbox img {
+  width: 100%;
+}
+#info-area .imgbox {
+  margin: 0 7rem;
+  width: 40%;
+}
+#info-area {
+  padding-top: 13rem;
+  overflow: hidden;
+
+  /* height: 80vh; */
+  /* padding-bottom: 15rem; */
+  backdrop-filter: blur(70px);
+  background-image: linear-gradient(to top, #000000, #00000000, #00000000),
+    url(../images/sub_badbatch_img/poster_1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/*************  2. episode area *************/
+
+#episode-area {
+  width: 70%;
+  margin: 6% auto;
+}
+
+#episode-area .tit-box a {
+  margin: 0 2rem;
+  line-height: 4;
+  text-decoration: none;
+}
+
+/* 카테고리 */
+.Kategorie {
+  padding: 2rem 0;
+}
+
+.Kategorie a {
+  color: #797979;
+  margin: 0 2rem;
+  transition: 0.2s;
+}
+
+/* 클래스 on 추가시  */
+.Kategorie li:hover a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.epSlide ul {
+  position: relative;
+  /* overflow: hidden; */
+  flex-wrap: wrap;
+  /* height: 75%; */
+  /* translate: -45%; */
+  /* left: 50%; */
+}
+
+.epSlide li {
+  overflow: hidden;
+  border-radius: 2rem;
+  width: calc(100% / 4);
+  margin: 4rem;
+}
+
+/*************  3. sns area *************/
+
+#sns-area {
+  width: 70vw;
+  margin: 0 auto;
+  position: relative;
+  background-color: #000;
+}
+.sns-slider-wrap {
+  position: relative;
+}
+.sns-abtn-wrap {
+  position: absolute;
+  top: 42%;
+  justify-content: space-between;
+  width: 100%;
+  translate: 0 -50%;
+}
+
+#sns-area .snsSlide {
+  margin-top: 4rem;
+  overflow: hidden;
+}
+#sns-area .snsSlide ul figcaption {
+  width: 80%;
+}
+.snsSlide ul {
+  gap: 0 2rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.snsSlide li {
+  width: calc(100% / 6);
+  padding-left: 2rem;
+  margin-top: 2rem;
+}
+
+#sns-area .snsSlide ul li img {
+  aspect-ratio: 340/415;
+}
+
+/*************  4. pos area *************/
+
+#pos-area {
+  margin: 0 auto;
+}
+
+.pos-wrap.cont-box {
+  margin: 0 auto;
+}
+
+#pos-area .tit-box > h3 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+#pos-area .tit-wrap .tit-box {
+  position: relative;
+  width: 30%;
+  top: 50%;
+  left: 53%;
+  translate: -50% -50%;
+}
+
+#pos-area .tit-wrap {
+  position: relative;
+  /* left: 50%; */
+  /* translate: -20%; */
+  /* width: 110vw; */
+  height: 60vh;
+  background-image: linear-gradient(to top, #000000, #00000000),
+    linear-gradient(
+      to bottom,
+      #000000,
+      #00000000,
+      #00000000,
+      #00000000,
+      #00000000
+    ),
+    url(../images/sub_badbatch_img/sub_postitle.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 70% 90%;
+}
+
+#pos-area .slider-wrap {
+  /* margin-top: 2rem; */
+  margin: 2rem auto;
+
+  /* translate: -21%; */
+  /* margin-top: 10rem; */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+#pos-area .slider-wrap li {
+  border: 0px dashed #85e2ff;
+  backdrop-filter: drop-shadow(inset 0px 0px 5px 3px #85e2ff);
+
+  scale: 1;
+  z-index: auto;
+  transition: 0.2s;
+}
+
+#pos-area .slider-wrap li.on {
+  scale: 1.4;
+  z-index: 1;
+  box-shadow: 53px 50px 50px 3px #00000080;
+}
+
+/***************** 포스터 클릭시 플로팅 되는 화면 *****************/
+/* 
+
+포스터 클릭시 가운데에
+포스터 큰버전 + 설명텍스트+ 설명문구 노출
+*/
+
+.pos-data-wrap {
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 레이어 안깔리게 */
+  z-index: 999;
+  opacity: 0;
+
+  transition: 0.2s;
+}
+.pos-data-wrap.on {
+  /* 컨텐츠 가운데 위치할 수 있도록 */
+  display: flex;
+  /* display: inline-block; */
+  opacity: 1;
+  /* display: inline; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 레이어 안깔리게 */
+  z-index: 999;
+}
+.pos-data-wrap::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pos-data-box {
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+.pos-data-imgbox {
+  width: 57%;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+.pos-data-imgbox img {
+  width: 100%;
+}
+.pos-data-text .bullet {
+  margin-bottom: 2rem;
+}
+
+.pos-data-text h3 {
+  font-size: 3.5rem;
+  text-align-last: left;
+}
+
+.pos-data-text .close-btn {
+  position: absolute;
+  top: 0;
+  /* left: -100%; */
+  translate: 190%;
+  width: 5rem;
+  height: 5rem;
+  color: #fff;
+}
+
+.pos-data-text .btn-link svg {
+  width: 73%;
+  translate: 50% -63%;
+}
+.pos-data-text .btn-link {
+  height: 4rem;
+  margin-top: 4rem;
+  margin-left: -25%;
+}
+
+.pos-data-text {
+  margin-top: 27%;
+  margin-left: 4rem;
+  width: 40%;
+}
+
+/************* 서브 하단 배너 *************/
+#bt-banner-area {
+  position: relative;
+  /* margin-top: 4rem; */
+  margin-top: 0rem;
+  /* margin-bottom: -24rem; */
+  /* left: 50%; */
+  /* translate: -50%; */
+  margin-bottom: 7%;
+}
+
+.sub-ban-wrap {
+  width: 82%;
+  translate: -50%;
+  left: 50%;
+  /* margin: 0 auto; */
+  /* margin-bottom: 16%; */
+  /* left: -3.9%; */
+  /* top: 0%; */
+  position: relative;
+  height: 50rem;
+  overflow: hidden;
+  border-radius: 4rem;
+}
+
+.sub-ban-wrap .desc-wrap {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  translate: 14% -50%;
+}
+
+.sub-ban-wrap .sub-ban-img {
+  overflow: hidden;
+  height: 50rem;
+}
+
+/* 기본셋팅 */
+.sub-ban-wrap .sub-ban-box {
+  position: relative;
+  top: 0;
+  /* translate: 0 -50%; */
+}
+
+.sub-ban-box li video {
+  width: 100%;
+}
+
+/*********** abtn svg 공통설정 ***********/
+.abtn {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 9rem;
+  height: 4rem;
+  color: rgb(255, 255, 255);
+}
+
+.imgbox {
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+/* 리스트 수정 */
+ul li figcaption {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.zoomImg > ul li figure img {
+  width: 110%;
+}
+.zoomImg > ul li figure {
+  position: relative;
+  background-color: black;
+}
+
+.zoomImg > ul li:hover figure img {
+  opacity: 0.4;
+}
+.zoomImg > ul li:hover figure::before {
+  position: absolute;
+  content: "more view";
+  display: block;
+  z-index: 1;
+  color: #fff;
+  font-size: 2rem;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+div > ul li {
+  /* line-height: 0; */
+  cursor: pointer;
+}
+
+div > ul figure {
+  overflow: hidden;
+  /* aspect-ratio: 188/106; */
+  border-radius: 2rem;
+}
+
+.zoomImg > ul li:hover img {
+  scale: 1.2;
+  transform-origin: 50%;
+}
+.zoomImg > ul li img {
+  width: 100%;
+  transition: 0.2s;
+  backdrop-filter: drop-shadow(5px 5px 5px 5px #00000060);
+}
+
+.close-btn span {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+/*버튼설정*/
+/*************  텍스트 공통 설정 *************/
+
+/* 텍스트 설정 */
+
+.basic-font {
+  font-size: 1.6rem;
+  font-weight: 200;
+}
+
+.title-sub {
+  text-align: left;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1.3;
+}
+
+.title-sub2 {
+  /* text-transform: none; */
+  text-align: left;
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1.3;
+}
+
+.title-topic {
+  color: #cbcbcb;
+  font-size: 1.5rem;
+}
+
+.btn-main:hover {
+  background-color: #fff075;
+}
+
+.btn-sub a {
+  color: #ffe400;
+}
+.btn-sub {
+  height: 7vh;
+  border: 1px solid #ffe400;
+  border-radius: 4.5vw;
+  box-sizing: border-box;
+  /* color: #FFE400; */
+  background-color: transparent;
+  padding: 1vw;
+  transition: 0.4s;
+}
+.btn-sub:hover {
+  color: #000;
+  background-color: #ffe40020;
+}
+
+/* 링크버튼 애니 */
+.btn-link img {
+  transform-origin: 50% 50%;
+  rotate: 0;
+  transition: 0.2s;
+}
+.btn-link:hover img {
+  rotate: 180deg;
+}
+
+.btn-link span {
+  color: #fff;
+  padding-left: 2rem;
+}
+
+.btn-link:hover svg {
+  opacity: 1;
+  stroke-dashoffset: 0;
+}
+
+.btn-link svg {
+  translate: 21% -59%;
+  fill: none;
+  opacity: 0;
+  stroke: #fff;
+  stroke-width: 1;
+
+  stroke-dashoffset: 140%;
+  stroke-dasharray: calc(50% * 3);
+
+  transition: stroke-dashoffset 0.4s ease-out, opacity 0.1s ease-out;
+}
+
+#footer-area {
+  /* left: -10%; */
+  bottom: -10%;
+}

@@ -1,0 +1,39 @@
+/* Ahsoka AsEpisode CSS */
+
+/*********************** 에피소드 가이드 영역 ***********************/
+#episode-area {
+  overflow: hidden;
+}
+.episode-box {
+  margin-top: 3rem;
+}
+.episode-box ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: min(2rem, 1.2vw);
+}
+.episode-box li {
+  cursor: pointer;
+}
+.episode-box .desc-box {
+  height: 14vh;
+  padding: 1rem 3rem;
+  border-radius: 0 0 2rem 2rem;
+  background-color: #1d1e1f;
+}
+.episode-box img {
+  width: 100%;
+  border-radius: 2rem 2rem 0 0;
+}
+.episode-box h3 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+.episode-box p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: left;
+  color: gray;
+}

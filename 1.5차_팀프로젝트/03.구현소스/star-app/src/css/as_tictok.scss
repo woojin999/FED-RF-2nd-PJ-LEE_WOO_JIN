@@ -1,0 +1,31 @@
+/*********************** 틱톡 영역 ***********************/
+#tiktoc-area {
+  overflow: hidden;
+  margin-bottom: 10rem;
+}
+.tiktoc-box {
+  margin-top: 3rem;
+}
+.tiktoc-box ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: min(2rem, 1.2vw);
+}
+.tiktoc-box li {
+  cursor: pointer;
+}
+.tiktoc-box .desc-box {
+  height: 5vh;
+  padding: 3rem 2rem;
+  border-radius: 0 0 2rem 2rem;
+  background-color: #1d1e1f;
+}
+.tiktoc-box img {
+  width: 100%;
+  border-radius: 2rem 2rem 0 0;
+}
+.tiktoc-box h3 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: left;
+}

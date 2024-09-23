@@ -1,0 +1,79 @@
+/* **************************** (공통)하단영역 **************************** */
+#footer-area {
+    bottom: -100%;
+    z-index: 100;
+      position: relative;
+     
+  .footer-area {
+    color: #fff;
+    background: linear-gradient(45deg, rgb(0 35 128 / 49%), transparent), black;
+  }
+  
+  .footer_inner2 {
+    box-sizing: border-box;
+  }
+  
+  .footer_cont.fx-box {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .footer_address {
+    box-sizing: border-box;
+    flex-basis: 70%;
+    padding: 40px 10px;
+  }
+  
+  ul.footer_info.fx-box li {
+    padding-right: 1vw;
+  }
+  
+  /* 푸터로고 이미지부모 */
+  .footer_cont.fx-box > h2 > a {
+    display: inline-block;
+    position: relative;
+    max-width: 200px;
+    height: 100%;
+  }
+  /* 이미지 */
+  .footer_cont.fx-box > h2 img {
+    
+    padding: 10px 0;
+    position: relative;
+    top: 50%;
+    translate: 0 -50%;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* 푸터 텍스트박스 1 */
+  ul.footer_info.fx-box {
+    font-size: 1.2rem;
+  }
+  /* 푸터 텍스트 1 */
+  ul.footer_info.fx-box .footer-menu {
+    color: #fff;
+  }
+  
+  /*푸터 텍스트박스 2 */
+  ul.footer_info.footer_info2 {
+    margin: 0 auto;
+    padding: 25px 0px;
+    text-align: center;
+  }
+  ul.footer_info.footer_info2 > li > p.footer-menu {
+    display: inline-block;
+  }
+  /* 푸터 텍스트박스 3*/
+  p.copyright {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+.fx-box {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  }
+  
+  

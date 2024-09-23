@@ -1,0 +1,348 @@
+/* Ahsoka CSS */
+
+body {
+  background-color: #000;
+  background: url(../../public/images/sub_ahsoka_images/background.jpg)
+  no-repeat fixed left / cover;
+}
+
+
+/* 타이틀, 설명글 공통 */
+.title {
+  color: #fff;
+  text-align: justify;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.desc {
+  color: #fff;
+  text-align: justify;
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+/*************  박스 공통 설정 *************/
+/* 섹션 상단 여백 */
+.section-top {
+  padding-top: 15rem;
+}
+/* 슬라이드 내 박스 설정 */
+.slider-wrap figcaption {
+  margin-top: 4rem;
+}
+figcaption > h4 {
+  margin-top: 2rem;
+}
+
+/*********************** 탑배너 영역 ***********************/
+.top-banner {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  height: 100vh;
+}
+.top-banner .main-ban {
+  height: 100vh;
+}
+.top-banner img{
+  width: 100%;
+}
+.ban-desc-box {
+  position: absolute;
+  top: 10%;
+  left: 55%;
+  max-width: 40%;
+}
+.ban-logo {
+  margin-bottom: 5rem;
+}
+.ban-desc-box .desc {
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.top-banner .btn-box {
+  cursor: pointer;
+  margin-top: 10rem;
+  text-align: center;
+}
+.ban-desc-box a {
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.ban-desc-box .btn1 {
+  border-radius: 4.5vw;
+  padding: 1.5vw 3vw;
+  margin: 1rem;
+  background-color: #ffe400;
+}
+.ban-desc-box .btn2 {
+  border: 1px solid #ffe400;
+  border-radius: 4.5vw;
+  box-sizing: border-box;
+  padding: 1.5vw 2.5vw;
+  margin: 1rem;
+}
+.ban-desc-box .btn2 a {
+  color: #fff;
+}
+
+/*********************** 영화소개 영역 ***********************/
+#info-area {
+  overflow: hidden;
+  height: 100vh;
+  padding-bottom: 15rem;
+  margin-bottom: 15rem;
+  backdrop-filter: blur(70px);
+  background-image: linear-gradient(to top, #000000, #00000000),
+  url(../../public/images/sub_ahsoka_images/poster1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bulr-box {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100vw;
+  backdrop-filter: blur(20px) opacity(100%) saturate(50%) brightness(50%);
+}
+#info-area .gradient {
+  margin-top: 40%;
+  width: 100%;
+  height: 50vh;
+  background-image: linear-gradient(0deg, #000000, #00000000);
+}
+#info-area .img-box{
+  max-width: 600px;
+  margin-right: 3rem;
+}
+#info-area .img-box img {
+  width: 100%;
+}
+#info-area .desc-box {
+  padding: 3rem;
+}
+.ban-desc-box {
+  top: 20%;
+}
+#info-area .desc-box > div {
+  margin-top: 4rem;
+}
+.btn-link {
+  margin-left: -1rem;
+  margin-top: 2rem;
+}
+.btn-link a {
+  color: #fff;
+}
+.btn-link img {
+  width: 3rem;
+  margin-right: 2rem;
+}
+
+/*********************** 비디오 영역 ***********************/
+#video-area {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+.video-box {
+  /* width: 125rem;
+  height: 73rem; */
+  aspect-ratio: 1250 / 703;
+}
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.slide-peek-box {
+  margin-top: 3rem;
+}
+.slide-peek-box ul {
+  display: flex;
+}
+.slide-peek-box li {
+  cursor: pointer;
+  flex: 1;
+}
+.slide-peek-box h3 {
+  font-size: 1.8rem;
+  text-align: left;
+}
+.slide-peek-box .img-box {
+  position: relative;
+  aspect-ratio: 16/9;
+}
+.slide-peek-box .img-box img {
+  width: 100%;
+  height: 100%;
+}
+/* 플레이 아이콘 */
+.slide-peek-box .img-box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem;
+  background: url(../../public/images/sub_ahsoka_images/icon/icon-play.png) no-repeat center/cover;
+  z-index: 1;
+}
+
+/*********************** 캐릭터 소개 영역 ***********************/
+#character-area {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0;
+}
+.cbox ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: min(2rem, 1.2vw);
+}
+.cbox li {
+  cursor: pointer;
+}
+.cbox img {
+  width: 100%;
+  height: 250px;
+  border-radius: 2rem;
+}
+.cbox h3 {
+  font-size: 1.8rem;
+}
+#character-page{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000d2;
+  z-index: 999;
+}
+#character-page .cont-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+}
+#character-page .img-box{
+  width: 50vw;
+  margin-right: 10rem;
+}
+#character-page .img-box img{
+  width: 100%;
+  height: auto;
+}
+/* 닫기 버튼 */
+.close-btn{
+  width: 3rem;
+  height: 3rem;
+  /* background: url(../images/sub_ahsoka_images/icon/icon_close.svg) no-repeat center/cover; */
+  cursor: pointer;
+}
+
+/*********************** 에피소드 가이드 영역 ***********************/
+#episode-area {
+  overflow: hidden;
+}
+.episode-box {
+  margin-top: 3rem;
+}
+.episode-box ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: min(2rem, 1.2vw);
+}
+.episode-box li {
+  cursor: pointer;
+}
+.episode-box .desc-box {
+  height: 14vh;
+  padding: 1rem 3rem;
+  border-radius: 0 0 2rem 2rem;
+  background-color: #1d1e1f;
+}
+.episode-box img {
+  width: 100%;
+  border-radius: 2rem 2rem 0 0;
+}
+.episode-box h3 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+.episode-box p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: left;
+  color: gray;
+}
+
+/*********************** 틱톡 영역 ***********************/
+#tiktoc-area {
+  overflow: hidden;
+  margin-bottom: 10rem;
+}
+.tiktoc-box {
+  margin-top: 3rem;
+}
+.tiktoc-box ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: min(2rem, 1.2vw);
+}
+.tiktoc-box li {
+  cursor: pointer;
+}
+.tiktoc-box .desc-box {
+  height: 5vh;
+  padding: 3rem 2rem;
+  border-radius: 0 0 2rem 2rem;
+  background-color: #1d1e1f;
+}
+.tiktoc-box img {
+  width: 100%;
+  border-radius: 2rem 2rem 0 0;
+}
+.tiktoc-box h3 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/*********************** 스크롤 등장액션 클래스 ***********************/
+.scAct {
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+/* 등장클래스+.on */
+.scAct.on {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/*********************** 공통 core.css에서 보충 ***********************/
+.under-line {
+  margin-bottom: 5rem;
+}
+.title-box{
+  margin-top: 1rem;
+}

@@ -1,0 +1,68 @@
+@charset "utf-8";
+/************* 서브 하단 배너 *************/
+#bt-banner-area {
+  position: relative;
+  /* margin-top: 4rem; */
+  margin-top: 0rem;
+  /* margin-bottom: -24rem; */
+  /* left: 50%; */
+  /* translate: -50%; */
+  margin-bottom: 7%;
+}
+
+.sub-ban-wrap {
+  width: 82%;
+  translate: -50%;
+  left: 50%;
+  /* margin: 0 auto; */
+  /* margin-bottom: 16%; */
+  /* left: -3.9%; */
+  /* top: 0%; */
+  position: relative;
+  height: 50rem;
+  overflow: hidden;
+  border-radius: 4rem;
+}
+
+.sub-ban-wrap .desc-wrap {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  translate: 14% -50%;
+}
+
+.sub-ban-wrap .sub-ban-img {
+  overflow: hidden;
+  height: 50rem;
+}
+
+/* 기본셋팅 */
+.sub-ban-wrap .sub-ban-box {
+  position: relative;
+  top: 0;
+  /* translate: 0 -50%; */
+}
+
+.sub-ban-box li video {
+  width: 100%;
+}
+
+/* a링크 호버 효과 */
+
+/* 카테고리 */
+.sub-ban-wrap .Kategorie {
+  padding: 2rem 0;
+}
+
+.sub-ban-wrap .Kategorie a {
+  color: #797979;
+  margin: 0 2rem;
+  transition: 0.2s;
+}
+
+/* 클래스 on 추가시  */
+.sub-ban-wrap .Kategorie li:hover a {
+  color: #fff;
+  text-decoration: underline;
+}
+

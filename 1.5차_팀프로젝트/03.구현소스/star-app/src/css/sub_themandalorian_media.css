@@ -1,0 +1,132 @@
+@charset "utf-8";
+/* 스타워즈 PJ 미디어쿼리 CSS - media.css */
+/* 하단 배너영역 */
+@media screen and (max-width: 1100px) {
+  .sub-ban-wrap {
+    width: 93%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ep-img-wrap ul li {
+    flex-basis: 50%;
+    left: 0%;
+  }
+  .video-img-wrap ul li {
+    flex-basis: 50%;
+    left: 0%;
+  }
+  .character-img-box .img-list:nth-child(1) li {
+    width: 33.3vw;
+    flex-shrink: 0;
+    padding: 2vw 3vw;
+  }
+  .character-img-box .img-list:nth-child(2) li {
+    width: 25vw;
+    flex-shrink: 0;
+    padding: 2vw 2vw;
+  }
+} /* 1024px */
+/* 하단 배너영역 */
+@media screen and (max-width: 930px) {
+  #bt-banner-area ul.fx-box {
+    flex-direction: column;
+  }
+}
+
+/* 860px */
+@media screen and (max-width: 860px) {
+  .sub-img-box {
+    display: inline-block;
+  }
+  .ep-img-wrap ul li {
+    position: relative;
+    flex-basis: 100%;
+  }
+  .video-img-wrap ul li {
+    flex-basis: 100%;
+  }
+  .gallery-box {
+    display: inline-block;
+  }
+  .gtxt-box {
+    height: 130px;
+  }
+  .main-img-title {
+    width: 90%;
+    left: 50%;
+    margin-left: 0;
+    transform: translate(-50%, -50%);
+  }
+  .main-img-box > img {
+    height: 700px;
+    object-fit: cover;
+    object-position: 80%;
+  }
+  .btn-main,
+  .btn-sub {
+    height: 5vh;
+  }
+} /* 860px */
+
+/* 하단 배너영역 */
+@media screen and (max-width: 670px) {
+  #bt-banner-area ul.fx-box {
+    flex-direction: column;
+  }
+  #bt-banner-area .Kategorie {
+    line-height: 2.5;
+  }
+  #bt-banner-area .title {
+    font-size: 3rem;
+  }
+
+  #bt-banner-area .title-sub {
+    font-size: 2.5rem;
+    line-height: 1.6;
+  }
+}
+
+/* 650px */
+@media screen and (max-width: 650px) {
+  .sub-img-box > div > img {
+    border-radius: 0;
+  }
+  .gallery-tab .imagea {
+    height: auto;
+    width: 90vw;
+  }
+  .video-txt-box {
+    display: none;
+  }
+  .character-img-box .img-list:nth-child(1) li {
+    width: 50vw;
+    flex-shrink: 0;
+    padding: 2vw 3vw;
+  }
+  .character-img-box .img-list:nth-child(2) li {
+    width: 50vw;
+    flex-shrink: 0;
+    padding: 2vw 2vw;
+  }
+  .abtn {
+    width: 40px;
+    height: 40px;
+  }
+  .info-txt-box {
+    margin: 3vw;
+  }
+  .sub-img-box {
+    padding: 0;
+  }
+  .gtxt-box .galaxy-sub-txt {
+    display: none;
+  }
+  .list-box h3 {
+    font-size: 1.4rem;
+    white-space: nowrap;
+  }
+  .section-top {
+    padding-top: 10rem;
+  }
+} /* 650px */

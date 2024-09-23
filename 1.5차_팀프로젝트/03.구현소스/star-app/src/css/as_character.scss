@@ -1,0 +1,58 @@
+/* Ahsoka AsCharacter CSS */
+
+/*********************** 캐릭터 소개 영역 ***********************/
+#character-area {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0;
+}
+.cbox ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: min(2rem, 1.2vw);
+}
+.cbox li {
+  cursor: pointer;
+}
+.cbox img {
+  width: 100%;
+  height: 250px;
+  border-radius: 2rem;
+}
+.cbox h3 {
+  font-size: 1.8rem;
+  margin-top: 5px;
+}
+#character-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000d2;
+  z-index: 999;
+}
+#character-page .content-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+}
+#character-page .img-box {
+  width: 50vw;
+  margin-right: 10rem;
+}
+#character-page .img-box img {
+  width: 100%;
+  height: auto;
+}
+/* 닫기 버튼 */
+.close-btn {
+  width: 3rem;
+  height: 3rem;
+  background: url(./svg/icon_close.svg) no-repeat center/cover;
+  cursor: pointer;
+}

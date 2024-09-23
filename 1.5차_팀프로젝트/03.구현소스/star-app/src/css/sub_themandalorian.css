@@ -1,0 +1,547 @@
+@charset "utf-8";
+
+/* 불러오기 영역 */
+@import url(./sub_themandalorian_media.css);
+@import url(./core.css);
+@import url(./grid_12_flex.css);
+@import url(./reset.css);
+@import url(./common.css);
+@import url(./sub_banner.css);
+
+body {
+  background: url(../images/sub_themandalorian_images/background-img.jpeg)
+    repeat-y center;
+
+  color: #fff;
+}
+
+/* 공사중 표시 */
+/* body * {
+  outline: 2px dashed #fff;
+} */
+
+/********************************  */
+
+/* .info-area{
+  padding-top: 125px;
+} */
+
+.main-img-box {
+  position: relative;
+}
+.main-img-box > img {
+  width: 100%;
+  height: 100vh;
+
+}
+
+.main-img-title {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 33%;
+  margin-left: 5vw;
+  transform: translateY(-50%);
+}
+.main-img-title img {
+  width: 100%;
+}
+.main-img-title p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* 버튼초기화 */
+button {
+  cursor: pointer;
+  margin: 0 2rem;
+  background-color: transparent;
+  border: transparent;
+}
+.btn-main a {
+  color: #000;
+}
+
+.btn-main {
+  height: 7vh;
+  background-color: #ffe400;
+  border-radius: 4.5vw;
+  padding: 1vw;
+  transition: 0.4s;
+}
+
+.btn-main:hover {
+  background-color: #fff075;
+}
+
+.btn-sub {
+  height: 7vh;
+  border: 1px solid #ffe400;
+  border-radius: 4.5vw;
+  box-sizing: border-box;
+  color: #ffe400;
+  background-color: transparent;
+  padding: 1vw;
+  transition: 0.4s;
+}
+.btn-sub:hover {
+  color: #000;
+  background-color: #ffe40020;
+}
+
+.btn-sub a {
+  color: #ffe400;
+}
+
+.sub-blur-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/sub_themandalorian_images/main_poster2.jpeg)
+    no-repeat top/cover;
+  filter: blur(20px);
+  z-index: -1;
+}
+
+.sub-img-box {
+  position: relative;
+  padding: 80px 70px;
+  text-align: left;
+}
+
+.character-area h2 {
+  margin-bottom: 10px;
+}
+.info-txt-box {
+  margin-left: 3vw;
+}
+
+.info-txt-box .bullet,
+.info-txt-box .desc {
+  margin-top: 2rem;
+}
+.info-txt-box .desc {
+  font-size: 1.6rem;
+}
+
+.sub-img-box > div > img {
+  width: 100%;
+  border-radius: 15px;
+}
+.rich-box {
+  margin-top: 4rem;
+}
+.rich-box a {
+  font-size: 1.6rem;
+  color: #fff;
+}
+.title {
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+.inboxman h2 {
+  font-size: 2.4rem;
+  text-align: left;
+  padding-left: 1.5%;
+}
+
+.character-wrap h2 {
+  text-align: center;
+  padding-left: 0;
+}
+.character-img-box {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.character-img-box ul {
+  text-align: center;
+  display: flex;
+  box-sizing: border-box;
+}
+.character-img-box li {
+  box-sizing: border-box;
+  transition: 0.4s;
+}
+
+.character-img-box .img-list:nth-child(1) li {
+  width: 25vw;
+  flex-shrink: 0;
+  padding: 2vw 4vw;
+}
+.character-img-box .img-list:nth-child(2) li {
+  width: 20vw;
+  flex-shrink: 0;
+  padding: 2vw 3vw;
+}
+
+.character-img-box li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.character-img-box li:hover {
+  scale: 1.2;
+}
+.list-box h3 {
+  position: relative;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  margin-top: 5px;
+  z-index: 999;
+}
+
+/* 에피소드 */
+.ep-wrap,
+.video-wrap,
+.gallery-wrap {
+  padding: 0 55px;
+}
+
+.ep-wrap h2 {
+  padding-left: 1.5%;
+}
+
+.ep-img-wrap {
+  position: relative;
+}
+.ep-img-wrap ul {
+  position: relative;
+  overflow: hidden;
+}
+
+.ep-img-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 1280/720;
+}
+.ep-img-wrap ul li {
+  position: relative;
+  flex-basis: 33.3333%;
+  flex-shrink: 0;
+  scale: 0.9;
+  cursor: pointer;
+  left: 0;
+  transition: 0.5s ease-in-out;
+  will-change: left;
+}
+
+.ep-bg-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  /* padding: 10px; */
+  background-color: #1d1e1f9a;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.ep-txt-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  transition: opacity 0.5s;
+}
+
+.ep-img-box:hover .ep-bg-box {
+  opacity: 1;
+}
+.ep-img-box:hover .ep-txt-box {
+  opacity: 1;
+}
+
+.ep-txt-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 2vh;
+}
+.ep-txt-box p {
+  font-size: 1.4rem;
+}
+.epbtn1,
+.vdbtn1 {
+  display: none;
+}
+
+.abtn {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #fff;
+  font-size: 3rem;
+  text-align: center;
+}
+.abtn:hover {
+  background-color: #ccc;
+}
+
+.ab1 {
+  left: 0;
+}
+.ab2 {
+  right: 0;
+}
+
+/* 비디오 */
+.video-img-wrap {
+  position: relative;
+}
+
+.video-img-wrap ul {
+  overflow: hidden;
+}
+.video-img-wrap ul li {
+  position: relative;
+  flex-basis: 33.3333%;
+  flex-shrink: 0;
+  scale: 0.9;
+  left: 0;
+  transition: 0.5s ease-in-out;
+  will-change: left;
+}
+.video-box {
+  /* padding: 10px; */
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.video-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 480/270;
+  border-radius: 10px 10px 0 0;
+}
+.video-txt-box {
+  background-color: #1d1e1f;
+  min-height: 100px;
+  border-radius: 0 0 10px 10px;
+  display: -webkit-box;
+}
+.video-txt-box h3 {
+  padding: 32px 12px 12px;
+  font-size: 1.8rem;
+  text-align: left;
+  word-break: break-all;
+}
+
+.video-img {
+  position: relative;
+}
+.video-box {
+  overflow: hidden;
+}
+.video-img {
+  transition: 0.4s;
+}
+.video-img:hover {
+  scale: 1.1;
+}
+.video-txt-box {
+  z-index: 1;
+}
+.video-img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: url(../images/sub_themandalorian_images/youtube_icon.png)
+    no-repeat center center;
+  background-size: 50px;
+}
+.video-cont-box {
+  display: none;
+}
+.video-cont-box.on {
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111111f1;
+  z-index: 9999;
+}
+
+.video-cont-box.on .video-tab {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.video-tab-btn {
+  float: right;
+
+  /* transform: translateX(50%); */
+  cursor: pointer;
+}
+.video-tab iframe {
+  width: 70vw;
+  aspect-ratio: 1248/702;
+  border: none;
+}
+#gallery-area {
+  text-align: center;
+}
+.gallery-box {
+  margin: 40px 15px;
+  cursor: pointer;
+}
+.gimg-box img {
+  width: 100%;
+  aspect-ratio: 864/482;
+  border-radius: 2% 0 0 2%;
+}
+.gtxt-box {
+  position: relative;
+  width: 100%;
+  background-color: #1d1e1f;
+  text-align: left;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+.gtxt-box h3 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+}
+.gtxt-box p {
+  font-size: 1.4rem;
+}
+.gtxt-box p:last-child {
+  position: absolute;
+  bottom: 10px;
+}
+.gtxt-box .bullet {
+  scale: 0.6;
+  margin-top: 1vh;
+  margin-left: -1rem;
+}
+
+.gallery-cont-box {
+  display: none;
+}
+.gallery-cont-box.on {
+  display: inline-block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111111f1;
+  z-index: 9999999;
+}
+
+.gallery-cont-box.on > .gallery-tab {
+  position: relative;
+  top: 47%;
+  transform: translateY(-50%);
+}
+
+.gallery-tab-btn {
+  position: relative;
+  margin-top: 1%;
+  margin-right: 2%;
+  float: right;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.gimg-wrap {
+  width: 100vw;
+}
+
+.gallery-tab ul {
+  display: flex;
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  will-change: left;
+}
+
+.gallery-tab .imagea {
+  height: 80vh;
+  border-radius: 20px;
+}
+
+.gallery-tab .imageb {
+  width: 90vw;
+  border-radius: 20px;
+}
+
+.gbtn {
+  width: 55px;
+  height: 55px;
+  z-index: 99;
+}
+
+.gbtn1 {
+  left: 1vw;
+}
+.gbtn2 {
+  right: 1vw;
+}
+
+.gallery-img-txt p {
+  z-index: 9999;
+}
+
+.gallery-img-txt p:nth-child(1) {
+  position: absolute;
+  left: 2%;
+  bottom: 3%;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.gallery-img-txt p:nth-child(2) {
+  position: absolute;
+  right: 2%;
+  bottom: 3%;
+  font-size: 1.5rem;
+}
+
+.cont-box {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+
+.sub-ban-wrap .sub-ban-box {
+  position: relative;
+  top: -100%;
+}
+#bt-banner-area{
+  max-width: 1600px;
+  padding: 0 55px;
+  margin: 0 auto;
+}
+
+.sub-ban-wrap {
+  width: 100%;
+}

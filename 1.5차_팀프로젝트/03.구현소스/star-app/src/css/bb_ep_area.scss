@@ -1,0 +1,44 @@
+
+/*************  2. episode area *************/
+.badbatch{
+
+  #episode-area{
+    margin: 0 auto;
+    width: 90%;
+  }
+
+#episode-area .tit-box a {
+    margin: 0 2rem;
+    line-height: 4;
+    text-decoration: none;
+  }
+  
+  /* 카테고리 */
+  .Kategorie {
+    padding: 2rem 0;
+  }
+  
+  .Kategorie a {
+    color: #797979;
+    margin: 0 2rem;
+    transition: 0.2s;
+  }
+  
+  /* 클래스 on 추가시  */
+  .Kategorie li:hover a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .epSlide ul {
+    /* overflow: hidden; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .epSlide li {
+    overflow: hidden;
+    border-radius: 2rem;
+    width: calc(100% / 4);
+    margin: 4rem;
+  }
+}

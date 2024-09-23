@@ -1,0 +1,56 @@
+/* Ahsoka AsInfo CSS */
+
+/*********************** 시리즈 소개 영역 ***********************/
+#info-area {
+  overflow: hidden;
+  height: 100vh;
+  padding-bottom: 15rem;
+  margin-bottom: 15rem;
+  backdrop-filter: blur(70px);
+  background-image: linear-gradient(to top, #000000, #00000000),
+    url(../../public/images/sub_ahsoka_images/poster1.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.bulr-box {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100vw;
+  backdrop-filter: blur(20px) opacity(100%) saturate(50%) brightness(50%);
+}
+#info-area .gradient {
+  margin-top: 40%;
+  width: 100%;
+  height: 50vh;
+  background-image: linear-gradient(0deg, #000000, #00000000);
+}
+#info-area .img-box {
+  max-width: 600px;
+  margin-right: 3rem;
+}
+#info-area .img-box img {
+  width: 100%;
+}
+#info-area .desc-box {
+  padding: 3rem;
+}
+.ban-desc-box {
+  top: 20%;
+}
+#info-area .desc-box > div {
+  margin-top: 4rem;
+}
+.btn-link {
+  margin-left: -1rem;
+  margin-top: 2rem;
+}
+.btn-link a {
+  color: #fff;
+}
+.btn-link img {
+  width: 3rem;
+  margin-right: 2rem;
+}

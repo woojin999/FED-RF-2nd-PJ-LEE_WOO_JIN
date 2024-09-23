@@ -1,0 +1,81 @@
+/* *************3-4 컨텐츠영역(하단배너)************* */
+#main-index {
+/* 하단배너 */
+.visualView {
+  border-radius: 5% 5% 1% 1%;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 3000 / 1481;
+  width: 100%;
+  z-index: 0;
+  display: flex;
+  flex-flow: row;
+}
+/* 이미지박스 공통 */
+.visualimg {
+  height: 100%;
+  width: 100%;
+  background-position: left center;
+  background-size: cover;
+  filter: brightness(0.6);
+  transition: all 0.3s ease-out 0.1s;
+}
+/* 이미지박스 개별 */
+.visualimg:first-of-type {
+  background-image: url("../../public/images/main_images/sub1.png");
+}
+
+.visualimg:nth-of-type(2) {
+  background-image: url("../../public/images/main_images/sub2.png");
+}
+
+.visualimg:last-of-type {
+  background-image: url("../../public/images/main_images/sub3.png");
+}
+/* 겉박스호버시 0.1초 뒤 10% */
+.visualView:hover > .visualimg {
+  width: 10%;
+  transition: all 0.3s ease-out 0.1s;
+}
+/* 상위선택자로 덮기 -> 호버된요소 즉시 크기키움 */
+section.visualView-ban .visualView .visualimg:hover {
+  filter: brightness(1.1);
+  width: 100%;
+  transition: all 0.3s ease-out;
+}
+
+.visualimg > span {
+  opacity: 0;
+}
+/* 이미지 호버시 글씨 */
+.visualimg:hover > span {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 1;
+  transition: opacity 1s ease 0.5s;
+  z-index: 1;
+  padding: 20px;
+}
+/* 상위선택자로 덮기 -> 마지막 이미지 글씨크기 변경 */
+.visualView-ban .visualimg:nth-of-type(3):hover > span {
+  color: rgb(0, 0, 0);
+}
+
+.visualimg > span > p:first-of-type {
+  width: 90%;
+  font-size: 1.2rem;
+}
+
+.visualimg > span > p:last-of-type {
+  /* word-break: break-all; */
+  width: 90%;
+  line-height: 1.5;
+  text-align: justify;
+  font-size: 1.5rem;
+  padding: 10px 0px;
+}
+}

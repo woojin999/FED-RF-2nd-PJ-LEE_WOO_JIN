@@ -1,0 +1,182 @@
+/* ***************배너영역*************** */
+
+#ban-area-index {
+  background-color: rgb(0, 0, 0);
+  height: 100vh;
+
+
+/* 배너플랙스박스 */
+.ban_wrap {
+  overflow: hidden;
+  width: 200%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  left: -0%;
+  transition: 0.1s;
+}
+
+/* 배너박스 가상요소 */
+.blur-wrap::after {
+  content: 'Starlight Shared: Enjoy Star Wars together';
+  position: absolute;
+  color: #fff;
+  display: block;
+  top: 35%;
+  left: 55%;
+  font-size: 3.5rem;
+  width: 15%;
+  filter: drop-shadow(0px 0px 6px black);
+  font-weight: bold;
+/* 사용자정의 가상요소 js용  */
+  scale: var(--scale,0.9);
+  opacity: var(--opacity,0);
+  transition: var(--transition,0.4s 0.2s);
+}
+
+/* 호버시 가상요소 */
+  /* .blur-wrap:hover::after {
+      opacity: 1;
+      scale: 1;
+  } */
+  .blur-wrap:hover>img{
+    scale: 1.1;
+  }
+
+/* 블러랩박스 */
+.blur-wrap{
+  overflow: hidden;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+}
+/* 블러박스 */
+.blur-box{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../../public/images/main_images/news04.jpg) no-repeat center/ cover;
+  filter: blur(50px);
+}
+/* 이미지박스 */
+.blur-wrap>img {
+  left: 25%;
+  translate: -50%;
+  position: relative;
+  max-width: 2000px;
+  height: 100%;
+  object-fit: cover;
+
+  transition: .8s ease-out;
+}
+
+/* 비디오부모박스 */
+.ban-area-index.col-12 {
+  
+  /* 배너랩박스숨기기 */
+  overflow: hidden;
+  height: 100%;
+  margin: 0px auto;
+}
+/* 영역채우기 */
+video.video {
+  /* left: 50%;
+  translate: -50%; */
+  flex-shrink: 0;
+  position: relative;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+
+/* 배너버튼 부모 */
+.ban-btn{
+  filter: drop-shadow(2px 4px 6px black);
+  color: #fff;
+  bottom: 40px;
+  left: 2%;
+  position: absolute;
+  z-index: 100;
+}
+/* 배너버튼 공통 */
+.banbtn{
+  cursor: pointer;
+  margin: 0 2px;
+  border-radius: 10%;
+  font-size: 1rem;
+  transform: scaleY(1.5);
+  display: inline-block;
+  padding: 0 12px;
+  vertical-align: center;
+  line-height: 1.1;
+}
+/* 마우스드래그 표시  */
+.ban-area-index .scroll_induce {
+  border: 2px solid rgb(255, 255, 255);
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50px;
+  position: absolute;
+  z-index: 100;
+  width: 20px;
+  height: 30px;
+}
+.ban-area-index .scroll_induce::before {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  top: 4px;
+  width: 2px;
+  height: 8px;
+  background-color: rgb(255, 255, 255);
+  animation: scrollMove 2s infinite;
+}
+@keyframes scrollMove {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    -webkit-transform: translate(-50%, 8px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* 동영상컨드롤러 */
+.video_control {
+  filter: drop-shadow(2px 2px 6px rgb(77, 77, 77));
+  cursor: pointer;
+  position: absolute;
+  right: 2%;
+  bottom: 40px;
+  z-index: 100;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+/* 멈춰있을때 재생버튼 */
+.video_control .pause {
+  display: inline-block;
+}
+.on.video_control .pause{
+  display: none;
+}
+/* 재생중일때 멈춤버튼 */
+.video_control .play{
+  display: none;
+}
+.on.video_control .play{
+  display: inline-block;
+}
+  
+}
+

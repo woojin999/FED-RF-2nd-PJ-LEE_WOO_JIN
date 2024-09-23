@@ -1,0 +1,112 @@
+// #mdvideo-area {
+  .fx-box {
+    display: flex;
+    /* flex-wrap: wrap; */
+  }
+  /* 비디오 */
+  .video-img-wrap {
+    position: relative;
+  }
+
+  .video-img-wrap ul {
+    overflow: hidden;
+  }
+  .video-img-wrap ul li {
+    position: relative;
+    flex-basis: 33.3333%;
+    flex-shrink: 0;
+    scale: 0.9;
+    left: 0;
+    transition: 0.5s ease-in-out;
+    will-change: left;
+  }
+  .mdvideo-box {
+    /* padding: 10px; */
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .mdvideo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 480/270;
+    border-radius: 10px 10px 0 0;
+  }
+  .video-txt-box {
+    background-color: #1d1e1f;
+    min-height: 100px;
+    border-radius: 0 0 10px 10px;
+    display: -webkit-box;
+  }
+  .video-txt-box h3 {
+    padding: 32px 12px 12px;
+    font-size: 1.8rem;
+    text-align: left;
+    word-break: break-all;
+  }
+
+  .video-img {
+    position: relative;
+  }
+  .mdvideo-box {
+    overflow: hidden;
+  }
+  .video-img {
+    transition: 0.4s;
+  }
+  .video-img:hover {
+    scale: 1.1;
+  }
+  .video-txt-box {
+    z-index: 1;
+  }
+  .video-img::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: url(../../public/images/sub_themandalorian_images/youtube_icon.png)
+      no-repeat center center;
+    background-size: 50px;
+  }
+  .video-cont-box {
+    display: none;
+  }
+  .video-cont-box.on {
+    display: inline-block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111111f1;
+    z-index: 9999;
+  }
+  // .video-tab{
+  //   display: none;
+  // }
+
+  .video-cont-box.on .video-tab {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+  }
+
+  .video-tab-btn {
+    float: right;
+
+    /* transform: translateX(50%); */
+    cursor: pointer;
+  }
+  .video-tab iframe {
+    width: 70vw;
+    aspect-ratio: 1248/702;
+    border: none;
+  }
+// }

@@ -1,0 +1,184 @@
+/* 회원가입 페이지 CSS */
+
+/* 최상위 부모박스 */
+.outbx {
+  padding: 25px;
+
+/* 전체박스 */
+.membx {
+  label {
+  }
+  .address-box {
+    padding-left: 14px;
+    width: 60%;
+  }
+
+  background: rgba(0, 0, 0, 0.4392156863);
+  max-width: 700px;
+  min-height: 600px;
+  padding: 15px;
+  margin: 0 auto;
+  font-family: "Ubuntu Condensed", sans-serif;
+  border-radius: 30px;
+  h2 {
+    color: #fff075;
+    margin-top: 100px;
+    text-align: center;
+    text-decoration-style: double;
+    padding: 15px;
+    font-size: clamp(20px, 5vw, 40px);
+  }
+
+  li {
+    position: relative;
+    padding: 25px;
+  }
+  label {
+    display: inline-block;
+    width: 25%;
+    text-align: revert;
+
+    font-size: clamp(12px, 2.7vw, 20px);
+    white-space: nowrap;
+  }
+  input {
+    width: 60%;
+    height: 3vh;
+    margin-left: 5%;
+    font-size: min(3vw,12px);
+    vertical-align: baseline;
+    font-family: "Ubuntu Condensed", sans-serif;
+  }
+  .msg {
+    position: absolute;
+    left: 31%;
+    width: 50%;
+    font-size: 14px;
+    /* outline: 1px dotted red; */
+    padding: 5px 0;
+    font-weight: bold;
+  }
+
+  .sbtn {
+    padding: 15px;
+    background-color: #0d6efd;
+    font-family: "Ubuntu Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border: 4px solid darkblue;
+    float: right;
+    margin-right: 9%;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background-color: #fd7e14;
+    }
+  }
+
+  ul {
+    li:last-child {
+      text-align: center;
+      a {
+        color: #fade4b;
+        text-decoration: none;
+        padding: min(15px, 1vw);
+        &:hover {
+          color: #fff;
+          text-decoration: overline;
+          text-decoration-style: wavy;
+        }
+      }
+    }
+  }
+  .already {
+    font-size: 13.33px;
+    color: #fff;
+  }
+}
+}
+section.membx button.btn-main {
+  display: block;
+  width: 50%;
+  height: 50px;
+  margin: 0 auto;
+  &:hover {
+    background-color: #fff075;
+    color: #000;
+    border: 1px solid #fade4b;
+    transition: 0.4s;
+  }
+}
+
+.address-box button {
+  border-radius: 50px;
+  color: #000;
+  border: 1px solid;
+  padding: 10px 10px;
+  margin: 0;
+  margin-bottom: 25px;
+  background: #fff075;
+}
+
+
+.outbx{
+@media screen and (max-width: 600px) {
+   .membx li {
+     padding-bottom: 0px;
+     translate: 15%;
+     display: flex;
+     flex-direction: column;
+ 
+     &:last-child {
+       translate: 0;
+     }
+   }
+ 
+   .membx {
+     > form > ul {
+       overflow: hidden;
+     }
+ 
+     label {
+       translate: 20%;
+       padding-bottom: 5px;
+     }
+ 
+     .msg {
+       position: relative;
+       left: 5%;
+     }
+   }
+ 
+   button.btn-main {
+     translate: -32%;
+   }
+ }
+ 
+ @media screen and (max-width: 500px) {
+   button.btn-main {
+     translate: 0%;
+   }
+ 
+   .membx li {
+     translate: 0%;
+   }
+ 
+   .membx {
+     input {
+       width: auto;
+     }
+ 
+     .address-box {
+       padding-left: 0px;
+       width: 93.5%;
+     }
+ 
+     input.zipcode {
+       margin: 0;
+       width: 100%;
+       padding: 0;
+     }
+   }
+ }
+}

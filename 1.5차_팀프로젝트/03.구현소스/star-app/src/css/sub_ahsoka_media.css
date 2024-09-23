@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+/* sub_ahsoka : 미디어쿼리 CSS - sub_ahsoka_media */
+
+/********* 최대사이즈 1204px 이하 시작 *********/
+@media screen and (max-width: 1204px) {
+  /* body > * {
+    overflow-x: hidden;
+  } */
+  .top-banner .btn-box {
+    margin-top: 2rem;
+  }
+  .ban-desc-box .desc{
+    font-size: 2rem;
+  }
+  #info-area {
+    height: 50%;
+    padding-bottom: 10rem;
+    margin-bottom: 10rem;
+  }
+
+  /* 캐릭터 박스 한 줄에 4개씩 */
+  .cbox ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cbox ul li {
+    grid-row: auto;
+  }
+  .section-top {
+    margin-top: 5rem;
+  }
+}
+/********* 최대사이즈 1204px 이하 끝 *********/
+
+/********* 최대사이즈 1190px 이하 시작 *********/
+@media screen and (max-width: 1190px) {
+ .section-top{
+  margin-top: 0;
+ }
+}
+/********* 최대사이즈 1190px 이하 끝 *********/
+
+/********* 최대사이즈 923px 이하 시작 *********/
+@media screen and (max-width: 923px) {
+  .top-banner .ban-desc-box {
+    justify-items: center;
+  }
+  #info-area {
+    height: 30%;
+  }
+  .episode-box ul {
+    grid-template-columns: repeat(2, 1fr);
+ 
+  }
+  .tiktoc-box ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .btn-box {
+    display: none;
+  }
+}
+/********* 최대사이즈 923px 이하 끝 *********/
+
+/********* 최대사이즈 780px 이하 시작 *********/
+@media screen and (max-width: 780px) {
+  #info-area {
+    height: 10%;
+  }
+  #info-area h2 {
+    font-size: 4rem;
+  }
+  #info-area .desc {
+    font-size: 1.5rem;
+  }
+  #info-area .desc-box > div {
+    margin-top: 2rem;
+  }
+  .cbox ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .slide-peek-box .img-box::after {
+    width: 3rem;
+    height: 3rem;
+  }
+  .title-box h3 {
+    font-size: 1.5rem;
+  }
+}
+/********* 최대사이즈 780px 이하 끝 *********/
+
+/********* 최대사이즈 700px 이하 시작 *********/
+@media screen and (max-width: 700px) {
+  #info-area .img-box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    flex-basis: 100%;
+  }
+  #info-area .img-box .img-box img{
+    width: 100%;
+  }
+  #info-area .desc-box {
+    position: absolute;
+  }
+  #info-area .desc-box > div {
+    font-size: 1.6rem;
+  }
+}
+/********* 최대사이즈 700px 이하 끝 *********/
+
+@media screen and (max-width: 670px) {
+  /* 하단 배너영역 */
+  #bt-banner-area ul.fx-box {
+    flex-direction: column;
+  }
+  #bt-banner-area .Kategorie{
+    line-height: 2.5;
+  }
+
+  /* 추가 */
+  #bt-banner-area .title{
+    font-size: 3rem;
+  }
+
+  #bt-banner-area .title-sub {
+    font-size: 2.5rem;
+    line-height: 1.6;
+  }
+}
+
+/********* 최대사이즈 450px 이하 시작 *********/
+@media screen and (max-width: 450px) {
+  .ban-desc-box{
+    
+  }
+  .ban-logo {
+    left: 30%;
+    width: 60vw;
+  }
+  .ban-desc-box .desc {
+    margin-top: 10rem;
+    width: 100%;
+  }
+}
+
+/********* 최대사이즈 450px 이하 끝 *********/
