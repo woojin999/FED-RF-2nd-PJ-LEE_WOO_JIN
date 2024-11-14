@@ -1,6 +1,6 @@
 # React -  Plants to the Rescue Project(쇼핑몰 프로젝트)(2차프로젝트)
 
-- 리액트를 활용하여 쇼핑몰 구현
+- 리액트를 활용하여 아로마 쇼핑몰 구현
 - [Plants to the Rescue 이용해보기](https://woojin999.github.io/FED-RF-2nd-PJ-LEE_WOO_JIN/2%EC%B0%A8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/03.%EA%B5%AC%ED%98%84%EC%86%8C%EC%8A%A4/plants-app/build/)
 - [Git-Url](https://github.com/woojin999/FED-RF-2nd-PJ-LEE_WOO_JIN/tree/main/2%EC%B0%A8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/03.%EA%B5%AC%ED%98%84%EC%86%8C%EC%8A%A4/plants-app)
 
