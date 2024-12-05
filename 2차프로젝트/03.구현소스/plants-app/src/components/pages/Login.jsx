@@ -9,9 +9,9 @@ function Login(props) {
   const myCon = useContext(dCon);
 
   // 1. 아이디변수
-  const [userId, setUserId] = useState("");
+  const [userId, setUserId] = useState("admin");
   // 2. 비밀번호변수
-  const [pwd, setPwd] = useState("");
+  const [pwd, setPwd] = useState("1111");
 
   // 1. 아이디변수
   const [userIdError, setUserIdError] = useState(false);
